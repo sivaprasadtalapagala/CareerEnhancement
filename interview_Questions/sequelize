@@ -1,0 +1,3 @@
+============what is ,sequelize ? =========
+
+Sequelize is a JavaScript library that simplifies working with relational databases, like MySQL, PostgreSQL, and SQLite, using Node.js. In simple terms, it acts as a bridge between your Node.js application and a database, allowing you to interact with the database by writing JavaScript code instead of writing raw SQL queries. Sequelize provides an Object-Relational Mapping (ORM) layer, which means you can work with your database tables and data as if they were JavaScript objects, making it easier to manage and query your data in a more familiar and structured way.

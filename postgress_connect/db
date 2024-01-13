@@ -1,0 +1,25 @@
+sivaprasadreddytalapagala@HYD-LTUB06:~$ sudo apt install postgresql postgresql-contrib
+sudo service postgresql start
+sudo -u postgres psql
+postgres=# CREATE DATABASE taxonomy;
+CREATE DATABASE
+postgres=# l
+postgres-# ls
+postgres-# \l
+
+
+===change role with pwd:
+ sudo -u postgres psql
+could not change directory to "/home/sivaprasadreddytalapagala": Permission denied
+psql (14.9 (Ubuntu 14.9-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# CREATE USER test WITH PASSWORD 'test';
+CREATE ROLE
+postgres=# \l
+
+
+==create database===
+
+postgres=# CREATE DATABASE testdb;
+CREATE DATABASE

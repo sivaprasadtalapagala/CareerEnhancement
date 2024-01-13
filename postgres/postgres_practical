@@ -1,0 +1,557 @@
+https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/
+
+
+
+postgre sql  learning tutorial
+https://www.postgresqltutorial.com/
+
+
+==========BASIC QUERIES===========
+
+
+Connect to a Database:
+
+sql
+Copy code
+\c database_name;
+Explanation: This command connects to the specified database. Replace "database_name" with the name of your database.
+
+List all Databases:
+
+sql
+Copy code
+\l
+Explanation: This command lists all the available databases on the PostgreSQL server.
+
+Show Tables in the Current Database:
+
+sql
+Copy code
+\dt
+Explanation: This command displays a list of tables in the currently connected database.
+
+Show Table Structure:
+
+sql
+Copy code
+\d table_name
+Explanation: This command shows the structure (columns and their data types) of the specified table.
+
+Select All Rows from a Table:
+
+sql
+Copy code
+SELECT * FROM table_name;
+Explanation: This is a basic SQL query that selects all rows from the specified table.
+
+Select Specific Columns from a Table:
+
+sql
+Copy code
+SELECT column1, column2 FROM table_name;
+Explanation: This query retrieves only the specified columns from the table.
+
+Filter Rows with WHERE Clause:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE condition;
+Explanation: This query selects rows from the table that satisfy the specified condition.
+
+Insert a New Row:
+
+sql
+Copy code
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+Explanation: This query adds a new row to the table with the specified values for the specified columns.
+
+Update Data in a Table:
+
+sql
+Copy code
+UPDATE table_name SET column1 = new_value WHERE condition;
+Explanation: This query updates existing data in the table based on the specified condition.
+
+Delete Rows from a Table:
+
+sql
+Copy code
+DELETE FROM table_name WHERE condition;
+Explanation: This query deletes rows from the table that satisfy the specified condition.
+
+
+
+
+
+-----Sorting Rows with ORDER BY:
+
+sql
+Copy code
+SELECT column1, column2 FROM table_name ORDER BY column1 ASC;
+Explanation: This query retrieves selected columns from the table and sorts the result set in ascending order based on the values in column1. You can use DESC for descending order.
+
+Limiting the Number of Rows Returned:
+
+sql
+Copy code
+SELECT * FROM table_name LIMIT 10;
+Explanation: This query limits the result set to the first 10 rows from the specified table.
+
+Counting Rows:
+
+sql
+Copy code
+SELECT COUNT(*) FROM table_name;
+Explanation: This query counts and returns the number of rows in the specified table.
+
+Distinct Values:
+
+sql
+Copy code
+SELECT DISTINCT column1 FROM table_name;
+Explanation: This query retrieves unique values from column1 in the specified table.
+
+Filtering with LIKE:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 LIKE 'prefix%';
+Explanation: This query retrieves rows where the values in column1 start with the specified prefix.
+
+Combining Conditions with AND/OR:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE condition1 AND condition2;
+Explanation: This query retrieves rows that satisfy both condition1 and condition2.
+
+Summarizing Data with GROUP BY:
+
+sql
+Copy code
+SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1;
+Explanation: This query groups the data based on column1 and counts the occurrences of each unique value.
+
+Calculating Aggregates:
+
+sql
+Copy code
+SELECT AVG(column1), MAX(column2), MIN(column3)
+FROM table_name;
+Explanation: This query calculates the average, maximum, and minimum values for the specified columns.
+
+Joining Tables:
+
+sql
+Copy code
+SELECT t1.column1, t2.column2
+FROM table1 t1
+INNER JOIN table2 t2 ON t1.id = t2.id;
+Explanation: This query performs an inner join between two tables (table1 and table2) based on a common column (id).
+
+Subqueries:
+
+sql
+Copy code
+SELECT column1, (SELECT MAX(column2) FROM table2 WHERE table1.id = table2.id)
+FROM table1;
+Explanation: This query includes a subquery to retrieve the maximum value from column2 in table2 for each row in table1.
+
+-----Using the BETWEEN Operator:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 BETWEEN 10 AND 20;
+Explanation: This query retrieves rows where the value in column1 falls within the range of 10 to 20 (inclusive).
+
+NULL Values:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 IS NULL;
+Explanation: This query retrieves rows where the value in column1 is NULL.
+
+Aggregating with GROUP BY and HAVING:
+
+sql
+Copy code
+SELECT column1, AVG(column2) as avg_value
+FROM table_name
+GROUP BY column1
+HAVING AVG(column2) > 50;
+Explanation: This query groups the data by column1, calculates the average of column2, and then filters the result set to include only those groups with an average greater than 50.
+
+Ordering by Multiple Columns:
+
+sql
+Copy code
+SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;
+Explanation: This query orders the result set first by column1 in ascending order and then by column2 in descending order.
+
+Using the IN Operator:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 IN (value1, value2, value3);
+Explanation: This query retrieves rows where the value in column1 matches any of the specified values in the list.
+
+Case-insensitive Search:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE LOWER(column1) = 'value';
+Explanation: This query performs a case-insensitive search by converting the values in column1 and the search term to lowercase.
+
+Calculating Percentiles:
+
+sql
+Copy code
+SELECT column1, PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY column2) AS median_value
+FROM table_name
+GROUP BY column1;
+Explanation: This query calculates the median (50th percentile) of column2 within each group defined by column1.
+
+Using the NOT Operator:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE NOT condition;
+Explanation: This query retrieves rows where the specified condition is not true.
+
+Counting Distinct Values:
+
+sql
+Copy code
+SELECT COUNT(DISTINCT column1) FROM table_name;
+Explanation: This query counts the number of distinct values in column1 in the specified table.
+
+Updating Multiple Columns:
+
+sql
+Copy code
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+Explanation: This query updates the values of column1 and column2 in the specified table based on the specified condition.
+
+----Using the LIKE Operator with Wildcards:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 LIKE 'pattern%';
+Explanation: This query retrieves rows where the value in column1 matches a specified pattern. The % is a wildcard that represents any sequence of characters.
+
+Calculating Aggregates with GROUP BY and ORDER BY:
+
+sql
+Copy code
+SELECT column1, AVG(column2) as avg_value
+FROM table_name
+GROUP BY column1
+ORDER BY avg_value DESC;
+Explanation: This query calculates the average of column2 for each group defined by column1 and orders the result set in descending order based on the average values.
+
+Using the NOT LIKE Operator:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 NOT LIKE 'pattern%';
+Explanation: This query retrieves rows where the value in column1 does not match the specified pattern.
+
+Counting Rows with GROUP BY:
+
+sql
+Copy code
+SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1;
+Explanation: This query counts the number of rows for each unique value in column1.
+
+Combining Multiple Conditions:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE (condition1 OR condition2) AND condition3;
+Explanation: This query retrieves rows that satisfy either condition1 or condition2, and also satisfy condition3.
+
+Using the ILIKE Operator for Case-insensitive Search:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE column1 ILIKE 'value';
+Explanation: This query performs a case-insensitive search using ILIKE, which is similar to LIKE but case-insensitive.
+
+Calculating Percentiles with PERCENT_RANK:
+
+sql
+Copy code
+SELECT column1, PERCENT_RANK() WITHIN GROUP (ORDER BY column2) AS percentile_rank
+FROM table_name
+ORDER BY column1;
+Explanation: This query calculates the percentile rank of each row based on the ordering of column2 within the entire result set.
+
+Using the COALESCE Function:
+
+sql
+Copy code
+SELECT COALESCE(column1, 'default_value') FROM table_name;
+Explanation: This query retrieves values from column1, and if the value is NULL, it returns a default value ('default_value' in this case).
+
+Checking for Existence:
+
+sql
+Copy code
+SELECT * FROM table_name WHERE EXISTS (SELECT 1 FROM another_table WHERE condition);
+Explanation: This query retrieves rows from table_name where a certain condition in another_table exists.
+
+Updating Rows Based on a Subquery:
+
+sql
+Copy code
+UPDATE table_name
+SET column1 = new_value
+WHERE column2 = (SELECT max_value FROM another_table WHERE condition);
+Explanation: This query updates rows in table_name where column2 matches the maximum value from a subquery.
+
+
+=======MEDIUM LEVEL QUERIES=======
+
+Joining Tables:
+
+sql
+Copy code
+SELECT orders.order_id, customers.customer_name
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;
+Explanation: This query uses an INNER JOIN to retrieve the order ID and customer name from the "orders" and "customers" tables, respectively, based on the common "customer_id" column.
+
+Aggregate Functions - Calculate Average:
+
+sql
+Copy code
+SELECT AVG(price) AS average_price
+FROM products;
+Explanation: This query calculates the average price of products in the "products" table using the AVG() aggregate function.
+
+Group By and Count:
+
+sql
+Copy code
+SELECT department, COUNT(employee_id) AS employee_count
+FROM employees
+GROUP BY department;
+Explanation: This query uses GROUP BY to count the number of employees in each department from the "employees" table.
+
+Subquery:
+
+sql
+Copy code
+SELECT product_name, price
+FROM products
+WHERE price > (SELECT AVG(price) FROM products);
+Explanation: This query uses a subquery to find products with a price higher than the average price in the "products" table.
+
+Case Statement:
+
+sql
+Copy code
+SELECT product_name,
+       CASE
+           WHEN price > 100 THEN 'Expensive'
+           WHEN price > 50 THEN 'Moderate'
+           ELSE 'Inexpensive'
+       END AS price_category
+FROM products;
+Explanation: This query uses a CASE statement to categorize products based on their price into 'Expensive', 'Moderate', or 'Inexpensive'.
+
+Window Functions - Rank:
+
+sql
+Copy code
+SELECT employee_name, salary, RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM employees;
+Explanation: This query uses the RANK() window function to assign a rank to each employee based on their salary in descending order.
+
+Create a View:
+
+sql
+Copy code
+CREATE VIEW high_salary_employees AS
+SELECT employee_name, salary
+FROM employees
+WHERE salary > 80000;
+Explanation: This query creates a view named "high_salary_employees" that includes employees with a salary greater than 80000 from the "employees" table.
+
+Modify Table Structure - Add Column:
+
+sql
+Copy code
+ALTER TABLE employees
+ADD COLUMN hire_date DATE;
+Explanation: This query adds a new column named "hire_date" to the "employees" table.
+
+Indexing for Performance:
+
+sql
+Copy code
+CREATE INDEX idx_product_name ON products(product_name);
+Explanation: This query creates an index on the "product_name" column in the "products" table, which can improve query performance when searching for specific product names.
+
+
+
+
+
+-----Transaction - Begin, Commit, Rollback:
+
+sql
+Copy code
+BEGIN;
+-- SQL queries within the transaction
+COMMIT;
+
+In PostgreSQL, a transaction is a sequence of one or more SQL statements that are executed as a single unit of work. The purpose of a transaction is to ensure the consistency and integrity of the database. The BEGIN, COMMIT, and ROLLBACK statements are used to manage transactions.
+
+Here's a breakdown of the example you provided:
+
+BEGIN:
+
+sql
+Copy code
+BEGIN;
+The BEGIN; statement marks the beginning of a transaction. When this statement is executed, PostgreSQL starts a new transaction. All subsequent SQL statements within the same session will be part of this transaction until it is explicitly committed or rolled back.
+
+SQL Queries Within the Transaction:
+Between the BEGIN; and COMMIT; statements, you can include one or more SQL queries that you want to execute as part of the transaction. These queries can be any valid SQL statements that modify the database, such as INSERT, UPDATE, or DELETE statements.
+
+sql
+Copy code
+-- SQL queries within the transaction
+COMMIT:
+
+sql
+Copy code
+COMMIT;
+The COMMIT; statement is used to permanently save the changes made during the transaction. Once COMMIT; is executed, the changes become permanent and visible to other database sessions. If the transaction is successful (i.e., all queries within the transaction execute without errors), you commit the changes to the database.
+
+ROLLBACK:
+If an issue arises during the transaction, you can use the ROLLBACK; statement to undo all the changes made during the transaction. This is particularly useful if an error occurs in one of the queries within the transaction, ensuring that the database remains in a consistent state.
+
+sql
+Copy code
+ROLLBACK;
+In summary, the BEGIN; statement initiates a transaction, the SQL queries within the transaction make the desired changes to the database, and the COMMIT; statement saves those changes permanently. If any issues occur, you can use ROLLBACK; to undo the changes made during the transaction, reverting the database to its state before the BEGIN; statement. Transactions help maintain the integrity of the database by ensuring that changes are either fully applied or fully rolled back
+
+
+------Using DISTINCT to Retrieve Unique Values:
+
+sql
+Copy code
+SELECT DISTINCT department
+FROM employees;
+Explanation: This query retrieves unique department names from the "employees" table using the DISTINCT keyword.
+
+Using LIMIT to Retrieve a Limited Number of Rows:
+
+sql
+Copy code
+SELECT employee_name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 5;
+Explanation: This query selects the top 5 highest-paid employees from the "employees" table, ordered by salary in descending order.
+
+Using OFFSET with LIMIT for Pagination:
+
+sql
+Copy code
+SELECT employee_name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 5 OFFSET 5;
+Explanation: This query retrieves the next set of 5 highest-paid employees after skipping the first 5, useful for implementing pagination.
+
+Using HAVING with Aggregates:
+
+sql
+Copy code
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 60000;
+Explanation: This query uses HAVING to filter groups (departments) based on the average salary being greater than 60,000.
+
+Case-Insensitive Search:
+
+sql
+Copy code
+SELECT product_name
+FROM products
+WHERE LOWER(product_name) LIKE 'iphone%';
+Explanation: This query uses the LOWER function to perform a case-insensitive search for products starting with "iphone".
+
+Using COALESCE to Handle NULL Values:
+
+sql
+Copy code
+SELECT product_name, COALESCE(stock_quantity, 0) AS available_stock
+FROM products;
+Explanation: This query uses COALESCE to replace NULL values in the "stock_quantity" column with 0, providing a default value.
+
+Using UNION to Combine Results from Multiple Queries:
+
+sql
+Copy code
+SELECT employee_id, employee_name
+FROM employees
+WHERE department = 'HR'
+UNION
+SELECT employee_id, employee_name
+FROM employees
+WHERE department = 'Finance';
+Explanation: This query combines the results of two SELECT statements using UNION to retrieve HR and Finance department employees.
+
+Deleting Duplicate Rows Using DELETE and CTE:
+
+sql
+Copy code
+WITH duplicate_cte AS (
+    SELECT employee_name, COUNT(*)
+    FROM employees
+    GROUP BY employee_name
+    HAVING COUNT(*) > 1
+)
+DELETE FROM employees
+USING duplicate_cte
+WHERE employees.employee_name = duplicate_cte.employee_name;
+Explanation: This query uses a Common Table Expression (CTE) to identify and delete duplicate rows based on the "employee_name" column in the "employees" table.
+
+Using EXISTS for Subquery Existence Check:
+
+sql
+Copy code
+SELECT customer_name
+FROM customers c
+WHERE EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.customer_id = c.customer_id
+);
+Explanation: This query retrieves customer names from the "customers" table where there exists at least one order in the "orders" table for that customer.
+
+Using WITH RECURSIVE for Recursive Queries:
+
+sql
+Copy code
+WITH RECURSIVE subordinates AS (
+    SELECT employee_id, manager_id, employee_name
+    FROM employees
+    WHERE manager_id IS NULL
+    UNION
+    SELECT e.employee_id, e.manager_id, e.employee_name
+    FROM employees e
+    JOIN subordinates s ON e.manager_id = s.employee_id
+)
+SELECT * FROM subordinates;
+Explanation: This recursive query finds all employees and their subordinates, starting from those without a manager (manager_id is NULL) in the "employees" table.
+
+These queries cover a range of scenarios and SQL features, including DISTINCT, LIMIT, OFFSET, HAVING, case-insensitive search, handling NULL values, UNION, deleting duplicates, EXISTS, and recursive queries.

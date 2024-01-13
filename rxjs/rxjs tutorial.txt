@@ -1,0 +1,1383 @@
+          RxJS Tutorial(https://www.tutorialspoint.com/rxjs/rxjs_overview.htm)
+
+RxJS is a JavaScript library that uses observables to work with reactive programming that deals with asynchronous data calls, callbacks and event-based programs. RxJS can be used with other JavaScript libraries and frameworks. It is supported by JavaScript and also with typescript.
+
+
+The full form of RxJS is Reactive Extension for Javascript. It is a javascript library that uses observables to work with reactive programming that deals with asynchronous data calls, callbacks and event-based programs. RxJS can be used with other Javascript libraries and frameworks. It is supported by javascript and also with typescript.
+
+==========1.what is RxJS?(,rxjs)
+RxJS, which stands for Reactive Extensions for JavaScript, is a library for reactive programming using Observables. Reactive programming is an asynchronous programming paradigm( "approach," "framework," "model," or "methodology") focused on data streams and the propagation of change. RxJS provides a set of tools for working with asynchronous data streams and handling events.
+
+Here are some key concepts in RxJS:
+
+Observables:
+
+An Observable is a representation of any set of values over time. It can emit multiple values, including primitive types, custom objects, events, or even errors and completion signals.
+Observables are like a stream of data that you can listen to and react to as new items arrive.
+Observers:
+
+Observers are objects that subscribe to Observables. They listen for any emissions or notifications from the Observable and react accordingly.
+Observers typically consist of three callbacks: next (invoked when a new value is emitted), error (invoked when an error occurs), and complete (invoked when the Observable has finished emitting values).
+Operators:
+
+RxJS provides a variety of operators that allow you to manipulate, filter, and transform data emitted by Observables. Operators include functions like map, filter, merge, concat, and many more.
+Operators provide a powerful way to compose and chain asynchronous operations.
+Subscription:
+
+When an Observer subscribes to an Observable, a Subscription is created. This subscription represents the ongoing connection between the Observer and the Observable.
+Subscriptions can be used to manage resources, handle clean-up, and unsubscribe from Observables when they are no longer needed.
+Schedulers:
+
+Schedulers in RxJS are used to control the execution context of Observables. They allow you to specify when and where the code associated with an Observable should run.
+Schedulers are helpful for managing concurrency and dealing with issues like race conditions.
+RxJS is commonly used in web development, especially with frameworks like Angular, where it is used for handling asynchronous operations, managing state, and dealing with events. It provides a powerful and flexible way to handle complex asynchronous scenarios in a more organized and declarative manner.
+
+========2.,features of RxJS=========
+In RxJS, the following concepts takes care of handling the async task −
+Observable:
+
+An observable is a function that sets up and returns a subscription. It represents a stream of data over time, and it can emit multiple values.
+Examples of observables include user interactions like clicks, mouse events, HTTP requests, etc.
+Observer:
+
+An observer is an object with three methods: next(), error(), and complete(). These methods get called when there is an interaction with the observable, such as when values are emitted (next()), an error occurs (error()), or the observable completes (complete()).
+Subscription:
+
+A subscription is created when you subscribe to an observable. It represents the ongoing connection between the observer and the observable. Subscriptions can be used to initiate or cancel the execution of the observable.
+Operators:
+
+Operators are pure functions that take an observable as input and return a new observable as output. They are used to manipulate, transform, or filter the data emitted by observables. Examples include map, filter, merge, etc.
+Subject:
+
+A subject is a special type of observable that can multicast, meaning it can have multiple observers. It acts as both an observer and an observable. Similar to an event listener attached to a button, a subject can notify multiple observers when an event occurs.
+Schedulers:
+
+Schedulers control the execution of observables, determining when the subscription starts and when notifications are sent to observers. They are useful for managing concurrency and controlling the timing of operations.
+In summary, RxJS provides a powerful set of tools for handling asynchronous tasks and managing streams of data. Observables represent these data streams, observers react to changes, subscriptions manage the execution of observables, operators manipulate data, subjects multicast to multiple observers, and schedulers control the timing of operations. This combination makes RxJS a versatile and efficient library for dealing with asynchronous programming in JavaScript.
+
+
+
+===========When to ,use RxJS?
+If your project consists of lots of async task handling than RxJS is a good choice. It is loaded by default with the Angular project.
+
+
+=========,advantages of using RxJS
+The following are the advantages of using RxJS −
+
+RxJS can be used with other Javascript libraries and frameworks. It is supported by javascript and also with typescript. Few examples are Angular, ReactJS, Vuejs, nodejs etc.
+
+RxJS is an awesome library when it comes to the handling of async tasks.RxJS uses observables to work with reactive programming that deals with asynchronous data calls, callbacks and event-based programs.
+
+RxJS offers a huge collection of operators in mathematical, transformation, filtering, utility, conditional, error handling, join categories that makes life easy when used with reactive programming.
+
+=========,disadvantages of using RxJS
+The following are the disadvantages of using RxJS −
+
+Debugging the code with observables is little difficult.
+
+As you start to use Observables, you can end up your full code wrapped under the observables.
+
+=========,install rxjs using below command −
+
+npm install ---save-dev rxjs
+
+
+          ---,how to use---
+testrx.js
+import { of } from 'rxjs;
+import { map } from 'rxjs/operators';
+
+map(x => x * x)(of(1, 2, 3)).subscribe((v) => console.log(`Output is: ${v}`));
+
+output:
+Output is: 1
+Output is: 4
+Output is: 9
+
+
+========,rxjs latest update=======
+The provided information is a guide for developers who are transitioning from using RxJS version 5 to version 6. Here's a simplified breakdown:
+
+RxJS Version 6 Overview:
+
+RxJS (Reactive Extensions for JavaScript) is a library used for reactive programming, commonly associated with Angular and ReactJS.
+Angular 6 automatically includes RxJS version 6 by default.
+Handling Version Updates:
+
+RxJS version 6 has structural changes compared to version 5, and code written for version 5 may break when upgraded.
+Developers have two options:
+Use a package called rxjs-compact to maintain backward compatibility with version 5.
+Make code changes for version 6 compatibility.
+Code Changes for Version 6:
+
+If opting for version 6 compatibility, developers need to update import statements for operators, observables, and subjects.
+Examples of Import Changes:
+
+Operators:
+Version 5: import 'rxjs/add/operator/mapTo'
+Version 6: import { mapTo } from 'rxjs/operators'
+Observables:
+Version 5: import { Observable } from 'rxjs/Observable'
+Version 6: import { Observable } from 'rxjs'
+Subject:
+Version 5: import { Subject } from 'rxjs/Subject'
+Version 6: import { Subject } from 'rxjs'
+Using Operators in Version 6:
+
+Version 6 introduces the pipe() method to execute operators in sequential order.
+Operators Renamed:
+
+Some operators were renamed during restructuring to avoid conflicts with JavaScript keywords.
+Example: do() is renamed to tap(), catch() is renamed to catchError(), etc.
+Example of Using Operators in Version 6:
+
+Version 5:
+javascript
+Copy code
+import "rxjs/add/observable/from";
+import 'rxjs/add/operator/max'
+
+let list1 = [1, 6, 15, 10, 58, 2, 40];
+from(list1).max((a,b)=>a-b).subscribe(x => console.log("The Max value is "+x));
+Version 6:
+javascript
+Copy code
+import { from } from 'rxjs';
+import { max } from 'rxjs/operators';
+
+from(list1).pipe(max((a,b)=>a-b)).subscribe(x => console.log("The Max value is "+x));
+In essence, these changes aim to adapt code to the new structure of RxJS version 6 while providing options for maintaining compatibility with version 5 if needed.
+
+Operators Renamed
+During restructuring of the packages some of the operators were renamed as they were conflicting or matching with javascript keywords. The list is as shown below −
+
+Operator	      Renamed to
+do()	           tap()
+catch()	           catchError()
+switch()	       switchAll()
+finally()	       finalize()
+throw()	           throwError()
+
+
+===========RxJS - Observables  (,rxjs ,observables)=========
+An observable is a function that creates an observer and attaches it to the source where values are expected from, for example, clicks, mouse events from a dom element or an Http request, etc.
+
+Observer is an object with callback functions, that will get called when there is interaction to the Observable, i.e., the source has interacted for an example button click, Http request, etc.
+
+We are going to discuss following topics in this chapter −
+
+Create Observable
+Subscribe Observable
+Execute Observable
+
+----------Observable Creation:
+
+An observable is a representation of a stream of data that can be observed over time. It can be created using the Observable constructor. The observable contains a function called subscribe, which takes a subscriber as an argument.
+The subscriber is an observer object with methods (next, complete, and error) that will be called when there are interactions with the observable.
+javascript
+Copy code
+import { Observable } from 'rxjs';
+
+var observable = new Observable(function subscribe(subscriber) {
+   subscriber.next("My First Observable");
+});
+Alternatively, the Observable.create() method can be used to achieve the same result:
+
+javascript
+Copy code
+import { Observable } from 'rxjs';
+
+var observer = Observable.create(function subscribe(subscriber) {
+   subscriber.next("My First Observable");
+});
+
+----------Subscription to Observable:
+
+To start the execution of an observable, you need to subscribe to it. This is done using the subscribe method on the observable instance.
+When an observer is subscribed, it will start receiving values emitted by the observable.
+javascript
+Copy code
+observer.subscribe(x => console.log(x));
+
+---------------Observable Execution:
+
+An observable gets executed when it is subscribed to. The observer, which is an object with next, complete, and error methods, is notified during this execution.
+The next method sends values like numbers, strings, objects, etc. The complete method indicates that the observable has completed, and the error method sends an error if any occurs.
+javascript
+Copy code
+var observer = new Observable(function subscribe(subscriber) {
+   try {
+      subscriber.next("My First Observable");
+      subscriber.next("Testing Observable");
+      subscriber.complete();
+   } catch(e) {
+      subscriber.error(e);
+   }
+});
+
+observer.subscribe(
+   x => console.log(x),
+   e => console.log(e),
+   () => console.log("Observable is complete")
+);
+In this example, the observer sends two values ("My First Observable" and "Testing Observable") using next, indicates completion using complete, and catches any potential errors, sending them via error.
+
+The subscribe method is then used to specify callbacks for handling the values (x), errors (e), and completion (()) of the observable.
+
+The output in the browser console would be:
+
+csharp
+Copy code
+My First Observable
+Testing Observable
+Observable is complete
+
+
+
+========rxjs ,operators========
+Operators in RxJS:
+
+An operator in RxJS is a pure function that takes an observable as input and produces a new observable as output.
+Operators are used to manipulate, filter, or transform the data emitted by observables. Examples of operators include map, reduce, and filter.
+Using the pipe() Method:
+
+To apply operators to an observable, the pipe() method is used. The pipe() method allows you to chain multiple operators together, and the execution of these operators occurs sequentially.
+The syntax involves calling the pipe() method on an observable and passing the desired operators as arguments.
+javascript
+Copy code
+let obs = of(1, 2, 3); // an observable
+obs.pipe(
+   operator1(),
+   operator2(),
+   operator3(),
+   // ...
+)
+Working Example:
+
+In the provided example, an observable test1 is created using the of() method with values 1 to 10.
+The pipe() method is then used to apply two operators: filter and reduce. The filter operator filters out even numbers, and the reduce operator sums up the remaining values.
+The result is a new observable case1 that represents the transformed data.
+javascript
+Copy code
+import { of } from 'rxjs';
+import { map, reduce, filter } from 'rxjs/operators';
+
+let test1 = of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+let case1 = test1.pipe(
+   filter(x => x % 2 === 0),
+   reduce((acc, one) => acc + one, 0)
+);
+
+case1.subscribe(x => console.log(x));
+Output:
+
+In this example, the output of the final observable case1 is 30. This result is achieved by filtering out even numbers and then summing up the remaining values.
+In summary, the pipe() method allows you to apply a sequence of operators to an observable, transforming the data emitted by the observable in a sequential manner. This is a powerful mechanism for working with asynchronous data streams in a clear and concise way.
+
+
+
+=========,list of Observables that we are going to discuss.========
+
+Creation
+Mathematical
+Join
+Transformation
+Filtering
+Utility
+Conditional
+Multicasting
+Error handling
+
+
+=========Creation Operators===========
+Creation operators in RxJS are a category of operators that help you create observables. Observables are a fundamental concept in reactive programming, representing a stream of data that can be observed over time. Creation operators simplify the process of creating these observables in various ways. Let's break down what each of the mentioned creation operators does:
+
+ajax:
+
+The ajax operator is used for making AJAX (Asynchronous JavaScript and XML) requests. It creates an observable that represents the asynchronous data stream resulting from the AJAX call.
+from:
+
+The from operator creates an observable from various sources, such as arrays, array-like objects, promises, iterable objects, or observable-like objects. It allows you to work with different types of data sources in a uniform way.
+fromEvent:
+
+fromEvent generates an observable that is tied to events emitted by DOM elements. For instance, it can be used to create an observable that emits values when a button is clicked.
+fromEventPattern:
+
+Similar to fromEvent, fromEventPattern creates an observable from a function used to register event handlers. It's useful when dealing with custom event handling logic.
+interval:
+
+The interval operator creates an observable that emits values at regular intervals. It's often used for tasks that need to be performed periodically, like polling for updates.
+of:
+
+of is a simple operator that creates an observable from a list of values passed as arguments. It's a quick way to convert static values into an observable stream.
+range:
+
+The range operator generates an observable that produces a sequence of numbers based on the specified range. It's useful when you need a sequence of numbers within a specified range.
+throwError:
+
+throwError creates an observable that immediately emits an error. This can be useful for testing error-handling logic in your application.
+timer:
+
+The timer operator creates an observable that emits a value after a specified timeout. It's commonly used to introduce delays in your observable streams.
+iif:
+
+The iif operator is a conditional operator that decides which observable to subscribe to based on a given condition. It allows you to dynamically choose between two observables.
+In summary, creation operators in RxJS provide convenient ways to generate observables, making it easier to work with asynchronous data sources, events, and timing-related tasks in a reactive programming paradigm.
+
+
+==========Mathematical Operators====
+The following are the operators we are going to discuss in the Mathematical operator category −
+
+Count:
+
+The count() operator takes an observable with values and converts it into an observable that emits a single value—the count of elements in the original observable.
+For example, if you have an observable with values [1, 2, 3, 4, 5], applying count() would result in a new observable emitting the value 5.
+Max:
+
+The max operator takes in an observable with values and returns an observable with the maximum value found in the original observable.
+For instance, given an observable with values [2, 8, 5, 10, 1], applying max would yield a new observable emitting the value 10.
+Min:
+
+Similar to max, the min operator takes in an observable with values and returns an observable with the minimum value found in the original observable.
+Using the example of [2, 8, 5, 10, 1], applying min would result in a new observable emitting the value 1.
+Reduce:
+
+The reduce operator applies an accumulator function to the values in the observable and returns an observable with the accumulated result.
+The accumulator function takes two arguments: the accumulated result and the current value from the observable. Optionally, you can provide a seed value as the second argument to reduce.
+For instance, if you have an observable with values [1, 2, 3, 4, 5] and apply reduce with a sum function and a seed value of 0, it would emit the result of 1 + 2 + 3 + 4 + 5, which is 15.
+javascript
+Copy code
+import { of } from 'rxjs';
+import { reduce } from 'rxjs/operators';
+
+let numbers = of(1, 2, 3, 4, 5);
+
+let sumObserver = numbers.pipe(
+   reduce((acc, val) => acc + val, 0)
+);
+
+sumObserver.subscribe(result => console.log(result)); // Output: 15
+In summary, these mathematical operators in RxJS allow you to perform operations such as counting the elements, finding the maximum and minimum values, and reducing the values in an observable to a single result through an accumulator function.
+
+
+========Join Operators========
+The following are the operators we are going to discuss in the Join operator category.
+
+Concatenation (concat): Values are emitted sequentially, first from obs1 and then from obs2.
+ForkJoin (forkJoin): It waits for both observables to complete and then emits an array with the last values from each observable.
+Merge (merge): Values are emitted concurrently from both observables.
+Race (race): Emits values from the first observable that emits, whether it's from obs1 or obs2. Subsequent emissions from the other observable are ignored.
+
+import { of, concat, forkJoin, merge, race } from 'rxjs';
+
+let obs1 = of(1, 2, 3);
+let obs2 = of('A', 'B', 'C');
+
+// Concatenation
+concat(obs1, obs2).subscribe(result => console.log(result));
+// Expected Output: 1, 2, 3, 'A', 'B', 'C'
+
+// ForkJoin
+forkJoin(obs1, obs2).subscribe(result => console.log(result));
+// Expected Output: [3, 'C'] (last values from both observables)
+
+// Merge
+merge(obs1, obs2).subscribe(result => console.log(result));
+// Expected Output: 1, 'A', 2, 'B', 3, 'C' (concurrently emits values from both observables)
+
+// Race
+race(obs1, obs2).subscribe(result => console.log(result));
+// Expected Output: 1 (the first value to be emitted, either from obs1 or obs2)
+
+
+========Transformation Operators========
+The following are the operators we are going to discuss in the Transformation operator category.
+
+
+--------Buffer:
+
+The buffer operator operates on an observable and takes another observable as an argument. It buffers the values emitted on its original observable into an array and emits that array when the observable passed as an argument emits. Once the argument observable emits, the buffer is reset, and the process repeats.
+Example:
+javascript
+Copy code
+import { interval } from 'rxjs';
+import { buffer } from 'rxjs/operators';
+
+const source = interval(1000);
+const click = interval(5000);
+
+const buffered = source.pipe(buffer(click));
+
+buffered.subscribe(val => console.log('Buffered Values:', val));
+Output:
+less
+Copy code
+Buffered Values: [0, 1, 2, 3, 4]
+Buffered Values: [5, 6, 7, 8, 9]
+In this example, the values emitted by the source observable are buffered until the click observable emits, and then the buffered values are printed.
+Output Explanation:
+The source emits values every second (0, 1, 2, 3, ...).
+The click observable emits a value every 5 seconds.
+The buffer operator collects values from source until click emits.
+The first buffer includes values 0, 1, 2, 3, 4.
+The second buffer includes values 5, 6, 7, 8, 9.
+---------BufferCount:
+bufferCount collects values from the observable on which it is called and emits the collected values when the buffer size, specified as an argument to bufferCount, is reached.
+Example:
+javascript
+Copy code
+import { interval } from 'rxjs';
+import { bufferCount } from 'rxjs/operators';
+
+const source = interval(1000);
+
+const buffered = source.pipe(bufferCount(3));
+
+buffered.subscribe(val => console.log('Buffered Values:', val));
+Output:
+less
+Copy code
+Buffered Values: [0, 1, 2]
+Buffered Values: [3, 4, 5]
+Here, values from source are collected in arrays of size 3 and emitted.
+Output Explanation:
+The source emits values every second (0, 1, 2, 3, ...).
+The bufferCount operator collects values from source in arrays of size 3.
+The first buffer includes values 0, 1, 2.
+The second buffer includes values 3, 4, 5.
+The pattern continues.
+
+--------BufferTime:
+
+Similar to bufferCount, bufferTime collects values from the observable and emits the buffer when the specified time interval (bufferTimeSpan argument) is reached.
+Example:
+javascript
+Copy code
+import { interval } from 'rxjs';
+import { bufferTime } from 'rxjs/operators';
+
+const source = interval(1000);
+
+const buffered = source.pipe(bufferTime(3000));
+
+buffered.subscribe(val => console.log('Buffered Values:', val));
+Output:
+less
+Copy code
+Buffered Values: [0, 1, 2]
+Buffered Values: [3, 4, 5, 6, 7]
+This example buffers values every 3 seconds from the source observable.
+
+
+---------BufferToggle:
+
+The bufferToggle operator takes two arguments: openings and closingSelector. openings indicate when to start buffering, and closingSelector indicates when to close the buffer and emit the collected values.
+Example:
+javascript
+Copy code
+import { interval, fromEvent } from 'rxjs';
+import { bufferToggle } from 'rxjs/operators';
+
+const source = interval(1000);
+const startButton = fromEvent(document, 'click');
+const stopButton = interval(5000);
+
+const buffered = source.pipe(bufferToggle(startButton, () => stopButton));
+
+buffered.subscribe(val => console.log('Buffered Values:', val));
+Output:
+less
+Copy code
+Buffered Values: [0, 1, 2, 3, 4]
+Buffered Values: [5, 6, 7, 8, 9]
+Here, values are buffered between each click on startButton and the corresponding emission on stopButton.
+
+---------BufferWhen:
+
+bufferWhen takes a function as an argument, and this function decides when to close, emit, and reset the buffer.
+Example:
+javascript
+Copy code
+import { interval, fromEvent } from 'rxjs';
+import { bufferWhen } from 'rxjs/operators';
+
+const source = interval(1000);
+const click = fromEvent(document, 'click');
+
+const buffered = source.pipe(bufferWhen(() => click));
+
+buffered.subscribe(val => console.log('Buffered Values:', val));
+Output:
+less
+Copy code
+Buffered Values: [0, 1, 2, 3, 4]
+Buffered Values: [5, 6, 7, 8, 9]
+This example buffers values until a click event occurs, emitting the buffer.
+
+---------Expand:
+
+The expand operator takes a function as an argument and applies it recursively on the source observable. The output is an observable.
+Example:
+javascript
+Copy code
+import { of } from 'rxjs';
+import { expand, take } from 'rxjs/operators';
+
+const source = of(2);
+
+const expanded = source.pipe(
+  expand(val => of(val * 2)),
+  take(5)
+);
+expanded.subscribe(val => console.log('Expanded Values:', val));
+Output:
+mathematica
+Copy code
+Expanded Values: 2
+Expanded Values: 4
+Expanded Values: 8
+Expanded Values: 16
+Expanded Values: 32
+In this example, expand recursively applies the function val => of(val * 2) to each value emitted by the source observable.
+
+
+
+--------GroupBy:
+
+In the groupBy operator, the output is grouped based on a specific condition, and these group items are emitted as GroupedObservable.
+Example:
+javascript
+Copy code
+import { from } from 'rxjs';
+import { groupBy, mergeMap } from 'rxjs/operators';
+
+const source = from([
+  { id: 1, name: 'Apple' },
+  { id: 2, name: 'Banana' },
+  { id: 1, name: 'Apricot' },
+  { id: 2, name: 'Blueberry' }
+]);
+
+const grouped = source.pipe(
+  groupBy(fruit => fruit.id),
+  mergeMap(group => group.toArray())
+);
+grouped.subscribe(val => console.log('Grouped Values:', val));
+Output:
+css
+Copy code
+Grouped Values: [ { id: 1, name: 'Apple' }, { id: 1, name: 'Apricot' } ]
+Grouped Values: [ { id: 2, name: 'Banana' }, { id: 2, name: 'Blueberry' } ]
+This example groups fruits based on the id property.
+
+
+
+--------Map:
+
+The map operator applies a project function to each value on the source observable, and the output is emitted as an observable.
+Example:
+javascript
+Copy code
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+const source = of(1, 2, 3);
+
+const mapped = source.pipe(map(val => val * 2));
+mapped.subscribe(val => console.log('Mapped Values:', val));
+Output:
+mathematica
+Copy code
+Mapped Values: 2
+Mapped Values: 4
+Mapped Values: 6
+In this example, map doubles each value emitted by the source observable.
+
+--------MapTo:
+
+mapTo emits a constant value along with the observable every time the source observable emits a value.
+Example:
+javascript
+Copy code
+import { fromEvent } from 'rxjs';
+import { mapTo } from 'rxjs/operators';
+
+const source = fromEvent(document, 'click');
+
+const mapped = source.pipe(mapTo('Clicked!'));
+mapped.subscribe(val => console.log('Mapped Values:', val));
+Output:
+mathematica
+Copy code
+Mapped Values: Clicked!
+Mapped Values: Clicked!
+Here, mapTo emits the constant value 'Clicked!' every time a click event occurs.
+
+-------MergeMap:
+
+In the mergeMap operator, a project function is applied to each source value, and the output is merged with the output observable.
+Example:
+javascript
+Copy code
+import { of } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+
+const source = of('A', 'B', 'C');
+
+const merged = source.pipe(mergeMap(val => of(`${val} - Mapped`)));
+merged.subscribe(val => console.log('Merged Values:', val));
+Output:
+mathematica
+Copy code
+Merged Values: A - Mapped
+Merged Values: B - Mapped
+Merged Values: C - Mapped
+This example mergeMap concatenates each source value with the result of the projection function.
+
+-------SwitchMap:
+
+switchMap is similar to mergeMap, but it only emits the most recent projected observable. If a new source value arrives, it cancels the previous observable and switches to the new one.
+Example:
+javascript
+Copy code
+import { fromEvent, interval } from 'rxjs';
+import { switchMap, take } from 'rxjs/operators';
+
+const source = fromEvent(document, 'click');
+const switched = source.pipe(switchMap(() => interval(1000).pipe(take(5))));
+
+switched.subscribe(val => console.log('Switched Values:', val));
+Output:
+mathematica
+Copy code
+Switched Values: 0
+Switched Values: 1
+Switched Values: 2
+Switched Values: 3
+Switched Values: 4
+Here, switchMap switches to a new observable whenever a click event occurs, emitting only values from the most recent observable.
+
+--------Window:
+
+The window operator takes an argument, windowBoundaries, which is an observable. It gives back a nested observable whenever the given windowBoundaries emits.
+These operators provide powerful ways to transform and manipulate observables, allowing you to perform various operations such as buffering, grouping, mapping, and merging values based on different conditions and criteria.
+Example:
+javascript
+Copy code
+import { interval, fromEvent } from 'rxjs';
+import { window, mergeAll } from 'rxjs/operators';
+
+const source = interval(1000);
+const click = fromEvent(document, 'click');
+
+const windowed = source.pipe(window(click), mergeAll());
+
+windowed.subscribe(val => console.log('Windowed Values:', val));
+Output:
+mathematica
+Copy code
+Windowed Values: 0
+Windowed Values: 1
+Windowed Values: 2
+Windowed Values: 3
+Windowed Values: 4
+In this example, the window operator emits nested observables every time a click event occurs, and mergeAll flattens them to emit individual values.
+
+These examples illustrate how each transformation operator works, along with their corresponding outputs.
+
+
+
+============Filtering Operators(,filteringOperators)===========
+The following are the operators we are going to discuss in the filtering operator category.
+
+1. debounce:
+Description: Emits a value from the source Observable after a specified time, and the emission is determined by another input Observable or promise.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.fromEvent(inputElement, 'keyup');
+const debounced = source.debounce(() => Rx.Observable.timer(1000));
+debounced.subscribe(value => console.log(value));
+Output:
+If the user stops typing for 1000 milliseconds, the last emitted value from the source will be logged.
+2. debounceTime:
+Description: Emits values from the source Observable only after a specified time has passed since the last emission.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.fromEvent(inputElement, 'keyup');
+const debounced = source.debounceTime(1000);
+debounced.subscribe(value => console.log(value));
+Output:
+Values will be emitted only if there is no keyup event for 1000 milliseconds.
+3. distinct:
+Description: Emits only values from the source Observable that are distinct from the previous value.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 1, 2, 2, 3, 3, 4, 4);
+const distinctValues = source.distinct();
+distinctValues.subscribe(value => console.log(value));
+Output:
+1, 2, 3, 4 (duplicates are removed)
+4. elementAt:
+Description: Emits a single value from the source Observable based on the provided index.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of('A', 'B', 'C', 'D');
+const element = source.elementAt(2);
+element.subscribe(value => console.log(value));
+Output:
+'C' (element at index 2)
+5. filter:
+Description: Filters values from the source Observable based on the provided predicate function.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3, 4, 5);
+const filteredValues = source.filter(value => value > 2);
+filteredValues.subscribe(value => console.log(value));
+Output:
+3, 4, 5 (values greater than 2)
+6. first:
+Description: Emits the first value emitted by the source Observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of('A', 'B', 'C');
+const firstValue = source.first();
+firstValue.subscribe(value => console.log(value));
+Output:
+'A' (the first emitted value)
+7. last:
+Description: Emits the last value emitted by the source Observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of('A', 'B', 'C');
+const lastValue = source.last();
+lastValue.subscribe(value => console.log(value));
+Output:
+'C' (the last emitted value)
+8. ignoreElements:
+Description: Ignores all values from the source Observable and only executes calls to complete or error callback functions.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const result = source.ignoreElements();
+result.subscribe(
+  () => console.log('Complete!'),
+  error => console.error('Error:', error)
+);
+Output:
+'Complete!' (only the complete callback is executed)
+9. sample:
+Description: Emits the most recent value from the source Observable at a specified interval.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(500);
+const sampler = Rx.Observable.interval(1000);
+const sampledValues = source.sample(sampler);
+sampledValues.subscribe(value => console.log(value));
+Output:
+Values from the source every 1000 milliseconds.
+10. skip:
+Description: Skips the first occurrence of the specified number of items from the source Observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3, 4, 5);
+const skippedValues = source.skip(2);
+skippedValues.subscribe(value => console.log(value));
+Output:
+3, 4, 5 (skips the first two values)
+11. throttle:
+Description: Outputs and ignores values from the source Observable for a specified time interval.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.fromEvent(button, 'click');
+const throttled = source.throttle(() => Rx.Observable.interval(1000));
+throttled.subscribe(() => console.log('Clicked!'));
+Output:
+Clicked! (emits a click event every 1000 milliseconds, ignoring other events during that time)
+
+
+
+===========Utility Operators==========
+The following are the operators we are going to discuss in the utility operator category.
+
+1. tap:
+Description: Outputs the same values as the source Observable and can be used for side effects like logging.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const tapped = source.tap(value => console.log('Value:', value));
+tapped.subscribe();
+Output:
+makefile
+Copy code
+Value: 1
+Value: 2
+Value: 3
+2. delay:
+Description: Delays the values emitted from the source Observable based on the specified timeout.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const delayed = source.delay(2000);
+delayed.subscribe(value => console.log(value));
+Output:
+After a 2000 ms delay, it will output: 1, 2, 3.
+3. delayWhen:
+Description: Delays the values emitted from the source Observable based on the timeout from another Observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const delayObservable = Rx.Observable.timer(2000);
+const delayed = source.delayWhen(() => delayObservable);
+delayed.subscribe(value => console.log(value));
+Output:
+After a 2000 ms delay, it will output: 1, 2, 3.
+4. observeOn:
+Description: Re-emits notifications from the source Observable based on the input scheduler.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const observed = source.observeOn(Rx.Scheduler.async);
+observed.subscribe(value => console.log(value));
+Output:
+The output will be the same values as the source, but emitted on the async scheduler.
+5. subscribeOn:
+Description: Asynchronously subscribes to the source Observable based on the scheduler taken as input.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const subscribedOn = source.subscribeOn(Rx.Scheduler.async);
+subscribedOn.subscribe(value => console.log(value));
+Output:
+The output will be the same values as the source, but the subscription is asynchronous based on the async scheduler.
+6. timeInterval:
+Description: Returns an object containing the current value and the time elapsed between the current and previous value.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const timed = source.timeInterval();
+timed.subscribe(value => console.log(value));
+Output:
+An object containing the current value and the time elapsed, e.g., { value: 0, interval: 1000 }.
+7. timestamp:
+Description: Returns an object with the timestamp along with the value emitted from the source Observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const timestamped = source.timestamp();
+timestamped.subscribe(value => console.log(value));
+Output:
+An object containing the timestamp and the current value, e.g., { timestamp: 1636542013661, value: 0 }.
+8. timeout:
+Description: Throws an error if the source Observable does not emit a value after the given timeout.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.never(); // Observable that never emits
+const timedOut = source.timeout(2000);
+timedOut.subscribe(
+  value => console.log(value),
+  error => console.error('Error:', error)
+);
+Output:
+An error will be thrown after 2000 ms because the source Observable never emits.
+9. toArray:
+Description: Accumulates all source values from the Observable and outputs them as an array when the source completes.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3);
+const toArrayed = source.toArray();
+toArrayed.subscribe(value => console.log(value));
+Output:
+[1, 2, 3] (array of all values emitted by the source when it completes)
+
+
+
+
+===============Conditional Operators
+The following are the operators we are going to discuss in the conditional operator category.
+
+1. defaultIfEmpty:
+Description: Returns a default value if the source Observable is empty.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.empty();
+const withDefault = source.defaultIfEmpty('No values');
+withDefault.subscribe(value => console.log(value));
+Output:
+'No values' (since the source Observable is empty, it returns the default value)
+2. every:
+Description: Returns an Observable based on whether every value of the source Observable satisfies the condition specified in the input function.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3, 4, 5);
+const allGreaterThanZero = source.every(value => value > 0);
+allGreaterThanZero.subscribe(result => console.log(result));
+Output:
+true (since every value in the source Observable is greater than 0)
+3. find:
+Description: Returns the Observable when the first value of the source Observable satisfies the condition specified in the predicate function.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3, 4, 5);
+const findValue = source.find(value => value > 2);
+findValue.subscribe(result => console.log(result));
+Output:
+3 (the first value in the source Observable that is greater than 2)
+4. findIndex:
+Description: Returns the index of the first value in the source Observable that satisfies the condition specified in the predicate function.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.of(1, 2, 3, 4, 5);
+const findIndexValue = source.findIndex(value => value > 2);
+findIndexValue.subscribe(result => console.log(result));
+Output:
+2 (the index of the first value in the source Observable that is greater than 2)
+5. isEmpty:
+Description: Returns true if the input Observable completes without emitting any values, and false if the input Observable emits any values.
+Example:
+javascript
+Copy code
+const emptySource = Rx.Observable.empty();
+const nonEmptySource = Rx.Observable.of(1, 2, 3);
+
+const isEmptyResult1 = emptySource.isEmpty();
+const isEmptyResult2 = nonEmptySource.isEmpty();
+
+isEmptyResult1.subscribe(result => console.log(result)); // Output: true
+isEmptyResult2.subscribe(result => console.log(result)); // Output: false
+Output:
+For isEmptyResult1: true (since the empty source completes without emitting any values)
+For isEmptyResult2: false (since the non-empty source emits values)
+
+
+==================Multicasting Operators
+The following are the operators we are going to discuss in the multicasting operator category..
+1. multicast:
+Description: Shares a single subscription created with other subscribers. It takes a subject or a factory method that returns a ConnectableObservable with a connect() method.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const subject = new Rx.Subject();
+const multicasted = source.multicast(subject);
+
+multicasted.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  multicasted.connect();
+}, 2000);
+
+setTimeout(() => {
+  multicasted.subscribe(value => console.log(`Subscriber 2: ${value}`));
+}, 4000);
+Output:
+yaml
+Copy code
+Subscriber 1: 0
+Subscriber 1: 1
+(After connect() is called)
+Subscriber 1: 2
+Subscriber 2: 2
+Subscriber 1: 3
+Subscriber 2: 3
+2. publish:
+Description: Returns a ConnectableObservable and requires the use of the connect() method to subscribe to the observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const published = source.publish();
+
+published.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  published.connect();
+}, 2000);
+
+setTimeout(() => {
+  published.subscribe(value => console.log(`Subscriber 2: ${value}`));
+}, 4000);
+Output:
+yaml
+Copy code
+Subscriber 1: 0
+Subscriber 1: 1
+(After connect() is called)
+Subscriber 1: 2
+Subscriber 2: 2
+Subscriber 1: 3
+Subscriber 2: 3
+3. publishBehavior:
+Description: Uses BehaviorSubject and returns a ConnectableObservable. The connect() method is used to subscribe to the observable created.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const published = source.publishBehavior('Initial');
+
+published.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  published.connect();
+}, 2000);
+
+setTimeout(() => {
+  published.subscribe(value => console.log(`Subscriber 2: ${value}`));
+}, 4000);
+Output:
+yaml
+Copy code
+Subscriber 1: Initial
+Subscriber 1: 0
+Subscriber 1: 1
+(After connect() is called)
+Subscriber 1: 2
+Subscriber 2: 2
+Subscriber 1: 3
+Subscriber 2: 3
+4. publishLast:
+Description: Uses AsyncSubject and returns a ConnectableObservable. The connect() method is used to subscribe to the observable created.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const published = source.publishLast();
+
+published.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  published.connect();
+}, 2000);
+
+setTimeout(() => {
+  published.subscribe(value => console.log(`Subscriber 2: ${value}`));
+}, 4000);
+Output:
+yaml
+Copy code
+(After connect() is called)
+Subscriber 1: 2
+Subscriber 2: 2
+Subscriber 1: 3
+Subscriber 2: 3
+5. publishReplay:
+Description: Uses BehaviorSubject to buffer and replay values to new subscribers. Returns a ConnectableObservable, and the connect() method is used to subscribe to the observable.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const published = source.publishReplay(2);
+
+published.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  published.connect();
+}, 2000);
+
+setTimeout(() => {
+  published.subscribe(value => console.log(`Subscriber 2: ${value}`));
+}, 4000);
+Output:
+yaml
+Copy code
+Subscriber 1: 0
+Subscriber 1: 1
+(After connect() is called)
+Subscriber 1: 2
+Subscriber 2: 1
+Subscriber 2: 2
+Subscriber 1: 3
+Subscriber 2: 2
+Subscriber 1: 4
+Subscriber 2: 3
+6. share:
+Description: An alias for the multicast() operator.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.interval(1000);
+const shared = source.share();
+
+shared.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  shared.subscribe(value => console.log(`Subscriber 2: ${value}`));
+}, 3000);
+Output:
+yaml
+Copy code
+Subscriber 1: 0
+Subscriber 1: 1
+Subscriber 2: 1
+Subscriber 1: 2
+Subscriber 2: 2
+Subscriber 1: 3
+Subscriber 2: 3
+Multicasting operators are useful for scenarios where you want to share a single subscription among multiple subscribers and control when the subscription starts (e.g., with connect()).
+
+
+=========Error Handling Operators
+The following are the operators we are going to discuss in error handling operator category.
+1. catchError:
+Description: Handles errors on the source Observable by returning a new Observable or throwing a new error.
+Example:
+javascript
+Copy code
+const source = Rx.Observable.create(observer => {
+  observer.next('A');
+  observer.next('B');
+  observer.error('Error!');
+});
+
+const errorHandler = source.pipe(
+  catchError(error => Rx.Observable.of('Fallback Value'))
+);
+
+errorHandler.subscribe(
+  value => console.log(`Next: ${value}`),
+  error => console.error(`Error: ${error}`)
+);
+Output:
+mathematica
+Copy code
+Next: A
+Next: B
+Next: Fallback Value
+
+2. retry:
+Description: Retries the source Observable if an error occurs, based on the input count given.
+Example:
+javascript
+Copy code
+let count = 0;
+const source = Rx.Observable.create(observer => {
+  observer.next('A');
+  observer.next('B');
+  if (count < 2) {
+    count++;
+    observer.error('Error!');
+  } else {
+    observer.complete();
+  }
+});
+
+const retried = source.pipe(
+  retry(2)
+);
+
+retried.subscribe(
+  value => console.log(`Next: ${value}`),
+  error => console.error(`Error: ${error}`),
+  () => console.log('Complete')
+);
+Output:
+vbnet
+Copy code
+Next: A
+Next: B
+(Retrying because of the error)
+Next: A
+Next: B
+Next: A
+Next: B
+Error: Error!
+In the catchError example, it catches the error from the source Observable and provides a fallback value, preventing the error from propagating.
+
+
+
+
+========RxJS - Working with Subscription========
+Working with subscriptions in RxJS involves creating an observable, subscribing to it, and managing the subscription. Subscriptions are essential for controlling the lifecycle of observable streams, and they help prevent memory leaks by unsubscribing when they are no longer needed.
+
+Let's go through an example to illustrate working with subscriptions in RxJS:
+
+Example: Creating and Managing Subscriptions
+javascript
+Copy code
+// Import the necessary modules
+import { Observable, interval } from 'rxjs';
+
+// Create an observable that emits values every 1000 milliseconds
+const source = interval(1000);
+
+// Subscribe to the observable
+const subscription = source.subscribe(
+  value => console.log(`Next: ${value}`),
+  error => console.error(`Error: ${error}`),
+  () => console.log('Complete')
+);
+
+// After 5000 milliseconds, unsubscribe from the observable
+setTimeout(() => {
+  subscription.unsubscribe();
+  console.log('Unsubscribed!');
+}, 5000);
+Output Explanation:
+Subscription (0-4 seconds):
+
+The observable emits values (Next: 0, Next: 1, Next: 2, ...) every 1000 milliseconds.
+The subscription logs the next values.
+Unsubscribe (after 5 seconds):
+
+After 5000 milliseconds (5 seconds), the unsubscribe() method is called on the subscription.
+The observable stops emitting values, and the subscription is unsubscribed.
+The output displays 'Unsubscribed!' to indicate that the subscription has been successfully unsubscribed.
+Summary of Steps:
+Create an Observable:
+
+Use functions like of, from, or interval to create an observable that emits values.
+Subscribe to the Observable:
+
+Use the subscribe method on the observable to start receiving values.
+Pass three optional callback functions for handling next values, errors, and completion.
+Manage the Subscription:
+
+The subscribe method returns a subscription object.
+Use the unsubscribe method on the subscription to stop receiving values.
+Unsubscribing is essential to prevent memory leaks, especially when the observable has a long lifecycle.
+Remember that managing subscriptions is crucial, especially in scenarios like Angular applications, where observables are often used for handling asynchronous events. Unsubscribing ensures that resources are freed up when they are no longer needed.
+
+In the provided example, after 5 seconds, the unsubscribe method is called, and the observable stops emitting values. This demonstrates the manual control of the subscription lifecycle.
+
+
+=========RxJS - Working with Subjects=============
+In RxJS, Subject is a special type of observable that allows both values and errors to be multicasted to multiple observers. It serves as both an observable and an observer. Subjects are commonly used to communicate between different parts of an application or to manage state in a reactive way.
+
+Let's go through an example of working with subjects in a real-time scenario:
+
+Example: Chat Application with Subjects
+javascript
+Copy code
+import { Subject } from 'rxjs';
+
+// Create a Subject to handle messages in a chat application
+const chatSubject = new Subject();
+
+// User 1 subscribes to the chat
+const user1Subscription = chatSubject.subscribe(message => {
+  console.log('User 1:', message);
+});
+
+// User 2 subscribes to the chat
+const user2Subscription = chatSubject.subscribe(message => {
+  console.log('User 2:', message);
+});
+
+// Simulate sending messages
+chatSubject.next('Hello, User 1!');
+chatSubject.next('Hi, User 2!');
+
+// Simulate user 1 disconnecting
+user1Subscription.unsubscribe();
+
+// Simulate sending more messages
+chatSubject.next('User 1 has left the chat.');
+
+// Simulate user 2 sending a message
+chatSubject.next('Goodbye, everyone!');
+Output Explanation:
+Initial Messages:
+
+User 1: and User 2: receive the initial messages sent using chatSubject.next.
+User Disconnects:
+
+User 1 unsubscribes using user1Subscription.unsubscribe().
+Subsequent messages are only received by User 2.
+More Messages:
+
+Messages are still received by User 2, and the output indicates that User 1 has left the chat.
+Final Message:
+
+User 2 sends a final message, and it is received by the remaining subscriber.
+Summary of Steps:
+Create a Subject:
+
+Use new Subject() to create a new Subject instance.
+Subscribe to the Subject:
+
+Use the subscribe method to subscribe to the subject and start receiving values.
+Publish Values:
+
+Use the next method on the subject to publish new values. These values will be multicasted to all subscribers.
+Unsubscribe from the Subject:
+
+Use the unsubscribe method on the subscription object to stop receiving values.
+In this example, the chat application uses a Subject to handle messages. Multiple users (subscribers) can connect to the chat, send and receive messages, and disconnect individually without affecting other users. The Subject ensures that messages are broadcasted to all active subscribers.
+
+Subjects are powerful for real-time communication scenarios, such as chat applications, where multiple observers need to react to events or changes in state.
+
+
+======RxJS - Working with Scheduler=======
+In RxJS, a scheduler is a centralized piece that manages the execution of scheduled tasks. Schedulers play a crucial role in controlling when and how the observable sequences are executed, especially in scenarios involving asynchronous operations, such as timers, delays, and intervals.
+
+Let's go through an example of working with schedulers in a real-time scenario:
+
+Example: Working with Schedulers for Delayed Execution
+javascript
+Copy code
+import { Observable, asyncScheduler } from 'rxjs';
+import { observeOn } from 'rxjs/operators';
+
+// Create an observable sequence of values
+const source = Observable.create(observer => {
+  observer.next(1);
+  observer.next(2);
+  observer.next(3);
+  observer.complete();
+});
+
+// Use the observeOn operator to specify a scheduler (asyncScheduler)
+const delayedSource = source.pipe(observeOn(asyncScheduler));
+
+// Subscribe to the delayed observable
+delayedSource.subscribe(
+  value => console.log(`Next: ${value}`),
+  error => console.error(`Error: ${error}`),
+  () => console.log('Complete')
+);
+Output Explanation:
+The source observable emits values synchronously (1, 2, 3).
+The observeOn operator is used to switch to the asyncScheduler, which is an asynchronous scheduler.
+As a result, the subscription to the delayedSource observable is executed asynchronously using the asyncScheduler.
+Summary of Steps:
+Create an Observable:
+
+Use functions like create, of, or interval to create an observable sequence of values.
+Use observeOn Operator:
+
+Use the observeOn operator to specify the scheduler on which the observable should be observed.
+Subscribe to the Observable:
+
+Subscribe to the observable to start receiving values.
+Scheduler Switch:
+
+The observeOn operator switches to the specified scheduler, affecting the timing of the observable execution.
+Schedulers, such as asyncScheduler, queueScheduler, and animationFrameScheduler, allow you to control the execution context of observables. This can be particularly useful in scenarios where you want to introduce delays or ensure that certain operations run asynchronously.
+
+In the provided example, the use of asyncScheduler ensures that the subscription to the delayedSource observable is executed asynchronously. This is just one example of how schedulers can be used in RxJS to control the timing of observable sequences.
+
+
+======

@@ -1,0 +1,44 @@
+https://ngrx.io/docs
+
+========What is NgRx?=========
+NgRx is like a toolbox for developers who are building web applications with Angular, which is a popular web framework. In this toolbox, you'll find tools that help you with the following:
+
+Managing Data: You can keep track of information that your app uses, both small pieces of data and big collections of data.
+
+Keeping Things Clean: It helps you organize your code in a way that's easy to understand and maintain. It's like keeping your room tidy.
+
+Handling Special Tasks: It has tools to deal with specific tasks, like when your app needs to talk to the internet or do other special things.
+
+Working with Navigation: It plays nicely with the parts of your app that handle moving from one page to another.
+
+Making Life Easier for Developers: It includes tools that make it easier for programmers to create, test, and fix their code.
+
+In simple terms, NgRx is like a set of tools that makes it easier to build complex web applications with Angular while keeping your code organized and maintainable.
+
+
+
+============Packages============
+NgRx packages are like different sets of tools for building Angular web applications, and they are divided into a few main categories:
+
+State: These packages help manage and organize the data your app uses.
+
+Store: It helps manage the overall data in your app.
+Effects: It handles special tasks related to data.
+Router Store: It helps with navigating between different parts of your app.
+Entity: It's useful for managing collections of information.
+ComponentStore: It helps manage data for specific parts of your app.
+Data: This category contains tools for handling data in a more simplified way.
+
+View: These packages help you build the visual part of your app with Angular, making it easier to work with the data.
+
+Component: It helps you create the visual part of your app in a way that's easy to update when the data changes.
+Developer Tools: These packages are for developers to help with testing, debugging, and maintaining their code.
+
+Store Devtools: It helps track and fix issues with the app's data.
+Schematics: It assists in starting new projects using NgRx.
+ESLint Plugin: It's like having a helper to keep your code tidy and catch common mistakes.
+In simpler terms, these packages are like different sets of tools that help developers manage data, create the visual part of their app, and maintain their code easily when building web applications with Angular.
+
+
+=====State=====
+-----------@NgRx Store-----------

@@ -1,0 +1,391 @@
+https://www.simplilearn.com/tutorials/css-tutorial/css-interview-questions
+
+================what is css?============
+
+
+CSS, which stands for Cascading Style Sheets, is a stylesheet language used to describe the presentation and formatting of web documents written in HTML and XML. It enables web designers and developers to control the visual appearance of web pages, including the layout, colors, fonts, spacing, and other aspects of the user interface.
+
+CSS works by selecting HTML elements in a web page and then applying style rules to define how those elements should be displayed. These style rules can be stored in separate CSS files or included directly within HTML documents using the <style> tag.
+
+CSS offers a wide range of features, including:
+
+Selectors: These are patterns used to target specific HTML elements. For example, you can select all the paragraphs in a document or only those with a specific class or ID attribute.
+
+Properties: These are attributes that define the visual aspects of the selected elements, such as color, font size, margin, padding, and more.
+
+Values: Values are assigned to properties to specify how they should be applied. For instance, you can set a background color to be "blue" or a font size to be "16px."
+
+Cascading: CSS rules can be organized into a hierarchy, allowing for the application of multiple style rules to the same element. The cascade determines which rule takes precedence when there are conflicting styles.
+
+Inheritance: Some styles can be inherited from parent elements to their child elements, making it more efficient to style multiple elements in a consistent manner.
+
+Media Queries: CSS supports media queries, which allow you to apply different styles based on the characteristics of the user's device, such as screen size, resolution, and orientation. This is important for creating responsive web designs that adapt to various devices and screen sizes.
+
+CSS plays a critical role in web development, as it separates the content (HTML) from its presentation. This separation of concerns makes it easier to maintain and update web pages, and it allows for a more flexible and consistent design across a website.
+
+
+
+=======1. Name some CSS frameworks. 
+CSS frameworks are libraries that make web page styling easier. Some of them are Foundation, Bootstrap, Gumby, Ukit, Semantic UI, etc. 
+
+=======2. What do you understand by the universal sector?
+A universal selector is a selector that matches any element type's name instead of selecting elements of a particular type. 
+
+Example: 
+
+<style>    
+
+* {    
+
+   color: blue;    
+
+   font-size: 10px;    
+
+}     
+
+</style> 
+
+
+======3. Tell us about the use of the ruleset.
+The ruleset is used for the identification of selectors, which can be attached with other selectors. The two parts of a ruleset are:
+
+Declaration block: contains one or more semicolon-separated declarations
+Sector: indicates the HTML element needed to be styled
+example:
+p {
+  color: red;
+  font-size: 16px;
+}
+
+
+=====4. What are the elements of the CSS Box Model?
+The CSS box model is a fundamental concept that defines how elements on a web page are structured and how their dimensions are calculated. It consists of four main components:
+
+Content: This is the innermost part of an element and represents the actual content, such as text, images, or other HTML elements. The content area's size is determined by the width and height properties you apply to the element.
+
+Padding: Padding is the space between the content and the element's border. It provides cushioning for the content, and you can control its size using the padding property. Padding ensures that the content doesn't touch the element's border, creating spacing inside the element.
+
+Border: The border surrounds the padding and content, creating a visible boundary around the element. You can control the border's properties like color, width, and style using CSS. The border property allows you to define these characteristics.
+
+Margin: The margin is the outermost layer of the box model and defines the space between an element's border and other adjacent elements. It's used to create spacing and separation between elements on a web page. You can adjust the margin's size using the margin property.
+
+In real-time, understanding and using the CSS box model is essential for web design and layout. Here's how it's applied:
+
+Content: You specify the size of an element's content area using the width and height properties. This controls how much space the actual content can occupy within the element.
+
+Padding: By setting the padding property, you create spacing inside the element, ensuring the content is not too close to the border. This can be useful for improving readability and aesthetics.
+
+Border: Borders are used for creating visible boundaries around elements. You can set properties like border-width, border-color, and border-style to control the appearance of the border.
+
+Margin: Margins are used to control the spacing between elements on a page. You can apply margins to push elements apart or bring them closer together. It's commonly used for page layout and design, like centering elements or creating spacing between sections.
+
+By understanding and using the CSS box model effectively, web designers and developers can control the layout, spacing, and appearance of elements to create visually appealing and well-organized web pages. It's a crucial concept for building responsive and user-friendly websites.
+
+
+=====5. Differentiate between CSS3 and CSS2.
+Sure, let's break down the differences between CSS3 and CSS2 in simple terms:
+
+Modularity: CSS3 is more organized because it's divided into smaller sections called modules. Each module handles a specific aspect of styling, like fonts, animations, or borders. This makes it easier to use only the parts of CSS you need for your project. CSS2 doesn't have this modular structure.
+
+Browser Support: CSS3 is designed to work with modern web browsers, and it's more compatible with them. CSS2 was created when older browsers were more common, so it might not work as well with the latest browsers.
+
+New Features: CSS3 introduces new features that were not available in CSS2. For example, it includes things like rounded corners, gradients, and animations, which make it possible to create more visually appealing and interactive websites.
+
+General Sibling Combinators: This is a technical term, but in simple words, CSS3 has more powerful ways to select and style elements based on their relationships with other elements on the page. It allows for more precise and flexible styling.
+
+So, in summary, CSS3 is a more modern and versatile version of CSS that's better suited for today's web design needs, while CSS2 is older and less feature-rich. If you want to create advanced and visually appealing web pages, CSS3 is the way to go.
+
+
+====6. How can CSS be integrated into an HTML page?
+There are three ways of integrating CSS into HTML: using style tags in the head section, using inline-styling, writing CSS in a separate file, and linking into the HTML page by the link tag. 
+
+a)Using Style Tags in the Head Section:
+You can include CSS styles directly within the HTML document using the <style> tag in the document's <head> section. This method is useful for small, page-specific styles.
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Your CSS rules go here */
+        p {
+            color: blue;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph with inline CSS.</p>
+</body>
+</html>
+
+
+b)Using Inline Styling:
+You can also apply CSS styles directly to individual HTML elements using the style attribute. This method is suitable for making quick style adjustments to specific elements.
+
+html
+Copy code
+<p style="color: green; font-size: 18px;">This is an inline styled paragraph.</p>
+
+c)Writing CSS in a Separate File and Linking to HTML:
+For larger projects, it's common to write your CSS in a separate file (e.g., styles.css) and then link it to your HTML document using the <link> tag. This approach keeps your HTML and CSS separate and is easier to maintain.
+
+styles.css:
+
+css
+Copy code
+/* styles.css */
+p {
+    color: red;
+    font-size: 20px;
+}
+HTML file:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <p>This is a paragraph styled using an external CSS file.</p>
+</body>
+</html>
+In all three methods, CSS is used to define the styles you want for your HTML elements. The choice of method depends on the complexity of your project and your preference for organization and maintainability. The third method, linking to an external CSS file, is often the most efficient and widely used approach for larger websites.
+
+
+=====7. Explain a few advantages of CSS. 
+With CSS, different documents can be controlled using a single site, styles can be grouped in complex situations using selectors and grouping methods, and multiple HTML elements can have classes. 
+
+Centralized Control:
+CSS allows you to control the styling of multiple web pages from a single style sheet. This makes it easy to maintain a consistent look and feel across your entire website.
+
+html
+Copy code
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage.</p>
+</body>
+</html>
+css
+Copy code
+/* styles.css */
+h1 {
+    color: blue;
+}
+p {
+    font-size: 16px;
+}
+Selectors and Grouping:
+CSS provides powerful selectors and grouping methods, allowing you to apply styles to specific elements and groups of elements. This makes it flexible and efficient for styling complex web pages.
+
+html
+Copy code
+<!-- index.html -->
+<h1 class="header">Welcome</h1>
+<p class="content">This is the content.</p>
+<p class="content">Another paragraph.</p>
+css
+Copy code
+/* styles.css */
+.header {
+    color: green;
+    font-size: 24px;
+}
+.content {
+    font-size: 16px;
+    margin-top: 10px;
+}
+Classes for HTML Elements:
+CSS allows you to assign classes to HTML elements, which makes it easy to apply the same styles to multiple elements without duplicating code.
+
+In the example above, we used the "header" and "content" classes to style specific elements. This helps maintain consistency across different parts of the website.
+
+By using CSS in this way, you can create a well-organized and consistent design for your website while keeping your HTML code clean and separated from the styling. This makes your web development process more efficient and allows for easy updates and maintenance.
+
+
+====8. What is meant by RGB stream?
+RGB represents colors in CSS. The three streams are namely Red, Green, and Blue. The intensity of colors is represented using numbers 0 to 256. This allows CSS to have a spectrum of visible colors
+
+====9. What was the purpose of developing CSS?
+CSS was developed to define the visual appearances of websites. It allows developers to separate the structure and content of a website that was not possible before.
+
+====10. What is the difference between a class and an ID?
+Ans. Class is a way of using HTML elements for styling. They are not unique and have multiple elements. Whereas ID is unique and it can be assigned to a single element. 
+
+====11. What are the limitations of CSS?
+CSS cannot always assure compatibility with every browser; you need to be cautious while choosing the style selector.
+The parent selector tag is not available, thus you can’t select the parent selector tag.
+Some selectors can lead to cross-browser issues due to their less browser-friendly behavior.
+We cannot request a webpage through CSS.
+
+====12. How to include CSS in the webpage?
+With the help of a link tag, you can include an external style sheet file as a CSS file into your HTML file.
+You can add CSS styles included within your HTML page and write it in the stand-alone stylesheet form of CSS.
+CSS can be included directly in the HTML tag by adding an inline style to HTML elements.
+One can import an external stylesheet file as a new CSS file by using the @import rule. 
+
+
+====13. What are the different types of Selectors in CSS?
+Universal Selector (*):
+This selector applies to all elements on a web page. It's like saying, "I want to style everything."
+
+Element Type Selector (e.g., p, h1, a):
+This selector targets specific HTML elements like paragraphs (p), headings (h1, h2, etc.), or links (a). You style all instances of that element type.
+
+ID Selector (#):
+ID selectors target a specific element with a unique ID attribute. It's like giving a single element a name and then styling just that one element.
+
+Class Selector (.):
+Class selectors style elements with a specific class attribute. You can apply the same class to multiple elements, and they'll all get the same styling.
+
+Descendant Combinator (whitespace):
+This selects elements that are descendants of another element. For example, div p selects all p elements that are inside a div.
+
+Child Combinator (>):
+This selects elements that are a direct child of another element. For instance, ul > li selects li elements that are directly inside a ul.
+
+General Sibling Combinator (~):
+This selects elements that are siblings of another element. It's like selecting all elements at the same level that follow a specific element. For example, h2 ~ p selects all p elements that come after an h2 on the same level.
+
+Adjacent Sibling Combinator (+):
+This selects elements that are immediately preceded by another element. It's like saying, "Select the element that comes right after this one." For example, h2 + p selects the p element immediately following an h2.
+
+Attribute Selector (e.g., [attribute]):
+Attribute selectors target elements with specific attributes. For instance, [target] selects elements with a target attribute.
+
+These selectors allow you to precisely target and style different elements on a web page, making your CSS more specific and flexible for achieving the desired look and layout.
+
+
+====14. What is a CSS Preprocessor? What are Sass, Less, and Stylus? Why do people use them?
+CSS Preprocessor: Think of a CSS preprocessor as a helper tool for writing CSS styles in a more advanced and organized way. It allows you to use features like variables, functions, and reusable code snippets (mixins) within your CSS code. It makes your stylesheets more powerful and easier to maintain.
+
+Sass (Syntactically Awesome Style Sheets): Sass is one of these preprocessors. It uses a file extension ".sass" and has a unique syntax that doesn't use curly brackets or semicolons. Instead, it relies on indentation to define the structure of your styles.
+
+Less (Leener Stylesheets): Less is another preprocessor, using the ".less" extension. It's easy to add to your projects and uses "@" to define variables. It's widely used in JavaScript projects and has a more familiar CSS-like syntax compared to Sass.
+
+Stylus: Stylus is another CSS preprocessor that's known for its flexibility. It can be used with both native CSS and a simplified syntax that doesn't require brackets, colons, or semicolons. You don't need special characters like "@" or "$" to define variables in Stylus.
+
+People use Sass, Less, and Stylus because they make writing and managing CSS code more efficient and organized. These preprocessors introduce features that simplify styling, allow for code reuse, and make it easier to maintain large and complex stylesheets. They also help reduce redundancy in your code, making it easier to update and adapt your styles to different parts of a website or application.
+
+
+====15. What is VH/VW (viewport height/ viewport width) in CSS?
+VH and VW are CSS units used to measure viewport height and viewport width respectively in percentage form in the responsive design techniques. E.g. If the height of the browser is 1000px, then VH is 1/100 of the height of the viewport that is 1000px*(1/100) = 10px, which is the height of the browser.  The same applies to VW (viewport width).
+
+====16. Difference between reset vs normalize CSS? How do they differ?
+Reset CSS is used to remove all built-in styles in the browser such as paddings, margins, and font sizes, and can be reset using all the elements.
+Normalize CSS is used to make all built-in styles in the browser consistent and correct bugs as per varying browsers.
+
+Reset CSS:
+
+Reset CSS is like starting with a completely blank slate. It removes all the default styles that different web browsers apply to HTML elements. For example, it sets margins, paddings, and font sizes to zero for all elements.
+It can be a bit heavy-handed, as it wipes out all default styling, leaving you to build everything from scratch.
+Example of a simple reset CSS:
+
+css
+Copy code
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+
+Normalize CSS:
+
+Normalize CSS, on the other hand, is like fine-tuning. It doesn't completely erase all styles; instead, it makes the default styles consistent and more predictable across different web browsers.
+It aims to correct any browser-specific quirks and inconsistencies, ensuring that elements behave similarly across various browsers.
+Example of a simple normalize CSS:
+
+css
+Copy code
+/* Normalize CSS */
+html, body, p, h1, h2, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+In simpler terms, reset CSS starts with a blank canvas, while normalize CSS aims to create a level playing field where browser styles are consistent. Your choice between the two depends on whether you want to start from scratch or work with a more consistent baseline for your web design.
+
+
+
+====17. What is the difference between inline, inline-block, and block?
+Block Elements are <div> and <p>. They usually start on a new line and can take space for an entire row or width.
+Inline elements are <a>, <span>, <strong>, and <img> tags. They don't start on a new line. However, they appear on the same line as the content and tags beside them.
+Inline block elements have padding and margins and set height and width values. Though, they are similar to inline elements. 
+
+
+====18. Is it important to test the webpage in different browsers?
+Yes, it is the most crucial thing or the most important trial to do when you design a webpage for the first time and make changes to it. Testing your website periodically in different browsers will help you make every webpage compatible with it as browsers have been going through many updates.
+
+
+====19. What are Pseudo classes?
+Pseudo-classes in CSS are used to select and style elements based on their state or certain conditions. They allow you to style elements in response to user interactions or other dynamic factors, such as hovering over a link, clicking a button, or focusing on an input field. In your example, you're using the :hover pseudo-class to change the color of an anchor tag when a user hovers their mouse pointer over it.
+/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}
+
+====20. How do you specify units in the CSS? What are the different ways to do it?
+There are mainly four different units in the CSS that are px, em, pt, and percentage (%).
+
+Px (Pixel) is used for fine-grained control and alignment and not cascade. To get it sharp, we can use 1px or multiple of px.
+Em is used to maintain relative size and responsive fonts. 1em = 16px having also the same font size. It is advisable to set the font size to 10px in common practice.
+Pt (point) is a fixed-size unit that is used in print. 1pt = 1/72 inch.
+Percentage (%) is used to set the font size with respect to the font size of the body. Thus, it is necessary to set the reasonable font size of the body.
+
+
+====21. Does margin-top or margin-bottom have an effect on inline elements?
+No, mMargin-top or margin-bottom does not have an effect on the inline elements.
+
+
+=====22. What property is used for changing the font face?
+The font-family property is used for changing the font face that is applied to the element in the DOM.
+
+
+====23. What are the differences between adaptive design and responsive design?
+Adaptive Design:
+Main focus is to develop a website in multiple fixed layout sizes.
+Offers good control over the design to develop variation in screens.
+It is very time-consuming and takes a lot of effort to build the best possible adaptive design as examining it will need to go for many options with respect to the realities of the end user.
+There are six standard screen sizes for the appropriate layouts; they are 320px, 480px, 760px, 960px, 1200px, 1600px to design.
+Responsive Design
+Main focus is to show content with respect to browser space.
+Offers less control over the design.
+It takes less time to build the design and there is no screen size issue irrespective of content.
+It uses CSS media queries to design the screen layouts with respect to specific devices and property changes in the screen.
+
+
+====24. How are the CSS selectors matched against the elements by the browser?
+Initially, there is a filtration of elements in the DOM via browsers with respect to key selectors that are traversed until we get parents' elements to determine the matches. Then the browser works on finding all the span elements present in the DOM and traverses them to parent elements to check whether they are matched to paragraph p elements. At last, when the browser finds all matches as parents, the matching process will be stopped and there will be black color applied to the content.
+
+
+====25. How is the border-box different from the content box?
+Border-box consists of properties such as content, padding, and the border with respect to height and width. However, Content-box is a default value property used for the box-sizing as well as it helps to add border and padding to give proper height and width to the box without having a border and padding properties
+
+====
+

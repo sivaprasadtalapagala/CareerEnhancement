@@ -1,0 +1,6672 @@
+
+https://www.youtube.com/watch?v=SBmSRK3feww
+
+=====================WHAT IS  ,javascript?======================
+
+JavaScript is a programming language that makes websites interactive and dynamic. Think of it as the behind-the-scenes magic that brings websites to life. Here's a simple explanation with real-time examples covering the major parts:
+
+Scripting Language: JavaScript is a scripting language. It's like a set of instructions that web browsers understand and execute.
+
+Web Interaction: It's used to create interactive web pages. For example, when you click a button on a webpage, JavaScript can make something happen, like displaying a pop-up or changing the content.
+
+Variables: JavaScript lets you store and manipulate data. You can think of variables as containers. For instance, you can store a number like your age in a variable:
+
+javascript
+Copy code
+let age = 25;
+Functions: JavaScript lets you define reusable sets of actions called functions. Imagine it as a recipe for a specific task. For instance, you can have a function to greet a user:
+
+javascript
+Copy code
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+Events: JavaScript responds to events like button clicks or page loads. When an event occurs, JavaScript can trigger actions. For example, when you click a "Submit" button on a form, JavaScript can check if all required fields are filled.
+
+DOM (Document Object Model): JavaScript can modify the content and structure of a webpage in real-time. Imagine a webpage as a set of objects that JavaScript can manipulate. For example, you can change the text inside an HTML element with JavaScript:
+
+javascript
+Copy code
+document.getElementById("myElement").innerHTML = "New Content";
+AJAX (Asynchronous JavaScript and XML): JavaScript allows you to communicate with servers in the background, fetching and sending data without needing to refresh the entire webpage. For instance, when you scroll through social media and new posts load automatically, that's often powered by JavaScript using AJAX.
+
+Libraries and Frameworks: Developers often use pre-built JavaScript libraries or frameworks like React, Vue.js, or jQuery to simplify and speed up development. These tools provide ready-made code for common tasks.
+
+In summary, JavaScript is a versatile programming language used to create interactive and dynamic elements on websites. It handles variables, functions, events, and can modify webpage content in real-time, making it an essential part of modern web development.
+
+
+
+=========================JavaScript and HTML DOM(,dom)===================
+>>>>>>>>>>>>>>>>>>,JavaScript Objects with Examples>>>>>>>>>>>
+Array, String, Number, Math, Date, Global, RegExp ,Object, Classes, Error, Boolean, Operators, Statements, JSON, Typed Array, Precedence
+
+
+>>>>>>>>>>>>>>>>>,Window Objects with Examples>>>>>>>>>>>>>>>
+Window, History, Location, Navigator, Screen
+
+
+>>>>>>>>>>>>>>>>>HTML DOM Objects with Examples>>>>>>>>>>>
+Document, Element, Attributes, Events, Event Objects, HTMLCollection, Style
+
+>>>>>>>>>>>>>>>>,Web APIs with Examples>>>>>>>>>>>>>>>>
+Canvas, Console, Fetch, Fullscreen, Geolocation, History, MediaQueryList, Storage, Validation
+
+
+>>>>>>>>>>>>>>>>>,HTML Elements with Examples>>>>>>>>>>>>>>>>>>
+aa, abbr, address, area, article, aside, audio, b, base, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, head, header, h1, h2, h3, h4, h5, h6, hr, html, i, iframe, img, ins, input button, input checkbox, input color, input date, input datetime, input datetime-local, input email, input file, input hidden, input image, input month, input number, input password, input radio, input range, input reset, input search, input submit, input text, input time, input url, input week, kbd, label, legend, li, link, map, mark, menu, menuitem, meta, meter, nav, object, ol, optgroup, option, output, p, param, pre, progress, q, s, samp, script, section, select, small, source, span, strong, style, sub, summary, sup, table, tbody, td, tfoot, th, thead, tr, textarea, time, title, track, u, ul, var, video.
+
+
+
+
+
+============================different types of JavaScript Array with codingexample============ 
+
+
+JavaScript arrays are versatile data structures that can hold various types of data. Here are some different types of JavaScript arrays along with coding examples:
+
+Numeric Array:
+
+An array that stores numeric values.
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+String Array:
+
+An array that stores strings.
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'orange'];
+Mixed Data Type Array:
+
+An array that can hold different types of data.
+javascript
+Copy code
+const mixedArray = [1, 'apple', true, { name: 'John' }];
+Array of Objects:
+
+An array where each element is an object.
+javascript
+Copy code
+const persons = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+];
+Two-Dimensional Array:
+
+An array of arrays, creating a matrix-like structure.
+javascript
+Copy code
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+Empty Array:
+
+An array without any initial values.
+javascript
+Copy code
+const emptyArray = [];
+Array with Defined Length:
+
+An array with a specific length, but without initializing values.
+javascript
+Copy code
+const arrayWithLength = new Array(5); // Creates an array with 5 empty slots.
+Array with Initial Values and Length:
+
+An array with specific values and a defined length.
+javascript
+Copy code
+const arrayWithInitialValues = new Array(3).fill(0); // Creates [0, 0, 0].
+Sparse Array:
+
+An array with gaps or undefined values.
+javascript
+Copy code
+const sparseArray = [1, , 3]; // Index 1 is undefined.
+Typed Array:
+
+Specialized arrays that hold data of a specific type, like Int8Array, Float32Array, etc.
+javascript
+Copy code
+const intArray = new Int8Array(4); // Creates an array for 4 8-bit integers.
+
+
+====================JavaScript Array Methods and Properties(,arrayMethods)===========
+
+at(): Returns an indexed element of an array.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+console.log(fruits.at(1)); // Output: 'banana'
+concat(): Joins arrays and returns an array with the joined arrays.
+
+javascript
+Copy code
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = arr1.concat(arr2);
+console.log(combined); // Output: [1, 2, 3, 4]
+constructor: Returns the function that created the Array object's prototype.
+
+javascript
+Copy code
+const arr = [];
+console.log(arr.constructor); // Output: function Array() { [native code] }
+copyWithin(): Copies array elements within the array, to and from specified positions.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+numbers.copyWithin(0, 3, 4);
+console.log(numbers); // Output: [4, 2, 3, 4, 5]
+entries(): Returns a key/value pair Array Iteration Object.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const iterator = fruits.entries();
+for (const [index, value] of iterator) {
+  console.log(index, value);
+}
+// Output:
+// 0 'apple'
+// 1 'banana'
+// 2 'cherry'
+every(): Checks if every element in an array passes a test.
+
+javascript
+Copy code
+const numbers = [2, 4, 6, 8, 10];
+const isEven = (number) => number % 2 === 0;
+const result = numbers.every(isEven);
+console.log(result); // Output: true
+fill(): Fills the elements in an array with a static value.
+
+javascript
+Copy code
+const arr = [1, 2, 3, 4, 5];
+arr.fill(0, 2, 4);
+console.log(arr); // Output: [1, 2, 0, 0, 5]
+filter(): Creates a new array with every element in an array that passes a test.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const isEven = (number) => number % 2 === 0;
+const evenNumbers = numbers.filter(isEven);
+console.log(evenNumbers); // Output: [2, 4]
+find(): Returns the value of the first element in an array that passes a test.
+
+javascript
+Copy code
+const numbers = [10, 20, 30, 40, 50];
+const isGreaterThan25 = (number) => number > 25;
+const result = numbers.find(isGreaterThan25);
+console.log(result); // Output: 30
+findIndex(): Returns the index of the first element in an array that passes a test.
+
+javascript
+Copy code
+const numbers = [10, 20, 30, 40, 50];
+const isGreaterThan25 = (number) => number > 25;
+const index = numbers.findIndex(isGreaterThan25);
+console.log(index); // Output: 2 (index of value 30)
+flat(): Concatenates sub-array elements into a single array.
+
+javascript
+Copy code
+const nestedArray = [1, [2, 3], [4, 5]];
+const flattenedArray = nestedArray.flat();
+console.log(flattenedArray); // Output: [1, 2, 3, 4, 5]
+flatMap(): Maps all array elements and creates a new flat array.
+
+javascript
+Copy code
+const numbers = [1, 2, 3];
+const doubled = numbers.flatMap((x) => [x * 2, x * 3]);
+console.log(doubled); // Output: [2, 3, 4, 6, 6, 9]
+forEach(): Calls a function for each array element.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.forEach((fruit) => {
+  console.log(fruit);
+});
+// Output:
+// 'apple'
+// 'banana'
+// 'cherry'
+from(): Creates an array from an object.
+
+javascript
+Copy code
+const set = new Set(['apple', 'banana', 'cherry']);
+const arr = Array.from(set);
+console.log(arr); // Output: ['apple', 'banana', 'cherry']
+includes(): Checks if an array contains the specified element.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const hasThree = numbers.includes(3);
+console.log(hasThree); // Output: true
+indexOf(): Searches the array for an element and returns its position.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const index = fruits.indexOf('banana');
+console.log(index); // Output: 1 (index of 'banana')
+isArray(): Checks whether an object is an array.
+
+javascript
+Copy code
+const arr = [1, 2, 3];
+const isArr = Array.isArray(arr);
+console.log(isArr); // Output: true
+join(): Joins all elements of an array into a string.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const joined = fruits.join(', ');
+console.log(joined); // Output: 'apple, banana, cherry'
+keys(): Returns an Array Iteration Object containing the keys of the original array.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const keys = fruits.keys();
+for (const key of keys) {
+  console.log(key);
+}
+// Output:
+// 0
+// 1
+// 2
+lastIndexOf(): Searches the array for an element, starting at the end, and returns its position.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 3, 5];
+const lastIndex = numbers.lastIndexOf(3);
+console.log(lastIndex); // Output: 4 (last index of value 3)
+length: Sets or returns the number of elements in an array.
+
+javascript
+Copy code
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.length); // Output: 5
+map(): Creates a new array with the result of calling a function for each array element.
+
+javascript
+Copy code
+const numbers = [1, 2, 3];
+const squared = numbers.map((x) => x * x);
+console.log(squared); // Output: [1, 4, 9]
+pop(): Removes the last element of an array and returns that element.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const removed = fruits.pop();
+console.log(removed); // Output: 'cherry'
+prototype: Allows you to add properties and methods to an Array object.
+
+javascript
+Copy code
+Array.prototype.sayHello = function () {
+  return 'Hello from Array!';
+};
+
+const arr = [1, 2, 3];
+console.log(arr.sayHello()); // Output: 'Hello from Array!'
+push(): Adds new elements to the end of an array and returns the new length.
+
+javascript
+Copy code
+const numbers = [1, 2, 3];
+const newLength = numbers.push(4, 5);
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
+console.log(newLength); // Output: 5
+reduce(): Reduce the values of an array to a single value (going left-to-right).
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(sum); // Output: 15
+reduceRight(): Reduce the values of an array to a single value (going right-to-left).
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const subtract = numbers.reduceRight((accumulator, currentValue) => accumulator - currentValue);
+console.log(subtract); // Output: -3
+reverse(): Reverses the order of the elements in an array.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+numbers.reverse();
+console.log(numbers); // Output: [5, 4, 3, 2, 1]
+shift(): Removes the first element of an array and returns that element.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const removed = fruits.shift();
+console.log(removed); // Output: 'apple'
+slice(): Selects a part of an array and returns the new array.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const sliced = numbers.slice(1, 4);
+console.log(sliced); // Output: [2, 3, 4]
+some(): Checks if any of the elements in an array pass a test.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const hasEven = numbers.some((number) => number % 2 === 0);
+console.log(hasEven); // Output: true
+sort(): Sorts the elements of an array.
+
+javascript
+Copy code
+const fruits = ['banana', 'apple', 'cherry'];
+fruits.sort();
+console.log(fruits); // Output: ['apple', 'banana', 'cherry']
+splice(): Adds/Removes elements from an array.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.splice(1, 1, 'kiwi');
+console.log(fruits); // Output: ['apple', 'kiwi', 'cherry']
+toString(): Converts an array to a string and returns the result.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const result = fruits.toString();
+console.log(result); // Output: 'apple,banana,cherry'
+unshift(): Adds new elements to the beginning of an array and returns the new length.
+
+javascript
+Copy code
+const fruits = ['banana', 'cherry'];
+const newLength = fruits.unshift('apple', 'kiwi');
+console.log(fruits); // Output: ['apple', 'kiwi', 'banana', 'cherry']
+console.log(newLength); // Output: 4
+valueOf(): Returns the primitive value of an array.
+
+javascript
+Copy code
+const arr = [1, 2, 3];
+const primitiveValue = arr.valueOf();
+console.log(primitiveValue); // Output: [1, 2, 3]
+These are some of the most commonly used JavaScript Array methods and properties. They provide powerful tools for working with arrays in JavaScript.
+
+
+
+
+=========================String Properties and Methods(,stringMethods)===================
+
+
+charAt(index): Returns the character at a specified index (position).
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const char = str.charAt(7); // Gets the character 'W' at index 7
+console.log(char); // Output: 'W'
+charCodeAt(index): Returns the Unicode of the character at a specified index.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const charCode = str.charCodeAt(0); // Gets the Unicode of 'H' at index 0
+console.log(charCode); // Output: 72
+concat(string1, string2, ...): Returns two or more joined strings.
+
+javascript
+Copy code
+const str1 = 'Hello';
+const str2 = ', World!';
+const result = str1.concat(str2);
+console.log(result); // Output: 'Hello, World!'
+constructor: Returns the string's constructor function.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+console.log(str.constructor); // Output: function String() { [native code] }
+endsWith(searchString, length): Returns true if a string ends with a specified value.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const endsWithWorld = str.endsWith('World!');
+console.log(endsWithWorld); // Output: true
+fromCharCode(char1, char2, ...): Returns Unicode values as characters.
+
+javascript
+Copy code
+const str = String.fromCharCode(72, 101, 108, 108, 111);
+console.log(str); // Output: 'Hello'
+includes(searchString, position): Returns true if a string contains a specified value.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const includesHello = str.includes('Hello');
+console.log(includesHello); // Output: true
+indexOf(searchValue, fromIndex): Returns the index (position) of the first occurrence of a value in a string.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const index = str.indexOf('World');
+console.log(index); // Output: 7
+lastIndexOf(searchValue, fromIndex): Returns the index (position) of the last occurrence of a value in a string.
+
+javascript
+Copy code
+const str = 'Hello, World, World!';
+const lastIndex = str.lastIndexOf('World');
+console.log(lastIndex); // Output: 14
+length: Returns the length of a string.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+console.log(str.length); // Output: 13
+localeCompare(compareString, locales, options): Compares two strings in the current locale and returns a value indicating their relative ordering.
+
+javascript
+Copy code
+const str1 = 'apple';
+const str2 = 'banana';
+const comparison = str1.localeCompare(str2);
+console.log(comparison); // Output: -1 (str1 comes before str2)
+match(regexp): Searches a string for a value, or a regular expression, and returns the matches as an array.
+
+javascript
+Copy code
+const str = 'The quick brown fox';
+const matches = str.match(/o/g);
+console.log(matches); // Output: ['o', 'o']
+prototype: Allows you to add properties and methods to a String object.
+
+javascript
+Copy code
+String.prototype.repeat = function (n) {
+  return new Array(n + 1).join(this);
+};
+
+const str = 'Hi ';
+console.log(str.repeat(3)); // Output: 'Hi Hi Hi '
+repeat(count): Returns a new string with a number of copies of a string.
+
+javascript
+Copy code
+const str = 'abc';
+const repeated = str.repeat(3);
+console.log(repeated); // Output: 'abcabcabc'
+replace(searchValue, newValue): Searches a string for a pattern, and returns a new string where the first match is replaced.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const replaced = str.replace('World', 'Universe');
+console.log(replaced); // Output: 'Hello, Universe!'
+replaceAll(searchValue, newValue): Searches a string for a pattern and returns a new string where all matches are replaced.
+
+javascript
+Copy code
+const str = 'Hello, World, World!';
+const replacedAll = str.replaceAll('World', 'Universe');
+console.log(replacedAll); // Output: 'Hello, Universe, Universe!'
+search(regexp): Searches a string for a value or regular expression and returns the index (position) of the match.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const index = str.search('World');
+console.log(index); // Output: 7
+slice(start, end): Extracts a part of a string and returns a new string.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const sliced = str.slice(7, 12);
+console.log(sliced); // Output: 'World'
+split(separator, limit): Splits a string into an array of substrings based on a separator.
+
+javascript
+Copy code
+const str = 'apple,banana,cherry';
+const fruits = str.split(',');
+console.log(fruits); // Output: ['apple', 'banana', 'cherry']
+startsWith(searchString, position): Checks whether a string begins with specified characters.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const startsWithHello = str.startsWith('Hello');
+console.log(startsWithHello); // Output: true
+substr(start, length): Extracts a number of characters from a string, starting at a specific index (position).
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const substring = str.substr(7, 5);
+console.log(substring); // Output: 'World'
+substring(start, end): Extracts characters from a string, between two specified indices (positions).
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const substring = str.substring(7, 12);
+console.log(substring); // Output: 'World'
+toLocaleLowerCase(): Returns a string converted to lowercase letters, using the host's locale.
+
+javascript
+Copy code
+const str = 'HELLO';
+const lowerCase = str.toLocaleLowerCase();
+console.log(lowerCase); // Output: 'hello' (based on locale)
+toLocaleUpperCase(): Returns a string converted to uppercase letters, using the host's locale.
+
+javascript
+Copy code
+const str = 'hello';
+const upperCase = str.toLocaleUpperCase();
+console.log(upperCase); // Output: 'HELLO' (based on locale)
+toLowerCase(): Returns a string converted to lowercase letters.
+
+javascript
+Copy code
+const str = 'HELLO';
+const lowerCase = str.toLowerCase();
+console.log(lowerCase); // Output: 'hello'
+toString(): Returns a string or a string object as a string.
+
+javascript
+Copy code
+const str = 'Hello, World!';
+const strToString = str.toString();
+console.log(strToString); // Output: 'Hello, World!'
+toUpperCase(): Returns a string converted to uppercase letters.
+
+javascript
+Copy code
+const str = 'hello';
+const upperCase = str.toUpperCase();
+console.log(upperCase); // Output: 'HELLO'
+trim(): Returns a string with removed whitespaces from both ends.
+
+javascript
+Copy code
+const str = '   Hello, World!   ';
+const trimmed = str.trim();
+console.log(trimmed); // Output: 'Hello, World!'
+trimEnd(): Returns a string with removed whitespaces from the end.
+
+javascript
+Copy code
+const str = '   Hello, World!   ';
+const trimmedEnd = str.trimEnd();
+console.log(trimmedEnd); // Output: '   Hello, World!'
+trimStart(): Returns a string with removed whitespaces from the start.
+
+javascript
+Copy code
+const str = '   Hello, World!   ';
+const trimmedStart = str.trimStart();
+console.log(trimmedStart); // Output: 'Hello, World!   '
+valueOf(): Returns the primitive value of a string or a string object.
+
+javascript
+Copy code
+const str = new String('Hello, World!');
+const primitiveValue = str.valueOf();
+console.log(primitiveValue); // Output: 'Hello, World!'
+
+
+
+
+=========================JavaScript Number Methods and Properties(,numberMethods)============
+
+
+constructor: Returns the function that created JavaScript's Number prototype.
+
+javascript
+Copy code
+const num = 42;
+console.log(num.constructor); // Output: function Number() { [native code] }
+EPSILON: Returns the difference between 1 and the smallest number greater than 1 that can be represented as a JavaScript number.
+
+javascript
+Copy code
+const epsilonValue = Number.EPSILON;
+console.log(epsilonValue); // Output: Approximately 2.220446049250313e-16
+isFinite(value): Checks whether a value is a finite number.
+
+javascript
+Copy code
+console.log(Number.isFinite(42)); // Output: true
+console.log(Number.isFinite(Infinity)); // Output: false
+isInteger(value): Checks whether a value is an integer.
+
+javascript
+Copy code
+console.log(Number.isInteger(42)); // Output: true
+console.log(Number.isInteger(42.5)); // Output: false
+isNaN(value): Checks whether a value is Number.NaN.
+
+javascript
+Copy code
+console.log(Number.isNaN(42)); // Output: false
+console.log(Number.isNaN(NaN)); // Output: true
+isSafeInteger(value): Checks whether a value is a safe integer.
+
+javascript
+Copy code
+console.log(Number.isSafeInteger(42)); // Output: true
+console.log(Number.isSafeInteger(Math.pow(2, 53))); // Output: false
+MAX_SAFE_INTEGER: Returns the maximum safe integer in JavaScript.
+
+javascript
+Copy code
+console.log(Number.MAX_SAFE_INTEGER); // Output: 9007199254740991
+MIN_SAFE_INTEGER: Returns the minimum safe integer in JavaScript.
+
+javascript
+Copy code
+console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991
+MAX_VALUE: Returns the largest number possible in JavaScript.
+
+javascript
+Copy code
+console.log(Number.MAX_VALUE); // Output: 1.7976931348623157e+308
+MIN_VALUE: Returns the smallest number possible in JavaScript.
+
+javascript
+Copy code
+console.log(Number.MIN_VALUE); // Output: 5e-324
+NaN: Represents a "Not-a-Number" value.
+
+javascript
+Copy code
+console.log(Number.NaN); // Output: NaN
+NEGATIVE_INFINITY: Represents negative infinity (returned on overflow).
+
+javascript
+Copy code
+console.log(Number.NEGATIVE_INFINITY); // Output: -Infinity
+POSITIVE_INFINITY: Represents positive infinity (returned on overflow).
+
+javascript
+Copy code
+console.log(Number.POSITIVE_INFINITY); // Output: Infinity
+parseFloat(string): Parses a string and returns a floating-point number.
+
+javascript
+Copy code
+const str = '3.14';
+const num = parseFloat(str);
+console.log(num); // Output: 3.14
+parseInt(string, radix): Parses a string and returns a whole number. The radix parameter specifies the base (e.g., 10 for decimal).
+
+javascript
+Copy code
+const str = '42';
+const num = parseInt(str, 10);
+console.log(num); // Output: 42
+prototype: Allows you to add properties and methods to a Number object.
+
+javascript
+Copy code
+Number.prototype.double = function () {
+  return this * 2;
+};
+
+const num = 5;
+console.log(num.double()); // Output: 10
+toExponential(x): Converts a number into exponential notation with x numbers of digits after the decimal point.
+
+javascript
+Copy code
+const num = 12345.6789;
+const exponential = num.toExponential(2);
+console.log(exponential); // Output: '1.23e+4'
+toFixed(x): Formats a number with x numbers of digits after the decimal point.
+
+javascript
+Copy code
+const num = 3.14159265359;
+const formatted = num.toFixed(2);
+console.log(formatted); // Output: '3.14'
+toLocaleString(): Converts a number into a string, based on the locale settings.
+
+javascript
+Copy code
+const num = 1234567.89;
+const localized = num.toLocaleString('en-US');
+console.log(localized); // Output: '1,234,567.89'
+toPrecision(x): Formats a number to have a total length of x characters.
+
+javascript
+Copy code
+const num = 123.456789;
+const precision = num.toPrecision(5);
+console.log(precision); // Output: '123.46'
+toString(): Converts a number to a string.
+
+javascript
+Copy code
+const num = 42;
+const str = num.toString();
+console.log(str); // Output: '42'
+valueOf(): Returns the primitive value of a number.
+
+javascript
+Copy code
+const num = new Number(42);
+const primitiveValue = num.valueOf();
+console.log(primitiveValue); // Output: 42
+
+
+
+
+==================Math Object Methods and Properties==============
+
+abs(x): Returns the absolute value of x.
+
+javascript
+Copy code
+const absoluteValue = Math.abs(-5);
+console.log(absoluteValue); // Output: 5
+acos(x): Returns the arccosine of x, in radians.
+
+javascript
+Copy code
+const arccosine = Math.acos(0.5);
+console.log(arccosine); // Output: 1.0471975511965979 (approximately 60 degrees)
+acosh(x): Returns the hyperbolic arccosine of x.
+
+javascript
+Copy code
+const hyperbolicArccosine = Math.acosh(2);
+console.log(hyperbolicArccosine); // Output: 1.3169578969248166
+asin(x): Returns the arcsine of x, in radians.
+
+javascript
+Copy code
+const arcsine = Math.asin(0.5);
+console.log(arcsine); // Output: 0.5235987755982989 (approximately 30 degrees)
+asinh(x): Returns the hyperbolic arcsine of x.
+
+javascript
+Copy code
+const hyperbolicArcsine = Math.asinh(2);
+console.log(hyperbolicArcsine); // Output: 1.4436354751788103
+atan(x): Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians.
+
+javascript
+Copy code
+const arctangent = Math.atan(1);
+console.log(arctangent); // Output: 0.7853981633974483 (approximately 45 degrees)
+atan2(y, x): Returns the arctangent of the quotient of its arguments.
+
+javascript
+Copy code
+const arctan2 = Math.atan2(1, 2);
+console.log(arctan2); // Output: 0.4636476090008061 (approximately 26.57 degrees)
+atanh(x): Returns the hyperbolic arctangent of x.
+
+javascript
+Copy code
+const hyperbolicArctangent = Math.atanh(0.5);
+console.log(hyperbolicArctangent); // Output: 0.5493061443340548
+cbrt(x): Returns the cubic root of x.
+
+javascript
+Copy code
+const cubicRoot = Math.cbrt(8);
+console.log(cubicRoot); // Output: 2
+ceil(x): Returns x, rounded upwards to the nearest integer.
+
+javascript
+Copy code
+const roundedUp = Math.ceil(3.14);
+console.log(roundedUp); // Output: 4
+clz32(x): Returns the number of leading zeros in a 32-bit binary representation of x.
+
+javascript
+Copy code
+const leadingZeros = Math.clz32(8);
+console.log(leadingZeros); // Output: 29
+cos(x): Returns the cosine of x (where x is in radians).
+
+javascript
+Copy code
+const cosine = Math.cos(Math.PI);
+console.log(cosine); // Output: -1
+cosh(x): Returns the hyperbolic cosine of x.
+
+javascript
+Copy code
+const hyperbolicCosine = Math.cosh(0);
+console.log(hyperbolicCosine); // Output: 1
+E: Returns Euler's number (approximately 2.718).
+
+javascript
+Copy code
+console.log(Math.E); // Output: 2.718281828459045
+exp(x): Returns the value of e^x.
+
+javascript
+Copy code
+const exponential = Math.exp(1);
+console.log(exponential); // Output: 2.718281828459045 (approximately)
+expm1(x): Returns the value of e^x minus 1.
+
+javascript
+Copy code
+const exponentialMinusOne = Math.expm1(1);
+console.log(exponentialMinusOne); // Output: 1.718281828459045 (approximately)
+floor(x): Returns x, rounded downwards to the nearest integer.
+
+javascript
+Copy code
+const roundedDown = Math.floor(3.14);
+console.log(roundedDown); // Output: 3
+fround(x): Returns the nearest (32-bit single precision) float representation of a number.
+
+javascript
+Copy code
+const floatRepresentation = Math.fround(3.14159);
+console.log(floatRepresentation); // Output: 3.141589879989624 (approximately)
+LN2: Returns the natural logarithm of 2 (approximately 0.693).
+
+javascript
+Copy code
+console.log(Math.LN2); // Output: 0.6931471805599453
+LN10: Returns the natural logarithm of 10 (approximately 2.302).
+
+javascript
+Copy code
+console.log(Math.LN10); // Output: 2.302585092994046
+log(x): Returns the natural logarithm of x.
+
+javascript
+Copy code
+const naturalLogarithm = Math.log(10);
+console.log(naturalLogarithm); // Output: 2.302585092994046 (approximately)
+log10(x): Returns the base-10 logarithm of x.
+
+javascript
+Copy code
+const base10Logarithm = Math.log10(100);
+console.log(base10Logarithm); // Output: 2
+LOG10E: Returns the base-10 logarithm of E (approximately 0.434).
+
+javascript
+Copy code
+console.log(Math.LOG10E); // Output: 0.4342944819032518
+log1p(x): Returns the natural logarithm of 1 + x.
+
+javascript
+Copy code
+const log1Plus = Math.log1p(0.5);
+console.log(log1Plus); // Output: 0.4054651081081644
+log2(x): Returns the base-2 logarithm of x.
+
+javascript
+Copy code
+const base2Logarithm = Math.log2(8);
+console.log(base2Logarithm); // Output: 3
+LOG2E: Returns the base-2 logarithm of E (approximately 1.442).
+
+javascript
+Copy code
+console.log(Math.LOG2E); // Output: 1.4426950408889634
+max(x1, x2, ...): Returns the number with the highest value among the given arguments.
+
+javascript
+Copy code
+const maxNumber = Math.max(5, 10, 3);
+console.log(maxNumber); // Output: 10
+min(x1, x2, ...): Returns the number with the lowest value among the given arguments.
+
+javascript
+Copy code
+const minNumber = Math.min(5, 10, 3);
+console.log(minNumber); // Output: 3
+PI: Returns the mathematical constant PI (approximately 3.14159).
+
+javascript
+Copy code
+console.log(Math.PI); // Output: 3.141592653589793
+pow(x, y): Returns the value of x to the power of y.
+
+javascript
+Copy code
+const power = Math.pow(2, 3);
+console.log(power); // Output: 8
+random(): Returns a random number between 0 (inclusive) and 1 (exclusive).
+
+javascript
+Copy code
+const randomValue = Math.random();
+console.log(randomValue); // Output: A random number between 0 and 1
+round(x): Rounds x to the nearest integer.
+
+javascript
+Copy code
+const rounded = Math.round(3.6);
+console.log(rounded); // Output: 4
+sign(x): Returns the sign of a number, indicating whether it is positive, negative, or zero.
+
+javascript
+Copy code
+console.log(Math.sign(5)); // Output: 1 (positive)
+console.log(Math.sign(-5)); // Output: -1 (negative)
+console.log(Math.sign(0)); // Output: 0 (zero)
+sin(x): Returns the sine of x (where x is in radians).
+
+javascript
+Copy code
+const sine = Math.sin(Math.PI / 2);
+console.log(sine); // Output: 1 (approximately)
+sinh(x): Returns the hyperbolic sine of x.
+
+javascript
+Copy code
+const hyperbolicSine = Math.sinh(1);
+console.log(hyperbolicSine); // Output: 1.1752011936438014
+sqrt(x): Returns the square root of x.
+
+javascript
+Copy code
+const squareRoot = Math.sqrt(25);
+console.log(squareRoot); // Output: 5
+SQRT1_2: Returns the square root of 1/2 (approximately 0.707).
+
+javascript
+Copy code
+console.log(Math.SQRT1_2); // Output: 0.7071067811865476
+SQRT2: Returns the square root of 2 (approximately 1.414).
+
+javascript
+Copy code
+console.log(Math.SQRT2); // Output: 1.4142135623730951
+tan(x): Returns the tangent of an angle x.
+
+javascript
+Copy code
+const tangent = Math.tan(Math.PI / 4);
+console.log(tangent); // Output: 1 (approximately)
+tanh(x): Returns the hyperbolic tangent of a number x.
+
+javascript
+Copy code
+const hyperbolicTangent = Math.tanh(1);
+console.log(hyperbolicTangent); // Output: 0.7615941559557649
+trunc(x): Returns the integer part of a number x.
+
+javascript
+Copy code
+const integerPart = Math.trunc(3.9);
+console.log(integerPart); // Output: 3
+
+
+
+
+
+
+
+=============================JavaScript Date Methods and Properties(,dateMethods)===============
+constructor: Returns the function that created the Date object's prototype.
+
+javascript
+Copy code
+const date = new Date();
+console.log(date.constructor); // Output: function Date() { [native code] }
+getDate(): Returns the day of the month (from 1-31).
+
+javascript
+Copy code
+const date = new Date();
+const dayOfMonth = date.getDate();
+console.log(dayOfMonth); // Output: Current day of the month (e.g., 6)
+getDay(): Returns the day of the week (from 0-6), where 0 represents Sunday.
+
+javascript
+Copy code
+const date = new Date();
+const dayOfWeek = date.getDay();
+console.log(dayOfWeek); // Output: Current day of the week (0-6)
+getFullYear(): Returns the year.
+
+javascript
+Copy code
+const date = new Date();
+const year = date.getFullYear();
+console.log(year); // Output: Current year (e.g., 2023)
+getHours(): Returns the hour (from 0-23).
+
+javascript
+Copy code
+const date = new Date();
+const hours = date.getHours();
+console.log(hours); // Output: Current hour (0-23)
+getMilliseconds(): Returns the milliseconds (from 0-999).
+
+javascript
+Copy code
+const date = new Date();
+const milliseconds = date.getMilliseconds();
+console.log(milliseconds); // Output: Current milliseconds (0-999)
+getMinutes(): Returns the minutes (from 0-59).
+
+javascript
+Copy code
+const date = new Date();
+const minutes = date.getMinutes();
+console.log(minutes); // Output: Current minutes (0-59)
+getMonth(): Returns the month (from 0-11), where 0 represents January.
+
+javascript
+Copy code
+const date = new Date();
+const month = date.getMonth();
+console.log(month); // Output: Current month (0-11)
+getSeconds(): Returns the seconds (from 0-59).
+
+javascript
+Copy code
+const date = new Date();
+const seconds = date.getSeconds();
+console.log(seconds); // Output: Current seconds (0-59)
+getTime(): Returns the number of milliseconds since midnight Jan 1, 1970, and a specified date.
+
+javascript
+Copy code
+const date = new Date();
+const timeInMillis = date.getTime();
+console.log(timeInMillis); // Output: Current time in milliseconds
+getTimezoneOffset(): Returns the time difference between UTC time and local time, in minutes.
+
+javascript
+Copy code
+const date = new Date();
+const timezoneOffset = date.getTimezoneOffset();
+console.log(timezoneOffset); // Output: Timezone offset in minutes
+getUTCDate(): Returns the day of the month, according to universal time (from 1-31).
+
+javascript
+Copy code
+const date = new Date();
+const utcDayOfMonth = date.getUTCDate();
+console.log(utcDayOfMonth); // Output: Current day of the month in UTC (1-31)
+getUTCDay(): Returns the day of the week, according to universal time (from 0-6).
+
+javascript
+Copy code
+const date = new Date();
+const utcDayOfWeek = date.getUTCDay();
+console.log(utcDayOfWeek); // Output: Current day of the week in UTC (0-6)
+getUTCFullYear(): Returns the year, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+const utcYear = date.getUTCFullYear();
+console.log(utcYear); // Output: Current year in UTC
+getUTCHours(): Returns the hour, according to universal time (from 0-23).
+
+javascript
+Copy code
+const date = new Date();
+const utcHours = date.getUTCHours();
+console.log(utcHours); // Output: Current hour in UTC (0-23)
+getUTCMilliseconds(): Returns the milliseconds, according to universal time (from 0-999).
+
+javascript
+Copy code
+const date = new Date();
+const utcMilliseconds = date.getUTCMilliseconds();
+console.log(utcMilliseconds); // Output: Current milliseconds in UTC (0-999)
+getUTCMinutes(): Returns the minutes, according to universal time (from 0-59).
+
+javascript
+Copy code
+const date = new Date();
+const utcMinutes = date.getUTCMinutes();
+console.log(utcMinutes); // Output: Current minutes in UTC (0-59)
+getUTCMonth(): Returns the month, according to universal time (from 0-11).
+
+javascript
+Copy code
+const date = new Date();
+const utcMonth = date.getUTCMonth();
+console.log(utcMonth); // Output: Current month in UTC (0-11)
+getUTCSeconds(): Returns the seconds, according to universal time (from 0-59).
+
+javascript
+Copy code
+const date = new Date();
+const utcSeconds = date.getUTCSeconds();
+console.log(utcSeconds); // Output: Current seconds in UTC (0-59)
+getYear() (deprecated): Deprecated. Use the getFullYear() method instead.
+
+now(): Returns the number of milliseconds since midnight Jan 1, 1970.
+
+javascript
+Copy code
+const currentTime = Date.now();
+console.log(currentTime); // Output: Current time in milliseconds since 1970
+parse(): Parses a date string and returns the number of milliseconds since January 1, 1970.
+
+javascript
+Copy code
+const dateStr = "2023-10-06T12:00:00Z";
+const parsedDate = Date.parse(dateStr);
+console.log(parsedDate); // Output: Number of milliseconds since 1970 for the given date string
+prototype: Allows you to add properties and methods to a Date object.
+
+setDate(): Sets the day of the month of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setDate(15); // Set the day of the month to the 15th
+console.log(date); // Output: Updated date with the day set to the 15th
+setFullYear(): Sets the year of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setFullYear(2024); // Set the year to 2024
+console.log(date); // Output: Updated date with the year set to 2024
+setHours(): Sets the hour of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setHours(16); // Set the hour to 16 (4 PM)
+console.log(date); // Output: Updated date with the hour set to 16
+setMilliseconds(): Sets the milliseconds of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setMilliseconds(500); // Set the milliseconds to 500
+console.log(date); // Output: Updated date with milliseconds set to 500
+setMinutes(): Sets the minutes of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setMinutes(30); // Set the minutes to 30
+console.log(date); // Output: Updated date with minutes set to 30
+setMonth(): Sets the month of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setMonth(5); // Set the month to June (0-based, so 5 represents June)
+console.log(date); // Output: Updated date with the month set to June
+setSeconds(): Sets the seconds of a date object.
+
+javascript
+Copy code
+const date = new Date();
+date.setSeconds(45); // Set the seconds to 45
+console.log(date); // Output: Updated date with seconds set to 45
+setTime(): Sets a date to a specified number of milliseconds after/before January 1, 1970.
+
+javascript
+Copy code
+const date = new Date();
+date.setTime(1700000000000); // Set the date to a specific timestamp
+console.log(date); // Output: Date set to the specified timestamp
+setUTCDate(): Sets the day of the month of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCDate(10); // Set the UTC day of the month to the 10th
+console.log(date); // Output: Updated date with UTC day set to the 10th
+setUTCFullYear(): Sets the year of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCFullYear(2024); // Set the UTC year to 2024
+console.log(date); // Output: Updated date with UTC year set to 2024
+setUTCHours(): Sets the hour of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCHours(16); // Set the UTC hour to 16 (4 PM)
+console.log(date); // Output: Updated date with UTC hour set to 16
+setUTCMilliseconds(): Sets the milliseconds of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCMilliseconds(500); // Set the UTC milliseconds to 500
+console.log(date); // Output: Updated date with UTC milliseconds set to 500
+setUTCMinutes(): Sets the minutes of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCMinutes(30); // Set the UTC minutes to 30
+console.log(date); // Output: Updated date with UTC minutes set to 30
+setUTCMonth(): Sets the month of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCMonth(5); // Set the UTC month to June (0-based, so 5 represents June)
+console.log(date); // Output: Updated date with UTC month set to June
+setUTCSeconds(): Sets the seconds of a date object, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+date.setUTCSeconds(45); // Set the UTC seconds to 45
+console.log(date); // Output: Updated date with UTC seconds set to 45
+setYear() (deprecated): Deprecated. Use the setFullYear() method instead.
+
+toDateString(): Converts the date portion of a Date object into a readable string.
+
+javascript
+Copy code
+const date = new Date();
+const dateString = date.toDateString();
+console.log(dateString); // Output: e.g., "Thu Oct 06 2023"
+toGMTString() (deprecated): Deprecated. Use the toUTCString() method instead.
+
+toISOString(): Returns the date as a string, using the ISO standard.
+
+javascript
+Copy code
+const date = new Date();
+const isoString = date.toISOString();
+console.log(isoString); // Output: e.g., "2023-10-06T12:00:00.000Z"
+toJSON(): Returns the date as a string, formatted as a JSON date.
+
+javascript
+Copy code
+const date = new Date();
+const jsonString = date.toJSON();
+console.log(jsonString); // Output: e.g., "2023-10-06T12:00:00.000Z"
+toLocaleDateString(): Returns the date portion of a Date object as a string, using locale conventions.
+
+javascript
+Copy code
+const date = new Date();
+const localeDateString = date.toLocaleDateString();
+console.log(localeDateString); // Output: Date in localized format (e.g., "10/6/2023" in US locale)
+toLocaleTimeString(): Returns the time portion of a Date object as a string, using locale conventions.
+
+javascript
+Copy code
+const date = new Date();
+const localeTimeString = date.toLocaleTimeString();
+console.log(localeTimeString); // Output: Time in localized format (e.g., "12:00:00 PM" in US locale)
+toLocaleString(): Converts a Date object to a string, using locale conventions.
+
+javascript
+Copy code
+const date = new Date();
+const localeString = date.toLocaleString();
+console.log(localeString); // Output: Date and time in localized format (e.g., "10/6/2023, 12:00:00 PM" in US locale)
+toString(): Converts a Date object to a string.
+
+javascript
+Copy code
+const date = new Date();
+const dateString = date.toString();
+console.log(dateString); // Output: e.g., "Thu Oct 06 2023 12:00:00 GMT+0000 (Coordinated Universal Time)"
+toTimeString(): Converts the time portion of a Date object to a string.
+
+javascript
+Copy code
+const date = new Date();
+const timeString = date.toTimeString();
+console.log(timeString); // Output: Time in string format (e.g., "12:00:00 GMT+0000 (Coordinated Universal Time)")
+toUTCString(): Converts a Date object to a string, according to universal time.
+
+javascript
+Copy code
+const date = new Date();
+const utcString = date.toUTCString();
+console.log(utcString); // Output: e.g., "Thu, 06 Oct 2023 12:00:00 GMT"
+UTC(): Returns the number of milliseconds in a date since midnight of January 1, 1970, according to UTC time.
+
+javascript
+Copy code
+const utcTimestamp = Date.UTC(2023, 9, 6, 12, 0, 0);
+console.log(utcTimestamp); // Output: Number of milliseconds since 1970 for the specified UTC date and time
+valueOf(): Returns the primitive value of a Date object.
+
+javascript
+Copy code
+const date = new Date();
+const dateValue = date.valueOf();
+console.log(dateValue); // Output: Number representing the date in milliseconds since 1970
+These Date methods and properties are essential for working with dates and times in JavaScript, allowing you to manipulate and format date objects as needed in your code.
+
+
+
+
+
+
+================RegExp Object Properties:(,regex)===================
+
+constructor: Returns the function that created the RegExp object's prototype.
+
+javascript
+Copy code
+const pattern = /w3schools/i;
+console.log(pattern.constructor); // Output: function RegExp() { [native code] }
+global: Checks whether the "g" modifier is set.
+
+javascript
+Copy code
+const pattern = /w3schools/g;
+console.log(pattern.global); // Output: true
+ignoreCase: Checks whether the "i" modifier is set.
+
+javascript
+Copy code
+const pattern = /w3schools/i;
+console.log(pattern.ignoreCase); // Output: true
+lastIndex: Specifies the index at which to start the next match.
+
+javascript
+Copy code
+const pattern = /w3schools/g;
+const text = "w3schools.com and W3SCHOOLS.ORG";
+
+pattern.exec(text); // Find the first match
+console.log(pattern.lastIndex); // Output: 12 (index where the next match will start)
+multiline: Checks whether the "m" modifier is set.
+
+javascript
+Copy code
+const pattern = /^Hello/m;
+const text = "Hello\nWorld";
+console.log(pattern.test(text)); // Output: true (matches at the beginning of a line)
+source: Returns the text of the RegExp pattern.
+
+javascript
+Copy code
+const pattern = /w3schools/i;
+console.log(pattern.source); // Output: "w3schools"
+RegExp Object Methods:
+
+compile() (Deprecated): Compiles a regular expression. Note that this method is deprecated.
+
+exec(): Tests for a match in a string. Returns the first match as an array or null if no match is found.
+
+javascript
+Copy code
+const pattern = /w3schools/i;
+const text = "Visit w3schools.com for online tutorials.";
+const result = pattern.exec(text);
+console.log(result); // Output: ["w3schools", index: 6, input: "Visit w3schools.com for online tutorials."]
+test(): Tests for a match in a string. Returns true if a match is found, otherwise false.
+
+javascript
+Copy code
+const pattern = /w3schools/i;
+const text = "Visit w3schools.com for online tutorials.";
+console.log(pattern.test(text)); // Output: true
+toString(): Returns the string value of the regular expression.
+
+javascript
+Copy code
+const pattern = /w3schools/i;
+const patternString = pattern.toString();
+console.log(patternString); // Output: "/w3schools/i"
+These are the key properties and methods of the RegExp object in JavaScript, which are used for working with regular expressions in your code.
+
+
+
+
+
+
+=======================Object Properties and Methods:==============
+
+constructor: Returns the function that created an object's prototype.
+
+javascript
+Copy code
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+console.log(person.constructor); // Output: function Object() { [native code] }
+keys(): Returns an Array Iterator object with the keys (property names) of an object.
+
+javascript
+Copy code
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+const keys = Object.keys(person);
+console.log(keys); // Output: ["firstName", "lastName", "age", "eyeColor"]
+prototype: Allows you to add properties and methods to JavaScript objects. While prototype is not a direct property of individual objects, it's associated with object constructors.
+
+javascript
+Copy code
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+Person.prototype.fullName = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+const person = new Person("John", "Doe");
+console.log(person.fullName()); // Output: "John Doe"
+toString(): Converts an object to a string and returns the result. This method is usually inherited from the Object prototype and can be overridden to customize the string representation of an object.
+
+javascript
+Copy code
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  toString: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+const str = person.toString();
+console.log(str); // Output: "John Doe"
+valueOf(): Returns the primitive value of an object. Like toString(), this method is also usually inherited from the Object prototype and can be overridden to provide a custom representation of the object's value.
+
+javascript
+Copy code
+const person = {
+  age: 30,
+  valueOf: function() {
+    return this.age;
+  }
+};
+
+const age = person.valueOf();
+console.log(age); // Output: 30
+These properties and methods are part of the built-in Object prototype in JavaScript and can be used to manipulate and work with objects and their properties in your code.
+
+
+
+
+
+========================JavaScript Classes(,jsClasses)===============
+Class: A class is a blueprint for creating objects with shared properties and methods. It is defined using the class keyword. Properties are typically assigned inside the constructor() method.
+
+javascript
+Copy code
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+}
+Constructor: The constructor() method is a special method used for creating and initializing objects created within a class. It is called when an object is instantiated from the class.
+
+javascript
+Copy code
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+}
+
+const myCar = new Car("Ford");
+console.log(myCar.carname); // Output: "Ford"
+extends: The extends keyword is used to create a subclass (a class that inherits from another class). It allows for the extension of an existing class with additional properties and methods.
+
+javascript
+Copy code
+class Vehicle {
+  constructor(brand) {
+    this.brand = brand;
+  }
+  startEngine() {
+    console.log("Engine started");
+  }
+}
+
+class Car extends Vehicle {
+  constructor(brand, model) {
+    super(brand);
+    this.model = model;
+  }
+  drive() {
+    console.log("Driving...");
+  }
+}
+
+const myCar = new Car("Ford", "Mustang");
+console.log(myCar.brand); // Output: "Ford"
+myCar.startEngine(); // Output: "Engine started"
+static: The static keyword is used to define a static method for a class. Static methods are called on the class itself, not on instances of the class.
+
+javascript
+Copy code
+class MathUtils {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+const result = MathUtils.add(5, 3);
+console.log(result); // Output: 8
+super: The super keyword is used within a subclass constructor to refer to the constructor of the parent class. It's typically used to call the constructor of the parent class and initialize properties inherited from it.
+
+javascript
+Copy code
+class Vehicle {
+  constructor(brand) {
+    this.brand = brand;
+  }
+}
+
+class Car extends Vehicle {
+  constructor(brand, model) {
+    super(brand); // Call the parent class constructor
+    this.model = model;
+  }
+}
+
+const myCar = new Car("Ford", "Mustang");
+console.log(myCar.brand); // Output: "Ford"
+JavaScript classes provide a more structured way to create objects and manage their properties and behaviors, making your code easier to understand and maintain.
+
+
+
+
+
+
+
+
+======================Error Object(,errorObject)=======================
+
+
+name: Sets or returns an error name.
+
+message: Sets or returns an error message (a string).
+
+javascript
+Copy code
+try {
+  throw new Error("This is a custom error message.");
+} catch (err) {
+  console.log(err.name); // Output: "Error"
+  console.log(err.message); // Output: "This is a custom error message."
+}
+Error Names:
+
+EvalError (Deprecated - use SyntaxError instead): Represents an error regarding the global eval() function.
+
+RangeError: Occurs when a number "out of range" has occurred.
+
+javascript
+Copy code
+try {
+  const arr = new Array(-1); // This will throw a RangeError
+} catch (err) {
+  console.log(err.name); // Output: "RangeError"
+  console.log(err.message); // Output: "Invalid array length"
+}
+ReferenceError: Occurs when an illegal reference has occurred, typically when trying to access an undefined variable or function.
+
+javascript
+Copy code
+try {
+  console.log(undefinedVariable); // This will throw a ReferenceError
+} catch (err) {
+  console.log(err.name); // Output: "ReferenceError"
+  console.log(err.message); // Output: "undefinedVariable is not defined"
+}
+SyntaxError: Occurs when a syntax error has occurred, such as a missing closing parenthesis or a typo in code.
+
+javascript
+Copy code
+try {
+  eval("const x = 5; consol.log(x);"); // Typo in "console.log"
+} catch (err) {
+  console.log(err.name); // Output: "SyntaxError"
+  console.log(err.message); // Output: "Unexpected identifier"
+}
+TypeError: Occurs when a type error has occurred, such as trying to call a non-function or accessing properties of non-objects.
+
+javascript
+Copy code
+try {
+  null.someMethod(); // This will throw a TypeError
+} catch (err) {
+  console.log(err.name); // Output: "TypeError"
+  console.log(err.message); // Output: "Cannot read properties of null (reading 'someMethod')"
+}
+URIError: Occurs when an error in encodeURI() or decodeURI() functions has occurred.
+
+javascript
+Copy code
+try {
+  decodeURI("%"); // This will throw a URIError
+} catch (err) {
+  console.log(err.name); // Output: "URIError"
+  console.log(err.message); // Output: "URI malformed"
+}
+These are some common error names and their descriptions when working with the JavaScript Error object. They can help you identify and handle errors in your code more effectively.
+
+
+==============================Boolean Object Properties and Methods:(,booleanMethods)======
+
+constructor: Returns the function that created JavaScript's Boolean prototype.
+
+javascript
+Copy code
+const bool = new Boolean(true);
+console.log(bool.constructor); // Output: function Boolean() { [native code] }
+prototype: Allows you to add properties and methods to the Boolean prototype. This property is not typically used directly in everyday code.
+
+toString(): Converts a boolean value to a string and returns the result.
+
+javascript
+Copy code
+const bool = new Boolean(true);
+const boolString = bool.toString();
+console.log(boolString); // Output: "true"
+valueOf(): Returns the primitive value of a boolean. This method is often used implicitly when converting a Boolean object to a primitive value.
+
+javascript
+Copy code
+const bool = new Boolean(true);
+const primitiveBool = bool.valueOf();
+console.log(primitiveBool); // Output: true
+It's important to note that in most cases, you don't need to create Boolean objects explicitly. JavaScript automatically converts values to booleans as needed. For example:
+
+javascript
+Copy code
+const boolValue = true; // A primitive boolean value
+const boolObject = new Boolean(true); // A Boolean object
+
+console.log(boolValue.toString()); // Output: "true"
+console.log(boolObject.toString()); // Output: "true"
+
+console.log(boolValue.valueOf()); // Output: true
+console.log(boolObject.valueOf()); // Output: true
+In practice, you can work with primitive boolean values (true or false) directly, and there's usually no need to create Boolean objects unless you have specific reasons to do so.
+
+
+==============JavaScript Operators Reference(,operators)=========
+
+>>>>>>>>>>>>>>>>>>>>1. Arithmetic Operators:
+
+Used for mathematical calculations like addition, subtraction, multiplication, division, etc.
+Example:
+1. Addition (+):
+
+Adds two values together.
+Example:
+javascript
+Copy code
+const y = 5;
+const x = y + 2; // x is assigned the result of 5 + 2, which is 7
+2. Subtraction (-):
+
+Subtracts the right operand from the left operand.
+Example:
+javascript
+Copy code
+const y = 5;
+const x = y - 2; // x is assigned the result of 5 - 2, which is 3
+3. Multiplication (*):
+
+Multiplies two values together.
+Example:
+javascript
+Copy code
+const y = 5;
+const x = y * 2; // x is assigned the result of 5 * 2, which is 10
+4. Exponentiation ():**
+
+Raises the left operand to the power of the right operand (ES2016).
+Example:
+javascript
+Copy code
+const y = 5;
+const x = y ** 2; // x is assigned the result of 5 to the power of 2, which is 25
+5. Division (/):
+
+Divides the left operand by the right operand.
+Example:
+javascript
+Copy code
+const y = 5;
+const x = y / 2; // x is assigned the result of 5 divided by 2, which is 2.5
+6. Remainder (%):
+
+Returns the remainder of dividing the left operand by the right operand.
+Example:
+javascript
+Copy code
+const y = 5;
+const x = y % 2; // x is assigned the remainder when 5 is divided by 2, which is 1
+7. Pre-increment (++):
+
+Increments the value of a variable before its current value is used.
+Example:
+javascript
+Copy code
+let y = 5;
+let x = ++y; // y is incremented to 6, and x is assigned the value of y, which is 6
+8. Post-increment (++):
+
+Increments the value of a variable after its current value is used.
+Example:
+javascript
+Copy code
+let y = 5;
+let x = y++; // x is assigned the current value of y (5), and then y is incremented to 6
+9. Pre-decrement (--):
+
+Decrements the value of a variable before its current value is used.
+Example:
+javascript
+Copy code
+let y = 5;
+let x = --y; // y is decremented to 4, and x is assigned the value of y, which is 4
+10. Post-decrement (--):
+- Decrements the value of a variable after its current value is used.
+- Example:
+javascript let y = 5; let x = y--; // x is assigned the current value of y (5), and then y is decremented to 4
+
+These arithmetic operators are essential for performing basic mathematical operations in JavaScript and are used extensively in programming to manipulate numerical values.
+
+
+>>>>>>>>>>>>>>>>>>>>2. Assignment Operators:
+
+Used to assign values to variables.
+Example:
+1. Assignment (=):
+
+Assigns the value on the right to the variable on the left.
+Example:
+javascript
+Copy code
+let x;
+let y = 5;
+x = y; // x is assigned the value of y, which is 5
+2. Addition Assignment (+=):
+
+Adds the value on the right to the variable on the left and assigns the result to the left variable.
+Example:
+javascript
+Copy code
+let x = 10;
+let y = 5;
+x += y; // x is incremented by the value of y, x becomes 15
+3. Subtraction Assignment (-=):
+
+Subtracts the value on the right from the variable on the left and assigns the result to the left variable.
+Example:
+javascript
+Copy code
+let x = 10;
+let y = 5;
+x -= y; // x is decremented by the value of y, x becomes 5
+4. Multiplication Assignment (*=):
+
+Multiplies the variable on the left by the value on the right and assigns the result to the left variable.
+Example:
+javascript
+Copy code
+let x = 10;
+let y = 5;
+x *= y; // x is multiplied by the value of y, x becomes 50
+5. Division Assignment (/=):
+
+Divides the variable on the left by the value on the right and assigns the result to the left variable.
+Example:
+javascript
+Copy code
+let x = 10;
+let y = 5;
+x /= y; // x is divided by the value of y, x becomes 2
+6. Remainder Assignment (%=):
+
+Calculates the remainder of dividing the variable on the left by the value on the right and assigns the result to the left variable.
+Example:
+javascript
+Copy code
+let x = 10;
+let y = 5;
+x %= y; // x is assigned the remainder when divided by y, x becomes 0
+7. Object Property Assignment (:):
+
+Assigns a value to an object property.
+Example:
+javascript
+Copy code
+const size = {};
+size.x = 45; // Assigns the value 45 to the property "x" of the "size" object
+
+>>>>>>>>>>>>>>>>>>>>3. Comparison Operators:
+
+Used to compare values and return true or false (boolean).
+Example:
+1. Equal to (==):
+
+Checks if two values are equal, regardless of their data types.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x == 8; // Checks if x is equal to 8, result is assigned false
+2. Equal value and type (===):
+
+Checks if two values are equal in both value and data type.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x === "5"; // Checks if x is equal to the string "5", result is assigned false
+3. Not equal (!=):
+
+Checks if two values are not equal, regardless of their data types.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x != 8; // Checks if x is not equal to 8, result is assigned true
+4. Not equal value or type (!==):
+
+Checks if two values are not equal in either value or data type.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x !== "5"; // Checks if x is not equal to the string "5", result is assigned true
+5. Greater than (>):
+
+Checks if the left operand is greater than the right operand.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x > 8; // Checks if x is greater than 8, result is assigned false
+6. Less than (<):
+
+Checks if the left operand is less than the right operand.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x < 8; // Checks if x is less than 8, result is assigned true
+7. Greater or equal to (>=):
+
+Checks if the left operand is greater than or equal to the right operand.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x >= 8; // Checks if x is greater than or equal to 8, result is assigned false
+8. Less or equal to (<=):
+
+Checks if the left operand is less than or equal to the right operand.
+Example:
+javascript
+Copy code
+let x = 5;
+let result = x <= 8; // Checks if x is less than or equal to 8, result is assigned true
+These comparison operators are used to evaluate conditions and make decisions in JavaScript programs. They return boolean values (true or false) based on the comparisons made.
+>>>>>>>>>>>>>>>>>>>>4. Logical Operators:
+
+Used to combine or manipulate boolean values.
+Example:
+
+1. Logical AND (&&):
+
+The && operator returns true if both operands are true, otherwise, it returns false.
+Example:
+javascript
+Copy code
+let x = 5;
+let y = 2;
+let result = x < 10 && y > 1; // Checks if both conditions are true, result is assigned true
+2. Logical OR (||):
+
+The || operator returns true if at least one of the operands is true, otherwise, it returns false.
+Example:
+javascript
+Copy code
+let x = 5;
+let y = 2;
+let result = x === 5 || y === 5; // Checks if either condition is true, result is assigned false
+3. Logical NOT (!):
+
+The ! operator is used to negate a boolean value. It returns true if the operand is false, and false if the operand is true.
+Example:
+javascript
+Copy code
+let x = 5;
+let y = 5;
+let result = !(x === y); // Negates the result of the comparison, result is assigned true
+These logical operators are often used to combine and evaluate multiple conditions in JavaScript. They are essential for controlling the flow of your program based on various conditions.
+>>>>>>>>>>>>>>>>>>>>5. Conditional (Ternary) Operator:
+
+Used for making decisions in a concise way.
+Example:
+javascript
+Copy code
+const age = 18;
+const message = age >= 18 ? "You can vote" : "You cannot vote"; // "You can vote"
+>>>>>>>>>>>>>>>>>>>>6. Type Operators:
+
+Used to check the type of a value or convert values to a specific type.
+Example (typeof):
+javascript
+Copy code
+const name = "John";
+const type = typeof name; // "string"
+These operators are fundamental in JavaScript and allow you to perform various operations, make decisions, and manipulate data in your code. They play a crucial role in controlling the flow and behavior of your programs.
+
+>>>>>>>>>>>>>>>>>>>>7.String Operators>>>>>>>>>>
+
+1. Concatenation Operator (+):
+
+The + operator is used to concatenate (combine) two or more strings.
+Example:
+javascript
+Copy code
+let t1 = "Good ";
+let t2 = "Morning";
+let t3 = t1 + t2; // t3 is assigned the result of concatenating t1 and t2, which is "Good Morning"
+
+2. Concatenation Assignment (+=):
+
+The += operator is used to concatenate a string on the right to an existing string on the left and update the left string with the result.
+Example:
+javascript
+Copy code
+let t1 = "Good ";
+let t2 = "Morning";
+t1 += t2; // t1 is updated to "Good Morning" by concatenating t2 to it
+These string operators are handy for combining and manipulating strings in JavaScript. They allow you to create dynamic text and update string variables with ease.
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>8.The Nullish Coalescing Operator (??)
+
+Certainly! The nullish coalescing operator (??) is used to provide a default value for a variable when the variable is null or undefined. Here's an explanation with a simple coding example:
+
+Example:
+
+javascript
+Copy code
+let name = null;
+let text = "missing";
+let result = name ?? text;
+In this example, we have two variables:
+
+name is assigned the value null.
+text is assigned the string "missing".
+We then use the nullish coalescing operator (??) to assign a value to the result variable.
+
+The ?? operator checks if the value of name is null or undefined.
+If name is null or undefined, it assigns the value of text to result.
+If name is not null or undefined, it assigns the value of name to result.
+In this specific case, since name is null, the nullish coalescing operator assigns the value of text to result. Therefore, result will be "missing".
+
+This operator is helpful for providing default values when dealing with potentially null or undefined variables, ensuring that you have a valid value to work with.
+
+
+>>>>>>>>>>>>>>>9.Optional Chaining Operator
+
+
+The Optional Chaining Operator (?.) is used to access properties or methods of an object, ensuring that if the object is undefined or null, it won't throw an error but instead return undefined. Here's an explanation with a simple coding example:
+
+Example:
+
+javascript
+Copy code
+// Create an object:
+const car = { type: "Fiat", model: "500", color: "white" };
+// Ask for car name:
+document.getElementById("demo").innerHTML = car?.name;
+In this example, we have an object car with properties type, model, and color.
+
+We are trying to access the name property of the car object using the optional chaining operator ?..
+
+If car had a name property, the value of that property would be assigned to document.getElementById("demo").innerHTML. However, in this case, car does not have a name property, so the expression car?.name returns undefined instead of throwing an error.
+
+This operator is particularly useful when you're dealing with nested objects or accessing properties that may or may not exist. It helps you avoid runtime errors and handle cases where properties are missing or objects are not fully defined.
+
+
+>>>>>>>>>>>>>>>>>>>>>>>10.Bitwise operators>>>>>>>>>>>>>>>>>>
+
+Bitwise operators in JavaScript are used to perform operations at the binary level on the individual bits of integer numbers. Here's an explanation of each bitwise operator with a simple coding example:
+
+1. Bitwise AND (&):
+
+The & operator performs a bitwise AND operation on each pair of corresponding bits of the operands.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let y = 1;  // Binary: 0001
+let result = x & y;  // Result: 0001 (Decimal: 1)
+2. Bitwise OR (|):
+
+The | operator performs a bitwise OR operation on each pair of corresponding bits of the operands.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let y = 1;  // Binary: 0001
+let result = x | y;  // Result: 0101 (Decimal: 5)
+3. Bitwise NOT (~):
+
+The ~ operator performs a bitwise NOT operation on each bit of the operand, flipping all bits.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let result = ~x;  // Result: 1010 (Decimal: -6)
+4. Bitwise XOR (^):
+
+The ^ operator performs a bitwise XOR (exclusive OR) operation on each pair of corresponding bits of the operands.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let y = 1;  // Binary: 0001
+let result = x ^ y;  // Result: 0100 (Decimal: 4)
+5. Left Shift (<<):
+
+The << operator shifts the bits of the left operand to the left by the number of positions specified by the right operand.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let result = x << 1;  // Result: 1010 (Decimal: 10)
+6. Right Shift (>>):
+
+The >> operator shifts the bits of the left operand to the right by the number of positions specified by the right operand.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let result = x >> 1;  // Result: 0010 (Decimal: 2)
+7. Unsigned Right Shift (>>>):
+
+The >>> operator shifts the bits of the left operand to the right by the number of positions specified by the right operand, filling with zeros.
+Example:
+javascript
+Copy code
+let x = 5;  // Binary: 0101
+let result = x >>> 1;  // Result: 0010 (Decimal: 2)
+These bitwise operators are used in low-level programming, such as optimizing numerical algorithms and dealing with binary data. They are not commonly used in everyday JavaScript programming but can be useful in specific situations where bitwise operations are required.
+
+
+>>>>>>>>>>>>>>>>>>>>11.The delete Operator:
+
+The delete operator is used to remove a property from an object.
+Example:
+javascript
+Copy code
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+delete person.age; // Removes the 'age' property from 'person' object
+
+
+>>>>>>>>>>>>>>>>>>>>12. The Spread (...) Operator:
+
+The ... operator is used to expand an iterable (e.g., an array) into more elements.
+Example:
+javascript
+Copy code
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const year = [...q1, ...q2]; // Combines the contents of 'q1' and 'q2' into 'year'
+
+
+>>>>>>>>>>>>>>>>>>>>13. The in Operator:
+
+The in operator checks if a property exists in an object and returns true or false.
+Example:
+javascript
+Copy code
+const person = { firstName: "John", lastName: "Doe", age: 50 };
+const hasFirstName = "firstName" in person; // Returns true
+const hasGender = "gender" in person; // Returns false
+
+
+>>>>>>>>>>>>>>>>>>>>14. The instanceof Operator:
+
+The instanceof operator checks if an object is an instance of a specified object or class.
+Example:
+javascript
+Copy code
+const cars = ["Saab", "Volvo", "BMW"];
+const isCarArray = cars instanceof Array; // Returns true
+const isCarObject = cars instanceof Object; // Returns true
+const isCarString = cars instanceof String; // Returns false
+
+
+>>>>>>>>>>>>>>>>>>>>15. The void Operator:
+
+The void operator evaluates an expression and returns undefined.
+Example:
+javascript
+Copy code
+<a href="javascript:void(0);">Useless link</a> // Clicking does nothing
+<a href="javascript:void(document.body.style.backgroundColor='red');">Click me to change the background color</a>
+These operators provide various functionalities for different use cases in JavaScript programming.
+
+
+
+
+=======================JavaScript Statements==============
+
+
+1. break Statement:
+
+The break statement is used to exit a loop or switch statement.
+Example (with a loop):
+javascript
+Copy code
+for (let i = 0; i < 5; i++) {
+  if (i === 3) {
+    break; // Exits the loop when i is 3
+  }
+  console.log(i);
+}
+2. class Statement:
+
+The class statement is used to declare a class in JavaScript (ES6 and later).
+Example:
+javascript
+Copy code
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+}
+3. const Statement:
+
+The const statement is used to declare a variable with a constant (unchangeable) value.
+Example:
+javascript
+Copy code
+const pi = 3.14159265359;
+4. continue Statement:
+
+The continue statement is used to skip the current iteration in a loop and continue with the next iteration.
+Example:
+javascript
+Copy code
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue; // Skips iteration when i is 2
+  }
+  console.log(i);
+}
+5. debugger Statement:
+
+The debugger statement stops the execution of JavaScript and invokes a debugging function if available.
+Example:
+javascript
+Copy code
+function debugFunction() {
+  // Debugging logic here
+}
+debugger; // Stops and invokes the debugging function
+6. do ... while Statement:
+
+The do ... while statement executes a block of statements while a condition is true.
+Example:
+javascript
+Copy code
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+7. for Statement:
+
+The for statement is used to loop through a block of code a specified number of times.
+Example:
+javascript
+Copy code
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+8. for ... in Statement:
+
+The for ... in statement is used to loop through the properties of an object.
+Example:
+javascript
+Copy code
+const person = { firstName: "John", lastName: "Doe", age: 30 };
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+9. for ... of Statement:
+
+The for ... of statement is used to loop through the values of an iterable object (like arrays).
+Example:
+javascript
+Copy code
+const fruits = ["apple", "banana", "cherry"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+These are some of the essential JavaScript statements used for controlling program flow, iteration, and more.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================JSON (JavaScript Object Notation)(,json)============
+1. JSON.stringify() Method:
+
+The JSON.stringify() method is used to convert a JavaScript object into a JSON string.
+Example:
+javascript
+Copy code
+var myObj = { "name": "John", "age": 31, "city": "New York" };
+var myJSON = JSON.stringify(myObj);
+console.log(myJSON);
+// Output: {"name":"John","age":31,"city":"New York"}
+2. JSON.parse() Method:
+
+The JSON.parse() method is used to parse a JSON string and convert it into a JavaScript object.
+Example:
+javascript
+Copy code
+var myJSON = '{"name":"John","age":31,"city":"New York"}';
+var myObj = JSON.parse(myJSON);
+console.log(myObj.name); // Output: John
+3. Valid Data Types in JSON:
+
+In JSON, values can be one of the following data types: string, number, object (containing valid JSON values), array, boolean, or null.
+Example:
+javascript
+Copy code
+var validJSON = {
+  "name": "John",
+  "age": 31,
+  "city": "New York",
+  "isStudent": true,
+  "hobbies": ["Reading", "Gaming"],
+  "address": null
+};
+4. Sending JSON Data:
+
+You can send JSON data by converting a JavaScript object into a JSON string and including it in a URL or a request.
+Example (sending JSON via URL):
+javascript
+Copy code
+var myObj = { "name": "John", "age": 31, "city": "New York" };
+var myJSON = JSON.stringify(myObj);
+window.location = "demo_json.php?x=" + myJSON;
+5. Storing and Retrieving JSON with localStorage:
+
+You can store JSON data in the browser's localStorage for later retrieval.
+Example (storing and retrieving JSON data):
+javascript
+Copy code
+var myObj = { "name": "John", "age": 31, "city": "New York" };
+var myJSON = JSON.stringify(myObj);
+
+// Storing data in localStorage:
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data from localStorage:
+var text = localStorage.getItem("testJSON");
+var obj = JSON.parse(text);
+console.log(obj.name); // Output: John
+JSON is a versatile format for data interchange, and these methods make it easy to work with JSON data in JavaScript.
+
+
+==============================Typed Array Methods and Properties======
+
+1. BYTES_PER_ELEMENT Property:
+
+The BYTES_PER_ELEMENT property returns the size in bytes of each element in the typed array.
+Example:
+javascript
+Copy code
+const intArray = new Int32Array(4);
+console.log(intArray.BYTES_PER_ELEMENT); // Output: 4 (4 bytes per element for Int32Array)
+2. fill() Method:
+
+The fill() method is used to fill all elements of the typed array with a specified value.
+Example:
+javascript
+Copy code
+const intArray = new Int32Array(5);
+intArray.fill(42);
+console.log(intArray); // Output: Int32Array [42, 42, 42, 42, 42]
+3. find() Method:
+
+The find() method returns the first element in the typed array that satisfies a specified condition.
+Example:
+javascript
+Copy code
+const intArray = new Int32Array([10, 20, 30, 40, 50]);
+const result = intArray.find(element => element > 30);
+console.log(result); // Output: 40 (First element greater than 30)
+4. name Property:
+
+The name property returns the name of the typed array constructor.
+Example:
+javascript
+Copy code
+const floatArray = new Float32Array(3);
+console.log(floatArray.name); // Output: Float32Array
+5. of() Method:
+
+The of() method is used to create a new typed array from an array-like or iterable object.
+Example:
+javascript
+Copy code
+const newArray = Int16Array.of(1, 2, 3, 4, 5);
+console.log(newArray); // Output: Int16Array [1, 2, 3, 4, 5]
+6. some() Method:
+
+The some() method tests whether at least one element in the typed array satisfies a specified condition.
+Example:
+javascript
+Copy code
+const intArray = new Int32Array([10, 20, 30, 40, 50]);
+const result = intArray.some(element => element > 30);
+console.log(result); // Output: true (At least one element is greater than 30)
+Typed Arrays in JavaScript provide a way to work with binary data and numerical values more efficiently, and these methods and properties are useful for performing operations on typed arrays.
+
+
+
+
+=============================Window Object Properties:==========
+
+closed Property:
+
+Returns true if the window is closed.
+Example:
+javascript
+Copy code
+if (window.closed) {
+  console.log('Window is closed');
+} else {
+  console.log('Window is open');
+}
+console Property:
+
+Returns the Console object for the window.
+Example:
+javascript
+Copy code
+window.console.log('This is a message in the console.');
+document Property:
+
+Returns the Document object for the window.
+Example:
+javascript
+Copy code
+const bodyElement = window.document.body;
+localStorage Property:
+
+Allows you to save key/value pairs in a web browser with no expiration date.
+Example:
+javascript
+Copy code
+window.localStorage.setItem('username', 'john_doe');
+const storedUsername = window.localStorage.getItem('username');
+location Property:
+
+Returns the Location object for the window.
+Example:
+javascript
+Copy code
+const currentURL = window.location.href;
+navigator Property:
+
+Returns the Navigator object for the window.
+Example:
+javascript
+Copy code
+const browserName = window.navigator.userAgent;
+
+
+==================Window Object Methods:====
+
+alert() Method:
+
+Displays an alert box with a message and an OK button.
+Example:
+javascript
+Copy code
+window.alert('This is an alert message.');
+confirm() Method:
+
+Displays a dialog box with a message and OK and Cancel buttons.
+Example:
+javascript
+Copy code
+const userConfirmed = window.confirm('Are you sure?');
+open() Method:
+
+Opens a new browser window.
+Example:
+javascript
+Copy code
+const newWindow = window.open('https://www.example.com', 'Example Website', 'width=500,height=300');
+print() Method:
+
+Prints the content of the current window.
+Example:
+javascript
+Copy code
+window.print();
+setTimeout() Method:
+
+Calls a function or evaluates an expression after a specified number of milliseconds.
+Example:
+javascript
+Copy code
+function greet() {
+  console.log('Hello, world!');
+}
+window.setTimeout(greet, 2000); // Calls greet() after 2 seconds
+These are just a few examples of properties and methods of the window object in JavaScript. The window object provides access to various aspects of the browser environment, allowing you to interact with and manipulate the browser window and its content.
+
+
+
+==============================Location Object Properties:===============
+
+hash Property:
+
+Sets or returns the anchor part (#) of a URL.
+Example:
+javascript
+Copy code
+const anchor = window.location.hash; // Gets the anchor part of the URL
+host Property:
+
+Sets or returns the hostname and port number of a URL.
+Example:
+javascript
+Copy code
+const hostnameAndPort = window.location.host; // Gets the hostname and port
+hostname Property:
+
+Sets or returns the hostname of a URL.
+Example:
+javascript
+Copy code
+const hostname = window.location.hostname; // Gets the hostname
+href Property:
+
+Sets or returns the entire URL.
+Example:
+javascript
+Copy code
+const fullURL = window.location.href; // Gets the entire URL
+origin Property:
+
+Returns the protocol, hostname, and port number of a URL.
+Example:
+javascript
+Copy code
+const origin = window.location.origin; // Gets the origin (e.g., "https://www.example.com")
+pathname Property:
+
+Sets or returns the pathname of a URL.
+Example:
+javascript
+Copy code
+const path = window.location.pathname; // Gets the pathname (e.g., "/products/index.html")
+port Property:
+
+Sets or returns the port number of a URL.
+Example:
+javascript
+Copy code
+const port = window.location.port; // Gets the port number (e.g., "80" or "443")
+protocol Property:
+
+Sets or returns the protocol of a URL.
+Example:
+javascript
+Copy code
+const protocol = window.location.protocol; // Gets the protocol (e.g., "https:")
+search Property:
+
+Sets or returns the querystring part of a URL.
+Example:
+javascript
+Copy code
+const querystring = window.location.search; // Gets the querystring part (e.g., "?id=123&name=example")
+Location Object Methods:
+
+assign() Method:
+
+Loads a new document by navigating to the specified URL.
+Example:
+javascript
+Copy code
+window.location.assign('https://www.example.com'); // Navigates to a new URL
+reload() Method:
+
+Reloads the current document.
+Example:
+javascript
+Copy code
+window.location.reload(); // Reloads the current page
+replace() Method:
+
+Replaces the current document with a new one, without creating a new entry in the browser's history.
+Example:
+javascript
+Copy code
+window.location.replace('https://www.example.com'); // Replaces the current URL without history entry
+These properties and methods allow you to manipulate and access various parts of the current URL in your JavaScript code.
+
+
+==========================Screen Object Properties:
+
+availHeight Property:
+
+Returns the height of the screen (excluding the Windows Taskbar) in pixels.
+Example:
+javascript
+Copy code
+const screenHeight = window.screen.availHeight; // Gets the screen height (excluding Taskbar)
+availWidth Property:
+
+Returns the width of the screen (excluding the Windows Taskbar) in pixels.
+Example:
+javascript
+Copy code
+const screenWidth = window.screen.availWidth; // Gets the screen width (excluding Taskbar)
+colorDepth Property:
+
+Returns the bit depth of the color palette for displaying images.
+Example:
+javascript
+Copy code
+const colorDepth = window.screen.colorDepth; // Gets the color depth (e.g., 24 bits)
+height Property:
+
+Returns the total height of the screen in pixels.
+Example:
+javascript
+Copy code
+const totalScreenHeight = window.screen.height; // Gets the total screen height
+pixelDepth Property:
+
+Returns the color resolution (in bits per pixel) of the screen.
+Example:
+javascript
+Copy code
+const pixelDepth = window.screen.pixelDepth; // Gets the pixel depth (e.g., 24 bits per pixel)
+width Property:
+
+Returns the total width of the screen in pixels.
+Example:
+javascript
+Copy code
+const totalScreenWidth = window.screen.width; // Gets the total screen width
+These properties provide information about the visitor's screen, such as its dimensions and color capabilities, which can be used in web applications to optimize content layout and presentation based on the user's screen size and color settings.
+
+
+
+
+
+
+
+=========================HTML DOM Objects with Examples==========
+>>>>>>>>>>>>>>>HTML DOM Documents>>>>>
+
+Properties:
+
+activeElement Property:
+
+Returns the currently focused element in the document.
+Example:
+javascript
+Copy code
+const focusedElement = document.activeElement;
+addEventListener() Method:
+
+Attaches an event handler to the document.
+Example:
+javascript
+Copy code
+document.addEventListener("click", function() {
+  console.log("Document was clicked.");
+});
+adoptNode() Method:
+
+Adopts a node from another document.
+Example:
+javascript
+Copy code
+const anotherDocument = someOtherDocument();
+const nodeToAdopt = anotherDocument.querySelector("div");
+document.adoptNode(nodeToAdopt);
+anchors Property (Deprecated):
+
+Deprecated property.
+Used to return a collection of all anchor elements in the document.
+applets Property (Deprecated):
+
+Deprecated property.
+Used to return a collection of all applet elements in the document.
+baseURI Property:
+
+Returns the absolute base URI of a document.
+Example:
+javascript
+Copy code
+const baseURI = document.baseURI;
+body Property:
+
+Sets or returns the document's body (the <body> element).
+Example:
+javascript
+Copy code
+document.body.style.backgroundColor = "lightblue"; // Set background color of the body
+characterSet Property:
+
+Returns the character encoding for the document.
+Example:
+javascript
+Copy code
+const encoding = document.characterSet; // Get character encoding (e.g., "UTF-8")
+charset Property (Deprecated):
+
+Deprecated property.
+Used to return the character encoding for the document.
+close() Method:
+
+Closes the output stream previously opened with document.open().
+Example:
+javascript
+Copy code
+document.close(); // Close the document stream
+cookie Property:
+
+Returns all name/value pairs of cookies in the document.
+Example:
+javascript
+Copy code
+const cookies = document.cookie; // Get all cookies
+createAttribute() Method:
+
+Creates an attribute node.
+Example:
+javascript
+Copy code
+const newAttribute = document.createAttribute("data-custom"); // Create a new attribute node
+createComment() Method:
+
+Creates a Comment node with the specified text.
+Example:
+javascript
+Copy code
+const comment = document.createComment("This is a comment."); // Create a comment node
+createDocumentFragment() Method:
+
+Creates an empty DocumentFragment node.
+Example:
+javascript
+Copy code
+const fragment = document.createDocumentFragment(); // Create an empty DocumentFragment
+createElement() Method:
+
+Creates an Element node.
+Example:
+javascript
+Copy code
+const newDiv = document.createElement("div"); // Create a new <div> element
+createEvent() Method:
+
+Creates a new event.
+Example:
+javascript
+Copy code
+const newEvent = document.createEvent("Event"); // Create a new Event object
+createTextNode() Method:
+
+Creates a Text node.
+Example:
+javascript
+Copy code
+const newText = document.createTextNode("Hello, World!"); // Create a new text node
+defaultView Property:
+
+Returns the window object associated with a document or null if none is available.
+Example:
+javascript
+Copy code
+const windowObject = document.defaultView; // Get the window object
+designMode Property:
+
+Controls whether the entire document should be editable or not.
+Example:
+javascript
+Copy code
+document.designMode = "on"; // Enable design mode for editing
+doctype Property:
+
+Returns the Document Type Declaration associated with the document.
+Example:
+javascript
+Copy code
+const doctype = document.doctype; // Get the document type declaration
+documentElement Property:
+
+Returns the Document Element of the document (the <html> element).
+Example:
+javascript
+Copy code
+const documentElement = document.documentElement; // Get the <html> element
+documentMode Property (Deprecated):
+
+Deprecated property.
+Used to return the document's compatibility mode.
+documentURI Property:
+
+Sets or returns the location of the document.
+Example:
+javascript
+Copy code
+const documentURL = document.documentURI; // Get the URL of the document
+domain Property:
+
+Returns the domain name of the server that loaded the document.
+Example:
+javascript
+Copy code
+const domainName = document.domain; // Get the domain name
+domConfig Property (Deprecated):
+
+Deprecated property.
+Used to return a DOM Configuration object associated with the document.
+embeds Property:
+
+Returns a collection of all <embed> elements in the document.
+Example:
+javascript
+Copy code
+const embedElements = document.embeds; // Get all <embed> elements
+execCommand() Method (Deprecated):
+
+Deprecated method.
+Used to execute a command on the document.
+forms Property:
+
+Returns a collection of all <form> elements in the document.
+Example:
+javascript
+Copy code
+const formElements = document.forms; // Get all <form> elements
+getElementById() Method:
+
+Returns the element that has the ID attribute with the specified value.
+Example:
+javascript
+Copy code
+const elementById = document.getElementById("myElement"); // Get element by ID
+getElementsByClassName() Method:
+
+Returns an HTMLCollection containing all elements with the specified class name.
+Example:
+javascript
+Copy code
+const elementsByClassName = document.getElementsByClassName("myClass"); // Get elements by class name
+getElementsByName() Method:
+
+Returns a live NodeList containing all elements with the specified name.
+Example:
+javascript
+Copy code
+const elementsByName = document.getElementsByName("myName"); // Get elements by name
+getElementsByTagName() Method:
+
+Returns an HTMLCollection containing all elements with the specified tag name.
+Example:
+javascript
+Copy code
+const elementsByTagName = document.getElementsByTagName("p"); // Get elements by tag name
+hasFocus() Method:
+
+Returns a Boolean value indicating whether the document has focus.
+Example:
+javascript
+Copy code
+const hasFocus = document.hasFocus(); // Check if the document has focus
+head Property:
+
+Returns the <head> element of the document.
+Example:
+javascript
+Copy code
+const headElement = document.head; // Get the <head> element
+images Property:
+
+Returns a collection of all <img> elements in the document.
+Example:
+javascript
+Copy code
+const imageElements = document.images; // Get all <img> elements
+implementation Property:
+
+Returns the DOMImplementation object that handles this document.
+Example:
+javascript
+Copy code
+const domImplementation = document.implementation; // Get the DOMImplementation object
+importNode() Method:
+
+Imports a node from another document.
+Example:
+javascript
+Copy code
+const anotherDocument = someOtherDocument();
+const nodeToImport = anotherDocument.querySelector("div");
+const importedNode = document.importNode(nodeToImport, true);
+inputEncoding Property (Deprecated):
+
+Deprecated property.
+Used to return the character encoding for the input stream.
+lastModified Property:
+
+Returns the date and time the document was last modified.
+Example:
+javascript
+Copy code
+const lastModified = document.lastModified; // Get the last modification date
+links Property:
+
+Returns a collection of all <a> and <area> elements in the document that have an href attribute.
+Example:
+javascript
+Copy code
+const linkElements = document.links; // Get all <a> and <area> elements with href attributes
+normalize() Method:
+
+Removes empty Text nodes, and joins adjacent nodes.
+Example:
+javascript
+Copy code
+const someElement = document.getElementById("myElement");
+someElement.normalize(); // Normalize the content of the element
+normalizeDocument() Method (Deprecated):
+
+Deprecated method.
+Used to normalize the document's structure.
+open() Method:
+
+Opens an HTML output stream to collect output from document.write().
+Example:
+javascript
+Copy code
+document.open(); // Open the document stream
+querySelector() Method:
+
+Returns the first element that matches a specified CSS selector(s) in the document.
+Example:
+javascript
+Copy code
+const firstMatch = document.querySelector(".myClass"); // Get the first element with class "myClass"
+querySelectorAll() Method:
+
+Returns a static NodeList containing all elements that match a specified CSS selector(s) in the document.
+Example:
+javascript
+Copy code
+const allMatches = document.querySelectorAll("a[href]"); // Get all <a> elements with href attributes
+readyState Property:
+
+Returns the (loading) status of the document.
+Example:
+javascript
+Copy code
+const loadingStatus = document.readyState; // Get the document's loading status
+referrer Property:
+
+Returns the URL of the document that loaded the current document.
+Example:
+javascript
+Copy code
+const referringURL = document.referrer; // Get the referring URL
+removeEventListener() Method:
+
+Removes an event handler from the document that has been attached with the addEventListener() method.
+Example:
+javascript
+Copy code
+const myFunction = () => {
+  // Your event handler function
+};
+
+document.addEventListener("click", myFunction);
+document.removeEventListener("click", myFunction); // Remove the event listener
+renameNode() Method (Deprecated):
+
+Deprecated method.
+Used to rename a node.
+scripts Property:
+
+Returns a collection of <script> elements in the document.
+Example:
+javascript
+Copy code
+const scriptElements = document.scripts; // Get all <script> elements
+strictErrorChecking Property (Deprecated):
+
+Deprecated property.
+Used to return a Boolean value indicating whether strict error checking is enabled.
+title Property:
+
+Sets or returns the title of the document.
+Example:
+javascript
+Copy code
+document.title = "My Page Title"; // Set the document's title
+URL Property:
+
+Returns the full URL of the HTML document.
+Example:
+javascript
+Copy code
+const documentURL = document.URL; // Get the full URL of the document
+write() Method:
+
+Writes HTML expressions or JavaScript code to a document.
+Example:
+javascript
+Copy code
+document.write("<p>Hello, World!</p>"); // Write HTML to the document
+writeln() Method:
+
+Same as write(), but adds a newline character after each statement.
+Example:
+javascript
+Copy code
+document.writeln("<p>Hello, World!</p>"); // Write HTML with newline to the document
+These properties and methods provide extensive control and access to the document's structure and content within a web page.
+
+
+
+
+
+
+
+
+====================Element object in the HTML DOM(,domElements)=============
+
+Properties:
+
+accessKey Property:
+
+Sets or returns the accesskey attribute of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.accessKey = "H"; // Sets the access key to 'H'
+attributes Property:
+
+Returns a NamedNodeMap of an element's attributes.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const attributeList = myElement.attributes;
+childElementCount Property:
+
+Returns the number of child elements an element has.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const childCount = myDiv.childElementCount;
+childNodes Property:
+
+Returns a NodeList of an element's child nodes.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const childNodesList = myElement.childNodes;
+children Property:
+
+Returns an HTMLCollection of an element's child elements.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const childElements = myDiv.children;
+classList Property:
+
+Returns the class name(s) of an element as a DOMTokenList.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.classList.add("active"); // Adds the 'active' class
+className Property:
+
+Sets or returns the value of the class attribute of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.className = "highlighted"; // Sets the class attribute to 'highlighted'
+clientHeight Property:
+
+Returns the height of an element, including padding, in pixels.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const height = myElement.clientHeight;
+clientLeft Property:
+
+Returns the width of the left border of an element, in pixels.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const leftBorderWidth = myElement.clientLeft;
+clientTop Property:
+
+Returns the width of the top border of an element, in pixels.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const topBorderWidth = myElement.clientTop;
+clientWidth Property:
+
+Returns the width of an element, including padding, in pixels.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const width = myElement.clientWidth;
+dir Property:
+
+Sets or returns the value of the dir attribute of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.dir = "rtl"; // Sets the text direction to right-to-left
+firstChild Property:
+
+Returns the first child node of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const firstChild = myElement.firstChild;
+firstElementChild Property:
+
+Returns the first child element of an element.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const firstChildElement = myDiv.firstElementChild;
+id Property:
+
+Sets or returns the value of the id attribute of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const elementId = myElement.id;
+innerHTML Property:
+
+Sets or returns the content of an element, including HTML markup.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.innerHTML = "<p>Hello, <b>world</b>!</p>";
+innerText Property:
+
+Sets or returns the text content of a node and its descendants.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.innerText = "New text content";
+lang Property:
+
+Sets or returns the value of the lang attribute of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.lang = "fr"; // Sets the language to French
+lastChild Property:
+
+Returns the last child node of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const lastChild = myElement.lastChild;
+lastElementChild Property:
+
+Returns the last child element of an element.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const lastChildElement = myDiv.lastElementChild;
+nextSibling Property:
+
+Returns the next node at the same node tree level.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const nextNode = myElement.nextSibling;
+nextElementSibling Property:
+
+Returns the next element at the same node tree level.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const nextElement = myDiv.nextElementSibling;
+nodeName Property:
+
+Returns the name of a node.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const nodeName = myElement.nodeName;
+nodeType Property:
+
+Returns the node type of a node.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const nodeType = myElement.nodeType;
+nodeValue Property:
+
+Sets or returns the value of a node.
+Example:
+javascript
+Copy code
+const myTextNode = document.createTextNode("Hello, world!");
+const textValue = myTextNode.nodeValue;
+offsetHeight Property:
+
+Returns the entire height of an element, including padding, border, and scrollbar, in pixels.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const offsetHeight = myElement.offsetHeight;
+offsetWidth Property:
+
+Returns the entire width of an element, including padding, border, and scrollbar, in pixels.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const offsetWidth = myElement.offsetWidth;
+offsetLeft Property:
+
+Returns the horizontal offset position of an element, in pixels, relative to its offset parent.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const offsetLeft = myElement.offsetLeft;
+offsetParent Property:
+
+Returns the offset container of an element, which is the closest positioned ancestor.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const offsetParent = myElement.offsetParent;
+offsetTop Property:
+
+Returns the vertical offset position of an element, in pixels, relative to its offset parent.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const offsetTop = myElement.offsetTop;
+outerHTML Property:
+
+Sets or returns the content of an element, including the start tag and the end tag.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.outerHTML = "<div>New content</div>";
+outerText Property:
+
+Sets or returns the outer text content of a node and its descendants.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.outerText = "New outer text";
+parentElement Property:
+
+Returns the parent element node of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const parentElement = myElement.parentElement;
+previousSibling Property:
+
+Returns the previous node at the same node tree level.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const previousNode = myElement.previousSibling;
+previousElementSibling Property:
+
+Returns the previous element at the same node tree level.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const previousElement = myDiv.previousElementSibling;
+tagName Property:
+
+Returns the tag name of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const tagName = myElement.tagName;
+textContent Property:
+
+Sets or returns the textual content of a node and its descendants.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.textContent = "New text content";
+title Property:
+
+Sets or returns the value of the title attribute of an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.title = "Tooltip text";
+Methods:
+
+addEventListener() Method:
+
+Attaches an event handler to an element.
+Example:
+javascript
+Copy code
+const myButton = document.getElementById("myButton");
+myButton.addEventListener("click", () => {
+  alert("Button clicked!");
+});
+appendChild() Method:
+
+Adds (appends) a new child node to an element.
+Example:
+javascript
+Copy code
+const myDiv = document.getElementById("myDiv");
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "New paragraph added!";
+myDiv.appendChild(newParagraph);
+blur() Method:
+
+Removes focus from an element.
+Example:
+javascript
+Copy code
+const myInput = document.getElementById("myInput");
+myInput.blur(); // Remove focus from the input field
+click() Method:
+
+Simulates a mouse-click on an element.
+Example:
+javascript
+Copy code
+const myButton = document.getElementById("myButton");
+myButton.click(); // Simulate a button click
+cloneNode() Method:
+
+Clones an element.
+Example:
+javascript
+Copy code
+const originalElement = document.getElementById("originalElement");
+const clonedElement = originalElement.cloneNode(true); // Clone with children
+closest() Method:
+
+Searches the DOM tree for the closest element that matches a CSS selector.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const closestDiv = myElement.closest("div");
+compareDocumentPosition() Method:
+
+Compares the document position of two elements.
+Example:
+javascript
+Copy code
+const element1 = document.getElementById("element1");
+const element2 = document.getElementById("element2");
+const position = element1.compareDocumentPosition(element2);
+contains() Method:
+
+Returns true if a node is a descendant of a node.
+Example:
+javascript
+Copy code
+const parentElement = document.getElementById("parentElement");
+const childElement = document.getElementById("childElement");
+const isDescendant = parentElement.contains(childElement);
+insertAdjacentElement() Method:
+
+Inserts a new HTML element at a position relative to an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const newElement = document.createElement("div");
+myElement.insertAdjacentElement("beforebegin", newElement); // Insert before the element
+insertAdjacentHTML() Method:
+
+Inserts an HTML formatted text at a position relative to an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.insertAdjacentHTML("afterend", "<p>Inserted paragraph</p>"); // Insert after the element
+insertAdjacentText() Method:
+
+Inserts text into a position relative to an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.insertAdjacentText("beforebegin", "Inserted text"); // Insert before the element
+normalize() Method:
+
+Joins adjacent text nodes and removes empty text nodes in an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.normalize(); // Normalize text nodes within the element
+remove() Method:
+
+Removes an element from the DOM.
+Example:
+javascript
+Copy code
+const elementToRemove = document.getElementById("elementToRemove");
+elementToRemove.remove(); // Remove the element from the DOM
+removeAttribute() Method:
+
+Removes an attribute from an element.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.removeAttribute("data-custom"); // Remove the 'data-custom' attribute
+removeAttributeNode() Method:
+
+Removes an attribute node, and returns the removed node.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const attributeNode = myElement.getAttributeNode("data-custom");
+myElement.removeAttributeNode(attributeNode); // Remove the 'data-custom' attribute node
+removeChild() Method:
+
+Removes a child node from an element.
+Example:
+javascript
+Copy code
+const myParentElement = document.getElementById("myParentElement");
+const childElementToRemove = document.getElementById("childElementToRemove");
+myParentElement.removeChild(childElementToRemove);
+removeEventListener() Method:
+
+Removes an event handler that has been attached with the addEventListener() method.
+Example:
+javascript
+Copy code
+const myButton = document.getElementById("myButton");
+const clickHandler = () => {
+  alert("Button clicked!");
+};
+myButton.addEventListener("click", clickHandler);
+myButton.removeEventListener("click", clickHandler); // Remove the event handler
+replaceChild() Method:
+
+Replaces a child node in an element.
+Example:
+javascript
+Copy code
+const myParentElement = document.getElementById("myParentElement");
+const oldChild = document.getElementById("oldChild");
+const newChild = document.getElementById("newChild");
+myParentElement.replaceChild(newChild, oldChild);
+scrollIntoView() Method:
+
+Scrolls the element into the visible area of the browser window.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.scrollIntoView();
+setAttribute() Method:
+
+Sets or changes an attribute's value.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.setAttribute("data-custom", "new-value"); // Set the 'data-custom' attribute
+setAttributeNode() Method:
+
+Sets or changes an attribute node.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const attributeNode = document.createAttribute("data-custom");
+attributeNode.value = "new-value";
+myElement.setAttributeNode(attributeNode); // Set the 'data-custom' attribute node
+scrollLeft Property:
+
+Sets or returns the number of pixels an element's content is scrolled horizontally.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.scrollLeft = 100; // Scroll 100 pixels to the right
+scrollTop Property:
+
+Sets or returns the number of pixels an element's content is scrolled vertically.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+myElement.scrollTop = 50; // Scroll 50 pixels down
+toString() Method:
+
+Converts an element to a string.
+Example:
+javascript
+Copy code
+const myElement = document.getElementById("myElement");
+const elementString = myElement.toString();
+These are some of the most commonly used properties and methods of the Element object in the HTML DOM. You can use these properties and methods to interact with and manipulate HTML elements on a web page.
+
+
+===================HTML DOM Attributes(,domAttributes)==============
+  Attribute Properties:
+
+isId (Deprecated):
+
+Indicates if the attribute is of type "id." Deprecated and not recommended for use.
+name Property:
+
+Returns an attribute's name.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attribute = element.getAttributeNode("data-custom");
+const attributeName = attribute.name;
+value Property:
+
+Sets or returns an attribute's value.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attribute = element.getAttributeNode("data-custom");
+const attributeValue = attribute.value;
+specified Property:
+
+Returns true if the attribute is specified (explicitly set in the HTML).
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attribute = element.getAttributeNode("data-custom");
+const isSpecified = attribute.specified;
+NamedNodeMap Properties and Methods:
+
+getNamedItem() Method:
+
+Returns an attribute node (by name) from a NamedNodeMap.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attributes = element.attributes; // NamedNodeMap of all attributes
+const customAttribute = attributes.getNamedItem("data-custom");
+item() Method:
+
+Returns an attribute node (by index) from a NamedNodeMap.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attributes = element.attributes; // NamedNodeMap of all attributes
+const firstAttribute = attributes.item(0);
+length Property:
+
+Returns the number of attributes in a NamedNodeMap.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attributes = element.attributes; // NamedNodeMap of all attributes
+const numberOfAttributes = attributes.length;
+removeNamedItem() Method:
+
+Removes an attribute (node) by name from a NamedNodeMap.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attributes = element.attributes; // NamedNodeMap of all attributes
+attributes.removeNamedItem("data-custom");
+setNamedItem() Method:
+
+Sets an attribute (node) by name in a NamedNodeMap.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+const attributes = element.attributes; // NamedNodeMap of all attributes
+const newAttribute = document.createAttribute("data-new");
+newAttribute.value = "new-value";
+attributes.setNamedItem(newAttribute);
+These properties and methods allow you to work with HTML attributes in the DOM, retrieve their values, check if they are specified, and manipulate them as needed in your JavaScript code.
+
+
+
+
+======================HTML DOM Events====================
+
+abort:
+
+Description: The loading of a media is aborted.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("abort", () => {
+  console.log("Loading aborted");
+});
+afterprint:
+
+Description: A page has started printing.
+Example:
+javascript
+Copy code
+window.addEventListener("afterprint", () => {
+  console.log("Page started printing");
+});
+animationend:
+
+Description: A CSS animation has completed.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("animationend", () => {
+  console.log("Animation completed");
+});
+animationiteration:
+
+Description: A CSS animation is repeated.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("animationiteration", () => {
+  console.log("Animation iteration");
+});
+animationstart:
+
+Description: A CSS animation has started.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("animationstart", () => {
+  console.log("Animation started");
+});
+beforeprint:
+
+Description: A page is about to be printed.
+Example:
+javascript
+Copy code
+window.addEventListener("beforeprint", () => {
+  console.log("Page about to be printed");
+});
+beforeunload:
+
+Description: Before a document is about to be unloaded.
+Example:
+javascript
+Copy code
+window.addEventListener("beforeunload", (event) => {
+  event.preventDefault();
+  event.returnValue = "";
+  console.log("Document is about to unload");
+});
+blur:
+
+Description: An element loses focus.
+Example:
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("blur", () => {
+  console.log("Input lost focus");
+});
+canplay:
+
+Description: The browser can start playing a media (has buffered enough to begin).
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("canplay", () => {
+  console.log("Media can start playing");
+});
+canplaythrough:
+
+Description: The browser can play through a media without stopping for buffering.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("canplaythrough", () => {
+  console.log("Media can play through without buffering");
+});
+change:
+
+Description: The content of a form element has changed.
+Example:
+javascript
+Copy code
+const select = document.getElementById("mySelect");
+select.addEventListener("change", () => {
+  console.log("Select option changed");
+});
+click:
+
+Description: An element is clicked on.
+Example:
+javascript
+Copy code
+const button = document.getElementById("myButton");
+button.addEventListener("click", () => {
+  console.log("Button clicked");
+});
+contextmenu:
+
+Description: An element is right-clicked to open a context menu.
+Example:
+javascript
+Copy code
+const contextMenu = document.getElementById("myContextMenu");
+contextMenu.addEventListener("contextmenu", () => {
+  console.log("Context menu opened");
+});
+copy:
+
+Description: The content of an element is copied.
+Example:
+javascript
+Copy code
+const text = document.getElementById("myText");
+text.addEventListener("copy", () => {
+  console.log("Text copied");
+});
+cut:
+
+Description: The content of an element is cut.
+Example:
+javascript
+Copy code
+const text = document.getElementById("myText");
+text.addEventListener("cut", () => {
+  console.log("Text cut");
+});
+dblclick:
+
+Description: An element is double-clicked.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("dblclick", () => {
+  console.log("Element double-clicked");
+});
+drag:
+
+Description: An element is being dragged.
+Example:
+javascript
+Copy code
+const draggableElement = document.getElementById("draggable");
+draggableElement.addEventListener("drag", () => {
+  console.log("Element is being dragged");
+});
+dragend:
+
+Description: Dragging of an element has ended.
+Example:
+javascript
+Copy code
+const draggableElement = document.getElementById("draggable");
+draggableElement.addEventListener("dragend", () => {
+  console.log("Dragging ended");
+});
+dragenter:
+
+Description: A dragged element enters the drop target.
+Example:
+javascript
+Copy code
+const dropTarget = document.getElementById("dropTarget");
+dropTarget.addEventListener("dragenter", () => {
+  console.log("Dragged element entered the drop target");
+});
+dragleave:
+
+Description: A dragged element leaves the drop target.
+Example:
+javascript
+Copy code
+const dropTarget = document.getElementById("dropTarget");
+dropTarget.addEventListener("dragleave", () => {
+  console.log("Dragged element left the drop target");
+});
+dragover:
+
+Description: A dragged element is over the drop target.
+Example:
+javascript
+Copy code
+const dropTarget = document.getElementById("dropTarget");
+dropTarget.addEventListener("dragover", () => {
+  console.log("Dragged element is over the drop target");
+});
+dragstart:
+
+Description: Dragging of an element has started.
+Example:
+javascript
+Copy code
+const draggableElement = document.getElementById("draggable");
+draggableElement.addEventListener("dragstart", () => {
+  console.log("Dragging started");
+});
+drop:
+
+Description: A dragged element is dropped on the target.
+Example:
+javascript
+Copy code
+const dropTarget = document.getElementById("dropTarget");
+dropTarget.addEventListener("drop", () => {
+  console.log("Element dropped on the target");
+});
+durationchange:
+
+Description: The duration of a media is changed.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("durationchange", () => {
+  console.log("Media duration changed");
+});
+ended:
+
+Description: A media has reached the end.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("ended", () => {
+  console.log("Media has ended");
+});
+error:
+
+Description: An error has occurred while loading a file.
+Example:
+javascript
+Copy code
+const img = document.getElementById("myImage");
+img.addEventListener("error", () => {
+  console.log("Error occurred while loading image");
+});
+focus:
+
+Description: An element gets focus.
+Example:
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("focus", () => {
+  console.log("Input element focused");
+});
+focusin:
+
+Description: An element is about to get focus.
+Example:
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("focusin", () => {
+  console.log("Input element is about to get focus");
+});
+focusout:
+
+Description: An element is about to lose focus.
+Example:
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("focusout", () => {
+  console.log("Input element is about to lose focus");
+});
+fullscreenchange:
+
+Description: An element is displayed in fullscreen mode.
+Example:
+javascript
+Copy code
+document.addEventListener("fullscreenchange", () => {
+  console.log("Entered/exited fullscreen mode");
+});
+fullscreenerror:
+
+Description: An element cannot be displayed in fullscreen mode.
+Example:
+javascript
+Copy code
+document.addEventListener("fullscreenerror", () => {
+  console.log("Fullscreen mode cannot be entered");
+});
+hashchange:
+
+Description: There have been changes to the anchor part of a URL.
+Example:
+javascript
+Copy code
+window.addEventListener("hashchange", () => {
+  console.log("Hash part of URL changed");
+});
+input:
+
+Description: An element gets user input.
+Example:
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("input", () => {
+  console.log("Input received");
+});
+invalid:
+
+Description: An element is invalid.
+Example:
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("invalid", () => {
+  console.log("Input is invalid");
+});
+keydown:
+
+Description: A key is pressed down.
+Example:
+javascript
+Copy code
+document.addEventListener("keydown", (event) => {
+  console.log(`Key pressed: ${event.key}`);
+});
+keypress:
+
+Description: A key is pressed.
+Example:
+javascript
+Copy code
+document.addEventListener("keypress", (event) => {
+  console.log(`Key pressed: ${event.key}`);
+});
+keyup:
+
+Description: A key is released.
+Example:
+javascript
+Copy code
+document.addEventListener("keyup", (event) => {
+  console.log(`Key released: ${event.key}`);
+});
+load:
+
+Description: An object has loaded.
+Example:
+javascript
+Copy code
+const image = document.getElementById("myImage");
+image.addEventListener("load", () => {
+  console.log("Image loaded");
+});
+loadeddata:
+
+Description: Media data is loaded.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("loadeddata", () => {
+  console.log("Media data loaded");
+});
+loadedmetadata:
+
+Description: Metadata (like dimensions and duration) are loaded.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("loadedmetadata", () => {
+  console.log("Metadata loaded");
+});
+loadstart:
+
+Description: The browser starts looking for the specified media.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("loadstart", () => {
+  console.log("Loading started");
+});
+message:
+
+Description: A message is received through the event source.
+Example:
+javascript
+Copy code
+window.addEventListener("message", (event) => {
+  console.log(`Received message: ${event.data}`);
+});
+mousedown:
+
+Description: The mouse button is pressed over an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mousedown", () => {
+  console.log("Mouse button pressed");
+});
+mouseenter:
+
+Description: The pointer is moved onto an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mouseenter", () => {
+  console.log("Mouse entered element");
+});
+mouseleave:
+
+Description: The pointer is moved out of an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mouseleave", () => {
+  console.log("Mouse left element");
+});
+mousemove:
+
+Description: The pointer is moved over an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mousemove", () => {
+  console.log("Mouse moved over element");
+});
+mouseover:
+
+Description: The pointer is moved onto an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mouseover", () => {
+  console.log("Mouse over element");
+});
+mouseout:
+
+Description: The pointer is moved out of an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mouseout", () => {
+  console.log("Mouse out of element");
+});
+mouseup:
+
+Description: A user releases a mouse button over an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mouseup", () => {
+  console.log("Mouse button released");
+});
+mousewheel:
+
+Description: Deprecated. Use the wheel event instead.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("mousewheel", () => {
+  console.log("Mouse wheel event");
+});
+offline:
+
+Description: The browser starts working offline.
+Example:
+javascript
+Copy code
+window.addEventListener("offline", () => {
+  console.log("Browser is offline");
+});
+online:
+
+Description: The browser starts working online.
+Example:
+javascript
+Copy code
+window.addEventListener("online", () => {
+  console.log("Browser is online");
+});
+open:
+
+Description: A connection with the event source is opened.
+Example:
+javascript
+Copy code
+const eventSource = new EventSource("my-events");
+eventSource.addEventListener("open", () => {
+  console.log("Connection opened with the event source");
+});
+pagehide:
+
+Description: User navigates away from a webpage.
+Example:
+javascript
+Copy code
+window.addEventListener("pagehide", () => {
+  console.log("Page is being hidden");
+});
+pageshow:
+
+Description: User navigates to a webpage.
+Example:
+javascript
+Copy code
+window.addEventListener("pageshow", () => {
+  console.log("Page is being shown");
+});
+paste:
+
+Description: Some content is pasted in an element.
+Example:
+javascript
+Copy code
+const textarea = document.getElementById("myTextarea");
+textarea.addEventListener("paste", () => {
+  console.log("Content pasted");
+});
+pause:
+
+Description: A media is paused.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("pause", () => {
+  console.log("Media paused");
+});
+play:
+
+Description: The media has started or is no longer paused.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("play", () => {
+  console.log("Media started playing");
+});
+playing:
+
+Description: The media is playing after being paused or buffered.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("playing", () => {
+  console.log("Media playing");
+});
+popstate:
+
+Description: The window's history changes.
+Example:
+javascript
+Copy code
+window.addEventListener("popstate", () => {
+  console.log("History changed");
+});
+progress:
+
+Description: The browser is downloading media data.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("progress", () => {
+  console.log("Media data is being downloaded");
+});
+ratechange:
+
+Description: The playing speed of a media is changed.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("ratechange", () => {
+  console.log("Playing speed changed");
+});
+resize:
+
+Description: The document view is resized.
+Example:
+javascript
+Copy code
+window.addEventListener("resize", () => {
+  console.log("Window resized");
+});
+reset:
+
+Description: A form is reset.
+Example:
+javascript
+Copy code
+const form = document.getElementById("myForm");
+form.addEventListener("reset", () => {
+  console.log("Form reset");
+});
+scroll:
+
+Description: A scrollbar is being scrolled.
+Example:
+javascript
+Copy code
+window.addEventListener("scroll", () => {
+  console.log("Page is being scrolled");
+});
+search:
+
+Description: Something is written in a search field.
+Example:
+javascript
+Copy code
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("search", () => {
+  console.log("Search input changed");
+});
+seeked:
+
+Description: Skipping to a media position is finished.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("seeked", () => {
+  console.log("Seeking finished");
+});
+seeking:
+
+Description: Skipping to a media position is started.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("seeking", () => {
+  console.log("Seeking started");
+});
+select:
+
+Description: User selects some text.
+Example:
+javascript
+Copy code
+const text = document.getElementById("myText");
+text.addEventListener("select", () => {
+  console.log("Text selected");
+});
+show:
+
+Description: A <menu> element is shown as a context menu.
+Example:
+javascript
+Copy code
+const menu = document.getElementById("myMenu");
+menu.addEventListener("show", () => {
+  console.log("Menu shown as context menu");
+});
+stalled:
+
+Description: The browser is trying to get unavailable media data.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("stalled", () => {
+  console.log("Media data is stalled");
+});
+storage:
+
+Description: A Web Storage area is updated.
+Example:
+javascript
+Copy code
+window.addEventListener("storage", (event) => {
+  console.log(`Storage updated: ${event.key}=${event.newValue}`);
+});
+submit:
+
+Description: A form is submitted.
+Example:
+javascript
+Copy code
+const form = document.getElementById("myForm");
+form.addEventListener("submit", () => {
+  console.log("Form submitted");
+});
+suspend:
+
+Description: The browser is intentionally not getting media data.
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("suspend", () => {
+  console.log("Media data is intentionally not fetched");
+});
+timeupdate:
+
+Description: The playing position has changed (the user moves to a different point in the media).
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("timeupdate", () => {
+  console.log("Playing position changed");
+});
+toggle:
+
+Description: The user opens or closes the <details> element.
+Example:
+javascript
+Copy code
+const details = document.getElementById("myDetails");
+details.addEventListener("toggle", () => {
+  console.log("Details element toggled");
+});
+touchcancel:
+
+Description: The touch is interrupted.
+Example:
+javascript
+Copy code
+const touchElement = document.getElementById("touchElement");
+touchElement.addEventListener("touchcancel", () => {
+  console.log("Touch event canceled");
+});
+touchend:
+
+Description: A finger is removed from a touch screen.
+Example:
+javascript
+Copy code
+const touchElement = document.getElementById("touchElement");
+touchElement.addEventListener("touchend", () => {
+  console.log("Finger removed from touch screen");
+});
+touchmove:
+
+Description: A finger is dragged across the screen.
+Example:
+javascript
+Copy code
+const touchElement = document.getElementById("touchElement");
+touchElement.addEventListener("touchmove", () => {
+  console.log("Finger dragged across the screen");
+});
+touchstart:
+
+Description: A finger is placed on a touch screen.
+Example:
+javascript
+Copy code
+const touchElement = document.getElementById("touchElement");
+touchElement.addEventListener("touchstart", () => {
+  console.log("Finger placed on touch screen");
+});
+transitionend:
+
+Description: A CSS transition has completed.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("transitionend", () => {
+  console.log("CSS transition completed");
+});
+unload:
+
+Description: A page has unloaded.
+Example:
+javascript
+Copy code
+window.addEventListener("unload", () => {
+  console.log("Page has unloaded");
+});
+volumechange:
+
+Description: The volume of a media is changed (includes muting).
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("volumechange", () => {
+  console.log("Volume changed");
+});
+waiting:
+
+Description: A media is paused but is expected to resume (e.g., buffering).
+Example:
+javascript
+Copy code
+const video = document.getElementById("myVideo");
+video.addEventListener("waiting", () => {
+  console.log("Media is waiting to resume");
+});
+wheel:
+
+Description: The mouse wheel rolls up or down over an element.
+Example:
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("wheel", (event) => {
+  console.log(`Mouse wheel rolled: ${event.deltaY}`);
+});
+These examples show how to use various DOM events in JavaScript to add functionality to your web pages. You can attach event listeners to HTML elements and execute code when these events occur.
+
+
+
+
+=====================HTML DOM Event Objects===========
+
+
+AnimationEvent: This event object is used for handling CSS animations.
+
+Example:
+
+javascript
+Copy code
+const element = document.getElementById("myElement");
+element.addEventListener("animationend", (event) => {
+  console.log("Animation ended:", event.animationName);
+});
+ClipboardEvent: Handles events related to the modification of the clipboard.
+
+Example:
+
+javascript
+Copy code
+const input = document.getElementById("myInput");
+input.addEventListener("paste", (event) => {
+  console.log("Text pasted:", event.clipboardData.getData("text"));
+});
+DragEvent: Used for handling drag and drop interactions.
+
+Example:
+
+javascript
+Copy code
+const draggableElement = document.getElementById("draggable");
+draggableElement.addEventListener("dragstart", (event) => {
+  event.dataTransfer.setData("text/plain", "Drag me!");
+});
+
+const dropZone = document.getElementById("dropZone");
+dropZone.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
+
+dropZone.addEventListener("drop", (event) => {
+  const data = event.dataTransfer.getData("text/plain");
+  dropZone.innerHTML = `Dropped: ${data}`;
+  event.preventDefault();
+});
+FocusEvent: Handles focus-related events.
+
+Example:
+
+javascript
+Copy code
+const inputElement = document.getElementById("myInput");
+inputElement.addEventListener("focus", () => {
+  console.log("Input element focused");
+});
+HashChangeEvent: Used for changes in the anchor part of a URL.
+
+Example:
+
+javascript
+Copy code
+window.addEventListener("hashchange", () => {
+  console.log("Hash changed to:", window.location.hash);
+});
+InputEvent: Handles user input events.
+
+Example:
+
+javascript
+Copy code
+const inputElement = document.getElementById("myInput");
+inputElement.addEventListener("input", (event) => {
+  console.log("Input value changed:", event.target.value);
+});
+KeyboardEvent: Handles keyboard interactions.
+
+Example:
+
+javascript
+Copy code
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    console.log("Enter key pressed");
+  }
+});
+MouseEvent: Used for mouse interactions.
+
+Example:
+
+javascript
+Copy code
+const buttonElement = document.getElementById("myButton");
+buttonElement.addEventListener("click", (event) => {
+  console.log("Button clicked at:", event.clientX, event.clientY);
+});
+PageTransitionEvent: Handles navigation between web pages.
+
+Example:
+
+javascript
+Copy code
+window.addEventListener("pagehide", () => {
+  console.log("Leaving the current page");
+});
+
+window.addEventListener("pageshow", () => {
+  console.log("Entering a new page");
+});
+PopStateEvent: Used for changes in the page history.
+
+Example:
+
+javascript
+Copy code
+window.addEventListener("popstate", (event) => {
+  console.log("History state changed:", event.state);
+});
+These are some of the common event objects and their usage in JavaScript. You can attach event listeners to HTML elements and handle events according to your application's needs.
+
+
+
+===================DOM HTMLCollection==============
+
+
+HTMLCollection Overview:
+
+An HTMLCollection is an array-like collection of HTML elements.
+Elements in the collection can be accessed by index (starting at 0).
+The length property returns the number of elements in the collection.
+Creating an HTMLCollection:
+
+An HTMLCollection is often created using methods like getElementsByTagName() and getElementsByClassName() or by accessing the children property.
+javascript
+Copy code
+// Get all <p> elements in the document
+const paragraphs = document.getElementsByTagName("p");
+
+// Get all elements with a specific class
+const elementsWithClass = document.getElementsByClassName("myClass");
+
+// Accessing children of an element
+const parentElement = document.getElementById("parent");
+const children = parentElement.children;
+Accessing Elements:
+
+Elements in an HTMLCollection can be accessed by index using the item() method or by name using the namedItem() method.
+javascript
+Copy code
+// Access the first <p> element
+const firstParagraph = paragraphs.item(0);
+
+// Access an element by id
+const elementById = elementsWithClass.namedItem("myId");
+Looping Over Elements:
+
+You can loop through an HTMLCollection to perform actions on its elements.
+javascript
+Copy code
+const elements = document.getElementsByTagName("*");
+for (let i = 0; i < elements.length; i++) {
+  // Perform actions on elements[i]
+}
+Not an Array:
+
+HTMLCollections may look like arrays, but they are not true JavaScript arrays.
+You cannot use Array methods like push(), pop(), or join() directly on HTMLCollections.
+HTMLCollection vs. NodeList:
+
+HTMLCollections and NodeLists are similar but have some differences.
+HTMLCollection is typically used for elements, while NodeList can contain nodes of various types (elements, attributes, and text nodes).
+HTMLCollections are live, meaning they automatically update when the DOM changes. NodeLists are often static.
+Here's a complete coding example illustrating these concepts:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTMLCollection Example</title>
+</head>
+<body>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <div id="parent">
+    <p class="myClass">Nested Paragraph 1</p>
+    <p class="myClass">Nested Paragraph 2</p>
+  </div>
+
+  <script>
+    // Get all <p> elements in the document
+    const paragraphs = document.getElementsByTagName("p");
+
+    // Access and log the second paragraph
+    const secondParagraph = paragraphs.item(1);
+    console.log("Second Paragraph Text:", secondParagraph.textContent);
+
+    // Loop through paragraphs and add a class
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].classList.add("highlight");
+    }
+
+    // Access and log the nested paragraph by class
+    const nestedParagraph = document.getElementsByClassName("myClass").item(0);
+    console.log("Nested Paragraph Text:", nestedParagraph.textContent);
+  </script>
+</body>
+</html>
+In this example, we retrieve and manipulate <p> elements using getElementsByTagName() and getElementsByClassName(), demonstrating how to access and work with elements in an HTMLCollection.
+
+
+
+
+======================HTML DOM Style Object==============
+
+
+Certainly! Here are all the CSS style object properties along with code examples for each:
+
+alignContent: Sets or returns the alignment between the lines inside a flexible container when the items do not use all available space.
+
+javascript
+Copy code
+// JavaScript
+const container = document.getElementById("flexContainer");
+container.style.alignContent = "center";
+html
+Copy code
+<!-- HTML -->
+<div id="flexContainer">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <!-- ... more items ... -->
+</div>
+alignItems: Sets or returns the alignment for items inside a flexible container.
+
+javascript
+Copy code
+// JavaScript
+const container = document.getElementById("flexContainer");
+container.style.alignItems = "center";
+alignSelf: Sets or returns the alignment for selected items inside a flexible container.
+
+javascript
+Copy code
+// JavaScript
+const item = document.getElementById("flexItem");
+item.style.alignSelf = "flex-end";
+html
+Copy code
+<!-- HTML -->
+<div id="flexContainer">
+    <div id="flexItem">Item 1</div>
+    <!-- ... more items ... -->
+</div>
+animation: A shorthand property for all animation properties.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animation = "myAnimation 2s linear 1s infinite";
+animationDelay: Sets or returns when the animation will start.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationDelay = "2s";
+animationDirection: Sets or returns whether or not the animation should play in reverse on alternate cycles.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationDirection = "alternate";
+animationDuration: Sets or returns how many seconds or milliseconds an animation takes to complete one cycle.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationDuration = "3s";
+animationFillMode: Sets or returns what values are applied by the animation outside the time it is executing.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationFillMode = "forwards";
+animationIterationCount: Sets or returns the number of times an animation should be played.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationIterationCount = "infinite";
+animationName: Sets or returns a name for the @keyframes animation.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationName = "myAnimation";
+animationTimingFunction: Sets or returns the speed curve of the animation.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationTimingFunction = "ease-in-out";
+animationPlayState: Sets or returns whether the animation is running or paused.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.animationPlayState = "paused";
+background: Sets or returns all the background properties in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.background = "url('image.jpg') no-repeat center center";
+backgroundAttachment: Sets or returns whether a background image is fixed or scrolls with the page.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundAttachment = "fixed";
+backgroundColor: Sets or returns the background-color of an element.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundColor = "lightblue";
+backgroundImage: Sets or returns the background-image for an element.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundImage = "url('image.jpg')";
+backgroundPosition: Sets or returns the starting position of a background-image.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundPosition = "top left";
+backgroundRepeat: Sets or returns how to repeat (tile) a background-image.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundRepeat = "repeat-x";
+backgroundClip: Sets or returns the painting area of the background.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundClip = "content-box";
+backgroundOrigin: Sets or returns the positioning area of the background images.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundOrigin = "border-box";
+backgroundSize: Sets or returns the size of the background image.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backgroundSize = "cover";
+backfaceVisibility: Sets or returns whether or not an element should be visible when not facing the screen.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.backfaceVisibility = "hidden";
+border: Sets or returns borderWidth, borderStyle, and borderColor in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.border = "2px solid #000";
+borderBottom: Sets or returns all the borderBottom properties in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderBottom = "2px solid #000";
+borderBottomColor: Sets or returns the color of the bottom border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderBottomColor = "red";
+borderBottomLeftRadius: Sets or returns the shape of the border of the bottom-left corner.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderBottomLeftRadius = "10px";
+borderBottomRightRadius: Sets or returns the shape of the border of the bottom-right corner.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderBottomRightRadius = "10px";
+borderBottomStyle: Sets or returns the style of the bottom border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderBottomStyle = "dotted";
+borderBottomWidth: Sets or returns the width of the bottom border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderBottomWidth = "3px";
+borderCollapse: Sets or returns whether the table border should be collapsed into a single border, or not.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myTable");
+element.style.borderCollapse = "collapse";
+borderColor: Sets or returns the color of an element's border (can have up to four values).
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderColor = "red green blue yellow";
+borderImage: A shorthand property for setting or returning all the borderImage properties.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderImage = "url('border.png') 30 30 round";
+borderImageOutset: Sets or returns the amount by which the border image area extends beyond the border box.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderImageOutset = "10px";
+borderImageRepeat: Sets or returns whether the image-border should be repeated, rounded, or stretched.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderImageRepeat = "round";
+borderImageSlice: Sets or returns the inward offsets of the image-border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderImageSlice = "30 fill";
+borderImageSource: Sets or returns the image to be used as a border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderImageSource = "url('border.png')";
+borderImageWidth: Sets or returns the widths of the image-border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderImageWidth = "10px";
+borderLeft: Sets or returns all the borderLeft properties in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderLeft = "2px solid #000";
+borderLeftColor: Sets or returns the color of the left border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderLeftColor = "green";
+borderLeftStyle: Sets or returns the style of the left border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderLeftStyle = "dashed";
+borderLeftWidth: Sets or returns the width of the left border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderLeftWidth = "3px";
+borderRadius: A shorthand property for setting or returning all the four borderRadius properties.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderRadius = "10px";
+borderRight: Sets or returns all the borderRight properties in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderRight = "2px solid #000";
+borderRightColor: Sets or returns the color of the right border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderRightColor = "blue";
+borderRightStyle: Sets or returns the style of the right border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderRightStyle = "solid";
+borderRightWidth: Sets or returns the width of the right border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderRightWidth = "4px";
+borderSpacing: Sets or returns the space between cells in a table.
+
+javascript
+Copy code
+// JavaScript
+const table = document.getElementById("myTable");
+table.style.borderSpacing = "10px";
+borderStyle: Sets or returns the style of an element's border (can have up to four values).
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderStyle = "dotted solid double dashed";
+borderTop: Sets or returns all the borderTop properties in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderTop = "2px solid #000";
+borderTopColor: Sets or returns the color of the top border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderTopColor = "red";
+borderTopLeftRadius: Sets or returns the shape of the border of the top-left corner.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderTopLeftRadius = "5px";
+borderTopRightRadius: Sets or returns the shape of the border of the top-right corner.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderTopRightRadius = "5px";
+borderTopStyle: Sets or returns the style of the top border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderTopStyle = "solid";
+borderTopWidth: Sets or returns the width of the top border.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderTopWidth = "3px";
+borderWidth: Sets or returns the width of an element's border (can have up to four values).
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.borderWidth = "2px 3px 4px 5px";
+bottom: Sets or returns the bottom position of a positioned element.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.bottom = "10px";
+boxDecorationBreak: Sets or returns the behavior of the background and border of an element at page-break or line-break.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.boxDecorationBreak = "clone";
+boxShadow: Attaches one or more drop-shadows to the box.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.boxShadow = "5px 5px 5px #888888";
+boxSizing: Allows you to define certain elements to fit an area in a certain way.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.boxSizing = "border-box";
+captionSide: Sets or returns the position of the table caption.
+
+javascript
+Copy code
+// JavaScript
+const table = document.getElementById("myTable");
+table.style.captionSide = "bottom";
+caretColor: Sets or returns the caret/cursor color of an element.
+
+javascript
+Copy code
+// JavaScript
+const input = document.getElementById("myInput");
+input.style.caretColor = "blue";
+clear: Sets or returns the position of the element relative to floating objects.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.clear = "both";
+clip: Sets or returns which part of a positioned element is visible.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.clip = "rect(10px, 50px, 90px, 20px)";
+color: Sets or returns the color of the text.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.color = "green";
+columnCount: Sets or returns the number of columns an element should be divided into.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnCount = "2";
+columnFill: Sets or returns how to fill columns.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnFill = "auto";
+columnGap: Sets or returns the gap between the columns.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnGap = "20px";
+columnRule: A shorthand property for setting or returning all the columnRule properties.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnRule = "1px solid #000";
+columnRuleColor: Sets or returns the color of the rule between columns.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnRuleColor = "blue";
+columnRuleStyle: Sets or returns the style of the rule between columns.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnRuleStyle = "dotted";
+columnRuleWidth: Sets or returns the width of the rule between columns.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnRuleWidth = "2px";
+columns: A shorthand property for setting or returning columnWidth and columnCount.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columns = "150px 3";
+columnSpan: Sets or returns how many columns an element should span across.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnSpan = "all";
+columnWidth: Sets or returns the width of the columns.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.columnWidth = "200px";
+content: Used with the :before and :after pseudo-elements, to insert generated content.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.content = "'This is some generated content.'";
+counterIncrement: Increments one or more counters.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.counterIncrement = "myCounter";
+counterReset: Creates or resets one or more counters.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.counterReset = "myCounter";
+cursor: Sets or returns the type of cursor to display for the mouse pointer.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.cursor = "pointer";
+direction: Sets or returns the text direction.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.direction = "rtl";
+display: Sets or returns an element's display type.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.display = "none";
+emptyCells: Sets or returns whether or not to display borders and background on empty cells in a table.
+
+javascript
+Copy code
+// JavaScript
+const table = document.getElementById("myTable");
+table.style.emptyCells = "show";
+filter: Sets or returns image filters for the display element.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.filter = "brightness(50%)";
+flex: A shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flex = "1 1 auto";
+flexBasis: Sets or returns the initial length of a flexible item.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flexBasis = "20%";
+flexDirection: Sets or returns the direction of the flexible items.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flexDirection = "column-reverse";
+flexFlow: A shorthand property for setting or returning both the flexDirection and flexWrap properties.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flexFlow = "column-reverse wrap";
+flexGrow: Sets or returns how much the item will grow relative to the rest of the flexible items.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flexGrow = "2";
+flexShrink: Sets or returns how the item will shrink relative to the rest of the flexible items.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flexShrink = "0";
+flexWrap: Sets or returns whether the flexible items should wrap or not.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.flexWrap = "nowrap";
+float: Sets or returns the float property of an element.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.float = "left";
+font: Sets or returns all the font properties in one declaration.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.font = "italic bold 12px/30px Arial, sans-serif";
+fontFamily: Sets or returns the font family for text content.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontFamily = "Arial, sans-serif";
+fontSize: Sets or returns the font size of the text content.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontSize = "16px";
+fontSizeAdjust: Sets or returns the aspect ratio of a font.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontSizeAdjust = "0.6";
+fontStretch: Sets or returns the font stretch for text content.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontStretch = "expanded";
+fontStyle: Sets or returns the font style for text content.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontStyle = "italic";
+fontVariant: Sets or returns whether the text should be displayed in small capital letters.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontVariant = "small-caps";
+fontWeight: Sets or returns the weight of a font.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.fontWeight = "bold";
+gap: Sets or returns the gap between the rows and columns in a grid layout.
+
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gap = "10px";
+grid: A shorthand property for setting or returning all the gridTemplate properties.
+
+go
+Copy code
+```javascript
+javascript
+Copy code
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.grid = "auto-flow 100px / 1fr 2fr";
+```
+101. gridArea: A shorthand property for setting or returning all the gridRow and gridColumn properties.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridArea = "1 / 1 / 3 / 3";
+```
+102. gridAutoColumns: Sets or returns the size of the columns in a grid layout.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridAutoColumns = "100px";
+```
+103. gridAutoFlow: Sets or returns how to auto-place items in a grid layout.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridAutoFlow = "row dense";
+```
+104. gridAutoRows: Sets or returns the size of the rows in a grid layout.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridAutoRows = "50px";
+```
+105. gridColumn: Sets or returns a grid item's position within the grid column.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridColumn = "2 / span 3";
+```
+106. gridColumnEnd: Sets or returns where a grid item ends within the grid column.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridColumnEnd = "span 3";
+```
+107. gridColumnStart: Sets or returns where a grid item starts within the grid column.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridColumnStart = "2";
+```
+108. gridRow: Sets or returns a grid item's position within the grid row.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridRow = "2 / span 2";
+```
+109. gridRowEnd: Sets or returns where a grid item ends within the grid row.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridRowEnd = "span 2";
+```
+110. gridRowStart: Sets or returns where a grid item starts within the grid row.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridRowStart = "2";
+```
+111. gridTemplate: A shorthand property for setting or returning all the gridTemplate properties.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridTemplate = "auto-flow 100px / 1fr 2fr";
+```
+112. gridTemplateAreas: Sets or returns how to allocate space for each grid item along the grid rows and columns.
+
+less
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridTemplateAreas = "'header header' 'menu main' 'menu footer'";
+```
+113. gridTemplateColumns: Sets or returns the size of the columns in a grid layout.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridTemplateColumns = "1fr 2fr";
+```
+114. gridTemplateRows: Sets or returns the size of the rows in a grid layout.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.gridTemplateRows = "repeat(3, 1fr)";
+```
+115. height: Sets or returns the height of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.height = "200px";
+```
+116. hyphens: Sets or returns how to split words to improve the layout of paragraphs.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.hyphens = "auto";
+```
+117. imageRendering: Sets or returns the quality of image rendering.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myImage");
+element.style.imageRendering = "pixelated";
+```
+118. justifyContent: Sets or returns the alignment between the items inside a flexible container when the items do not use all available space.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const container = document.getElementById("flexContainer");
+container.style.justifyContent = "flex-start";
+```
+119. justifyItems: Sets or returns the alignment for items inside a flexible container.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const container = document.getElementById("flexContainer");
+container.style.justifyItems = "center";
+```
+120. justifySelf: Sets or returns the alignment for selected items inside a flexible container.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const item = document.getElementById("flexItem");
+item.style.justifySelf = "flex-end";
+```
+121. left: Sets or returns the left position of a positioned element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.left = "10px";
+```
+122. letterSpacing: Sets or returns the space between characters in a text.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.letterSpacing = "2px";
+```
+123. lineHeight: Sets or returns the line height.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.lineHeight = "1.5";
+```
+124. listStyle: Sets or returns all the listStyle properties in one declaration.
+
+scss
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.listStyle = "square inside url('image.png')";
+```
+125. listStyleImage: Sets or returns an image to be used as the list-item marker.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.listStyleImage = "url('image.png')";
+```
+126. listStylePosition: Sets or returns the position of the list-item marker.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.listStylePosition = "inside";
+```
+127. listStyleType: Sets or returns the list-item marker type.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.listStyleType = "circle";
+```
+128. margin: Sets or returns all the margin properties in one declaration.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.margin = "10px 20px 30px 40px";
+```
+129. marginBottom: Sets or returns the bottom margin of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.marginBottom = "20px";
+```
+130. marginLeft: Sets or returns the left margin of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.marginLeft = "10px";
+```
+131. marginRight: Sets or returns the right margin of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.marginRight = "30px";
+```
+132. marginTop: Sets or returns the top margin of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.marginTop = "40px";
+```
+133. mask: Sets or returns the masking properties for an element.
+
+scss
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.mask = "url('mask.png') no-repeat center center";
+```
+134. maskType: Sets or returns the type of mask to be used for an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.maskType = "luminance";
+```
+135. maxHeight: Sets or returns the maximum height of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.maxHeight = "300px";
+```
+136. maxWidth: Sets or returns the maximum width of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.maxWidth = "400px";
+```
+137. minHeight: Sets or returns the minimum height of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.minHeight = "100px";
+```
+138. minWidth: Sets or returns the minimum width of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.minWidth = "200px";
+```
+139. mixBlendMode: Sets or returns how a blended element will be mixed with elements behind it.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.mixBlendMode = "screen";
+```
+140. objectFit: Sets or returns how the content of a replaced element should be resized to fit its container.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myImage");
+element.style.objectFit = "cover";
+```
+141. objectPosition: Sets or returns the alignment of the replaced element inside its box.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myImage");
+element.style.objectPosition = "center top";
+```
+142. opacity: Sets or returns the opacity level of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.opacity = "0.5";
+```
+143. order: Sets or returns the order of the flexible item, relative to the rest of the flexible items inside the same container.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const item = document.getElementById("flexItem");
+item.style.order = "2";
+```
+144. orphans: Sets or returns the minimum number of lines for an element that must be left at the bottom of a page when a page break occurs inside an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.orphans = "2";
+```
+145. outline: A shorthand property for setting or returning all the outline properties.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.outline = "2px dotted red";
+```
+146. outlineColor: Sets or returns the color of the outline around an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.outlineColor = "blue";
+```
+147. outlineOffset: Sets or returns the space between an outline and the border edge of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.outlineOffset = "5px";
+```
+148. outlineStyle: Sets or returns the style of the outline around an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.outlineStyle = "dashed";
+```
+149. outlineWidth: Sets or returns the width of the outline around an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.outlineWidth = "3px";
+```
+150. overflow: Sets or returns what should happen if content overflows an element's box.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.overflow = "scroll";
+```
+151. overflowX: Sets or returns what to do with the left/right edges of the content if it overflows the element's content area.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.overflowX = "hidden";
+```
+152. overflowY: Sets or returns what to do with the top/bottom edges of the content if it overflows the element's content area.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.overflowY = "auto";
+```
+153. padding: Sets or returns all the padding properties in one declaration.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.padding = "10px 20px 30px 40px";
+```
+154. paddingBottom: Sets or returns the bottom padding of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.paddingBottom = "20px";
+```
+155. paddingLeft: Sets or returns the left padding of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.paddingLeft = "10px";
+```
+156. paddingRight: Sets or returns the right padding of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.paddingRight = "30px";
+```
+157. paddingTop: Sets or returns the top padding of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.paddingTop = "40px";
+```
+158. pageBreakAfter: Sets or returns the page-break behavior after an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.pageBreakAfter = "always";
+```
+159. pageBreakBefore: Sets or returns the page-break behavior before an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.pageBreakBefore = "left";
+```
+160. pageBreakInside: Sets or returns the page-break behavior inside an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.pageBreakInside = "avoid";
+```
+161. perspective: Sets or returns the perspective on how 3D elements are viewed.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.perspective = "100px";
+```
+162. perspectiveOrigin: Sets or returns the position at which the viewer is looking.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.perspectiveOrigin = "50% 75%";
+```
+163. pointerEvents: Sets or returns whether or not an element should be visible and can respond to user input.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.pointerEvents = "none";
+```
+164. position: Sets or returns the type of positioning method used for an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.position = "absolute";
+```
+165. quotes: Sets or returns the type of quotation marks for embedded quotations.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.quotes = "'' ''";
+```
+166. resize: Sets or returns whether or not an element is resizable by the user.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.resize = "both";
+```
+167. right: Sets or returns the right position of a positioned element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.right = "10px";
+```
+168. rowGap: Sets or returns the gap between the rows in a grid layout.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.rowGap = "10px";
+```
+169. scrollBehavior: Sets or returns the behavior of smooth scrolling.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.scrollBehavior = "smooth";
+```
+170. tabSize: Sets or returns the number of spaces in a tab character.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.tabSize = "4";
+```
+171. tableLayout: Sets or returns the layout algorithm to be used for a table.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const table = document.getElementById("myTable");
+table.style.tableLayout = "fixed";
+```
+172. textAlign: Sets or returns the horizontal alignment of text content within an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textAlign = "center";
+```
+173. textAlignLast: Sets or returns the alignment of the last line of text within an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textAlignLast = "right";
+```
+174. textDecoration: Sets or returns the decoration added to text.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textDecoration = "underline";
+```
+175. textDecorationColor: Sets or returns the color of the text decoration.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textDecorationColor = "red";
+```
+176. textDecorationLine: Sets or returns the type of line in a text decoration.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textDecorationLine = "overline";
+```
+177. textDecorationStyle: Sets or returns the style of the line in a text decoration.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textDecorationStyle = "dotted";
+```
+178. textIndent: Sets or returns the indentation of the first line of text in an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textIndent = "30px";
+```
+179. textJustify: Sets or returns the justification method used when text-align is "justify".
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textJustify = "inter-word";
+```
+180. textOverflow: Sets or returns what should happen when text overflows the containing element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textOverflow = "ellipsis";
+```
+181. textShadow: Sets or returns the shadow effect of a text.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textShadow = "2px 2px 4px #000";
+```
+182. textTransform: Sets or returns the capitalization of text.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.textTransform = "uppercase";
+```
+183. top: Sets or returns the top position of a positioned element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.top = "10px";
+```
+184. transform: Applies a 2D or 3D transformation to an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transform = "rotate(45deg)";
+```
+185. transformOrigin: Sets or returns the point at which a transformation should be applied.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transformOrigin = "top left";
+```
+186. transition: A shorthand property for setting or returning all the transition properties.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transition = "width 2s, height 2s";
+```
+187. transitionDelay: Sets or returns when the transition effect will start.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transitionDelay = "1s";
+```
+188. transitionDuration: Sets or returns how many seconds or milliseconds a transition effect takes to complete.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transitionDuration = "500ms";
+```
+189. transitionProperty: Sets or returns the CSS properties to which a transition effect should be applied.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transitionProperty = "width, height";
+```
+190. transitionTimingFunction: Sets or returns the speed curve of a transition effect.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.transitionTimingFunction = "ease-in-out";
+```
+191. unicodeBidi: Sets or returns whether the text should be overridden to support multiple languages in the same document.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.unicodeBidi = "embed";
+```
+192. userSelect: Sets or returns whether the text can be selected or not.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.userSelect = "none";
+```
+193. verticalAlign: Sets or returns the vertical alignment of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.verticalAlign = "middle";
+```
+194. visibility: Sets or returns whether an element is visible.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.visibility = "hidden";
+```
+195. whiteSpace: Sets or returns how white space inside an element is handled.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.whiteSpace = "nowrap";
+```
+196. width: Sets or returns the width of an element.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.width = "300px";
+```
+197. willChange: Sets or returns a comma-separated list of CSS properties that will be animated in the future.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.willChange = "transform, opacity";
+```
+198. wordBreak: Sets or returns how to break lines of text.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.wordBreak = "break-all";
+```
+199. wordSpacing: Sets or returns the space between words in a text.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.wordSpacing = "5px";
+```
+200. wordWrap: Sets or returns whether to allow long words to be able to be broken and wrap onto the next line.
+
+arduino
+Copy code
+```javascript
+// JavaScript
+const element = document.getElementById("myElement");
+element.style.wordWrap = "break-word";
+```
+These are some of the most commonly used CSS properties that can be manipulated using JavaScript. You can select an HTML element by its ID or other selectors, and then use the style property to set or get these CSS properties for that element. Remember that not all properties are applicable to all types of HTML elements, so make sure to use them appropriately based on the type of element you are working with.
+
+
+201. widows: Sets or returns the minimum number of lines for an element that must be visible at the top of a page.
+vbnet
+Copy code
+- Explanation: The "widows" property is used to control the minimum number of lines of an element that must be visible at the top of a printed page. It is often used with printed documents to ensure that a certain number of lines are not left as orphans at the bottom of a page.
+arduino
+Copy code
+- Example:
+
+  ```javascript
+  // JavaScript
+  const element = document.getElementById("myElement");
+  element.style.widows = "3"; // Ensure at least 3 lines are visible at the top of a page
+  ```
+202. zIndex: Sets or returns the stack order of a positioned element.
+
+vbnet
+Copy code
+- Explanation: The "zIndex" property is used to control the stacking order of positioned elements on a web page. Elements with a higher "zIndex" value will appear on top of elements with a lower "zIndex" value. It is often used when you want to control the layering of elements, such as in the case of overlapping elements.
+
+- Example:
+
+  ```javascript
+  // JavaScript
+  const element = document.getElementById("myElement");
+  element.style.zIndex = "2"; // Set the stacking order to 2
+  ```
+These properties can be set or returned using JavaScript to control the layout and visibility of elements on a web page.
+
+
+
+
+
+========================Canvas API(,canvasApi)=================
+
+Drawing Methods:
+
+fillRect(): Draws a filled rectangle on the canvas.
+javascript
+Copy code
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillRect(50, 50, 100, 100); // Draws a filled rectangle
+strokeRect(): Draws the outline of a rectangle (no fill).
+javascript
+Copy code
+ctx.strokeRect(50, 50, 100, 100); // Draws the outline of a rectangle
+clearRect(): Clears a specified rectangular area on the canvas.
+javascript
+Copy code
+ctx.clearRect(60, 60, 80, 80); // Clears a portion of the canvas
+beginPath(): Starts a new drawing path or resets the current path.
+javascript
+Copy code
+ctx.beginPath(); // Starts a new path
+closePath(): Adds a line connecting the current point to the starting point, closing a path.
+javascript
+Copy code
+ctx.moveTo(50, 50);
+ctx.lineTo(150, 50);
+ctx.lineTo(100, 100);
+ctx.closePath(); // Closes the path
+moveTo(): Moves the drawing point to a specified position without drawing a line.
+javascript
+Copy code
+ctx.moveTo(50, 50); // Moves the drawing point
+lineTo(): Adds a line from the current point to a specified position.
+javascript
+Copy code
+ctx.lineTo(150, 50); // Adds a line to (150, 50)
+fill(): Fills the current path with color.
+javascript
+Copy code
+ctx.fill(); // Fills the path with the current color
+rect(): Adds a rectangle to the current path.
+javascript
+Copy code
+ctx.rect(50, 50, 100, 100); // Adds a rectangle to the path
+stroke(): Draws the current path (lines and shapes).
+javascript
+Copy code
+ctx.stroke(); // Draws the current path
+Circles and Curves:
+
+bezierCurveTo(): Adds a curved line using control points (cubic Bézier curve).
+javascript
+Copy code
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.bezierCurveTo(100, 20, 200, 20, 250, 50);
+ctx.stroke(); // Draws a curved line
+arc(): Adds an arc or circle to the path.
+javascript
+Copy code
+ctx.beginPath();
+ctx.arc(100, 100, 50, 0, Math.PI * 2);
+ctx.stroke(); // Draws a circle
+arcTo(): Adds an arc/curve between two tangent lines to the path.
+javascript
+Copy code
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.lineTo(150, 50);
+ctx.arcTo(200, 50, 200, 100, 30);
+ctx.stroke(); // Draws an arc between lines
+quadraticCurveTo(): Adds a curved line with one control point (quadratic Bézier curve).
+javascript
+Copy code
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.quadraticCurveTo(125, 0, 200, 50);
+ctx.stroke(); // Draws a quadratic curve
+Text:
+
+fillText(): Draws filled text on the canvas.
+javascript
+Copy code
+ctx.font = "30px Arial";
+ctx.fillText("Hello, Canvas!", 50, 50); // Draws filled text
+strokeText(): Draws text on the canvas.
+javascript
+Copy code
+ctx.font = "30px Arial";
+ctx.strokeText("Hello, Canvas!", 50, 50); // Draws text outline
+font: Sets the font style and size for text.
+javascript
+Copy code
+ctx.font = "30px Arial"; // Sets the font
+textAlign: Sets the alignment (left, center, right) for text.
+javascript
+Copy code
+ctx.textAlign = "center"; // Sets text alignment to center
+textBaseline: Sets the vertical alignment (top, middle, bottom) for text.
+javascript
+Copy code
+ctx.textBaseline = "middle"; // Sets vertical alignment to middle
+Colors, Styles, and Shadows:
+
+fillStyle: Sets the color, gradient, or pattern used for filling shapes.
+javascript
+Copy code
+ctx.fillStyle = "blue"; // Sets fill color to blue
+strokeStyle: Sets the color, gradient, or pattern used for drawing lines and shapes.
+javascript
+Copy code
+ctx.strokeStyle = "red"; // Sets stroke color to red
+shadowBlur: Sets the blur level for shadows.
+javascript
+Copy code
+ctx.shadowBlur = 10; // Sets shadow blur level
+shadowColor: Sets the color of shadows.
+javascript
+Copy code
+ctx.shadowColor = "gray"; // Sets shadow color to gray
+shadowOffsetX: Sets the horizontal distance of shadows.
+javascript
+Copy code
+ctx.shadowOffsetX = 5; // Sets horizontal shadow offset
+shadowOffsetY: Sets the vertical distance of shadows.
+javascript
+Copy code
+ctx.shadowOffsetY = 5; // Sets vertical shadow offset
+Transformations:
+
+scale(): Scales the current drawing, making it larger or smaller.
+javascript
+Copy code
+ctx.scale(2, 2); // Scales drawing by a factor of 2
+rotate(): Rotates the current drawing.
+javascript
+Copy code
+ctx.rotate(Math.PI / 4); // Rotates drawing by 45 degrees
+translate(): Moves the (0,0) position on the canvas.
+javascript
+Copy code
+ctx.translate(50, 50); // Moves the origin point
+transform(): Applies a custom transformation matrix to the drawing.
+javascript
+Copy code
+ctx.transform(1, 0, 0, 1, 50, 50); // Applies a custom transformation
+setTransform(): Resets the transformation matrix to its default state.
+javascript
+Copy code
+ctx.setTransform(1, 0, 0, 1, 0, 0); // Resets transformation to default
+Image Drawing:
+
+drawImage(): Draws an image, canvas, or video onto the canvas.
+javascript
+Copy code
+const img = new Image();
+img.src = "image.jpg";
+img.onload = function () {
+  ctx.drawImage(img, 50, 50); // Draws the image
+};
+This code provides examples for each Canvas API method and property to help you understand how to use them for drawing and manipulation on the canvas.
+
+
+
+
+==================JavaScript Fetch API===================
+
+
+Certainly! The Fetch API is a modern way to make network requests in JavaScript. It allows you to retrieve data from a server or an API and work with the response. Here's an explanation of the key parts with code examples:
+
+1. fetch(file)
+
+This method initiates a network request to fetch a resource (usually from a server or an API).
+file is an optional parameter that specifies the URL of the resource you want to fetch.
+javascript
+Copy code
+fetch('https://example.com/data.json')
+2. .then(x => x.text())
+
+After calling fetch(), you can chain .then() to handle the response.
+In this example, it converts the response into text format.
+javascript
+Copy code
+.then(response => response.text())
+3. .then(y => myDisplay(y))
+
+Another .then() is used to handle the text data obtained from the response.
+myDisplay(y) is a function where you can do something with the text data.
+javascript
+Copy code
+.then(textData => myDisplay(textData))
+4. Using async/await
+
+Instead of using .then(), you can use async/await for a more readable and synchronous-like code.
+javascript
+Copy code
+async function getText(file) {
+  let response = await fetch(file);
+  let textData = await response.text();
+  myDisplay(textData);
+}
+5. Using Descriptive Names
+
+It's a good practice to use descriptive variable names instead of x and y.
+javascript
+Copy code
+async function getText(file) {
+  let response = await fetch(file);
+  let textData = await response.text();
+  myDisplay(textData);
+}
+Here's a complete example of using the Fetch API to fetch data from a JSON API:
+
+javascript
+Copy code
+async function fetchData() {
+  try {
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    let jsonData = await response.json();
+    console.log(jsonData);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchData();
+In this example, we fetch JSON data from an API, handle potential errors, and then work with the retrieved data using async/await syntax for a more readable and clean code structure.
+
+
+
+
+
+
+
+
+
+=========================var,let,const========================
+
+In JavaScript, var, let, and const are used to declare variables, but they have different scoping and mutability characteristics. Here are the key differences between them with coding examples:
+
+1. var:
+
+Variables declared with var are function-scoped or globally scoped. They are not block-scoped.
+Variables declared with var are hoisted to the top of their containing function or global scope.
+Example using var:
+
+javascript
+Copy code
+function exampleVar() {
+  if (true) {
+    var x = 10; // Function-scoped variable
+  }
+  console.log(x); // Outputs 10
+}
+
+exampleVar();
+console.log(x); // ReferenceError: x is not defined
+2. let:
+
+Variables declared with let are block-scoped. They are limited to the block (inside {}) where they are defined.
+Variables declared with let are not hoisted to the top of their block.
+Example using let:
+
+javascript
+Copy code
+function exampleLet() {
+  if (true) {
+    let y = 20; // Block-scoped variable
+  }
+  console.log(y); // ReferenceError: y is not defined
+}
+
+exampleLet();
+3. const:
+
+Variables declared with const are also block-scoped like let.
+const variables cannot be reassigned after they are assigned a value. However, their properties (if they are objects) can be modified.
+Example using const:
+
+javascript
+Copy code
+function exampleConst() {
+  const z = 30; // Block-scoped constant
+  z = 40; // TypeError: Assignment to constant variable
+}
+
+exampleConst();
+
+const person = { name: 'John' };
+person.name = 'Alice'; // This is allowed
+person.age = 25; // Adding a property is allowed
+console.log(person); // { name: 'Alice', age: 25 }
+In summary:
+
+Use var when you need function or global scope variables (although it's rarely recommended in modern JavaScript).
+Use let when you need block-scoped variables that may be reassigned.
+Use const when you need block-scoped variables that should not be reassigned but can have their properties modified.
+In modern JavaScript development, it's recommended to use let and const over var for better scoping and to reduce potential issues related to variable hoisting.
