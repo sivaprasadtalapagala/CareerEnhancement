@@ -135,13 +135,40 @@ const intArray = new Int8Array(4); // Creates an array for 4 8-bit integers.
 
 ====================JavaScript Array Methods and Properties(,arrayMethods)===========
 
-at(): Returns an indexed element of an array.
+======>>>>=====,at(): Returns an indexed element of an array.
 
 javascript
 Copy code
 const fruits = ['apple', 'banana', 'cherry'];
 console.log(fruits.at(1)); // Output: 'banana'
-concat(): Joins arrays and returns an array with the joined arrays.
+
+
+explanation: at() vs  bracket notation (array[index]) 
+
+1.array[index]: If you try to access an index that is outside the bounds of the array, it will not throw an error but instead return undefined. For example:
+
+javascript
+Copy code
+const myArray = [1, 2, 3];
+
+console.log(myArray[5]); // Outputs: undefined
+Using the bracket notation can lead to unexpected behavior if you're not careful about checking array lengths.
+
+2.at(): The at() method, on the other hand, is designed to throw an error (RangeError) if the specified index is out of bounds. This can be useful for catching and handling such errors explicitly in your code:
+
+javascript
+Copy code
+const myArray = [1, 2, 3];
+
+try {
+  console.log(myArray.at(5)); // Throws a RangeError
+} catch (error) {
+  console.error(error.message);
+}
+
+
+
+======>>>>=====,concat(): Joins arrays and returns an array with the joined arrays.
 
 javascript
 Copy code
@@ -149,7 +176,9 @@ const arr1 = [1, 2];
 const arr2 = [3, 4];
 const combined = arr1.concat(arr2);
 console.log(combined); // Output: [1, 2, 3, 4]
-constructor: Returns the function that created the Array object's prototype.
+
+
+======>>>>=====,constructor: Returns the function that created the Array object's prototype.
 
 javascript
 Copy code
@@ -175,7 +204,9 @@ for (const [index, value] of iterator) {
 // 0 'apple'
 // 1 'banana'
 // 2 'cherry'
-every(): Checks if every element in an array passes a test.
+
+
+======>>>>=====,every(): Checks if every element in an array passes a test.
 
 javascript
 Copy code
@@ -183,14 +214,23 @@ const numbers = [2, 4, 6, 8, 10];
 const isEven = (number) => number % 2 === 0;
 const result = numbers.every(isEven);
 console.log(result); // Output: true
-fill(): Fills the elements in an array with a static value.
+
+
+======>>>>=====,fill(): Fills the elements in an array with a static value.
 
 javascript
 Copy code
 const arr = [1, 2, 3, 4, 5];
 arr.fill(0, 2, 4);
 console.log(arr); // Output: [1, 2, 0, 0, 5]
-filter(): Creates a new array with every element in an array that passes a test.
+
+array.fill(value, start, end);
+value: The value to fill the array elements with.
+start (optional): The index to start filling the array. Default is 0.
+end (optional): The index to stop filling the array (not inclusive). Default is array.length.
+
+
+======>>>>=====,filter(): Creates a new array with every element in an array that passes a test.
 
 javascript
 Copy code
@@ -198,7 +238,10 @@ const numbers = [1, 2, 3, 4, 5];
 const isEven = (number) => number % 2 === 0;
 const evenNumbers = numbers.filter(isEven);
 console.log(evenNumbers); // Output: [2, 4]
-find(): Returns the value of the first element in an array that passes a test.
+
+
+
+======>>>>=====,find(): Returns the value of the first element in an array that passes a test.
 
 javascript
 Copy code
@@ -206,7 +249,10 @@ const numbers = [10, 20, 30, 40, 50];
 const isGreaterThan25 = (number) => number > 25;
 const result = numbers.find(isGreaterThan25);
 console.log(result); // Output: 30
-findIndex(): Returns the index of the first element in an array that passes a test.
+
+
+
+======>>>>=====,findIndex(): Returns the index of the first element in an array that passes a test.
 
 javascript
 Copy code
@@ -214,21 +260,39 @@ const numbers = [10, 20, 30, 40, 50];
 const isGreaterThan25 = (number) => number > 25;
 const index = numbers.findIndex(isGreaterThan25);
 console.log(index); // Output: 2 (index of value 30)
-flat(): Concatenates sub-array elements into a single array.
+
+
+======>>>>=====,some(): Checks if any of the elements in an array pass a test.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const hasEven = numbers.some((number) => number % 2 === 0);
+console.log(hasEven); // Output: true
+
+
+
+======>>>>=====,flat(): Concatenates sub-array elements into a single array.
 
 javascript
 Copy code
 const nestedArray = [1, [2, 3], [4, 5]];
 const flattenedArray = nestedArray.flat();
 console.log(flattenedArray); // Output: [1, 2, 3, 4, 5]
-flatMap(): Maps all array elements and creates a new flat array.
+
+
+
+======>>>>=====,flatMap(): Maps all array elements and creates a new flat array.
 
 javascript
 Copy code
 const numbers = [1, 2, 3];
 const doubled = numbers.flatMap((x) => [x * 2, x * 3]);
 console.log(doubled); // Output: [2, 3, 4, 6, 6, 9]
-forEach(): Calls a function for each array element.
+
+
+
+======>>>>=====,forEach(): Calls a function for each array element.
 
 javascript
 Copy code
@@ -240,42 +304,61 @@ fruits.forEach((fruit) => {
 // 'apple'
 // 'banana'
 // 'cherry'
-from(): Creates an array from an object.
+
+
+
+
+======>>>>=====,from(): Creates an array from an object.
 
 javascript
 Copy code
 const set = new Set(['apple', 'banana', 'cherry']);
 const arr = Array.from(set);
 console.log(arr); // Output: ['apple', 'banana', 'cherry']
-includes(): Checks if an array contains the specified element.
+
+
+
+======>>>>=====,includes(): Checks if an array contains the specified element.
 
 javascript
 Copy code
 const numbers = [1, 2, 3, 4, 5];
 const hasThree = numbers.includes(3);
 console.log(hasThree); // Output: true
-indexOf(): Searches the array for an element and returns its position.
+
+
+
+======>>>>=====,indexOf(): Searches the array for an element and returns its position.
 
 javascript
 Copy code
 const fruits = ['apple', 'banana', 'cherry'];
 const index = fruits.indexOf('banana');
 console.log(index); // Output: 1 (index of 'banana')
-isArray(): Checks whether an object is an array.
+
+
+
+======>>>>=====,isArray(): Checks whether an object is an array.
 
 javascript
 Copy code
 const arr = [1, 2, 3];
 const isArr = Array.isArray(arr);
 console.log(isArr); // Output: true
-join(): Joins all elements of an array into a string.
+
+
+
+======>>>>=====,join(): Joins all elements of an array into a string.
 
 javascript
 Copy code
 const fruits = ['apple', 'banana', 'cherry'];
 const joined = fruits.join(', ');
 console.log(joined); // Output: 'apple, banana, cherry'
-keys(): Returns an Array Iteration Object containing the keys of the original array.
+
+
+
+======>>>>=====,keys(): Returns an Array Iteration Object containing the keys of the original array.
 
 javascript
 Copy code
@@ -288,7 +371,10 @@ for (const key of keys) {
 // 0
 // 1
 // 2
-lastIndexOf(): Searches the array for an element, starting at the end, and returns its position.
+
+
+
+======>>>>=====,lastIndexOf(): Searches the array for an element, starting at the end, and returns its position.
 
 javascript
 Copy code
@@ -301,21 +387,30 @@ javascript
 Copy code
 const arr = [1, 2, 3, 4, 5];
 console.log(arr.length); // Output: 5
-map(): Creates a new array with the result of calling a function for each array element.
+
+
+
+======>>>>=====,map(): Creates a new array with the result of calling a function for each array element.
 
 javascript
 Copy code
 const numbers = [1, 2, 3];
 const squared = numbers.map((x) => x * x);
 console.log(squared); // Output: [1, 4, 9]
-pop(): Removes the last element of an array and returns that element.
+
+
+
+======>>>>=====,pop(): Removes the last element of an array and returns that element.
 
 javascript
 Copy code
 const fruits = ['apple', 'banana', 'cherry'];
 const removed = fruits.pop();
 console.log(removed); // Output: 'cherry'
-prototype: Allows you to add properties and methods to an Array object.
+
+
+
+======>>>>=====,prototype: Allows you to add properties and methods to an Array object.
 
 javascript
 Copy code
@@ -325,7 +420,10 @@ Array.prototype.sayHello = function () {
 
 const arr = [1, 2, 3];
 console.log(arr.sayHello()); // Output: 'Hello from Array!'
-push(): Adds new elements to the end of an array and returns the new length.
+
+
+
+======>>>>=====,push(): Adds new elements to the end of an array and returns the new length.
 
 javascript
 Copy code
@@ -333,70 +431,49 @@ const numbers = [1, 2, 3];
 const newLength = numbers.push(4, 5);
 console.log(numbers); // Output: [1, 2, 3, 4, 5]
 console.log(newLength); // Output: 5
-reduce(): Reduce the values of an array to a single value (going left-to-right).
+
+
+
+======>>>>=====,reduce(): Reduce the values of an array to a single value (going left-to-right).
 
 javascript
 Copy code
 const numbers = [1, 2, 3, 4, 5];
 const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
 console.log(sum); // Output: 15
-reduceRight(): Reduce the values of an array to a single value (going right-to-left).
+
+
+
+======>>>>=====,reduceRight(): Reduce the values of an array to a single value (going right-to-left).
 
 javascript
 Copy code
 const numbers = [1, 2, 3, 4, 5];
 const subtract = numbers.reduceRight((accumulator, currentValue) => accumulator - currentValue);
 console.log(subtract); // Output: -3
-reverse(): Reverses the order of the elements in an array.
+
+
+
+======>>>>=====,reverse(): Reverses the order of the elements in an array.
 
 javascript
 Copy code
 const numbers = [1, 2, 3, 4, 5];
 numbers.reverse();
 console.log(numbers); // Output: [5, 4, 3, 2, 1]
-shift(): Removes the first element of an array and returns that element.
+
+
+
+======>>>>=====,shift(): Removes the first element of an array and returns that element.
 
 javascript
 Copy code
 const fruits = ['apple', 'banana', 'cherry'];
 const removed = fruits.shift();
 console.log(removed); // Output: 'apple'
-slice(): Selects a part of an array and returns the new array.
 
-javascript
-Copy code
-const numbers = [1, 2, 3, 4, 5];
-const sliced = numbers.slice(1, 4);
-console.log(sliced); // Output: [2, 3, 4]
-some(): Checks if any of the elements in an array pass a test.
 
-javascript
-Copy code
-const numbers = [1, 2, 3, 4, 5];
-const hasEven = numbers.some((number) => number % 2 === 0);
-console.log(hasEven); // Output: true
-sort(): Sorts the elements of an array.
-
-javascript
-Copy code
-const fruits = ['banana', 'apple', 'cherry'];
-fruits.sort();
-console.log(fruits); // Output: ['apple', 'banana', 'cherry']
-splice(): Adds/Removes elements from an array.
-
-javascript
-Copy code
-const fruits = ['apple', 'banana', 'cherry'];
-fruits.splice(1, 1, 'kiwi');
-console.log(fruits); // Output: ['apple', 'kiwi', 'cherry']
-toString(): Converts an array to a string and returns the result.
-
-javascript
-Copy code
-const fruits = ['apple', 'banana', 'cherry'];
-const result = fruits.toString();
-console.log(result); // Output: 'apple,banana,cherry'
-unshift(): Adds new elements to the beginning of an array and returns the new length.
+======>>>>=====,unshift(): Adds new elements to the beginning of an array and returns the new length.
 
 javascript
 Copy code
@@ -404,7 +481,48 @@ const fruits = ['banana', 'cherry'];
 const newLength = fruits.unshift('apple', 'kiwi');
 console.log(fruits); // Output: ['apple', 'kiwi', 'banana', 'cherry']
 console.log(newLength); // Output: 4
-valueOf(): Returns the primitive value of an array.
+
+
+======>>>>=====,slice(): Selects a part of an array and returns the new array.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+const sliced = numbers.slice(1, 4);
+console.log(sliced); // Output: [2, 3, 4]
+
+
+======>>>>=====,sort(): Sorts the elements of an array.
+
+javascript
+Copy code
+const fruits = ['banana', 'apple', 'cherry'];
+fruits.sort();
+console.log(fruits); // Output: ['apple', 'banana', 'cherry']
+
+
+
+======>>>>=====,splice(): Adds/Removes elements from an array.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.splice(1, 1, 'kiwi');
+console.log(fruits); // Output: ['apple', 'kiwi', 'cherry']
+
+explanation:
+    The splice method is used to modify the contents of an array. In this case, it starts at index 1 (the second element, which is 'banana'), removes 1 element, and then inserts 'kiwi' at that position. So, after this line executes, the array fruits will be modified to ['apple', 'kiwi', 'cherry']
+
+
+======>>>>=====,toString(): Converts an array to a string and returns the result.
+
+javascript
+Copy code
+const fruits = ['apple', 'banana', 'cherry'];
+const result = fruits.toString();
+console.log(result); // Output: 'apple,banana,cherry'
+
+======>>>>=====,valueOf(): Returns the primitive value of an array.
 
 javascript
 Copy code
@@ -419,21 +537,25 @@ These are some of the most commonly used JavaScript Array methods and properties
 =========================String Properties and Methods(,stringMethods)===================
 
 
-charAt(index): Returns the character at a specified index (position).
+======>>>>=====,charAt(index): Returns the character at a specified index (position).
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const char = str.charAt(7); // Gets the character 'W' at index 7
 console.log(char); // Output: 'W'
-charCodeAt(index): Returns the Unicode of the character at a specified index.
+
+
+======>>>>=====,charCodeAt(index): Returns the Unicode of the character at a specified index.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const charCode = str.charCodeAt(0); // Gets the Unicode of 'H' at index 0
 console.log(charCode); // Output: 72
-concat(string1, string2, ...): Returns two or more joined strings.
+
+
+======>>>>=====,concat(string1, string2, ...): Returns two or more joined strings.
 
 javascript
 Copy code
@@ -441,53 +563,71 @@ const str1 = 'Hello';
 const str2 = ', World!';
 const result = str1.concat(str2);
 console.log(result); // Output: 'Hello, World!'
-constructor: Returns the string's constructor function.
+
+
+======>>>>=====,constructor: Returns the string's constructor function.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 console.log(str.constructor); // Output: function String() { [native code] }
-endsWith(searchString, length): Returns true if a string ends with a specified value.
+
+
+======>>>>=====,endsWith(searchString, length): Returns true if a string ends with a specified value.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const endsWithWorld = str.endsWith('World!');
 console.log(endsWithWorld); // Output: true
-fromCharCode(char1, char2, ...): Returns Unicode values as characters.
+
+
+======>>>>=====,fromCharCode(char1, char2, ...): Returns Unicode values as characters.
 
 javascript
 Copy code
 const str = String.fromCharCode(72, 101, 108, 108, 111);
 console.log(str); // Output: 'Hello'
-includes(searchString, position): Returns true if a string contains a specified value.
+
+
+======>>>>=====,includes(searchString, position): Returns true if a string contains a specified value.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const includesHello = str.includes('Hello');
 console.log(includesHello); // Output: true
-indexOf(searchValue, fromIndex): Returns the index (position) of the first occurrence of a value in a string.
+
+
+======>>>>=====,indexOf(searchValue, fromIndex): Returns the index (position) of the first occurrence of a value in a string.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const index = str.indexOf('World');
 console.log(index); // Output: 7
-lastIndexOf(searchValue, fromIndex): Returns the index (position) of the last occurrence of a value in a string.
+
+
+======>>>>=====,lastIndexOf(searchValue, fromIndex): Returns the index (position) of the last occurrence of a value in a string.
 
 javascript
 Copy code
 const str = 'Hello, World, World!';
 const lastIndex = str.lastIndexOf('World');
 console.log(lastIndex); // Output: 14
-length: Returns the length of a string.
+
+
+
+======>>>>=====,length: Returns the length of a string.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 console.log(str.length); // Output: 13
-localeCompare(compareString, locales, options): Compares two strings in the current locale and returns a value indicating their relative ordering.
+
+
+
+======>>>>=====,localeCompare(compareString, locales, options): Compares two strings in the current locale and returns a value indicating their relative ordering.
 
 javascript
 Copy code
@@ -495,14 +635,18 @@ const str1 = 'apple';
 const str2 = 'banana';
 const comparison = str1.localeCompare(str2);
 console.log(comparison); // Output: -1 (str1 comes before str2)
-match(regexp): Searches a string for a value, or a regular expression, and returns the matches as an array.
+
+
+======>>>>=====,match(regexp): Searches a string for a value, or a regular expression, and returns the matches as an array.
 
 javascript
 Copy code
 const str = 'The quick brown fox';
 const matches = str.match(/o/g);
 console.log(matches); // Output: ['o', 'o']
-prototype: Allows you to add properties and methods to a String object.
+
+
+======>>>>=====,prototype: Allows you to add properties and methods to a String object.
 
 javascript
 Copy code
@@ -519,70 +663,91 @@ Copy code
 const str = 'abc';
 const repeated = str.repeat(3);
 console.log(repeated); // Output: 'abcabcabc'
-replace(searchValue, newValue): Searches a string for a pattern, and returns a new string where the first match is replaced.
+
+
+
+======>>>>=====,replace(searchValue, newValue): Searches a string for a pattern, and returns a new string where the first match is replaced.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const replaced = str.replace('World', 'Universe');
 console.log(replaced); // Output: 'Hello, Universe!'
-replaceAll(searchValue, newValue): Searches a string for a pattern and returns a new string where all matches are replaced.
+
+
+======>>>>=====,replaceAll(searchValue, newValue): Searches a string for a pattern and returns a new string where all matches are replaced.
 
 javascript
 Copy code
 const str = 'Hello, World, World!';
 const replacedAll = str.replaceAll('World', 'Universe');
 console.log(replacedAll); // Output: 'Hello, Universe, Universe!'
-search(regexp): Searches a string for a value or regular expression and returns the index (position) of the match.
+
+
+======>>>>=====,search(regexp): Searches a string for a value or regular expression and returns the index (position) of the match.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const index = str.search('World');
 console.log(index); // Output: 7
-slice(start, end): Extracts a part of a string and returns a new string.
+
+
+======>>>>=====,slice(start, end): Extracts a part of a string and returns a new string.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const sliced = str.slice(7, 12);
 console.log(sliced); // Output: 'World'
-split(separator, limit): Splits a string into an array of substrings based on a separator.
+
+
+======>>>>=====,split(separator, limit): Splits a string into an array of substrings based on a separator.
 
 javascript
 Copy code
 const str = 'apple,banana,cherry';
 const fruits = str.split(',');
 console.log(fruits); // Output: ['apple', 'banana', 'cherry']
-startsWith(searchString, position): Checks whether a string begins with specified characters.
+
+
+======>>>>=====,startsWith(searchString, position): Checks whether a string begins with specified characters.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const startsWithHello = str.startsWith('Hello');
 console.log(startsWithHello); // Output: true
-substr(start, length): Extracts a number of characters from a string, starting at a specific index (position).
+
+
+======>>>>=====,substr(start, length): Extracts a number of characters from a string, starting at a specific index (position).
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const substring = str.substr(7, 5);
 console.log(substring); // Output: 'World'
-substring(start, end): Extracts characters from a string, between two specified indices (positions).
+
+
+======>>>>=====,substring(start, end): Extracts characters from a string, between two specified indices (positions).(last index non inclusive)
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const substring = str.substring(7, 12);
 console.log(substring); // Output: 'World'
-toLocaleLowerCase(): Returns a string converted to lowercase letters, using the host's locale.
+
+
+======>>>>=====,toLocaleLowerCase(): Returns a string converted to lowercase letters, using the host's locale.
 
 javascript
 Copy code
 const str = 'HELLO';
 const lowerCase = str.toLocaleLowerCase();
 console.log(lowerCase); // Output: 'hello' (based on locale)
-toLocaleUpperCase(): Returns a string converted to uppercase letters, using the host's locale.
+
+
+======>>>>=====,toLocaleUpperCase(): Returns a string converted to uppercase letters, using the host's locale.
 
 javascript
 Copy code
@@ -596,42 +761,54 @@ Copy code
 const str = 'HELLO';
 const lowerCase = str.toLowerCase();
 console.log(lowerCase); // Output: 'hello'
-toString(): Returns a string or a string object as a string.
+
+
+======>>>>=====,toString(): Returns a string or a string object as a string.
 
 javascript
 Copy code
 const str = 'Hello, World!';
 const strToString = str.toString();
 console.log(strToString); // Output: 'Hello, World!'
-toUpperCase(): Returns a string converted to uppercase letters.
+
+
+======>>>>=====,toUpperCase(): Returns a string converted to uppercase letters.
 
 javascript
 Copy code
 const str = 'hello';
 const upperCase = str.toUpperCase();
 console.log(upperCase); // Output: 'HELLO'
-trim(): Returns a string with removed whitespaces from both ends.
+
+
+======>>>>=====,trim(): Returns a string with removed whitespaces from both ends.
 
 javascript
 Copy code
 const str = '   Hello, World!   ';
 const trimmed = str.trim();
 console.log(trimmed); // Output: 'Hello, World!'
-trimEnd(): Returns a string with removed whitespaces from the end.
+
+
+======>>>>=====,trimEnd(): Returns a string with removed whitespaces from the end.
 
 javascript
 Copy code
 const str = '   Hello, World!   ';
 const trimmedEnd = str.trimEnd();
 console.log(trimmedEnd); // Output: '   Hello, World!'
-trimStart(): Returns a string with removed whitespaces from the start.
+
+
+======>>>>=====,trimStart(): Returns a string with removed whitespaces from the start.
 
 javascript
 Copy code
 const str = '   Hello, World!   ';
 const trimmedStart = str.trimStart();
 console.log(trimmedStart); // Output: 'Hello, World!   '
-valueOf(): Returns the primitive value of a string or a string object.
+
+
+======>>>>=====,valueOf(): Returns the primitive value of a string or a string object.
 
 javascript
 Copy code
@@ -651,86 +828,116 @@ javascript
 Copy code
 const num = 42;
 console.log(num.constructor); // Output: function Number() { [native code] }
-EPSILON: Returns the difference between 1 and the smallest number greater than 1 that can be represented as a JavaScript number.
+
+
+======>>>>=====,EPSILON: Returns the difference between 1 and the smallest number greater than 1 that can be represented as a JavaScript number.
 
 javascript
 Copy code
 const epsilonValue = Number.EPSILON;
 console.log(epsilonValue); // Output: Approximately 2.220446049250313e-16
-isFinite(value): Checks whether a value is a finite number.
+
+
+======>>>>=====,isFinite(value): Checks whether a value is a finite number.
 
 javascript
 Copy code
 console.log(Number.isFinite(42)); // Output: true
 console.log(Number.isFinite(Infinity)); // Output: false
-isInteger(value): Checks whether a value is an integer.
+
+
+======>>>>=====,isInteger(value): Checks whether a value is an integer.
 
 javascript
 Copy code
 console.log(Number.isInteger(42)); // Output: true
 console.log(Number.isInteger(42.5)); // Output: false
-isNaN(value): Checks whether a value is Number.NaN.
+
+
+======>>>>=====,isNaN(value): Checks whether a value is Number.NaN.
 
 javascript
 Copy code
 console.log(Number.isNaN(42)); // Output: false
 console.log(Number.isNaN(NaN)); // Output: true
-isSafeInteger(value): Checks whether a value is a safe integer.
+
+
+======>>>>=====,isSafeInteger(value): Checks whether a value is a safe integer.
 
 javascript
 Copy code
 console.log(Number.isSafeInteger(42)); // Output: true
 console.log(Number.isSafeInteger(Math.pow(2, 53))); // Output: false
-MAX_SAFE_INTEGER: Returns the maximum safe integer in JavaScript.
+
+
+======>>>>=====,MAX_SAFE_INTEGER: Returns the maximum safe integer in JavaScript.
 
 javascript
 Copy code
 console.log(Number.MAX_SAFE_INTEGER); // Output: 9007199254740991
-MIN_SAFE_INTEGER: Returns the minimum safe integer in JavaScript.
+
+
+======>>>>=====,MIN_SAFE_INTEGER: Returns the minimum safe integer in JavaScript.
 
 javascript
 Copy code
 console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991
-MAX_VALUE: Returns the largest number possible in JavaScript.
+
+
+======>>>>=====,MAX_VALUE: Returns the largest number possible in JavaScript.
 
 javascript
 Copy code
 console.log(Number.MAX_VALUE); // Output: 1.7976931348623157e+308
-MIN_VALUE: Returns the smallest number possible in JavaScript.
+
+
+======>>>>=====,MIN_VALUE: Returns the smallest number possible in JavaScript.
 
 javascript
 Copy code
 console.log(Number.MIN_VALUE); // Output: 5e-324
-NaN: Represents a "Not-a-Number" value.
+
+
+======>>>>=====,NaN: Represents a "Not-a-Number" value.
 
 javascript
 Copy code
 console.log(Number.NaN); // Output: NaN
-NEGATIVE_INFINITY: Represents negative infinity (returned on overflow).
+
+
+======>>>>=====,NEGATIVE_INFINITY: Represents negative infinity (returned on overflow).
 
 javascript
 Copy code
 console.log(Number.NEGATIVE_INFINITY); // Output: -Infinity
-POSITIVE_INFINITY: Represents positive infinity (returned on overflow).
+
+
+======>>>>=====,POSITIVE_INFINITY: Represents positive infinity (returned on overflow).
 
 javascript
 Copy code
 console.log(Number.POSITIVE_INFINITY); // Output: Infinity
-parseFloat(string): Parses a string and returns a floating-point number.
+
+
+======>>>>=====,parseFloat(string): Parses a string and returns a floating-point number.
 
 javascript
 Copy code
 const str = '3.14';
 const num = parseFloat(str);
 console.log(num); // Output: 3.14
-parseInt(string, radix): Parses a string and returns a whole number. The radix parameter specifies the base (e.g., 10 for decimal).
+
+
+======>>>>=====,parseInt(string, radix): Parses a string and returns a whole number. The radix parameter specifies the base (e.g., 10 for decimal).
 
 javascript
 Copy code
 const str = '42';
 const num = parseInt(str, 10);
 console.log(num); // Output: 42
-prototype: Allows you to add properties and methods to a Number object.
+
+
+======>>>>=====,prototype: Allows you to add properties and methods to a Number object.
 
 javascript
 Copy code
@@ -740,27 +947,35 @@ Number.prototype.double = function () {
 
 const num = 5;
 console.log(num.double()); // Output: 10
-toExponential(x): Converts a number into exponential notation with x numbers of digits after the decimal point.
+
+
+======>>>>=====,toExponential(x): Converts a number into exponential notation with x numbers of digits after the decimal point.
 
 javascript
 Copy code
 const num = 12345.6789;
 const exponential = num.toExponential(2);
 console.log(exponential); // Output: '1.23e+4'
-toFixed(x): Formats a number with x numbers of digits after the decimal point.
+
+
+======>>>>=====,toFixed(x): Formats a number with x numbers of digits after the decimal point.
 
 javascript
 Copy code
 const num = 3.14159265359;
 const formatted = num.toFixed(2);
 console.log(formatted); // Output: '3.14'
-toLocaleString(): Converts a number into a string, based on the locale settings.
+
+
+======>>>>=====,toLocaleString(): Converts a number into a string, based on the locale settings.
 
 javascript
 Copy code
 const num = 1234567.89;
 const localized = num.toLocaleString('en-US');
 console.log(localized); // Output: '1,234,567.89'
+
+
 toPrecision(x): Formats a number to have a total length of x characters.
 
 javascript
@@ -768,14 +983,18 @@ Copy code
 const num = 123.456789;
 const precision = num.toPrecision(5);
 console.log(precision); // Output: '123.46'
-toString(): Converts a number to a string.
+
+
+======>>>>=====,toString(): Converts a number to a string.
 
 javascript
 Copy code
 const num = 42;
 const str = num.toString();
 console.log(str); // Output: '42'
-valueOf(): Returns the primitive value of a number.
+
+
+======>>>>=====,valueOf(): Returns the primitive value of a number.
 
 javascript
 Copy code
@@ -812,19 +1031,25 @@ javascript
 Copy code
 const arcsine = Math.asin(0.5);
 console.log(arcsine); // Output: 0.5235987755982989 (approximately 30 degrees)
-asinh(x): Returns the hyperbolic arcsine of x.
+
+
+======>>>>=====,asinh(x): Returns the hyperbolic arcsine of x.
 
 javascript
 Copy code
 const hyperbolicArcsine = Math.asinh(2);
 console.log(hyperbolicArcsine); // Output: 1.4436354751788103
-atan(x): Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians.
+
+
+======>>>>=====,atan(x): Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians.
 
 javascript
 Copy code
 const arctangent = Math.atan(1);
 console.log(arctangent); // Output: 0.7853981633974483 (approximately 45 degrees)
-atan2(y, x): Returns the arctangent of the quotient of its arguments.
+
+
+======>>>>=====,atan2(y, x): Returns the arctangent of the quotient of its arguments.
 
 javascript
 Copy code
@@ -836,7 +1061,9 @@ javascript
 Copy code
 const hyperbolicArctangent = Math.atanh(0.5);
 console.log(hyperbolicArctangent); // Output: 0.5493061443340548
-cbrt(x): Returns the cubic root of x.
+
+
+======>>>>=====,cbrt(x): Returns the cubic root of x.
 
 javascript
 Copy code
@@ -6670,3 +6897,184 @@ Use var when you need function or global scope variables (although it's rarely r
 Use let when you need block-scoped variables that may be reassigned.
 Use const when you need block-scoped variables that should not be reassigned but can have their properties modified.
 In modern JavaScript development, it's recommended to use let and const over var for better scoping and to reduce potential issues related to variable hoisting.
+
+======================,es6 features==================
+========>==========,let (The let keyword)
+The let keyword allows you to declare a variable with block scope.
+
+The let keyword was introduced in ES6 (2015)
+
+Variables declared with let have Block Scope
+
+Variables declared with let must be Declared before use
+
+Variables declared with let cannot be Redeclared in the same scope
+
+
+========>==========Block Scope(,blockScope)
+Before ES6 (2015), JavaScript did not have Block Scope.
+
+JavaScript had Global Scope and Function Scope.
+
+ES6 introduced the two new JavaScript keywords: let and const.
+
+These two keywords provided Block Scope in JavaScript:
+
+Variables declared with let inside a { } block cannot be accessed from outside the block:
+
+{
+  let x = 2;
+}
+// x can NOT be used here
+
+
+========>==========Global Scope(,globalScope)
+Variables declared with the var always have Global Scope.
+
+Variables declared with the var keyword can NOT have block scope:
+
+Variables declared with var inside a { } block can be accessed from outside the block:
+
+{
+  var x = 2;
+}
+// x CAN be used here
+
+========>==========,Cannot be Redeclared
+Variables defined with let can not be redeclared.
+
+You can not accidentally redeclare a variable declared with let.
+
+----->With let you can not do this:
+
+let x = "John Doe";
+
+let x = 0;
+
+
+----->With var you can do this:
+
+var x = "John Doe";
+
+var x = 0;
+
+========>==========,Redeclaring Variables
+Redeclaring a variable using the var keyword can impose problems.
+
+----->Redeclaring a variable inside a block will also redeclare the variable outside the block:
+
+Example
+var x = 10;
+// Here x is 10
+
+{
+var x = 2;
+// Here x is 2
+}
+
+// Here x is 2
+
+
+----->Redeclaring a variable using the let keyword can solve this problem.
+
+Redeclaring a variable inside a block will not redeclare the variable outside the block:
+
+Example
+let x = 10;
+// Here x is 10
+
+{
+let x = 2;
+// Here x is 2
+}
+
+// Here x is 10
+
+
+========>==========,Let Hoisting
+Variables defined with var are hoisted to the top and can be initialized at any time.
+
+Meaning: You can use the variable before it is declared:
+
+Example
+This is OK:
+
+carName = "Volvo";
+var carName;
+
+-->JavaScript Declarations are Hoisted
+
+ In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
+
+-->JavaScript Initializations are Not Hoisted
+
+
+
+========>==========,closures in js
+
+In JavaScript, a closure is a feature that allows a function to remember and access the variables from its outer (enclosing) scope, even after that scope has finished executing. This provides a way to create private variables and maintain state in a function.
+
+Here's a simple breakdown:
+
+Scope: In JavaScript, variables have a scope, which defines where they are accessible. A function creates its own scope, and any variables declared inside it are only accessible within that function, creating a local scope.
+
+javascript
+Copy code
+function outerFunction() {
+    let outerVariable = 10;
+
+    function innerFunction() {
+        console.log(outerVariable);
+    }
+
+    innerFunction(); // Outputs: 10
+}
+
+outerFunction();
+Closures: A closure occurs when a function is defined inside another function, and the inner function has access to the outer function's variables, even after the outer function has finished executing.
+
+javascript
+Copy code
+function outerFunction() {
+    let outerVariable = 10;
+
+    function innerFunction() {
+        console.log(outerVariable);
+    }
+
+    return innerFunction;
+}
+
+const closureFunction = outerFunction();
+closureFunction(); // Outputs: 10
+Here, innerFunction is returned from outerFunction, and it maintains access to outerVariable even after outerFunction has completed.
+
+Private Variables: Closures are often used to create private variables. These are variables that can only be accessed and modified by the functions within the same closure.
+
+javascript
+Copy code
+function counter() {
+    let count = 0;
+
+    return function() {
+        count++;
+        console.log(count);
+    };
+}
+
+const increment = counter();
+increment(); // Outputs: 1
+increment(); // Outputs: 2
+Here, the count variable is private to the counter function, and the returned function (the closure) can still access and modify it.
+
+In summary, closures in JavaScript allow functions to retain access to variables from their parent scopes, providing a way to create private variables and maintain state. They are a powerful and commonly used concept in JavaScript programming.
+
+
+
+========>==========,JavaScript const(,const)
+The const keyword allows you to declare a constant (a JavaScript variable with a constant value).
+
+Constants are similar to let variables, except that the value cannot be changed.

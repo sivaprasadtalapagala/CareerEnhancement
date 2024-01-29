@@ -481,6 +481,83 @@ In this example, the AuthDirective is a structural directive that conditionally 
 This demonstrates the flexibility of structural directives in managing the structure of your templates based on dynamic conditions.
 
  
+==================change detection in angular(,changeDetection) ==========
+
+Default Change Detection:
+Angular's default change detection strategy is to check the components' properties and their children's properties for changes. If any changes are detected, Angular updates the view.
+
+Example:
+
+typescript
+Copy code
+@Component({
+  selector: 'app-example',
+  template: '<p>{{ data }}</p>',
+})
+export class ExampleComponent {
+  data: string = 'Initial value';
+}
+OnPush Change Detection:
+You can change the change detection strategy to OnPush for a component. With OnPush, Angular will only check for changes when:
+
+The component's input properties change.
+The component raises an event.
+An observable bound to the template emits a new value.
+Example:
+
+typescript
+Copy code
+@Component({
+  selector: 'app-example',
+  template: '<p>{{ data }}</p>',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ExampleComponent {
+  @Input() data: string = 'Initial value';
+}
+ChangeDetectorRef:
+The ChangeDetectorRef service allows you to manually trigger change detection for a component.
+
+Example:
+
+typescript
+Copy code
+import { ChangeDetectorRef } from '@angular/core';
+
+constructor(private cdr: ChangeDetectorRef) { }
+
+// Trigger change detection manually
+detectChanges() {
+  this.cdr.detectChanges();
+}
+Immutable Data:
+Using immutable data structures can help with change detection. If you always create new objects or arrays when updating data, Angular's change detection can easily identify the changes.
+
+Async Pipe:
+When working with observables, the async pipe automatically triggers change detection when a new value is emitted.
+
+Example:
+
+typescript
+Copy code
+import { Observable } from 'rxjs';
+
+data$: Observable<string>;
+
+// In the template
+<p>{{ data$ | async }}</p>
+NgDoCheck:
+Implementing the ngDoCheck lifecycle hook allows you to perform custom change detection logic.
+
+Example:
+
+typescript
+Copy code
+ngDoCheck() {
+  // Custom change detection logic
+}
+Remember that Angular's default change detection is highly optimized, and in most cases, you don't need to manually intervene. However, understanding these techniques can be helpful in scenarios where you need more control over change detection behavior.
+
 
 
  ================================,What are components?(,components)
@@ -758,6 +835,14 @@ export class ExampleComponent implements OnInit {
     });
   }
 }
+
+
+==== Why constructor is called before ngOnInit?
+This is because the constructor is called to initialize the class and not the component. The constructor is called before ngOnInit , 
+at this point the component hasn't been created yet, only the component class has being instantiated thus your dependencies are brought in, 
+but your initialization code will not run.
+
+
 
 =================================What is a ,service?
 
@@ -2238,7 +2323,7 @@ npm install -g @angular-devkit/schematics-cli
 
 
 
-==========================How to use polyfills in Angular application?
+==========================How to use ,polyfills in Angular application?
 
 The Angular CLI provides support for polyfills officially. When you create a new project with the ng new command, a src/polyfills.ts configuration file is created as part of your project folder. 
 This file includes the mandatory and many of the optional polyfills as JavaScript import statements. Let's categorize the polyfills,
@@ -2725,6 +2810,9 @@ Non-semantic elements: <div> and <span> tells nothing about its content.
 
 ========================================= What are the semantic tags available in html5?(,sematicTags)
 
+Semantic HTML refers to syntax that makes the HTML more comprehensible by better defining the different sections and layout of web pages. 
+It makes web pages more informative and adaptable, allowing browsers and search engines to better interpret content
+
 
 Semantic HTML elements are those that clearly describe their meaning in a human- and machine-readable way. 
 Elements such as 
@@ -2775,13 +2863,6 @@ Syntax:
    </body> 
 </html> 
 
-
-
-
-===========================,sematicTagsUses
-
-Semantic HTML refers to syntax that makes the HTML more comprehensible by better defining the different sections and layout of web pages. 
-It makes web pages more informative and adaptable, allowing browsers and search engines to better interpret content
 
 
 
@@ -3162,8 +3243,6 @@ Example 01: Create a Cookies
 // create a cookie
 document.cookie = "username=Anjali Batta";
 
-// cookie with expiry date
-document.cookie = "username=Anjali Batta; expires=Thu, 18 Dec 2022 12:00:00 UTC";
 Example 02: Cookie with expiry date
 
 // cookie with expiry date
@@ -3709,62 +3788,6 @@ rtl	Right-to-left text direction
 auto	Let the browser figure out the text direction, based on the content
 
 
-
-
-==========,webPack=========
-Webpack is a tool used in Angular (and many other modern web development projects) to help manage and bundle various files and assets used in your application. It takes different pieces of your code, like JavaScript, CSS, images, and more, and bundles them together into optimized and efficient packages for your web application.
-
-Let's break down this explanation with a real-time example in the context of an Angular project:
-
-Example Scenario:
-Without Webpack:
-Imagine you have an Angular application with multiple components, styles, and scripts. Each component has its own JavaScript file, styles are in separate CSS files, and you have images and fonts scattered around.
-
-plaintext
-Copy code
-- app/
-  - components/
-    - header/
-      - header.component.ts
-      - header.component.css
-    - main/
-      - main.component.ts
-      - main.component.css
-  - assets/
-    - images/
-      - logo.png
-    - fonts/
-      - font.woff
-Without a bundler like Webpack, your HTML might have to include multiple script and link tags for each component, style, image, and font, resulting in a lot of separate requests to the server.
-
-With Webpack:
-Configuration:
-
-You set up a webpack.config.js file in your project to configure how Webpack should handle different types of files.
-Dependency Graph:
-
-Webpack creates a dependency graph by analyzing your code and figuring out how different files depend on each other.
-Bundling:
-
-It bundles everything together. For instance, it combines all your component files, styles, images, and fonts into a few optimized files.
-Output:
-
-The output is typically one or more JavaScript bundles, along with other optimized assets.
-plaintext
-Copy code
-- dist/
-  - bundle.js
-  - styles.css
-  - images/
-    - logo.png
-  - fonts/
-    - font.woff
-Efficiency:
-With Webpack, your application becomes more efficient because it reduces the number of requests needed to load your app. Users download fewer and optimized files, resulting in faster load times.
-Summary:
-So, in a nutshell, Webpack is like a smart organizer for your web application, helping you manage and bundle all the pieces of your code and assets efficiently. It simplifies the development process and enhances the performance of your Angular application by creating optimized bundles that are ready to be served to users.
-
-
 ================,standaloneComponents====
 
 In Angular, standalone components are individual pieces of your user interface that can be developed, tested, and used independently. They are reusable building blocks that help you organize and modularize your application.
@@ -3881,6 +3904,7 @@ Explanation:
 Default Change Detection:
 
 By default, Angular runs change detection automatically and efficiently. However, in some cases, you might need to perform specific actions based on changes that Angular might not automatically detect.
+
 ngDoCheck: Manual Change Detection:
 
 The ngDoCheck lifecycle hook allows you to implement custom change detection logic.
@@ -3906,15 +3930,7 @@ Let's consider a scenario where a component subscribes to an observable, and we 
 
 ,gitHubInverview topics
 
-,constructorVsNgonInit
-The constructor() should only be used to initialize class members but shouldn't do actual "work".
- So we should use constructor() to setup Dependency Injection, Initialization of class fields etc.
-  ngOnInit() is a better place to write "actual work code" that we need to execute as soon as the class is instantiated.
 
-  Why constructor is called before ngOnInit?
-This is because the constructor is called to initialize the class and not the component. The constructor is called before ngOnInit , 
-at this point the component hasn't been created yet, only the component class has being instantiated thus your dependencies are brought in, 
-but your initialization code will not run.
 
 
 
@@ -4042,27 +4058,132 @@ ActivatedRoute
 RouterState
 RouteLink Parameters array
 
- 3(1),Router
-The Angular Router is an object that enables navigation from one component to the next component as users perform application tasks like clicking on menus links, buttons or clicking on back/forward button on the browser. We can access the router object and use its methods like navigate() or navigateByUrl(), to navigate to a route
- 3(2),Route
-Route tells the Angular Router which view to display when a user clicks a link or pastes a URL into the browser address bar. Every Route consists of a path and a component it is mapped to. The Router object parses and builds the final URL using the Route
-3(3),Routes
-Routes is an array of Route objects our application supports
-3(4),RouterOutlet
-The outerOutlet is a directive (<router-outlet>) that serves as a placeholder, where the Router should display the view
-3(5),RouterLink
-The RouterLink is a directive that binds the HTML element to a Route. Clicking on the HTML element, which is bound to a RouterLink, will result in navigation to the Route. The RouterLink may contain parameters to be passed to the route’s component.
-3(6),RouterLinkActive
-RouterLinkActive is a directive for adding or removing classes from an HTML element that is bound to a RouterLink. Using this directive, we can toggle CSS classes for active RouterLinks based on the current RouterState
-3(7),ActivatedRoute
-The ActivatedRoute is an object that represents the currently activated route associated with the loaded Component.
-3(8),RouterState
-The current state of the router including a tree of the currently activated routes together with convenience methods for traversing the route tree.
-3(9),RouteLink Parameters array
-The Parameters or arguments to the Route. It is an array which you can bind to RouterLink directive or pass it as an argument to the Router.navigate method.
+ 1. Router:
+
+The router is a module in Angular that provides a way to navigate between different components of an Angular application based on the URL.
+typescript
+Copy code
+// Import the router module
+import { RouterModule, Routes } from '@angular/router';
+
+// Define routes
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+];
+
+// Add the RouterModule to your application
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+2. Route:
+
+A route defines a mapping between a URL path and a component in your Angular application.
+typescript
+Copy code
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+];
 
 
-4 ,How to configure Angular Router
+3. Routes:
+
+Routes is an array of Route objects that define the navigation paths and corresponding components.
+typescript
+Copy code
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+];
+
+
+4. RouterOutlet:
+
+RouterOutlet is a directive in Angular that acts as a placeholder where the router displays the routed component views.
+html
+Copy code
+<router-outlet></router-outlet>
+
+
+5. RouterLink:
+
+RouterLink is a directive in Angular used to create navigation links in your templates.
+html
+Copy code
+<a routerLink="/home">Home</a>
+<a routerLink="/about">About</a>
+
+
+6. RouterLinkActive:
+
+RouterLinkActive is a directive in Angular that adds a CSS class when the associated RouterLink is active.
+html
+Copy code
+<a routerLink="/home" routerLinkActive="active">Home</a>
+<a routerLink="/about" routerLinkActive="active">About</a>
+
+
+7. ActivatedRoute:
+
+ActivatedRoute is a service in Angular that provides information about the route that is currently active.
+typescript
+Copy code
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) { }
+
+ngOnInit() {
+  this.route.params.subscribe(params => {
+    // Access route parameters
+    console.log(params.id);
+  });
+}
+
+
+8. RouterState:
+
+RouterState is a service in Angular that represents the state of the router at a point in time.
+typescript
+Copy code
+import { Router } from '@angular/router';
+
+constructor(private router: Router) { }
+
+ngOnInit() {
+  const routerState = this.router.routerState;
+  console.log(routerState);
+}
+
+
+9. RouteLink Parameters array:
+
+Route parameters allow you to pass data to a route. You can access these parameters using the ActivatedRoute service.
+typescript
+Copy code
+// Define a route with a parameter
+const routes: Routes = [
+  { path: 'user/:id', component: UserComponent },
+];
+
+// Access route parameter in component
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) { }
+
+ngOnInit() {
+  this.route.params.subscribe(params => {
+    console.log(params.id); // Access the 'id' parameter
+  });
+}
+
+
+
+
+=========4 ,How to configure Angular Router
 ->To Configure the Router in Angular, you need to follow these steps
 
 ->Set the <base href>

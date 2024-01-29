@@ -1,0 +1,33 @@
+=====share data when there is no relation using behavioural subject in angular===========
+
+// data.service.ts
+import { BehaviorSubject } from 'rxjs';
+export class DataService {
+  private userDataSubject = new BehaviorSubject<any>(null);
+  userData$ = this.userDataSubject.asObservable();
+
+  setUserData(data: any) {
+    this.userDataSubject.next(data);
+  }
+}
+
+
+// compA.component.ts
+constructor(private dataService: DataService) {}
+
+  showUserData() {
+    this.dataService.setUserData(this.userData);
+  }
+
+
+
+// compB.component.ts
+  userData: any;
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.userData$.subscribe((userData) => {
+      this.userData = userData;
+    });
+  }

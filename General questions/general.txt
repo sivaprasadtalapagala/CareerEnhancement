@@ -33,3 +33,108 @@ I am committed to delivering high-quality results and contributing effectively t
 
 
 ======different angular versions you worked and there differences====
+
+
+====another best way to store token other than local storage===
+
+cookies
+
+
+===different packages used====
+in meity
+1.@angular/material (v12.2.13) - Material Design components for Angular.
+2.ckeditor (v4.7.3) - JavaScript rich text editor.
+3.@nebular/auth (v8.0.0) - Nebular authentication module.
+4.@nebular/theme (v8.0.0) - Nebular theme and UI components.
+5.@ng-select/ng-select (v7.4.0) - Angular dropdown/select library.
+6.angular2-chartjs (v0.4.1) - Angular 2 wrapper for Chart.js.
+7.axios (v1.3.2) - Promise-based HTTP client.
+8.bootstrap (v4.3.1) - Front-end framework.
+9.chart.js (v2.7.1) - JavaScript charting library.
+10.classlist.js (v1.1.20150312) - Cross-browser element.classList.
+11.dom-to-json (v0.0.4) - Convert DOM to JSON.
+12.echarts (v4.0.2) - Interactive charts and data visualization.
+13.eva-icons (v1.1.3) - Customizable SVG icons.
+14.export-to-csv (v0.2.1) - Export data to CSV.
+15.file-saver (v2.0.5) - Save files on the client side.
+16.font-awesome (v4.7.0) - Icon font and CSS toolkit.
+17.html2canvas (v1.4.1) - HTML to canvas library.
+18.http-server (v14.1.1) - Simple HTTP server.
+19.intl (v1.2.5) - Internationalization library.
+20.ionicons (v2.0.1) - Icon pack for Ionic framework.
+21.jspdf (v2.5.1) - Generate PDFs in the browser.
+22.leaflet (v1.2.0) - JavaScript library for interactive maps.
+23.lodash (v4.17.21) - Utility library.
+24.nebular-icons (v1.1.0) - Icons for Nebular.
+25.ng-multiselect-dropdown (v0.3.9) - Angular multi-select dropdown.
+26.ngx-bootstrap (v10.2.0) - Bootstrap components for Angular.
+27.ngx-echarts (v4.2.2) - ECharts wrapper for Angular.
+28.ngx-pagination (v5.1.1) - Angular pagination component.
+29.ngx-quill-editor (v2.2.2) - Angular wrapper for Quill editor.
+30.normalize.css (v6.0.0) - CSS normalization library.
+31.pace-js (v1.0.2) - Automatic page load progress bar.
+32.pdfmake (v0.2.7) - PDF document generation library.
+33.roboto-fontface (v0.8.0) - Roboto fontface.
+34.rxjs (v6.6.2) - Reactive Extensions library for JavaScript.
+35.socicon (v3.0.5) - Social icons font.
+36.style-loader (v1.1.3) - Style loader for Webpack.
+37.tinymce (v4.5.7) - Rich text editing for modern applications.
+38.tslib (v2.1.0) - Runtime library for TypeScript.
+39.web-animations-js (v2.3.2) - Web Animations API polyfill.
+40.xlsx (v0.18.5) - Excel file parser and writer.
+41.zone.js (~0.11.4) - Execution context for JavaScript.
+
+in meity UI
+
+@highcharts/map-collection - Collection of Highcharts map data.
+@ng-bootstrap/ng-bootstrap - Angular Bootstrap components.
+@types/googlemaps - TypeScript types for Google Maps API.
+angular-dark-mode - Angular directive for dark mode.
+angular-highcharts - Highcharts integration for Angular.
+axios-observable - Axios extension for observables.
+domjson - Convert DOM to JSON.
+hammerjs - Library for touch gestures.
+highcharts - Interactive JavaScript charts.
+highcharts-angular - Highcharts wrapper for Angular.
+ng-recaptcha - Google reCAPTCHA integration for Angular.
+ng14-odometer - Angular wrapper for Odometer.
+ng2-google-charts - Angular wrapper for Google Charts.
+ng2-odometer - Angular wrapper for Odometer.
+ngx-slick-carousel - Angular wrapper for Slick Carousel.
+ngx-slickjs - Angular wrapper for Slick.js.
+ngx-spinner - Angular loading spinner component.
+odometer - Library for smoothly transitioning numbers.
+pdfmake - PDF document generation library.
+proj4 - Library for performing cartographic projections.
+slick-carousel - Slick Carousel jQuery plugin.
+
+in cerina UI
+@angular/http - Angular HTTP module (Note: Deprecated in recent Angular versions; consider using HttpClient).
+@nebular/theme - Nebular theme and UI components (Note: Already listed in a previous response).
+ng-dynamic-component - Dynamic component loader for Angular.
+ng2-ace-editor - Angular wrapper for the Ace editor.
+ngx-color-picker - Color picker component for Angular.
+ngx-json-viewer - JSON viewer component for Angular.
+ngx-linky - Angular directive for linkifying text.
+ngx-monaco-editor - Angular wrapper for the Monaco editor.
+ngx-quill - Angular wrapper for the Quill editor.
+ngx-virtual-scroller - Angular virtual scroller component.
+primeicons - PrimeIcons library for PrimeNG (Note: PrimeNG is listed in a previous response).
+primeng - PrimeNG UI component library (Note: Already listed in a previous response).
+quill - Quill rich text editor.
+socket.io-client - Socket.IO client library for real-time web applications.
+DevDependencies:
+
+@types/chart.js - TypeScript types for Chart.js.
+@types/d3 - TypeScript types for D3.js.
+terser - JavaScript minifier.
+terser-webpack-plugin - Webpack plugin for Terser.
+tslint - TypeScript linter.
+rxjs-tslint - RxJS linting rules.
+ts-node - TypeScript execution environment for Node.js.
+
+
+
+
+
+======ask any suggestions will give to make me improve my self==========
