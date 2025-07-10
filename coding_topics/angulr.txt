@@ -31,3 +31,158 @@ constructor(private dataService: DataService) {}
       this.userData = userData;
     });
   }
+
+
+
+
+
+
+
+
+  ===============   ,pipes Features Covered: ============
+
+Built-in Pipes
+
+Custom Pipe (Filter Pipe)
+
+Chaining Pipes
+
+Pure vs Impure Pipe
+
+Pipe with parameters
+
+Pipe in *ngFor
+
+
+
+ app.component.html
+
+<h2>🔧 Built-in Pipes</h2>
+<p>Name Uppercase: {{ name | uppercase }}</p>
+<p>Date (short): {{ today | date:'short' }}</p>
+<p>Amount (Currency): {{ amount | currency:'INR' }}</p>
+<p>Percentage: {{ percentValue | percent }}</p>
+
+<hr>
+
+<h2>🔁 Chaining Pipes</h2>
+<p>Chained: {{ name | uppercase | slice:0:4 }}</p>
+
+<hr>
+
+<h2>🔍 Filter (Custom Pipe)</h2>
+<input type="text" [(ngModel)]="searchText" placeholder="Search name" />
+<ul>
+  <li *ngFor="let user of users | filter:searchText">
+    {{ user.name }}
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🧠 What is a Custom Pipe?
+A custom pipe is like a custom filter. You create it when Angular’s built-in pipes (like uppercase, date, currency) are not enough.
+
+👀 What Problem Are We Solving?
+Let’s say you have a list of names:
+
+ts
+Copy
+Edit
+users = [
+  { name: 'Siva' },
+  { name: 'Ravi' },
+  { name: 'Kiran' },
+  { name: 'Siva Kumar' }
+];
+Now, you want to show only the users that match your search text. You can’t do that with built-in pipes.
+
+So, we create a custom pipe to filter that list based on the input value.
+
+🔨 Step-by-Step: Create a Custom Pipe
+✅ 1. Generate a pipe
+Run in terminal:
+
+bash
+Copy
+Edit
+ng generate pipe filter
+It creates a file like filter.pipe.ts
+
+✅ 2. Write your logic in the pipe
+ts
+Copy
+Edit
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'filter',
+  pure: false  // this makes it update in real-time
+})
+export class FilterPipe implements PipeTransform {
+  transform(items: any[], searchText: string): any[] {
+    if (!items) return [];
+    if (!searchText) return items;
+
+    searchText = searchText.toLowerCase();
+
+    return items.filter(item => {
+      return item.name.toLowerCase().includes(searchText);
+    });
+  }
+}
+📌 What this code does:
+@Pipe({ name: 'filter' }): This registers your pipe with the name filter.
+
+transform(): This is the function that will be called when Angular uses your pipe.
+
+It checks if each item in the list includes the search text.
+
+✅ 3. Register it in app.module.ts
+ts
+Copy
+Edit
+import { FilterPipe } from './filter.pipe';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    FilterPipe
+  ],
+  ...
+})
+✅ 4. Use it in HTML (your template)
+html
+Copy
+Edit
+<input type="text" [(ngModel)]="searchText" placeholder="Search" />
+
+<ul>
+  <li *ngFor="let user of users | filter:searchText">
+    {{ user.name }}
+  </li>
+</ul>
+🧪 Example
+If you type "siva" in the input, you’ll see:
+
+nginx
+Copy
+Edit
+Siva
+Siva Kumar
+The others (Ravi, Kiran) are filtered out — thanks to your custom pipe!
+
