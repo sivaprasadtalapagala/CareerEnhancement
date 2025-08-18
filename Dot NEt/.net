@@ -1,0 +1,188 @@
+
+======================INTRODUCTION TO DOTNET ==============================================
+
+
+1. What Came Before .NET: COM (Component Object Model)
+COM was Microsoft’s earlier framework for building Windows apps (using VB) and web apps (using ASP).
+
+It had serious drawbacks:
+
+Not fully object‑oriented
+
+Platform‑dependent (only worked on Windows)
+
+.NET was created to solve these limitations. 
+Microsoft
++8
+Dot Net Tutorials
++8
+Dot Net Tutorials
++8
+Dot Net Tutorials
+
+2. What Does “.NET” Mean?
+The name breaks down to:
+
+“.” stands for Object‑Oriented
+
+“NET” stands for Network‑enabled (Internet-based apps)
+
+Microsoft describes .NET as a free, cross‑platform, open‑source developer platform—supporting languages like C#, VB, F#, and tools like Visual Studio, VS Code, Rider, etc. 
+Dot Net Tutorials
++1
+Dot Net Tutorials
++1
+
+3. What is a Framework?
+A framework is essentially a collection of integrated technologies that help you build and run software.
+
+4. Core Components of .NET
+a) BCL (Base Class Library)
+A set of essential, predefined classes (for strings, IO, collections, etc.).
+
+Installed with the .NET Framework. For example, on Windows they’re in C:\Windows\assembly. 
+Dot Net Tutorials
++1
+Dot Net Tutorials
++1
+
+b) CLR (Common Language Runtime)
+The runtime engine that runs your .NET applications.
+
+It handles:
+
+Converting MSIL (Intermediate Language) to native code
+
+Memory management
+
+Garbage collection
+
+Security, exception handling, and more 
+Microsoft
++7
+Dot Net Tutorials
++7
+Dot Net Tutorials
++7
+Dot Net Tutorials
+
+5. Two-Step Compilation
+Your source code is compiled into MSIL/IL (Platform‑agnostic intermediate code).
+
+At runtime, CLR's JIT (Just‑In‑Time) compiler transforms MSIL into native CPU instructions 
+Dot Net Tutorials
++2
+Dot Net Tutorials
++2
+Dot Net Tutorials
++2
+Dot Net Tutorials
++3
+Dot Net Tutorials
++3
+Dot Net Tutorials
++3
+
+6. Variants of .NET
+Implementation	Platform	Use Case
+.NET Framework	Windows only	Legacy desktop, ASP.NET
+.NET (formerly .NET Core)	Windows, Linux, macOS	Cross-platform web, console
+Xamarin/Mono	iOS, Android, mobile	Mobile app development 
+Dot Net Tutorials
++8
+Dot Net Tutorials
++8
+Wikipedia
++8
+Dot Net Tutorials
+
+7. Why Use .NET?
+Fully OOP: Supports all modern object‑oriented features.
+
+Cross‑platform: Write once, run anywhere.
+
+Rich ecosystem: Includes libraries (BCL) and over 100,000 packages via NuGet 
+Dot Net Tutorials
+reddit.com
++7
+Dot Net Tutorials
++7
+Dot Net Tutorials
++7
+
+Managed runtime: Memory + security + exceptions handled by CLR.
+
+Supports multiple languages: C#, F#, VB, even community ones like IronPython.
+
+8. It’s Not…
+.NET is not:
+
+An OS
+
+A database
+
+A single programming language
+
+A package or testing tool
+
+Instead, it’s a broad developer platform supporting many tools, languages, and frameworks. 
+reddit.com
++9
+Dot Net Tutorials
++9
+Dot Net Tutorials
++9
+Dot Net Tutorials
+Wikipedia
++1
+Dot Net Tutorials
++1
+
+TL;DR Summary
+.NET is Microsoft’s modern cross‑platform development platform.
+
+It fixes the limits of COM (Windows-only, non-OOP).
+
+Powered by BCL and CLR, and uses MSIL + JIT to run code.
+
+Comes in three versions: .NET Framework, .NET, and Xamarin/Mono.
+
+Fully object‑oriented and supports multiple languages.
+
+Backed by a massive package ecosystem via NuGet.
+
+
+
+
+
+🔹 ========================What is NuGet? ,nuget=============================
+NuGet is the official package manager for the .NET platform.
+
+It helps you find, install, update, and manage libraries/packages in your .NET projects.
+
+NuGet packages usually contain compiled DLLs (libraries), metadata, and sometimes source code or configuration files.
+
+
+Feature	Angular (JavaScript/TypeScript)	.NET (C#)
+Package Manager	npm	NuGet
+Package Registry	npmjs.com	nuget.org
+Install Package	npm install lodash	Install-Package Newtonsoft.Json
+Package File	package.json	.csproj file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================== .NET Framework Architecture and Components =================================
