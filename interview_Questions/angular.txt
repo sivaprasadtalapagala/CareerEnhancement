@@ -68,6 +68,53 @@ Method Decorators
 Parameter Decorators
 
 
+@decorators
+
+=====================Class Decorators
+
+@NgModule
+
+@Component
+
+@Injectable
+
+@Directive
+
+@Pipe
+
+====================Method Decorators
+
+@HostListener
+
+===================Parameter Decorators
+
+@Inject
+
+@Self
+
+@SkipSelf
+
+@Optional
+
+@Host
+
+====================Property Decorators
+
+@Input
+
+@Output
+
+@HostBinding
+
+@ContentChild
+
+@ContentChildren
+
+@ViewChild
+
+@ViewChildren
+
+
 
 
 or
@@ -85,136 +132,175 @@ Property decorators for properties inside classes, such as @Input and @Output,@V
 Method decorators for methods inside classes, such as @HostListener
 Parameter decorators for parameters inside class constructors, such as @Inject
 
+============================,classDecorator   1. Class Decorators
+
+These are applied to classes (like components, modules, services).
+
+@NgModule
+Defines an Angular module. It groups components, directives, pipes, and services together.
+
+@NgModule({
+  declarations: [AppComponent, HomeComponent],
+  imports: [BrowserModule, FormsModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 
 
-In Angular, decorators are special functions that attach metadata to classes, methods, properties, or parameters.
-This metadata tells Angular how to process or use that thing.
+@Component
+Turns a class into a component with template + styles.
 
-✅ Think of decorators as "labels" or "instructions" to Angular on how to treat your code.
-
-🔶 Types of Decorators in Angular
-Decorator	Used On	Purpose
-@Component	Class	Defines an Angular component
-@NgModule	Class	Defines an Angular module
-@Injectable	Class	Makes a class injectable (for services)
-@Input	Property	Accepts data from parent component
-@Output	Property	Sends data from child to parent
-@Directive	Class	Creates a directive
-@HostListener	Method	Listens to events on the host element
-@ViewChild / @ContentChild	Property	Gets reference to child elements/components
+@Component({
+  selector: 'app-hello',
+  template: `<h1>Hello Angular!</h1>`
+})
+export class HelloComponent {}
 
 
+@Injectable
+Marks a class as a service that can be injected into other classes.
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  getUser() { return "John"; }
+}
 
 
-===============================What are the ,classDecorators in Angular?
+@Directive
+Creates a custom directive (to change behavior/appearance of DOM elements).
 
-A class decorator is a decorator that appears immediately before a class definition, which declares the class to be of the given type, and provides metadata suitable to the type
-
-The following list of decorators comes under class decorators,
-
-@Component()=The @Component decorator is used to define a component in Angular. It provides metadata about the component, such as its selector, template, and styles.
-             @Component({
-                 selector: 'app-example',
-                 template: '<p>Example Component</p>',
-             })
-@Directive()
-@Pipe()
-@Injectable()=The @Injectable decorator is used to define a service in Angular. It indicates that the class can be injected as a dependency in other components or services.
-
-         Example:
-         typescript
-         Copy code
-      import { Injectable } from '@angular/core';
-      @Injectable()
-      export class ExampleService {
-      // Service logic here
-      }
-@NgModule()=The @NgModule decorator is used to define a module in Angular. It provides configuration information for the module, such as the list of components, services, and other modules that should be part of the module
-
-
-
-================,property Decorators:==============
-
-,@input vs,@output
-
-Suppose you have two Angular components: ParentComponent and ChildComponent, and you want to pass data from the parent to the child component and emit events from the child to the parent.
-
-@Input() in ChildComponent:
-
-In the ChildComponent, you use @Input like this:
-
-typescript
-Copy code
-@Input() inputData: string;
-This decorator tells Angular that the inputData property can receive data from its parent component (ParentComponent). It allows the parent component to pass a string value to the ChildComponent.
-
-@Output() in ChildComponent:
-
-In the ParentComponent, you use @Output like this:
-
-typescript
-Copy code
-@Output() eventEmitter = new EventEmitter<string>();
-This decorator tells Angular that eventEmitter is an output property, and it can emit events. You can use the EventEmitter to send data or events from the ChildComponent to its parent component (ParentComponent). For example, when a button is clicked in the ChildComponent, you can use eventEmitter.emit('Some data') to send data to the parent component.
-
-So, in summary, @Input allows you to pass data from a parent component to a child component, and @Output allows you to emit events or send data from a child component to its parent component in an Angular application.
-
-//parent component
-export class ProductListComp {
-  products = [
-    { id: 1, name: 'Laptop', price: 1000 },
-    { id: 2, name: 'Smartphone', price: 500 },
-    // ...
-  ];
-
-  @Output() productSelected = new EventEmitter<any>();
-
-  send(product) {
-    this.productSelected.emit(product);
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  constructor(el: ElementRef) {
+    el.nativeElement.style.background = 'yellow';
   }
 }
 
-//child component
-// productDetailComponent.ts
-import { Component, Input } from '@angular/core';
 
-@Component({
-  selector: 'app-product-detail',
-  template: `
-    <div *ngIf="selectedProduct">
-      <h2>Product Details</h2>
-      <p>ID: {{ selectedProduct.id }}</p>
-      <p>Name: {{ selectedProduct.name }}</p>
-      <p>Price: {{ selectedProduct.price }}</p>
-    </div>
-  `
-})
-export class ProductDetailComponent {
-  @Input() selectedProduct: any;
+@Pipe
+Defines a pipe (for transforming data in templates).
+
+@Pipe({name: 'uppercaseFirst'})
+export class UppercaseFirstPipe implements PipeTransform {
+  transform(value: string): string {
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
+}
+
+============================,methodDecorator 2. Method Decorators
+
+@HostListener
+Listens to DOM events on the host element.
+
+@Directive({ selector: '[appClickTracker]' })
+export class ClickTrackerDirective {
+  @HostListener('click', ['$event'])
+  onClick(event: Event) {
+    console.log('Element clicked!', event);
+  }
+}
+
+============================,parameterDecorator  3. Parameter Decorators
+
+Used inside constructors for dependency injection.
+
+@Inject
+Explicitly specify the dependency token.
+
+constructor(@Inject('API_URL') private apiUrl: string) {}
+
+
+@Self
+Look for the dependency only in the current injector.
+
+constructor(@Self() private formControl: NgControl) {}
+
+
+@SkipSelf
+Skip current injector, look in parent injector.
+
+constructor(@SkipSelf() private parentService: SomeService) {}
+
+
+@Optional
+Dependency is optional (won’t throw error if not found).
+
+constructor(@Optional() private logger?: LoggerService) {}
+
+
+@Host
+Resolve dependency from the host element injector.
+
+constructor(@Host() private hostService: HostService) {}
+
+
+
+============================,propertyDecorator    4. Property Decorators
+
+@Input
+Pass data from parent → child component.
+
+@Input() userName: string = '';
+
+
+@Output
+Send events from child → parent.
+
+@Output() userClicked = new EventEmitter<string>();
+
+
+@HostBinding
+Bind a property to a host element attribute/style/class.
+
+@Directive({ selector: '[appActive]' })
+export class ActiveDirective {
+  @HostBinding('class.active') isActive = true;
 }
 
 
+@ContentChild
+Get a reference to the first projected child.
+
+@ContentChild('projected') content: ElementRef;
+
+
+@ContentChildren
+Get references to all projected children.
+
+@ContentChildren('item') items: QueryList<ElementRef>;
+
+
+@ViewChild
+Get reference to a child component/directive inside the template.
+
+@ViewChild(ChildComponent) child: ChildComponent;
+
+
+@ViewChildren
+Get multiple child references.
+
+@ViewChildren(ChildComponent) children: QueryList<ChildComponent>;
+
+
+✅ In short:
+
+Class Decorators → Define components, services, modules.
+
+Method Decorators → Listen to host events.
+
+Parameter Decorators → Control how dependencies are injected.
+
+Property Decorators → Handle inputs, outputs, child references.
 
 
 
 
-================================,method Decorator =========================
-
-A method decorator in Angular is placed above a function inside a class, and it tells Angular to do something special when that method is used.
-
-@HostListener is the most commonly used method decorator in Angular.        
-
-@HostListener?
-@HostListener tells Angular to listen to a DOM event (like click, scroll, mouseenter, etc.) on the host element of the component or directive, and then run a specific method.
-
-Host element = the HTML tag where the component or directive is used.
-
- Explanation:
-@HostListener('click', ['$event']) means:
-
-"When the host element (this component) is clicked, call the onBoxClick() method and pass the event."
-
-The event object (like MouseEvent) contains info like cursor position, buttons, etc. 
+===================================================================================================================================================================
 
 
 ====================================,Single Page Applications (SPA)?(,spa)
@@ -254,6 +340,19 @@ This annotation is used to define an Angular component. It provides metadata abo
 @Injectable Annotation:
 
 This annotation is used for services in Angular. It tells Angular that a class can be injected with dependencies.
+
+
+
+Visual relationship
+Decorators (big set → TypeScript feature)
+    |
+    |--- Angular-specific decorators (@Component, @Injectable, @NgModule...)
+             |
+             ---> Produce Annotations (metadata Angular understands)
+
+
+✅ Final Answer:
+Annotations are a subset of decorators — they are the Angular-specific metadata that result from applying Angular decorators.
 
 
 
@@ -732,6 +831,359 @@ ngAfterContentChecked: This is called in response after Angular checks the conte
 ngAfterViewInit: This is called in response after Angular initializes the component's views and child views.
 ngAfterViewChecked: This is called in response after Angular checks the component's views and child views.
 ngOnDestroy: This is the cleanup phase just before Angular destroys the directive/component.
+             If we don’t clean up, intervals or subscriptions keep running in background even after component is destroyed → leads to memory leaks and app slowing down.
+
+
+
+
+
+
+
+=====ngDoCheck ====
+
+By default, Angular detects changes by reference for objects/arrays.
+That means Angular only knows if you replaced the entire object/array, not if you mutated it.
+
+Example:
+
+this.items.push("new item");
+
+
+Angular does not detect that the contents of the array changed, because the reference (this.items) is the same.
+
+👉 ngDoCheck lets you write custom logic to notice those “deep changes”.
+
+🔹 Real-time Example 1: Detecting changes inside an array
+@Component({
+  selector: 'app-cart',
+  template: `Cart has {{ itemCount }} items`
+})
+export class CartComponent implements DoCheck {
+  @Input() items: string[] = [];
+  itemCount = 0;
+  private prevLength = 0;
+
+  ngDoCheck() {
+    // Detect deep changes (push/pop)
+    if (this.items.length !== this.prevLength) {
+      this.prevLength = this.items.length;
+      this.itemCount = this.items.length;
+      console.log("Cart updated, new count:", this.itemCount);
+    }
+  }
+}
+
+
+If the parent does this.items.push("item"), Angular won’t notice by itself.
+
+But with ngDoCheck, you can manually detect and respond.
+
+==============================================,ngAfterContentInit 
+
+👉 Think of a box (ChildComponent) with an open slot (<ng-content>).
+Whatever you (the parent) put inside that slot, Angular will project (insert) into the child’s template.
+
+That inserted stuff = Content.
+
+Your child’s own template = View.
+
+🔹 Example without projection (normal view)
+<!-- child.component.html -->
+<div>
+  <h2>Child View</h2>
+</div>
+
+
+Nothing is projected here. The child owns its own template.
+
+🔹 Example WITH projection (using ng-content)
+<!-- child.component.html -->
+<div class="card">
+  <h2>Child Header</h2>
+  <ng-content></ng-content>   <!-- parent can insert here -->
+</div>
+
+
+This <ng-content> is a placeholder for whatever parent passes inside.
+
+🔹 Parent using the child
+<!-- parent.component.html -->
+<app-child>
+  <p>I am content coming from the parent!</p>
+</app-child>
+
+
+Rendered result in browser:
+
+<div class="card">
+  <h2>Child Header</h2>
+  <p>I am content coming from the parent!</p> <!-- projected -->
+</div>
+
+🔹 Now where does ngAfterContentInit fit?
+
+The child can say:
+
+“After Angular has projected the parent’s content inside me, I want to do something with it.”
+
+So in child component:
+
+import { Component, AfterContentInit, ContentChild, ElementRef } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `
+    <div class="card">
+      <h2>Child Header</h2>
+      <ng-content></ng-content>  <!-- parent stuff goes here -->
+    </div>
+  `
+})
+export class ChildComponent implements AfterContentInit {
+  // Get a reference to projected <p> from parent
+  @ContentChild('projectedPara') para!: ElementRef;
+
+  ngAfterContentInit() {
+    console.log("👉 ngAfterContentInit called once");
+    console.log("Projected content text is:", this.para.nativeElement.textContent);
+  }
+
+  //ngAfterContentChecked starts
+
+    ngAfterContentChecked() {
+    console.log("👉 ngAfterContentChecked called");
+    console.log("Current projected content:", this.para.nativeElement.textContent);
+  }
+
+  //ngAfterContentChecked ends
+}
+
+🔹 Parent component
+<app-child>
+  <p #projectedPara>I am content from parent</p>
+</app-child>
+
+🔹 Console Output
+
+When this runs:
+
+👉 ngAfterContentInit called
+Projected content text is: I am content from parent
+
+🔹 Key understanding
+
+Parent puts <p> inside <app-child>.
+
+That <p> is not the child’s own view, it’s projected content.
+
+@ContentChild grabs it.
+
+ngAfterContentInit fires once, right after Angular puts that content in place.
+
+✅ Super simple meaning in plain words:
+ngAfterContentInit = “The parent has inserted its stuff into my <ng-content>. Now I can safely look at or use it.”
+
+==========================================================,ngAfterContentChecked
+
+
+ngAfterContentInit = runs once, after content is first inserted.
+
+ngAfterContentChecked = runs many times, after Angular re-checks that content for changes.
+
+
+=====================================🔹 What is ,ngAfterViewInit?
+
+It’s a lifecycle hook in Angular.
+
+Called once after Angular has fully initialized the component’s own view (its template) and all child components inside it.
+
+👉 In simple words:
+
+Content = what the parent puts inside your component via <ng-content>.
+
+View = your own template + child components.
+
+ngAfterViewInit = “My own template and children are ready, now I can safely access them.”
+
+🔹 When is it called?
+
+After the first change detection that creates the component’s view.
+
+Runs only once during the component’s lifetime.
+
+🔹 Why do we use it?
+
+To access elements in your own template using @ViewChild / @ViewChildren.
+
+To run logic that needs the DOM available (like focusing an input, measuring size, initializing charts).
+
+🔹 Example
+Child component (child.component.ts)
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `
+    <div class="box">
+      <h2>Child View</h2>
+      <input #inputBox type="text" placeholder="Type here" />
+    </div>
+  `
+})
+export class ChildComponent implements AfterViewInit {
+  // Access element inside THIS component's template
+  @ViewChild('inputBox') inputBox!: ElementRef;
+
+  ngAfterViewInit() {
+    console.log("👉 ngAfterViewInit called, input is ready");
+    this.inputBox.nativeElement.focus(); // auto-focus input
+  }
+}
+
+Parent component (parent.component.html)
+<app-child></app-child>
+
+🔹 What happens?
+
+Angular renders <app-child>.
+
+Inside it, the <h2> and <input> are created (child’s view).
+
+Once view is ready → Angular calls ngAfterViewInit.
+
+Now the child can safely use @ViewChild to access the <input> DOM element and focus it.
+
+🔹 Output
+
+In console:
+
+👉 ngAfterViewInit called, input is ready
+
+
+In browser: The input field inside <app-child> is auto-focused.
+
+🔹 Key Points
+
+Runs once, after view initialization.
+
+Used with @ViewChild / @ViewChildren.
+
+Common use cases:
+
+Auto-focus an input.
+
+Measure element sizes.
+
+Initialize third-party libraries (charts, sliders, etc.).
+
+✅ In one line:
+ngAfterViewInit = “My own template and child components are fully ready; now I can safely interact with them.”
+
+Would you like me to continue with ngAfterViewChecked (which is like the “repeat check” version of this, just like ngAfterContentChecked was for content)?
+
+You said:
+ngAfterViewChecked
+ChatGPT said:
+
+Perfect 👍 let’s go step by step with ngAfterViewChecked, explained very clearly with example so even a beginner can understand.
+
+===================================🔹 What is ,ngAfterViewChecked?
+
+This lifecycle hook is called every time Angular checks the component’s view and all its child views.
+
+It is like a "post-check" step after Angular makes sure everything in the view (HTML + child components) is updated.
+
+👉 Think of it like a teacher checking homework again and again whenever something changes in the notebook.
+
+🔹 When is it called?
+
+It runs after ngAfterViewInit (the first time view is ready).
+
+Then it runs every time Angular’s change detection checks the view (for example, if a property changes, or an event triggers).
+
+It may be called many times, not just once.
+
+🔹 Real-time Example
+
+Imagine you have a parent component (AppComponent) and a child component (ChildComponent).
+We want to know when Angular finishes checking the child component’s view.
+
+📌 Code Example
+
+app.component.html
+
+<h2>Parent Component</h2>
+<button (click)="updateMessage()">Change Message</button>
+
+<app-child [message]="parentMessage"></app-child>
+
+
+app.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  parentMessage = 'Hello from Parent!';
+
+  updateMessage() {
+    this.parentMessage = 'Updated at ' + new Date().toLocaleTimeString();
+  }
+}
+
+
+child.component.html
+
+<h3>Child Component</h3>
+<p>{{ message }}</p>
+
+
+child.component.ts
+
+import { Component, Input, AfterViewChecked } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html'
+})
+export class ChildComponent implements AfterViewChecked {
+  @Input() message!: string;
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked called in ChildComponent');
+  }
+}
+
+📌 What Happens
+
+First load → ngAfterViewInit runs once, then ngAfterViewChecked runs.
+
+Every time you click "Change Message", the view changes → Angular re-checks → ngAfterViewChecked runs again.
+
+So this hook is useful if you want to run some logic every time view update finishes.
+
+🔹 When do we use ngAfterViewChecked in real projects?
+
+Rarely! Because it runs too often (every change detection cycle).
+
+But it is useful when:
+
+You need to run custom logic after every update of the view.
+
+Example: logging performance, auto-scrolling chat windows after new message, syncing DOM changes that Angular doesn’t handle.
+
+⚠️ Warning: Avoid heavy logic here (like API calls, complex loops), because it runs many times and can slow down your app.
+
+✅ Simple Analogy:
+
+ngAfterViewInit = "The shop is open for the first time."
+
+ngAfterViewChecked = "The shopkeeper checks the shop every time a customer comes in or something changes."
+
+====================================================
 
 
 
@@ -954,24 +1406,6 @@ Angular comes with its own dependency injection framework for resolving dependen
 So you can have your services depend on other services throughout your application
 
 
-=======================================What is the purpose of ,asyncPipe?============
-
-The AsyncPipe subscribes to an observable or promise and returns the latest value it has emitted. 
-When a new value is emitted, the pipe marks the component to be checked for changes.
-
-Let's take a time observable which continuously updates the view for every 2 seconds with the current time.
-
-@Component({
-  selector: 'async-observable-pipe',
-  template: `<div><code>observable|async</code>:
-       Time: {{ time | async }}</div>`
-})
-export class AsyncObservablePipeComponent {
-  time = new Observable(observer =>
-    setInterval(() => observer.next(new Date().toString()), 2000)
-  );
-}
-
 
 ==================================What is the option to choose between ,inline ,vs+ external template file?=================
 
@@ -1180,6 +1614,23 @@ Impure Pipe Example:
 Now, consider a scenario where you have a list of messages, and you want to display each message along with the current time it was viewed. The time is dynamic and should update in real-time
 
 
+=======================================What is the purpose of ,asyncPipe?============
+
+The AsyncPipe subscribes to an observable or promise and returns the latest value it has emitted. 
+When a new value is emitted, the pipe marks the component to be checked for changes.
+
+Let's take a time observable which continuously updates the view for every 2 seconds with the current time.
+
+@Component({
+  selector: 'async-observable-pipe',
+  template: `<div><code>observable|async</code>:
+       Time: {{ time | async }}</div>`
+})
+export class AsyncObservablePipeComponent {
+  time = new Observable(observer =>
+    setInterval(() => observer.next(new Date().toString()), 2000)
+  );
+}
 
 ===============================================What is a ,bootstrappingModule?==============
 
@@ -5278,3 +5729,229 @@ Used in reusable components?	✅ Yes	✅ Yes
 Syntax	<ng-content></ng-content>	<ng-template #tpl></ng-template>
 Use with *ngIf, *ngFor	❌ No	✅ Yes
 
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================What is Redux?
+
+Redux is a state management library for JavaScript applications (commonly used with React, but can be used with Angular, Vue, etc.).
+It helps manage the global state of your application in a predictable way.
+
+🔹 Why do we need Redux?
+
+Imagine you’re building a shopping cart app:
+
+The cart icon in the header should show how many items are in the cart.
+
+The cart page should list all items.
+
+The checkout page should know the total price.
+
+If you pass data (props) between components manually, it becomes messy ("prop drilling").
+Redux solves this by keeping a single source of truth: a store that holds your app’s state.
+
+🔹 Redux Core Concepts
+
+Store
+
+The central place where the state lives.
+
+Example: The "shopping cart" data is stored here.
+
+State
+
+The actual data inside the store.
+
+Example:
+
+{
+  cartItems: [{ id: 1, name: "Shoes", qty: 2 }],
+  user: { name: "John", loggedIn: true }
+}
+
+
+Action
+
+A plain JavaScript object that describes what you want to do.
+
+Example: Add an item to cart:
+
+{ type: "ADD_TO_CART", payload: { id: 2, name: "Watch", qty: 1 } }
+
+
+Reducer
+
+A pure function that takes the current state + action → returns a new state.
+
+Example:
+
+function cartReducer(state = [], action) {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+}
+
+
+Dispatch
+
+The way to send an action to the store.
+
+Example:
+
+store.dispatch({ type: "ADD_TO_CART", payload: { id: 3, name: "Bag", qty: 1 } });
+
+
+Subscriber
+
+Components subscribe to the store to get updated state.
+
+Example: The cart icon re-renders when a new item is added.
+
+🔹 Redux Flow (Step by Step)
+
+User clicks "Add to Cart".
+
+An Action ({ type: "ADD_TO_CART", payload: {...} }) is created.
+
+The Dispatch sends this action to the Store.
+
+The Reducer checks the action type and updates the State.
+
+The new State goes back to the Store.
+
+All Subscribers (components) update automatically.
+
+🔹 Real-Life Example (ATM Machine analogy)
+
+Store (State) = ATM balance (₹5000).
+
+Action = "WITHDRAW 1000".
+
+Reducer = Calculates new balance (5000 - 1000 = 4000).
+
+Dispatch = You press the withdraw button.
+
+Subscriber = Screen updates to show ₹4000.
+
+✅ In short:
+Redux = Store + Actions + Reducers + Dispatch + Subscribers.
+
+
+
+
+
+
+=====================================Perfect 👍 Let’s go step by step with a small Angular + NgRx (Redux for Angular) example.
+
+We’ll build a simple counter app with Redux in Angular.
+
+🔹 Step 1: Install NgRx
+
+Run in your Angular project:
+
+ng add @ngrx/store
+
+🔹 Step 2: Create Counter State
+counter.actions.ts
+import { createAction } from '@ngrx/store';
+
+export const increment = createAction('[Counter] Increment');
+export const decrement = createAction('[Counter] Decrement');
+export const reset = createAction('[Counter] Reset');
+
+counter.reducer.ts
+import { createReducer, on } from '@ngrx/store';
+import { increment, decrement, reset } from './counter.actions';
+
+export const initialState = 0;
+
+export const counterReducer = createReducer(
+  initialState,
+  on(increment, (state) => state + 1),
+  on(decrement, (state) => state - 1),
+  on(reset, () => 0)
+);
+
+🔹 Step 3: Register Reducer in App Module
+app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot({ count: counterReducer })  // <-- Register store
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
+🔹 Step 4: Use Store in Component
+app.component.ts
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { increment, decrement, reset } from './counter.actions';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  count$ = this.store.select('count');  // observable of state
+
+  constructor(private store: Store<{ count: number }>) {}
+
+  onIncrement() {
+    this.store.dispatch(increment());
+  }
+
+  onDecrement() {
+    this.store.dispatch(decrement());
+  }
+
+  onReset() {
+    this.store.dispatch(reset());
+  }
+}
+
+app.component.html
+<div style="text-align:center; margin-top:50px">
+  <h1>Angular + Redux Counter</h1>
+  
+  <h2>Count: {{ count$ | async }}</h2>
+
+  <button (click)="onIncrement()">Increment</button>
+  <button (click)="onDecrement()">Decrement</button>
+  <button (click)="onReset()">Reset</button>
+</div>
+
+🔹 Step 5: Run the App
+ng serve
+
+
+✅ You’ll see a counter with Increment / Decrement / Reset buttons — all managed by Redux store.
+
+
+
+
+
+
+
+ 

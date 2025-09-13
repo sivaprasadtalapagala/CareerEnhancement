@@ -1,0 +1,728 @@
+
+
+
+
+
+
+==============================>    Level 1 — HTML Basics & Structure
+
+(1) Understanding HTML syntax: <!DOCTYPE html>, <html>, <head>, <body>.
+
+(2) Basic tags: <h1>–<h6>, <p>, <span>, <div>.
+
+(3) Adding comments: <!-- comment -->.
+
+(4) HTML attributes: id, class, title.
+
+(5) Nesting elements properly.
+
+(6) Understanding block vs inline elements.
+
+(7) Linking external CSS: <link rel="stylesheet">.
+
+(8) Linking external JS: <script src="">.
+
+(9) Using meta tags: charset, viewport, description.
+
+(10) Creating a basic HTML page and rendering in browser.
+
+
+
+==============================>    Level 2 — Text Formatting & Semantic Tags
+
+(1) Bold, italics, underline: <b>, <strong>, <i>, <em>, <u>.
+
+(2) Subscript and superscript: <sub>, <sup>.
+
+(3) Abbreviations and citations: <abbr>, <cite>.
+
+(4) Inline code & keyboard text: <code>, <kbd>.
+
+(5) Semantic headings <h1>–<h6> for accessibility.
+
+(6) Sectioning elements: <header>, <footer>, <main>, <section>, <article>.
+
+(7) Navigation: <nav>.
+
+(8) Aside and complementary content: <aside>.
+
+(9) Marking text: <mark>.
+
+(10) Blockquote and quotes: <blockquote>, <q>.
+
+
+
+==============================>    Level 3 — Links & Navigation
+
+(1) Anchor tag basics: <a href="url">.
+
+(2) Target attribute: _blank, _self.
+
+(3) Relative vs absolute URLs.
+
+(4) Linking to sections with IDs: #section1.
+
+(5) Anchor with title attribute.
+
+(6) Download attribute for files.
+
+(7) Linking email and phone: mailto:, tel:.
+
+(8) Using <nav> for menus.
+
+(9) Accessible link text.
+
+(10) Styling links with CSS pseudo-classes: :hover, :visited, :active.
+
+
+
+==============================>    Level 4 — Images & Media
+
+(1) <img> tag: src, alt, width, height.
+
+(2) Responsive images with srcset and sizes.
+
+(3) Lazy loading images: loading="lazy".
+
+(4) Picture element: <picture> with <source>.
+
+(5) Image formats: JPEG, PNG, SVG, WebP.
+
+(6) Background images using CSS.
+
+(7) Audio element: <audio> with controls.
+
+(8) Video element: <video> with controls, autoplay, loop.
+
+(9) Embedding media from external sources: <iframe>.
+
+(10) Accessibility: providing captions, subtitles.
+
+
+
+==============================>    Level 5 — Lists & Tables
+
+(1) Unordered lists: <ul> + <li>.
+
+(2) Ordered lists: <ol> + <li>.
+
+(3) Description lists: <dl>, <dt>, <dd>.
+
+(4) Nested lists.
+
+(5) Table structure: <table>, <tr>, <th>, <td>.
+
+(6) Table captions: <caption>.
+
+(7) Table headers with scope.
+
+(8) Table colgroup and column width: <colgroup>, <col>.
+
+(9) Merging cells: rowspan and colspan.
+
+(10) Accessibility in tables: aria attributes.
+
+
+
+==============================>    Level 6 — Forms & Inputs
+
+(1) Basic form: <form> with action and method.
+
+(2) Input types: text, password, email, number, date.
+
+(3) Textarea: <textarea>.
+
+(4) Radio buttons and checkboxes: <input type="radio">, <input type="checkbox">.
+
+(5) Select dropdown: <select> + <option>.
+
+(6) Labels and association with for attribute.
+
+(7) Placeholder and required attributes.
+
+(8) Min, max, pattern validation.
+
+(9) Form buttons: <button> and <input type="submit">.
+
+(10) File upload: <input type="file">.
+
+
+
+==============================>    Level 7 — HTML5 Semantic Elements
+
+(1) <header> and <footer>.
+
+(2) <main> and <article>.
+
+(3) <section> for content grouping.
+
+(4) <aside> for side content.
+
+(5) <nav> for navigation.
+
+(6) <figure> and <figcaption> for media.
+
+(7) <mark> for highlighted text.
+
+(8) <time> for date and time.
+
+(9) <progress> and <meter> for data visualization.
+
+(10) <summary> + <details> for collapsible content.
+
+
+
+==============================>    Level 8 — HTML Attributes & Global Attributes
+
+(1) id and class.
+
+(2) title for tooltips.
+
+(3) data-* attributes for custom data.
+
+(4) lang for language specification.
+
+(5) dir for text direction.
+
+(6) hidden for hiding elements.
+
+(7) tabindex for keyboard navigation.
+
+(8) contenteditable for editable elements.
+
+(9) draggable for drag-and-drop.
+
+(10) ARIA attributes for accessibility.
+
+
+
+==============================>    Level 9 — Meta Tags & SEO Basics
+
+(1) Charset: <meta charset="UTF-8">.
+
+(2) Viewport: <meta name="viewport">.
+
+(3) Description: <meta name="description">.
+
+(4) Keywords: <meta name="keywords">.
+
+(5) Author: <meta name="author">.
+
+(6) Robots: <meta name="robots" content="index, follow">.
+
+(7) Open Graph meta tags for social sharing.
+
+(8) Twitter card meta tags.
+
+(9) Canonical URL tag.
+
+(10) Favicon link: <link rel="icon">.
+
+
+
+==============================>    Level 10 — HTML Tables Advanced
+
+(1) Table headers and accessibility.
+
+(2) Row and column spanning.
+
+(3) Colgroup and column width.
+
+(4) Table captions and summaries.
+
+(5) Styling tables with CSS.
+
+(6) Zebra striping with nth-child.
+
+(7) Sticky table headers.
+
+(8) Responsive tables with overflow-x: auto.
+
+(9) Sorting table columns with JS.
+
+(10) Using <thead>, <tbody>, <tfoot> correctly.
+
+
+
+==============================>    Level 11 — Multimedia & Embeds
+
+(1) Embedding YouTube/Vimeo: <iframe>.
+
+(2) Audio with multiple sources.
+
+(3) Video with multiple sources.
+
+(4) Poster attribute for videos.
+
+(5) Autoplay, loop, muted attributes.
+
+(6) Subtitles and captions with <track>.
+
+(7) Canvas element basics: <canvas>.
+
+(8) SVG embedding: <svg> inline and external.
+
+(9) Object, embed, param elements.
+
+(10) Responsive media with CSS.
+
+
+
+==============================>    Level 12 — Forms Advanced & Validation
+
+(1) Required fields with required.
+
+(2) Pattern matching with pattern attribute.
+
+(3) Min/max length for text inputs.
+
+(4) Min/max for numeric inputs.
+
+(5) Email and URL input types.
+
+(6) Date, month, time, week inputs.
+
+(7) Form validation using :valid and :invalid pseudo-classes.
+
+(8) Disabled and readonly inputs.
+
+(9) Fieldset and legend grouping.
+
+(10) Autocomplete and autofocus attributes.
+
+
+
+==============================>    Level 13 — HTML5 APIs Basics
+
+(1) LocalStorage and sessionStorage.
+
+(2) Geolocation API.
+
+(3) Drag & Drop API.
+
+(4) History API: pushState, replaceState.
+
+(5) Web Workers integration.
+
+(6) Notifications API.
+
+(7) WebSockets for real-time communication.
+
+(8) IndexedDB basics.
+
+(9) Fullscreen API.
+
+(10) Pointer events API.
+
+
+
+
+
+
+==============================>    Level 14 — HTML5 Semantic & Structural Elements Advanced
+
+(1) <article> for standalone content.
+
+(2) <section> for thematic grouping.
+
+(3) <aside> for complementary info.
+
+(4) <header> and <footer> for sections.
+
+(5) <main> for main content area.
+
+(6) <figure> and <figcaption> for media with captions.
+
+(7) <details> and <summary> for collapsible content.
+
+(8) <mark> for highlighted text.
+
+(9) <time> for dates and times.
+
+(10) <progress> and <meter> for visual feedback.
+
+(11) <dialog> for modals.
+
+
+
+==============================>    Level 15 — Accessibility & ARIA
+
+(1) Using alt for images.
+
+(2) Labels for form elements: <label for="id">.
+
+(3) Using role attributes for custom elements.
+
+(4) ARIA landmarks: role="navigation", role="main".
+
+(5) Keyboard accessibility: tabindex, focus management.
+
+(6) Screen reader testing.
+
+(7) Using semantic HTML instead of divs for accessibility.
+
+(8) Live regions: aria-live.
+
+(9) Error messages with aria-describedby.
+
+(10) Accessible modals and dialogs.
+
+
+
+==============================>    Level 16 — Advanced Forms & Inputs
+
+(1) Form validation with required, pattern, min, max.
+
+(2) Input types: email, url, tel, number, date, time, color, range.
+
+(3) Datalist for autocomplete: <datalist>.
+
+(4) Fieldset and legend grouping.
+
+(5) Placeholder and autofocus attributes.
+
+(6) Disabled and readonly inputs.
+
+(7) Formnovalidate attribute on buttons.
+
+(8) Custom validation messages with setCustomValidity().
+
+(9) File input multiple selection: multiple.
+
+(10) Capturing form data with FormData API.
+
+
+
+==============================>    Level 17 — Tables Advanced
+
+(1) Using <thead>, <tbody>, <tfoot>.
+
+(2) Table headers: <th> and scope attributes.
+
+(3) Cell merging: colspan and rowspan.
+
+(4) Table captions: <caption>.
+
+(5) Responsive tables with overflow.
+
+(6) Styling tables with CSS and pseudo-classes.
+
+(7) Sticky table headers with CSS.
+
+(8) Semantic markup for accessibility.
+
+(9) Sorting table columns with JS.
+
+(10) Nested tables.
+
+
+
+==============================>    Level 18 — Multimedia & Embedding
+
+(1) Video: <video> with multiple sources.
+
+(2) Audio: <audio> with multiple sources.
+
+(3) Poster attribute for videos.
+
+(4) Subtitles and captions: <track>.
+
+(5) Iframe embedding: YouTube, Google Maps.
+
+(6) SVG inline vs external embedding.
+
+(7) Object and embed tags.
+
+(8) Canvas for drawing: <canvas>.
+
+(9) Responsive media with CSS.
+
+(10) Lazy loading media with loading="lazy".
+
+
+
+==============================>    Level 19 — HTML5 Forms & Input Enhancements
+
+(1) Input types: search, tel, url, email, date, color.
+
+(2) Number inputs: min, max, step.
+
+(3) Range inputs: sliders.
+
+(4) Date and time pickers.
+
+(5) Placeholder vs label.
+
+(6) Autofocus, autocomplete, and spellcheck.
+
+(7) Required and optional fields.
+
+(8) Form novalidate attribute.
+
+(9) Using <datalist> for suggestions.
+
+(10) Custom validity messages.
+
+
+
+==============================>    Level 20 — HTML APIs & Integration
+
+(1) LocalStorage and sessionStorage.
+
+(2) Geolocation API.
+
+(3) History API: pushState, replaceState.
+
+(4) Web Workers.
+
+(5) Notifications API.
+
+(6) WebSockets integration.
+
+(7) IndexedDB basics.
+
+(8) Drag & Drop API.
+
+(9) Pointer events API.
+
+(10) Fullscreen API.
+
+
+
+==============================>    Level 21 — Templates & Reusable Content
+
+(1) <template> tag for reusable markup.
+
+(2) Cloning template content with JS.
+
+(3) Using <slot> for content projection.
+
+(4) Shadow DOM basics.
+
+(5) Custom elements integration.
+
+(6) Dynamically injecting templates with JS.
+
+(7) Conditionals inside templates.
+
+(8) Looping through data to populate templates.
+
+(9) Using templates with frameworks.
+
+(10) Performance considerations for template cloning.
+
+
+
+==============================>    Level 22 — Semantic & Structural HTML Advanced
+
+(1) <section> for grouping content.
+
+(2) <article> for independent items.
+
+(3) <aside> for side content.
+
+(4) <nav> for main navigation.
+
+(5) <main> as page container.
+
+(6) <footer> for page or section footer.
+
+(7) <header> for section headings.
+
+(8) <figure> and <figcaption>.
+
+(9) <details> + <summary> for collapsible content.
+
+(10) Using <mark> for highlights.
+
+
+
+==============================>    Level 23 — Accessibility & ARIA Advanced
+
+(1) ARIA roles: banner, main, complementary.
+
+(2) ARIA states: aria-expanded, aria-checked.
+
+(3) ARIA properties: aria-label, aria-labelledby.
+
+(4) Live regions: aria-live.
+
+(5) Focus management for modals.
+
+(6) Semantic HTML over divs/spans.
+
+(7) Accessible forms: labels, error messages.
+
+(8) Skip links and landmarks.
+
+(9) Testing accessibility with Lighthouse.
+
+(10) Keyboard navigation best practices.
+
+
+
+==============================>    Level 24 — HTML Forms & Input APIs
+
+(1) FormData API for handling form submissions.
+
+(2) Constraint validation API: checkValidity().
+
+(3) setCustomValidity() for custom messages.
+
+(4) reportValidity() to trigger validation UI.
+
+(5) File API: reading uploaded files.
+
+(6) Input events: input, change, invalid.
+
+(7) Autofill and autocomplete features.
+
+(8) Capturing form events with JS.
+
+(9) Resetting forms programmatically.
+
+(10) Dynamic form fields creation.
+
+
+
+==============================>    Level 25 — Multimedia & Media APIs
+
+(1) HTML5 video/audio controls.
+
+(2) Video streaming formats: MP4, WebM, Ogg.
+
+(3) Audio streaming formats: MP3, Ogg.
+
+(4) Subtitles with <track>.
+
+(5) Media events: play, pause, ended.
+
+(6) Canvas integration for drawing overlays.
+
+(7) Embedding interactive SVG.
+
+(8) Lazy loading media with loading="lazy".
+
+(9) Responsive media with CSS and HTML.
+
+(10) Performance considerations.
+
+
+
+==============================>    Level 26 — Web Storage & Offline
+
+(1) LocalStorage set/get/remove.
+
+(2) SessionStorage usage.
+
+(3) Storing JSON objects in storage.
+
+(4) IndexedDB basics.
+
+(5) Cache API for offline.
+
+(6) Service workers integration.
+
+(7) Detecting offline/online status.
+
+(8) Fallback content for offline.
+
+(9) Clearing storage on logout.
+
+(10) Security considerations.
+
+
+
+==============================>    Level 27 — Web Components Basics
+
+(1) Custom elements creation.
+
+(2) Shadow DOM basics.
+
+(3) Templates and slots.
+
+(4) Encapsulation of styles.
+
+(5) Attributes reflection.
+
+(6) Lifecycle callbacks: connectedCallback, disconnectedCallback.
+
+(7) Event dispatching from components.
+
+(8) Using components inside HTML.
+
+(9) Nested components.
+
+(10) Integrating web components with frameworks.
+
+
+
+==============================>    Level 28 — HTML5 APIs Advanced
+
+(1) Canvas API drawing.
+
+(2) Geolocation API with callbacks/promises.
+
+(3) WebRTC basics.
+
+(4) WebSocket integration.
+
+(5) Drag & Drop API.
+
+(6) Pointer events API.
+
+(7) Fullscreen API: requestFullscreen, exitFullscreen.
+
+(8) Device orientation events.
+
+(9) Performance API: measure timings.
+
+(10) Clipboard API for copy/paste.
+
+
+
+==============================>    Level 29 — SEO & Metadata
+
+(1) Meta description and keywords.
+
+(2) Canonical links.
+
+(3) Open Graph tags for social media.
+
+(4) Twitter card meta tags.
+
+(5) Robots meta tag.
+
+(6) Sitemap.xml link.
+
+(7) Favicon setup.
+
+(8) Page title and headings hierarchy.
+
+(9) Structured data with JSON-LD.
+
+(10) Accessibility considerations for SEO.
+
+
+
+==============================>    Level 30 — Modern HTML Practices & Optimization
+
+(1) Mobile-first design principles.
+
+(2) Responsive images with srcset and sizes.
+
+(3) Lazy loading images and iframes.
+
+(4) Using semantic HTML5 elements for accessibility.
+
+(5) Integrating forms with JS validation.
+
+(6) Progressive enhancement principle.
+
+(7) Minifying HTML for performance.
+
+(8) Using HTML templates for dynamic content.
+
+(9) Integrating HTML with CSS and JS frameworks.
+
+(10) Testing HTML across browsers and devices.

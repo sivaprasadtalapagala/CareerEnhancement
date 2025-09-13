@@ -1,0 +1,934 @@
+🌟 Angular Tasks Roadmap (Expanded Levels 1–30)
+
+
+
+
+==============================>    Level 1 — Environment Setup & First App
+
+(1) Install Node.js (latest LTS).
+
+(2) Verify installation:
+a) Run node -v.
+b) Run npm -v.
+
+(3) Install Angular CLI globally:
+→ npm install -g @angular/cli
+
+(4) Create a new Angular project:
+→ ng new my-app
+a) Enable routing.
+b) Select SCSS for styles.
+
+(5) Explore the project folder structure:
+a) src/
+b) main.ts
+c) app.module.ts
+d) angular.json
+e) package.json
+
+(6) Run the app:
+→ ng serve and open in browser.
+
+(7) Explore Angular CLI commands:
+a) ng generate
+b) ng serve
+c) ng build
+d) ng test
+
+(8) Create a new component:
+→ ng g c hello
+
+(9) Display the new component inside app.component.html.
+
+(10) Change title dynamically using string interpolation.
+
+(11) Create a simple navigation header and style it with SCSS.
+
+(12) Modify index.html and styles.scss to test global styles.
+
+(13) Add a README.md with installation and startup steps.
+
+(14) Bonus: Configure Prettier/ESLint for code formatting.
+
+
+
+
+
+
+==============================>    Level 2 — Components & Data Binding
+
+(1) Create UserCardComponent.
+
+(2) Use interpolation to display name and age.
+
+(3) Use property binding to set an image source dynamically.
+
+(4) Add a button with event binding ((click)) to trigger alert.
+
+(5) Implement two-way data binding with [(ngModel)].
+
+(6) Add multiple buttons with different handlers:
+a) onEdit
+b) onDelete
+
+(7) Use *ngIf to conditionally show/hide text.
+
+(8) Use *ngFor to display a list of users.
+
+(9) Use ngSwitch to display UI based on role:
+a) admin
+b) user
+c) guest
+
+(10) Apply dynamic styles with ngClass.
+
+(11) Apply inline styles with ngStyle.
+
+(12) Use template reference variable (#inputRef) to read input value.
+
+(13) Create a counter app using buttons and two-way binding.
+
+
+
+
+
+
+==============================>    Level 3 — Parent-Child Communication
+
+(1) Create ParentComponent and ChildComponent.
+
+(2) Pass data from parent to child using @Input:
+a) Example: parent sends username.
+b) Display received data in child template.
+
+(3) Emit an event from child to parent using @Output + EventEmitter.
+
+(4) Pass an object as input:
+→ {id, name}
+
+(5) Handle event in parent to update a list.
+
+(6) Use getter/setter in @Input to validate input.
+
+(7) Create nested communication:
+→ Parent → Child → Grandchild
+
+(8) Use @ViewChild to access child component methods.
+
+(9) Create a shared reusable button component.
+
+(10) Pass function references as input and trigger from child.
+
+(11) Use @ContentChild to project content and control it.
+
+
+
+
+
+
+==============================>    Level 4 — Lifecycle Hooks
+
+(1) Implement ngOnInit to log a message and fetch data.
+
+(2) Implement ngOnChanges to detect input changes:
+a) Track how many times it changes.
+
+(3) Use ngDoCheck for manual change detection.
+
+(4) Use ngAfterContentInit with ng-content.
+
+(5) Implement ngAfterContentChecked to track updates.
+
+(6) Use ngAfterViewInit for DOM access.
+
+(7) Implement ngAfterViewChecked to debug view changes.
+
+(8) Use ngOnDestroy for cleanup (unsubscribe from Observables).
+
+(9) Create a component that logs all lifecycle hooks in order.
+
+(10) Subtask: Destroy component dynamically using *ngIf and see cleanup logs.
+
+
+
+
+
+
+==============================>    Level 5 — Services & Dependency Injection
+
+(1) Create UserService.
+
+(2) Inject service into a component via constructor.
+
+(3) Provide service in root (singleton).
+
+(4) Create a method in service returning an array of users.
+
+(5) Fetch users in component using service.
+
+(6) Share data between two components using the same service.
+
+(7) Inject one service into another.
+
+(8) Provide service at component level (providers array).
+
+(9) Create scoped service inside lazy-loaded module.
+
+(10) Use providedIn: 'any' vs root difference.
+
+(11) Create factory provider for configurable service.
+
+(12) Use multi-provider pattern.
+
+
+
+
+
+
+==============================>    Level 6 — Built-in Directives
+
+(1) Use *ngIf for conditional UI.
+
+(2) Use *ngFor with trackBy.
+
+(3) Use *ngSwitch for menu options.
+
+(4) Create nested *ngFor (table with rows & columns).
+
+(5) Apply dynamic classes with ngClass.
+
+(6) Apply inline styles with ngStyle.
+
+(7) Combine multiple directives in one element.
+
+(8) Use ng-template for conditional rendering.
+
+(9) Build a dynamic table with *ngFor.
+
+(10) Build a collapsible menu with *ngIf + *ngFor.
+
+(11) Create a loading spinner with *ngIf.
+
+
+
+
+
+
+==============================>    Level 7 — Custom Directives
+
+(1) Create a directive to highlight text on hover:
+→ Pass color as input.
+
+(2) Create directive to disable button conditionally.
+
+(3) Create directive to auto-focus input on load.
+
+(4) Create directive to show tooltip on hover.
+
+(5) Create structural directive like *appIfRole="'admin'".
+
+(6) Use Renderer2 for safe DOM manipulation.
+
+(7) Use HostListener to capture events.
+
+(8) Use HostBinding to toggle CSS class dynamically.
+
+(9) Apply multiple custom directives on same element.
+
+(10) Build a directive to detect outside clicks.
+
+(11) Create directive to track scroll position.
+
+
+
+
+
+
+==============================>    Level 8 — Pipes
+
+(1) Use built-in pipes:
+a) date
+b) currency
+c) uppercase
+d) lowercase
+
+(2) Create a custom pipe (capitalize).
+
+(3) Create pipe with arguments (truncate text).
+
+(4) Create pure vs impure pipe and compare performance.
+
+(5) Use async pipe with Observables.
+
+(6) Chain multiple pipes together.
+
+(7) Use custom pipe in shared module.
+
+(8) Optimize pipe with pure: true.
+
+(9) Create a search filter pipe.
+
+(10) Create pipe to format phone numbers.
+
+(11) Create pipe for masking sensitive data (e.g., ****1234).
+
+
+
+
+
+
+==============================>    Level 9 — Template-Driven Forms
+
+(1) Create a login form using ngModel.
+
+(2) Add required validation.
+
+(3) Add minLength/maxLength validation.
+
+(4) Add email validation.
+
+(5) Display error messages conditionally.
+
+(6) Create form with multiple fields.
+
+(7) Add radio buttons with binding.
+
+(8) Add select dropdown with binding.
+
+(9) Create form with checkboxes.
+
+(10) Submit form and display entered values.
+
+(11) Disable submit button if form invalid.
+
+(12) Group form fields into FormGroup (ngModelGroup).
+
+
+
+
+
+
+==============================>    Level 10 — Reactive Forms
+
+(1) Create form using FormGroup and FormControl.
+
+(2) Add built-in validators:
+a) required
+b) minLength
+
+(3) Add email validator.
+
+(4) Show validation messages dynamically.
+
+(5) Add multiple controls inside a FormGroup.
+
+(6) Use FormArray for dynamic form fields.
+
+(7) Create custom validator (no spaces allowed).
+
+(8) Create async validator (username check).
+
+(9) Use valueChanges to react to changes.
+
+(10) Patch/update form values programmatically.
+
+(11) Reset form with default values.
+
+(12) Disable/enable controls dynamically.
+
+(13) Group controls with nested FormGroup.
+
+
+
+
+
+
+
+
+
+==============================>    Level 11 — Routing & Navigation
+
+(1) Set up Angular Router in app.module.ts.
+
+(2) Create multiple pages/components:
+a) HomeComponent
+b) AboutComponent
+c) ContactComponent
+
+(3) Add routes in app-routing.module.ts.
+
+(4) Use <router-outlet> in app.component.html.
+
+(5) Navigate using routerLink:
+a) <a [routerLink]="['/home']">Home</a>
+
+(6) Navigate programmatically with Router.navigate().
+
+(7) Pass route parameters:
+→ /user/:id
+
+(8) Use ActivatedRoute to fetch route params.
+
+(9) Implement child routes (nested routing).
+
+(10) Implement route guards:
+a) CanActivate
+b) CanDeactivate
+
+(11) Implement lazy loading modules.
+
+(12) Handle wildcard routes for 404 pages.
+
+
+
+
+
+
+==============================>    Level 12 — HTTP & APIs
+
+(1) Import HttpClientModule in app.module.ts.
+
+(2) Inject HttpClient in a service.
+
+(3) Make GET requests to fetch data.
+
+(4) Make POST requests to send data.
+
+(5) Use query parameters in requests.
+
+(6) Handle headers and authentication tokens.
+
+(7) Handle errors with catchError in RxJS.
+
+(8) Use HttpParams to build query strings.
+
+(9) Use Observables to subscribe to API responses.
+
+(10) Use async pipe to display API data in templates.
+
+(11) Create an interceptor to log or modify requests/responses.
+
+(12) Handle loading states and errors in UI.
+
+
+
+
+
+
+==============================>    Level 13 — RxJS & Observables
+
+(1) Understand Observable creation:
+a) of(), from(), interval()
+
+(2) Subscribe to Observables using .subscribe().
+
+(3) Unsubscribe to prevent memory leaks.
+
+(4) Use operators:
+a) map
+b) filter
+c) tap
+
+(5) Combine Observables:
+a) merge
+b) concat
+c) combineLatest
+
+(6) Use Subject, BehaviorSubject, ReplaySubject.
+
+(7) Use async pipe with Observables.
+
+(8) Use switchMap, mergeMap, concatMap for API chaining.
+
+(9) Handle errors with catchError.
+
+(10) Use take, takeUntil to control subscriptions.
+
+
+
+
+
+
+==============================>    Level 14 — State Management (NgRx)
+
+(1) Install NgRx packages:
+→ @ngrx/store, @ngrx/effects
+
+(2) Create store module in app.module.ts.
+
+(3) Define actions:
+→ loadUsers, addUser, deleteUser
+
+(4) Create reducers to update state.
+
+(5) Create selectors to read state.
+
+(6) Dispatch actions from components.
+
+(7) Use Effects for API calls.
+
+(8) Connect components with store.select().
+
+(9) Use OnPush change detection for performance.
+
+(10) Implement DevTools for state debugging.
+
+
+
+
+
+
+==============================>    Level 15 — Angular Material & UI Libraries
+
+(1) Install Angular Material:
+→ ng add @angular/material
+
+(2) Set up theme and typography.
+
+(3) Use Material components:
+a) MatToolbar
+b) MatButton
+c) MatCard
+d) MatIcon
+
+(4) Use MatFormField with inputs and selects.
+
+(5) Implement responsive layouts with MatGridList or Flex Layout.
+
+(6) Use MatTable with sorting, filtering, pagination.
+
+(7) Use MatDialog for modals.
+
+(8) Use MatSnackBar for notifications.
+
+(9) Implement Material stepper and tabs.
+
+(10) Customize Angular Material theme and colors.
+
+
+
+
+
+
+==============================>    Level 16 — Animations
+
+(1) Import BrowserAnimationsModule.
+
+(2) Use @angular/animations API.
+
+(3) Apply trigger, state, style, transition.
+
+(4) Animate component enter/leave using :enter and :leave.
+
+(5) Use keyframes for complex animations.
+
+(6) Use animation callbacks: done event.
+
+(7) Animate lists with query and stagger.
+
+(8) Combine multiple animations.
+
+(9) Use reusable animation functions.
+
+(10) Animate routes during navigation.
+
+
+
+
+
+
+==============================>    Level 17 — Internationalization (i18n)
+
+(1) Mark translatable strings with i18n attribute.
+
+(2) Extract translation file:
+→ ng extract-i18n
+
+(3) Create locale-specific translation files (XLIFF/JSON).
+
+(4) Configure i18n in angular.json.
+
+(5) Load translations dynamically.
+
+(6) Use LOCALE_ID to set default locale.
+
+(7) Format numbers, dates, and currencies per locale.
+
+(8) Switch languages dynamically at runtime.
+
+(9) Test translations in multiple languages.
+
+(10) Handle pluralization and gender-specific translations.
+
+
+
+
+
+
+==============================>    Level 18 — Testing
+
+(1) Unit testing with Jasmine/Karma:
+a) Test components
+b) Test services
+
+(2) Mock dependencies using TestBed.
+
+(3) Use spies for function calls.
+
+(4) Test Observables with done or fakeAsync.
+
+(5) Test template rendering and DOM updates.
+
+(6) Test form validation.
+
+(7) Test directives and pipes.
+
+(8) E2E testing with Protractor or Cypress.
+
+(9) Write integration tests for modules.
+
+(10) Configure CI/CD to run tests automatically.
+
+
+
+
+
+
+==============================>    Level 19 — Performance Optimization
+
+(1) Use OnPush change detection.
+
+(2) Lazy-load modules to reduce bundle size.
+
+(3) Use trackBy in *ngFor.
+
+(4) Use pure pipes for heavy computations.
+
+(5) Avoid unnecessary subscriptions.
+
+(6) Use memoization for repeated calculations.
+
+(7) Optimize images and assets.
+
+(8) Use Angular CLI build optimizations (ng build --prod).
+
+(9) Prefetch or preload modules intelligently.
+
+(10) Monitor performance using Chrome DevTools and Lighthouse.
+
+
+
+
+
+
+==============================>    Level 20 — Progressive Web Apps (PWA)
+
+(1) Add PWA support:
+→ ng add @angular/pwa
+
+(2) Configure manifest.webmanifest.
+
+(3) Configure service worker caching strategies.
+
+(4) Implement offline support for assets and APIs.
+
+(5) Use ngsw-config.json to customize caching.
+
+(6) Add app icon and splash screen.
+
+(7) Test installable PWA behavior on mobile.
+
+(8) Handle push notifications with service workers.
+
+(9) Use Angular PWA update mechanism (SwUpdate).
+
+(10) Monitor PWA performance and offline usage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==============================>    Level 21 — Security & Authentication
+
+(1) Implement authentication using JWT tokens.
+
+(2) Store tokens securely (localStorage/sessionStorage).
+
+(3) Create AuthService to handle login/logout.
+
+(4) Protect routes using CanActivate guards.
+
+(5) Protect child routes using CanActivateChild.
+
+(6) Implement CanDeactivate to prevent unsaved changes.
+
+(7) Handle token expiration and refresh tokens.
+
+(8) Secure API requests with HttpInterceptor.
+
+(9) Use role-based access control in components.
+
+(10) Sanitize inputs to prevent XSS attacks.
+
+
+
+
+
+
+==============================>    Level 22 — Advanced Forms
+
+(1) Use nested FormGroup for complex forms.
+
+(2) Dynamically add/remove FormControl using FormArray.
+
+(3) Implement conditional validation.
+
+(4) Implement cross-field validation.
+
+(5) Create reusable custom validators.
+
+(6) Use async validators for API validation.
+
+(7) Patch/update values programmatically.
+
+(8) Handle value and status changes with valueChanges and statusChanges.
+
+(9) Disable/enable controls dynamically.
+
+(10) Create dynamic forms driven by JSON configuration.
+
+
+
+
+
+
+==============================>    Level 23 — Content Projection & Dynamic Components
+
+(1) Use <ng-content> for content projection.
+
+(2) Create multiple slots using select in <ng-content>.
+
+(3) Use @ContentChild to access projected content.
+
+(4) Dynamically create components using ComponentFactoryResolver (Angular 14+) or ViewContainerRef.createComponent().
+
+(5) Pass data to dynamically created components.
+
+(6) Destroy dynamic components programmatically.
+
+(7) Handle dynamic components with inputs/outputs.
+
+(8) Create a reusable dynamic modal component.
+
+(9) Load components from lazy-loaded modules dynamically.
+
+(10) Combine dynamic components with directives for flexible UI.
+
+
+
+
+
+
+==============================>    Level 24 — Internationalization & Accessibility
+
+(1) Implement aria attributes for accessibility.
+
+(2) Ensure semantic HTML usage (<header>, <main>, <footer>).
+
+(3) Support keyboard navigation (tabindex, focus management).
+
+(4) Use screen reader-friendly labels.
+
+(5) Ensure color contrast for readability.
+
+(6) Test accessibility using tools (axe, Lighthouse).
+
+(7) Implement language switch dynamically.
+
+(8) Format dates, currencies, numbers per locale.
+
+(9) Handle pluralization correctly in translations.
+
+(10) Maintain accessible and translatable templates.
+
+
+
+
+
+
+==============================>    Level 25 — Server-Side Rendering (Angular Universal)
+
+(1) Add Angular Universal:
+→ ng add @nguniversal/express-engine
+
+(2) Configure server.ts for SSR.
+
+(3) Handle API requests on server side.
+
+(4) Render initial HTML on server.
+
+(5) Handle dynamic meta tags for SEO.
+
+(6) Pre-render pages for static generation.
+
+(7) Handle lazy-loaded modules in SSR.
+
+(8) Manage browser-specific code using isPlatformBrowser.
+
+(9) Optimize performance for SSR.
+
+(10) Deploy Angular Universal app to server.
+
+
+
+
+
+
+==============================>    Level 26 — State Management Advanced
+
+(1) Use NgRx Entity for structured state management.
+
+(2) Implement feature modules with separate stores.
+
+(3) Use selectors with memoization for performance.
+
+(4) Use createAction, createReducer, createSelector.
+
+(5) Handle side effects using Effects.
+
+(6) Use StoreModule.forFeature for lazy-loaded modules.
+
+(7) Implement undo/redo state functionality.
+
+(8) Use DevTools to debug state changes.
+
+(9) Combine multiple feature states.
+
+(10) Optimize store performance for large applications.
+
+
+
+
+
+
+==============================>    Level 27 — Advanced RxJS & Performance
+
+(1) Use debounceTime for user input optimization.
+
+(2) Use distinctUntilChanged to prevent unnecessary updates.
+
+(3) Use shareReplay to share Observable data.
+
+(4) Handle multiple API requests using forkJoin and zip.
+
+(5) Cancel previous requests using switchMap.
+
+(6) Use combineLatest for dependent data streams.
+
+(7) Use BehaviorSubject for current state broadcasting.
+
+(8) Use ReplaySubject for caching previous emissions.
+
+(9) Use auditTime and throttleTime for performance.
+
+(10) Optimize subscriptions with takeUntil and unsubscribe.
+
+
+
+
+
+
+==============================>    Level 28 — Module Architecture & Monorepo
+
+(1) Organize application with feature modules.
+
+(2) Separate shared modules for reusable components/directives/pipes.
+
+(3) Use CoreModule for singleton services.
+
+(4) Lazy-load feature modules for performance.
+
+(5) Use barrel files (index.ts) for clean exports.
+
+(6) Implement monorepo using Nx or Lerna.
+
+(7) Share libraries between applications.
+
+(8) Version control shared modules.
+
+(9) Apply consistent coding conventions across modules.
+
+(10) Optimize build size with tree-shaking and lazy loading.
+
+
+
+
+
+
+==============================>    Level 29 — Advanced Angular Patterns
+
+(1) Use smart/dumb components pattern.
+
+(2) Implement stateful container components.
+
+(3) Use presentation components for UI only.
+
+(4) Apply facade services to hide state management complexity.
+
+(5) Use reusable form components with ControlValueAccessor.
+
+(6) Apply dependency inversion for loosely coupled components.
+
+(7) Implement higher-order components using directives.
+
+(8) Apply reactive programming patterns with RxJS.
+
+(9) Use renderless components for behavior sharing.
+
+(10) Apply modular design for scalable applications.
+
+
+
+
+
+
+==============================>    Level 30 — Full-Stack Angular Applications
+
+(1) Integrate Angular with backend APIs (Node.js, .NET, Python).
+
+(2) Implement authentication and authorization.
+
+(3) Use Angular CLI to generate services for API calls.
+
+(4) Implement error handling and loading states.
+
+(5) Use RxJS for real-time updates (WebSocket or SSE).
+
+(6) Use Angular Universal for SEO and SSR.
+
+(7) Apply state management for large apps (NgRx or Akita).
+
+(8) Optimize performance and lazy-load modules.
+
+(9) Deploy to production (Netlify, Firebase, AWS, or Azure).
+
+(10) Implement CI/CD pipelines for Angular applications.

@@ -1,0 +1,733 @@
+🌟 Javascript Tasks Roadmap
+
+
+
+
+==============================>    Level 1 — JavaScript Environment & Setup
+
+(1) Install Node.js (latest LTS).
+
+(2) Verify installation:
+a) node -v
+b) npm -v
+
+(3) Install VS Code or any preferred IDE.
+
+(4) Setup ESLint and Prettier for code formatting.
+
+(5) Run a simple console.log("Hello JS") in Node.js.
+
+(6) Include JS in HTML:
+a) Inline <script>
+b) External JS <script src="app.js"></script>
+
+(7) Learn basic debugging in browser console.
+
+(8) Setup npm project: npm init -y.
+
+(9) Install essential npm packages: e.g., lodash.
+
+(10) Learn basic Git integration for JS projects.
+
+
+
+==============================>    Level 2 — Basic Syntax & Operators
+
+(1) Variables: var, let, const.
+
+(2) Data types: String, Number, Boolean, Null, Undefined, Symbol, BigInt.
+
+(3) Arithmetic operators: + - * / % **.
+
+(4) Comparison operators: ==, ===, !=, !==, >, <, >=, <=.
+
+(5) Logical operators: &&, ||, !.
+
+(6) Assignment operators: =, +=, -=, *=, /=.
+
+(7) Increment/decrement: ++, --.
+
+(8) Ternary operator: condition ? true : false.
+
+(9) Type conversion and coercion.
+
+(10) Template literals and string interpolation.
+
+
+
+==============================>    Level 3 — Control Structures
+
+(1) if, else if, else statements.
+
+(2) switch statement with multiple cases.
+
+(3) Loops: for, while, do-while.
+
+(4) Iterating arrays: for-of, for-in.
+
+(5) Break and continue statements.
+
+(6) Nested loops and conditional statements.
+
+(7) Using labels with loops (rare but useful).
+
+(8) Handling switch fall-through with break.
+
+(9) Early returns in functions to simplify logic.
+
+(10) Short-circuiting logic with && and ||.
+
+
+
+==============================>    Level 4 — Functions
+
+(1) Function declaration: function myFunc() {}.
+
+(2) Function expression: const myFunc = function() {}.
+
+(3) Arrow functions: const myFunc = () => {}.
+
+(4) Function parameters and default values.
+
+(5) Return values from functions.
+
+(6) Rest parameters: ...args.
+
+(7) Spread operator in function calls.
+
+(8) Immediately Invoked Function Expressions (IIFE).
+
+(9) Recursive functions.
+
+(10) Callback functions and higher-order functions.
+
+
+
+==============================>    Level 5 — Scope & Hoisting
+
+(1) Global vs local scope.
+
+(2) Block scope using let & const.
+
+(3) Function scope using var.
+
+(4) Lexical scope.
+
+(5) Hoisting of variables and functions.
+
+(6) Closures and private variables.
+
+(7) Shadowing variables in nested scopes.
+
+(8) this keyword context in functions.
+
+(9) arguments object in functions.
+
+(10) IIFE for scope encapsulation.
+
+
+
+==============================>    Level 6 — Objects & Arrays
+
+(1) Object literals: { key: value }.
+
+(2) Accessing properties: dot vs bracket notation.
+
+(3) Adding, updating, deleting object properties.
+
+(4) Nested objects.
+
+(5) Object methods and this.
+
+(6) Arrays: creating, accessing elements.
+
+(7) Common array methods: push, pop, shift, unshift.
+
+(8) Nested arrays and multidimensional arrays.
+
+(9) Iterating arrays: forEach, map, filter.
+
+(10) Array destructuring.
+
+
+
+==============================>    Level 7 — ES6+ Features
+
+(1) let and const.
+
+(2) Template literals.
+
+(3) Destructuring: arrays and objects.
+
+(4) Default parameters.
+
+(5) Spread and Rest operators.
+
+(6) Arrow functions.
+
+(7) Modules: export / import.
+
+(8) Classes and constructor.
+
+(9) for-of loops.
+
+(10) Promises, async/await for async handling.
+
+
+
+==============================>    Level 8 — Advanced Objects
+
+(1) Object methods: Object.keys(), Object.values(), Object.entries().
+
+(2) Object.assign() and spread operator.
+
+(3) this in objects, functions, and classes.
+
+(4) Call, apply, bind methods.
+
+(5) Prototypes and prototype chain.
+
+(6) ES6 classes and inheritance.
+
+(7) Getters and setters.
+
+(8) Object.freeze() and Object.seal().
+
+(9) Symbols as object keys.
+
+(10) Computed property names.
+
+
+
+==============================>    Level 9 — Arrays Advanced
+
+(1) map(), filter(), reduce().
+
+(2) some() and every().
+
+(3) find() and findIndex().
+
+(4) Sorting arrays: sort().
+
+(5) Reversing arrays: reverse().
+
+(6) Flattening arrays: flat(), flatMap().
+
+(7) Combining arrays: concat().
+
+(8) Copying arrays with spread operator.
+
+(9) Removing duplicates using Set.
+
+(10) Array performance considerations.
+
+
+
+==============================>    Level 10 — Strings & RegEx
+
+(1) String methods: length, slice, substring, substr.
+
+(2) replace(), replaceAll().
+
+(3) toUpperCase(), toLowerCase().
+
+(4) trim(), padStart(), padEnd().
+
+(5) split() and join().
+
+(6) Template literals and interpolation.
+
+(7) Regular expressions basics.
+
+(8) Regex methods: test(), match(), replace(), search().
+
+(9) Regex patterns for validation (email, phone, password).
+
+(10) Escaping special characters in strings.
+
+
+
+==============================>    Level 11 — Dates & Time
+
+(1) Date object creation: new Date().
+
+(2) Getting date and time: getFullYear(), getMonth(), getDate().
+
+(3) Setting date and time: setFullYear(), setMonth().
+
+(4) Formatting dates manually.
+
+(5) Comparing dates.
+
+(6) Time difference calculations.
+
+(7) Date.now() and timestamps.
+
+(8) toISOString(), toDateString().
+
+(9) Using Intl.DateTimeFormat for localization.
+
+(10) Libraries: moment.js / dayjs usage.
+
+
+
+
+
+
+==============================>    Level 12 — Error Handling & Debugging
+
+(1) try-catch-finally blocks.
+
+(2) Throwing custom errors: throw new Error().
+
+(3) Using error properties: name, message, stack.
+
+(4) Async error handling with Promise.catch() and async/await.
+
+(5) Logging errors to console and external services.
+
+(6) Graceful error recovery strategies.
+
+(7) Debugging with browser DevTools.
+
+(8) Breakpoints, watches, and step execution.
+
+(9) Conditional breakpoints and debugging loops.
+
+(10) Error boundaries in front-end frameworks (e.g., React/Angular integration).
+
+
+
+==============================>    Level 13 — DOM Manipulation Advanced
+
+(1) Selecting elements: getElementById(), querySelector(), querySelectorAll().
+
+(2) DOM traversal: parentNode, childNodes, nextSibling, previousSibling.
+
+(3) Modifying elements: innerHTML, textContent, classList, style.
+
+(4) Creating elements: document.createElement().
+
+(5) Appending/removing elements: appendChild(), removeChild(), replaceChild().
+
+(6) Cloning elements: cloneNode().
+
+(7) Handling attributes: setAttribute(), getAttribute(), removeAttribute().
+
+(8) Dataset attributes: dataset.
+
+(9) DocumentFragment for performance optimization.
+
+(10) Using templates (<template> and content.cloneNode()).
+
+
+
+==============================>    Level 14 — Events & Event Handling
+
+(1) Mouse events: click, dblclick, mouseover, mouseout.
+
+(2) Keyboard events: keydown, keyup, keypress.
+
+(3) Form events: submit, input, change, focus, blur.
+
+(4) Event object properties: target, currentTarget, type.
+
+(5) Event delegation for dynamic elements.
+
+(6) preventDefault() and stopPropagation().
+
+(7) Custom events: CustomEvent and dispatchEvent().
+
+(8) Using once option in addEventListener.
+
+(9) Passive event listeners for performance.
+
+(10) Removing event listeners: removeEventListener().
+
+
+
+==============================>    Level 15 — Browser Object Model (BOM)
+
+(1) Window object methods: alert(), confirm(), prompt().
+
+(2) location object: href, reload(), assign().
+
+(3) history object: back(), forward(), go().
+
+(4) navigator object: browser info, user agent.
+
+(5) screen object: screen dimensions.
+
+(6) Timers: setTimeout(), setInterval(), clearTimeout(), clearInterval().
+
+(7) Detecting online/offline status: navigator.onLine, online/offline events.
+
+(8) Window size & resize events: innerWidth, innerHeight.
+
+(9) Opening and controlling new windows: window.open(), window.close().
+
+(10) Using requestAnimationFrame for animations.
+
+
+
+==============================>    Level 16 — JSON & Web Storage
+
+(1) JSON parsing and stringifying: JSON.parse(), JSON.stringify().
+
+(2) LocalStorage: setItem(), getItem(), removeItem(), clear().
+
+(3) SessionStorage usage.
+
+(4) Cookies: create, read, delete.
+
+(5) Storing complex objects in storage.
+
+(6) Handling storage limits and exceptions.
+
+(7) Detecting storage availability in browsers.
+
+(8) Using structuredClone() to copy objects safely.
+
+(9) Converting data formats between JSON and JS objects.
+
+(10) Security considerations for client-side storage.
+
+
+
+==============================>    Level 17 — Promises & Async/Await
+
+(1) Creating promises: new Promise((resolve, reject) => {}).
+
+(2) Handling promises: .then(), .catch(), .finally().
+
+(3) Promise chaining.
+
+(4) Parallel requests: Promise.all(), Promise.allSettled().
+
+(5) Racing promises: Promise.race().
+
+(6) Async functions: async function().
+
+(7) Using await to resolve promises.
+
+(8) Error handling with try-catch in async functions.
+
+(9) Fetch API with async/await.
+
+(10) Canceling async operations using AbortController.
+
+
+
+==============================>    Level 18 — Modules & Import/Export
+
+(1) Named exports: export const myVar = ....
+
+(2) Default exports: export default function() {}.
+
+(3) Importing named exports: import {myVar} from './file.js'.
+
+(4) Importing default exports: import myFunc from './file.js'.
+
+(5) Re-exporting modules.
+
+(6) Dynamic imports: import('./file.js').then(...).
+
+(7) Circular dependency handling.
+
+(8) Organizing code into modules for scalability.
+
+(9) Module bundlers: Webpack, Parcel, Vite.
+
+(10) Tree-shaking to reduce bundle size.
+
+
+
+==============================>    Level 19 — Classes & Object-Oriented Programming
+
+(1) Class declaration: class MyClass {}.
+
+(2) Constructor: constructor() {}.
+
+(3) Instance methods and properties.
+
+(4) Static methods and properties.
+
+(5) this keyword inside classes.
+
+(6) Inheritance: extends and super().
+
+(7) Private and public fields: #privateVar.
+
+(8) Getters and setters.
+
+(9) Method overriding and super calls.
+
+(10) Mixins for multiple inheritance patterns.
+
+
+
+==============================>    Level 20 — Advanced Functions
+
+(1) Closures for private state.
+
+(2) Higher-order functions: accepting/returning functions.
+
+(3) Callback functions.
+
+(4) Currying and partial application.
+
+(5) Function composition.
+
+(6) Recursion.
+
+(7) Debouncing and throttling.
+
+(8) Memoization for optimization.
+
+(9) IIFE patterns for encapsulation.
+
+(10) Dynamic function creation: new Function().
+
+
+
+==============================>    Level 21 — Functional Programming Concepts
+
+(1) Pure functions.
+
+(2) Immutability.
+
+(3) First-class functions.
+
+(4) Higher-order functions: map, filter, reduce.
+
+(5) Function composition.
+
+(6) Currying.
+
+(7) Declarative vs imperative code.
+
+(8) Using closures in FP style.
+
+(9) Side-effect management.
+
+(10) Using functional libraries like Lodash or Ramda.
+
+
+
+==============================>    Level 22 — Advanced Arrays & Collections
+
+(1) Nested array iteration.
+
+(2) Multi-dimensional arrays.
+
+(3) Flattening arrays: flat(), flatMap().
+
+(4) Removing duplicates using Set.
+
+(5) Sorting arrays of objects.
+
+(6) Chunking arrays.
+
+(7) Searching in arrays: indexOf, includes, find.
+
+(8) Reducing arrays for aggregation.
+
+(9) Merging arrays efficiently.
+
+(10) Performance optimization for large arrays.
+
+
+
+==============================>    Level 23 — Advanced Strings & RegEx
+
+(1) Tagged templates.
+
+(2) String repetition: repeat().
+
+(3) String padding: padStart(), padEnd().
+
+(4) Searching strings: includes(), startsWith(), endsWith().
+
+(5) Regular expressions: basics and advanced.
+
+(6) Regex groups and capturing.
+
+(7) Lookahead and lookbehind assertions.
+
+(8) Replacing patterns with replace().
+
+(9) Validating inputs with regex (email, phone, password).
+
+(10) Unicode handling in strings.
+
+
+
+==============================>    Level 24 — Event Loop & Asynchronous Patterns
+
+(1) Understanding call stack, heap, and task queue.
+
+(2) Microtasks vs macrotasks.
+
+(3) Event loop behavior with setTimeout and Promises.
+
+(4) Async functions and await.
+
+(5) Avoiding blocking the main thread.
+
+(6) Web Workers for background tasks.
+
+(7) requestAnimationFrame for animations.
+
+(8) Cancellation patterns with AbortController.
+
+(9) Throttling async events.
+
+(10) Debouncing events for performance.
+
+
+
+==============================>    Level 25 — Advanced DOM & Shadow DOM
+
+(1) DOM traversal and manipulation.
+
+(2) Event delegation.
+
+(3) Shadow DOM basics: attachShadow({mode: 'open'}).
+
+(4) Slots for content projection.
+
+(5) Custom elements with class extends HTMLElement.
+
+(6) Encapsulation with Shadow DOM.
+
+(7) Templates for dynamic content.
+
+(8) Handling dynamic updates inside Shadow DOM.
+
+(9) Interacting between light DOM and shadow DOM.
+
+(10) Browser compatibility considerations.
+
+
+
+==============================>    Level 26 — Web APIs
+
+(1) Fetch API for network requests.
+
+(2) XMLHttpRequest basics.
+
+(3) WebSockets for real-time communication.
+
+(4) Server-Sent Events (SSE).
+
+(5) IndexedDB for client-side storage.
+
+(6) Geolocation API.
+
+(7) Notification API.
+
+(8) Canvas API basics.
+
+(9) Web Audio API basics.
+
+(10) Performance monitoring with Performance API.
+
+
+
+==============================>    Level 27 — Advanced JavaScript Patterns
+
+(1) Module pattern.
+
+(2) Revealing module pattern.
+
+(3) Singleton pattern.
+
+(4) Factory pattern.
+
+(5) Observer pattern.
+
+(6) Pub-Sub pattern.
+
+(7) Prototype pattern.
+
+(8) Mixins.
+
+(9) Memoization for optimization.
+
+(10) Decorators (experimental).
+
+
+
+==============================>    Level 28 — Testing & Debugging
+
+(1) Unit testing with Jest.
+
+(2) Integration testing.
+
+(3) Mocking functions and modules.
+
+(4) Using console.assert().
+
+(5) Browser DevTools debugging.
+
+(6) Breakpoints and watch expressions.
+
+(7) Code coverage analysis.
+
+(8) End-to-end testing with Cypress or Selenium.
+
+(9) Testing async code with async/await.
+
+(10) Test-driven development (TDD) basics.
+
+
+
+==============================>    Level 29 — Performance & Optimization
+
+(1) Memory leaks and garbage collection.
+
+(2) Minimizing DOM manipulation.
+
+(3) Lazy loading modules.
+
+(4) Debouncing and throttling.
+
+(5) Using requestAnimationFrame for smooth animations.
+
+(6) Reducing reflows and repaints.
+
+(7) Optimizing loops and iterations.
+
+(8) Minimizing network requests.
+
+(9) Using Web Workers for heavy computation.
+
+(10) Profiling with browser DevTools.
+
+
+
+==============================>    Level 30 — Full-Stack JavaScript & Modern Practices
+
+(1) Node.js integration for backend.
+
+(2) Express.js setup and routing.
+
+(3) REST API development.
+
+(4) Async/await for server requests.
+
+(5) Frontend-backend separation best practices.
+
+(6) Using ES6 modules across full-stack.
+
+(7) Authentication & authorization.
+
+(8) Real-time updates using WebSockets.
+
+(9) Deployment with Vercel, Netlify, or Heroku.
+
+(10) CI/CD pipelines and automated testing.
+
+(11) Security best practices (XSS, CSRF, SQL Injection).
+
+(12) Logging & monitoring in full-stack apps.
