@@ -3,612 +3,670 @@
 
 
 
+===============================> Level 1 — CSS Basics & Setup
 
-==============================>    Level 1 — CSS Basics & Setup
+(1) Understand CSS syntax:
+→ selector { property: value; }
 
-(1) Understand CSS syntax: selector { property: value; }.
+(2) Add CSS to HTML:
+a) Inline styles → <div style="color:red"></div>
+b) Internal styles → <style> </style>
+c) External stylesheet → <link rel="stylesheet" href="style.css">
 
-(2) Include CSS in HTML:
-a) Inline <div style="">
-b) Internal <style>
-c) External <link rel="stylesheet">.
+(3) CSS comments → /* comment */
 
-(3) Learn CSS comments: /* comment */.
+(4) Selectors basics: element, class, id
 
-(4) CSS color formats: hex, rgb, rgba, hsl.
+(5) Combine selectors:
+→ div, p { color: red; }
 
-(5) Font properties: font-family, font-size, font-weight.
+(6) Descendant & child selectors
 
-(6) Text properties: color, text-align, text-decoration, text-transform.
+(7) Grouping selectors
 
-(7) CSS units: px, em, rem, %, vh, vw.
+(8) Understanding specificity
 
-(8) Basic box model: width, height, padding, border, margin.
+(9) CSS cascade order
 
-(9) Inspect element and DevTools usage.
+(10) CSS units: px, em, rem, %, vh, vw
 
-(10) Apply CSS classes and IDs.
+===============================> Level 2 — CSS Colors & Backgrounds
 
+(1) CSS color properties: color, background-color
 
+(2) Named colors vs hex vs RGB/rgba vs HSL/hsla
 
-==============================>    Level 2 — Selectors & Combinators
+(3) Background images: background-image
 
-(1) Type selectors: div, p.
+(4) Background repeat & size: no-repeat, cover, contain
 
-(2) Class selectors: .classname.
+(5) Background position
 
-(3) ID selectors: #idname.
+(6) Background shorthand property
 
-(4) Universal selector: *.
+(7) Opacity → opacity: 0.5
 
-(5) Attribute selectors: [type="text"].
+(8) Linear gradients → linear-gradient()
 
-(6) Pseudo-classes: :hover, :focus, :first-child, :nth-child().
+(9) Radial gradients → radial-gradient()
 
-(7) Pseudo-elements: ::before, ::after.
+(10) Multiple background images
 
-(8) Grouping selectors: h1, h2, h3.
+===============================> Level 3 — CSS Text & Fonts
 
-(9) Descendant combinator: div p.
+(1) Font-family property
 
-(10) Child combinator: div > p.
+(2) Font-size, font-weight, font-style
 
-(11) Adjacent sibling combinator: div + p.
+(3) Text color & text-shadow
 
-(12) General sibling combinator: div ~ p.
+(4) Text alignment: text-align
 
+(5) Text decoration: underline, line-through, none
 
+(6) Text transform: uppercase, lowercase, capitalize
 
-==============================>    Level 3 — Box Model & Layout Fundamentals
+(7) Letter-spacing & word-spacing
 
-(1) Understand box-sizing: content-box, border-box.
+(8) Line-height & vertical-align
 
-(2) Margin collapsing.
+(9) Text overflow → ellipsis
 
-(3) Padding and spacing inside elements.
+(10) Google Fonts integration
 
-(4) Borders: border-style, border-width, border-radius.
+===============================> Level 4 — CSS Box Model
 
-(5) Width, height, min/max-width/height.
+(1) Content, padding, border, margin
 
-(6) Overflow: visible, hidden, scroll, auto.
+(2) Width & height properties
 
-(7) Display property: block, inline, inline-block, none.
+(3) Box-sizing → content-box vs border-box
 
-(8) Visibility property: visible, hidden.
+(4) Margin collapse
 
-(9) Float and clear properties.
+(5) Overflow → visible, hidden, scroll, auto
 
-(10) Position property: static, relative, absolute, fixed, sticky.
+(6) Min-width & max-width
 
+(7) Min-height & max-height
 
+(8) Outline vs border
 
-==============================>    Level 4 — Typography & Fonts
+(9) Border-radius → rounded corners
 
-(1) Font families: serif, sans-serif, monospace.
+(10) Box-shadow → box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 
-(2) Google Fonts integration.
+===============================> Level 5 — CSS Display & Positioning
 
-(3) Font-weight, font-style, font-variant.
+(1) Display types → block, inline, inline-block, none
 
-(4) Line-height and letter-spacing.
+(2) Visibility → visible, hidden
 
-(5) Word-spacing.
+(3) Positioning → static, relative, absolute, fixed, sticky
 
-(6) Text-align, text-indent.
+(4) Top, bottom, left, right properties
 
-(7) Text-transform, text-decoration.
+(5) Z-index & stacking context
 
-(8) White-space property: nowrap, pre, pre-line.
+(6) Float → left, right
 
-(9) Overflow text: text-overflow: ellipsis.
+(7) Clear → clear: both
 
-(10) Responsive typography with vw, em, rem.
+(8) Object-fit for images
 
+(9) Object-position
 
+(10) Positioning practical examples
 
-==============================>    Level 5 — Colors, Backgrounds & Gradients
+===============================> Level 6 — CSS Flexbox Basics
 
-(1) Color formats: hex, rgb, rgba, hsl.
+(1) Display flex → display: flex
 
-(2) Background color: background-color.
+(2) Flex-direction → row, column, row-reverse, column-reverse
 
-(3) Background image: background-image.
+(3) Justify-content → flex-start, center, space-between
 
-(4) Background position, size, repeat.
+(4) Align-items → stretch, center, flex-start
 
-(5) Linear gradients: linear-gradient().
+(5) Align-self for individual items
 
-(6) Radial gradients: radial-gradient().
+(6) Flex-wrap → wrap, nowrap, wrap-reverse
 
-(7) Multiple backgrounds.
+(7) Flex property → flex: 1 1 auto
 
-(8) Background shorthand property.
+(8) Gap property → gap: 10px
 
-(9) Transparency with opacity.
+(9) Nesting flex containers
 
-(10) Overlay effects with pseudo-elements and gradients.
+(10) Flexbox practical layouts
 
+===============================> Level 7 — CSS Grid Basics
 
+(1) Display grid → display: grid
 
-==============================>    Level 6 — Transitions & Animations
+(2) Grid-template-columns & rows
 
-(1) CSS transitions: transition-property, transition-duration.
+(3) Grid gap → gap: 10px
 
-(2) Timing functions: ease, linear, ease-in, ease-out.
+(4) Grid-column & grid-row for items
 
-(3) Transition shorthand.
+(5) Fraction units → fr
 
-(4) Transform property: translate, scale, rotate, skew.
+(6) Repeat function → repeat(3, 1fr)
 
-(5) Keyframe animations: @keyframes.
+(7) Auto-fill & auto-fit
 
-(6) Animation properties: animation-name, animation-duration, animation-delay, animation-iteration-count.
+(8) Named grid areas
 
-(7) Animation-timing-function.
+(9) Place-items & place-content
 
-(8) Combining transitions and animations.
+(10) Responsive grid layouts
 
-(9) Hover and focus animations.
+===============================> Level 8 — CSS Pseudo-classes & Pseudo-elements
 
-(10) Performance considerations for animations.
+(1) Pseudo-classes → :hover, :focus, :active
 
+(2) Structural pseudo-classes → :first-child, :last-child, :nth-child()
 
+(3) :not() selector
 
-==============================>    Level 7 — Flexbox Basics
+(4) Pseudo-elements → ::before, ::after
 
-(1) Display flex: display: flex.
+(5) Content property in pseudo-elements
 
-(2) Flex-direction: row, row-reverse, column, column-reverse.
+(6) Styling links → :link, :visited
 
-(3) Justify-content: flex-start, center, space-between.
+(7) Form pseudo-classes → :checked, :disabled, :valid
 
-(4) Align-items: flex-start, center, stretch.
+(8) Dynamic hover effects
 
-(5) Align-self for individual items.
+(9) Combining pseudo-classes & pseudo-elements
 
-(6) Flex-wrap: nowrap, wrap, wrap-reverse.
+(10) Practical UI enhancements
 
-(7) Flex-grow, flex-shrink, flex-basis.
+===============================> Level 9 — CSS Transitions & Animations
 
-(8) Order property.
+(1) Transition properties → transition: all 0.3s ease
 
-(9) Gap property for spacing.
+(2) Transition-delay & timing-function
 
-(10) Nested flex containers.
+(3) Transition individual properties
 
+(4) Hover transitions
 
+(5) Keyframes animations → @keyframes
 
-==============================>    Level 8 — Grid Layout
+(6) Animation properties → animation-name, duration, iteration-count
 
-(1) Display grid: display: grid.
+(7) Animation timing functions
 
-(2) Grid-template-columns and rows.
+(8) Animation-delay & direction
 
-(3) Grid-gap / gap.
+(9) Multiple animations on one element
 
-(4) Grid-area naming.
+(10) Smooth UI animation effects
 
-(5) Grid-auto-flow: row, column.
+===============================> Level 10 — CSS Transformations
 
-(6) Justify-items and align-items.
+(1) Transform property → transform: rotate(45deg)
 
-(7) Justify-content and align-content.
+(2) Scale → scale(1.5)
 
-(8) Grid-column and grid-row span.
+(3) Translate → translateX(50px)
 
-(9) Implicit vs explicit grids.
+(4) Skew → skewX(20deg)
 
-(10) Combining grid and flexbox.
+(5) Rotate3d & perspective
 
+(6) Transform-origin
 
+(7) Combining multiple transforms
 
-==============================>    Level 9 — Responsive Design & Media Queries
+(8) Hover transform effects
 
-(1) Mobile-first design principle.
+(9) Transition + transform integration
 
-(2) Media query syntax: @media (max-width: 768px) {}.
+(10) Interactive buttons & cards
 
-(3) Breakpoints for devices.
+===============================> Level 11 — CSS Responsive Design Basics
 
-(4) Responsive units: %, vw, vh, em, rem.
+(1) Viewport meta tag → <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-(5) Fluid grids and flexible layouts.
+(2) Media queries → @media (max-width: 768px)
 
-(6) Images: max-width: 100%, height: auto.
+(3) Mobile-first vs desktop-first
 
-(7) Responsive typography.
+(4) Flexible units → %, vw, vh, em, rem
 
-(8) Hiding/showing elements per screen size.
+(5) Responsive typography
 
-(9) Viewport meta tag in HTML.
+(6) Responsive images → max-width:100%
 
-(10) Combining media queries with CSS variables.
+(7) Hide/show elements on different screens
 
+(8) Adjust padding/margin for small screens
 
+(9) Flexbox + media queries
 
-==============================>    Level 10 — CSS Variables & Custom Properties
+(10) Grid + media queries
 
-(1) Declaring variables: --main-color: #333.
+===============================> Level 12 — CSS Advanced Flexbox
 
-(2) Using variables: var(--main-color).
+(1) Nested flex containers
 
-(3) Scope of CSS variables: :root vs elements.
+(2) Align-content vs align-items
 
-(4) Fallback values: var(--main-color, #000).
+(3) Flex basis, grow, shrink
 
-(5) Updating variables dynamically with JS.
+(4) Justify-content advanced patterns
 
-(6) Theme switching with variables.
+(5) Flex order property
 
-(7) Animating variables.
+(6) Flex shorthand flex: grow shrink basis
 
-(8) Combining variables with calc(): width: calc(100% - var(--gap)).
+(7) Centering with flex
 
-(9) Nested variables in components.
+(8) Vertical alignment with flex
 
-(10) Performance considerations with variables.
+(9) Flexible sidebar layout
 
+(10) Card layout using flexbox
 
+===============================> Level 13 — CSS Advanced Grid
 
+(1) Grid-template-areas
 
-==============================>    Level 11 — Advanced Selectors & Combinators
+(2) Grid-auto-flow → row, column
 
-(1) Attribute selectors: [attr^="value"], [attr$="value"], [attr*="value"].
+(3) Minmax function → minmax(100px, 1fr)
 
-(2) Pseudo-classes: :not(), :nth-of-type(), :nth-last-child().
+(4) Implicit vs explicit grid
 
-(3) Pseudo-elements: ::first-letter, ::first-line, ::selection.
+(5) Align-items & justify-items
 
-(4) Grouping selectors for multiple elements.
+(6) Align-content & justify-content
 
-(5) Descendant vs child selectors.
+(7) Place-self
 
-(6) Adjacent sibling + vs general sibling ~.
+(8) Grid for complex layouts
 
-(7) Combining multiple pseudo-classes.
+(9) Nested grids
 
-(8) Using :root selector for variables.
+(10) Responsive grids
 
-(9) Attribute selectors for forms: [type="text"].
+===============================> Level 14 — CSS Variables & Custom Properties
 
-(10) Combining combinators and pseudo-classes.
+(1) Define custom properties → --main-color: #ff0000
 
+(2) Use variables → color: var(--main-color)
 
+(3) Fallback values → var(--main-color, blue)
 
-==============================>    Level 12 — Advanced Box Model & Positioning
+(4) Global vs local variables
 
-(1) Understanding z-index stacking.
+(5) Variables in media queries
 
-(2) Positioning: static, relative, absolute, fixed, sticky.
+(6) Variables in calc()
 
-(3) Offset properties: top, right, bottom, left.
+(7) Theme switching using variables
 
-(4) Overflow: visible, hidden, scroll, auto.
+(8) Override variables in nested selectors
 
-(5) Clip-path shapes.
+(9) Dynamic variables with JavaScript
 
-(6) Object-fit and object-position for images.
+(10) Best practices
 
-(7) CSS masks.
+===============================> Level 15 — CSS Advanced Selectors
 
-(8) Box shadows: box-shadow.
+(1) Attribute selectors → [type="text"]
 
-(9) Multiple box shadows.
+(2) Starts with, ends with, contains → [attr^="value"]
 
-(10) Outline vs border differences.
+(3) Sibling combinators → +, ~
 
+(4) Child vs descendant
 
+(5) Grouping complex selectors
 
-==============================>    Level 13 — Advanced Flexbox Techniques
+(6) :nth-child() advanced
 
-(1) Nested flex containers.
+(7) :nth-of-type()
 
-(2) Aligning items vertically and horizontally.
+(8) :first-of-type / :last-of-type
 
-(3) Combining flex-wrap with align-content.
+(9) :empty
 
-(4) Using flex-grow, flex-shrink, and flex-basis effectively.
+(10) Combining pseudo-classes & attribute selectors
 
-(5) Ordering items dynamically.
+===============================> Level 16 — CSS Fonts & Typography Advanced
 
-(6) Flex shorthand: flex: 1 0 auto.
+(1) Font-face → @font-face
 
-(7) Flexible navigation bars with flexbox.
+(2) Web fonts integration
 
-(8) Responsive cards/grid with flexbox.
+(3) Font-display
 
-(9) Centering content perfectly with flex.
+(4) Letter-spacing & word-spacing advanced
 
-(10) Performance considerations in complex layouts.
+(5) Line-height techniques
 
+(6) Vertical rhythm
 
+(7) Text-overflow → ellipsis
 
-==============================>    Level 14 — Advanced Grid Techniques
+(8) Multi-line truncation → -webkit-line-clamp
 
-(1) Implicit vs explicit grid tracks.
+(9) Responsive typography
 
-(2) Grid-template-areas.
+(10) Typographic hierarchy
 
-(3) Auto-fit vs auto-fill.
+===============================> Level 17 — CSS Positioning Advanced
 
-(4) Fractional units: fr.
+(1) Sticky positioning
 
-(5) Aligning content with justify-self/align-self.
+(2) Fixed header/footer
 
-(6) Nested grids.
+(3) Layering with z-index
 
-(7) Grid gaps vs row-gap/column-gap.
+(4) Absolute positioning within relative parent
 
-(8) Overlapping items with grid-area.
+(5) Full-page layouts
 
-(9) Responsive grids with media queries.
+(6) Centering techniques (absolute, flex, grid)
 
-(10) Combining grid and flexbox for hybrid layouts.
+(7) Positioning with transform
 
+(8) Overlapping elements
 
+(9) Responsive positioning
 
-==============================>    Level 15 — CSS Transitions & Animations Advanced
+(10) Practical layout challenges
 
-(1) Multiple property transitions simultaneously.
+===============================> Level 18 — CSS Images & Media
 
-(2) Transition delays and timing functions.
+(1) Responsive images → max-width:100%
 
-(3) Transform origin adjustments.
+(2) Object-fit → cover, contain
 
-(4) Keyframe animation sequences.
+(3) Image aspect ratio
 
-(5) Animation iteration counts and infinite loops.
+(4) Image sprites
 
-(6) Animation direction: normal, reverse, alternate.
+(5) Background-image effects
 
-(7) Chaining animations.
+(6) Image hover effects
 
-(8) Triggering animations on hover/focus/scroll.
+(7) Media queries for images
 
-(9) Performance optimization for animations.
+(8) Lazy loading images
 
-(10) Combining transitions and transforms.
+(9) SVG integration
 
+(10) Icon fonts vs SVG icons
 
+===============================> Level 19 — CSS Shadows & Filters
 
-==============================>    Level 16 — CSS Filters & Effects
+(1) Box-shadow basics
 
-(1) Filter properties: blur(), brightness(), contrast().
+(2) Text-shadow
 
-(2) Drop shadows: drop-shadow().
+(3) Multiple shadows
 
-(3) Grayscale, hue-rotate, saturate effects.
+(4) Blur & spread radius
 
-(4) Backdrop-filter for backgrounds.
+(5) CSS filter → blur, brightness, contrast
 
-(5) Applying filters on images and containers.
+(6) Filter grayscale, sepia, hue-rotate
 
-(6) Combining multiple filters.
+(7) Backdrop-filter
 
-(7) CSS blend modes: mix-blend-mode.
+(8) Hover effects with filters
 
-(8) Using filter with animations.
+(9) Drop-shadow on images
 
-(9) Performance considerations for heavy filters.
+(10) Creative UI examples
 
-(10) Creating hover effects with filters.
+===============================> Level 20 — CSS Transitions Advanced
 
+(1) Transition multiple properties
 
+(2) Transition-timing-function
 
-==============================>    Level 17 — Pseudo-classes & Pseudo-elements Advanced
+(3) Transition-delay
 
-(1) :first-child, :last-child, :nth-child().
+(4) Hover effects transitions
 
-(2) :nth-of-type(), :nth-last-of-type().
+(5) Focus & active transitions
 
-(3) :hover, :focus, :active.
+(6) Smooth menu animations
 
-(4) ::before and ::after content generation.
+(7) Button hover transitions
 
-(5) Using counters with ::before and ::after.
+(8) Transform + transition
 
-(6) :checked, :disabled, :enabled for forms.
+(9) Transition for grid/flex items
 
-(7) :empty and :not() selectors.
+(10) Real-world UI transitions
 
-(8) ::selection styling.
+===============================> Level 21 — CSS Animations Advanced
 
-(9) Combining pseudo-classes with combinators.
+(1) Keyframes animation
 
-(10) Animating pseudo-elements.
+(2) Animation shorthand
 
+(3) Animation-delay & direction
 
+(4) Infinite animations
 
-==============================>    Level 18 — CSS Variables Advanced
+(5) Hover trigger animations
 
-(1) Dynamic theming with variables.
+(6) Sequential animations
 
-(2) Fallback values: var(--color, #000).
+(7) Transform + animation
 
-(3) Animating variables with transitions.
+(8) Text animations
 
-(4) Using variables inside calc(): calc(var(--gap) * 2).
+(9) Loading animations
 
-(5) Component-level vs global variables.
+(10) Performance considerations
 
-(6) Updating variables with JavaScript.
+===============================> Level 22 — CSS Media Queries Advanced
 
-(7) Responsive variables for media queries.
+(1) Mobile-first media queries
 
-(8) Dark/light mode toggling.
+(2) Desktop-first media queries
 
-(9) Using variables in gradients and filters.
+(3) Max-width vs min-width
 
-(10) Scoped variables inside nested selectors.
+(4) Orientation queries
 
+(5) Aspect ratio queries
 
+(6) Dark mode media query
 
-==============================>    Level 19 — Responsive & Mobile-First Design
+(7) High-resolution display queries
 
-(1) Mobile-first principle.
+(8) Print media queries
 
-(2) Media queries: min-width vs max-width.
+(9) Combining media queries
 
-(3) Responsive typography with vw units.
+(10) Responsive component testing
 
-(4) Responsive grids and flex layouts.
+===============================> Level 23 — CSS Transforms Advanced
 
-(5) Scaling images: max-width: 100%.
+(1) 2D transforms → rotate, translate, scale, skew
 
-(6) Hiding/showing content for breakpoints.
+(2) 3D transforms → rotateX, rotateY, perspective
 
-(7) Viewport meta tag usage.
+(3) Transform-origin
 
-(8) REM/em-based scaling for text and spacing.
+(4) Combining multiple transforms
 
-(9) Testing responsiveness in browser DevTools.
+(5) Hover & active transform effects
 
-(10) Combining fluid layouts and media queries.
+(6) Animating transforms
 
+(7) Card flipping effect
 
+(8) Interactive UI with transform
 
-==============================>    Level 20 — CSS Units & Measurements
+(9) Rotate & scale together
 
-(1) Absolute units: px, cm, in.
+(10) Performance best practices
 
-(2) Relative units: %, em, rem.
+===============================> Level 24 — CSS Preprocessors Basics
 
-(3) Viewport units: vw, vh, vmin, vmax.
+(1) Install Sass → npm install sass
 
-(4) Ch unit for monospace width.
+(2) SCSS syntax basics
 
-(5) Ex unit for x-height.
+(3) Nesting selectors
 
-(6) Combining units with calc(): calc(100% - 2rem).
+(4) Variables → $primary-color: red;
 
-(7) Using clamp() for responsive sizes.
+(5) Mixins → @mixin
 
-(8) CSS min(), max() functions.
+(6) Include mixins → @include
 
-(9) Performance considerations of units.
+(7) Functions → @function
 
-(10) Using units consistently in layouts.
+(8) Partials & imports → _file.scss
 
+(9) Extend/inheritance → @extend
 
+(10) Compile SCSS to CSS
 
-==============================>    Level 21 — CSS Preprocessors (Sass/SCSS, Less)
+===============================> Level 25 — CSS Preprocessors Advanced
 
-(1) Installing and configuring Sass/SCSS.
+(1) Loops → @for, @each, @while
 
-(2) Variables in SCSS.
+(2) Conditional statements → @if, @else
 
-(3) Nesting selectors.
+(3) Nested properties → border: { width:1px; color:red; }
 
-(4) Mixins for reusable code.
+(4) Maps → map-get(), map-merge()
 
-(5) Functions in SCSS.
+(5) Color functions → lighten(), darken()
 
-(6) Partials and imports.
+(6) Responsive mixins
 
-(7) Extends and inheritance.
+(7) Theme-based variables
 
-(8) Loops and conditionals in SCSS.
+(8) Media query mixins
 
-(9) Math operations in SCSS.
+(9) DRY principles with SCSS
 
-(10) Using SCSS maps for theme management.
+(10) Modular SCSS structure
 
+===============================> Level 26 — CSS Advanced Layouts
 
+(1) Flexbox complex layouts
 
-==============================>    Level 22 — CSS Methodologies & Best Practices
+(2) CSS Grid advanced layouts
 
-(1) BEM (Block-Element-Modifier).
+(3) CSS multi-column layout
 
-(2) SMACSS principles.
+(4) Holy Grail layout
 
-(3) OOCSS (Object-Oriented CSS).
+(5) Sticky footer layout
 
-(4) Atomic CSS concepts.
+(6) Sidebar layout
 
-(5) Naming conventions for classes.
+(7) Responsive card layout
 
-(6) Avoiding ID selectors in styling.
+(8) CSS calc() function usage
 
-(7) Component-based styling strategy.
+(9) Align content with flex & grid
 
-(8) Organizing CSS files by feature/modules.
+(10) Practical real-world layout
 
-(9) Reducing specificity wars.
+===============================> Level 27 — CSS Variables Advanced
 
-(10) Writing maintainable and scalable CSS.
+(1) Dynamic theme switching
 
+(2) Dark mode with CSS variables
 
+(3) Animating variables
 
-==============================>    Level 23 — Accessibility & ARIA
+(4) Variables in calc()
 
-(1) Color contrast for readability.
+(5) Nested variable overrides
 
-(2) Focus indicators for keyboard navigation.
+(6) Fallback variables
 
-(3) Visually hidden text for screen readers.
+(7) Combining variables + media queries
 
-(4) Using semantic HTML.
+(8) Variables in pseudo-elements
 
-(5) ARIA roles and attributes.
+(9) Best practices for large projects
 
-(6) Accessible forms: labels, placeholders, error messages.
+(10) Integrating with JS for dynamic changes
 
-(7) Skip links for navigation.
+===============================> Level 28 — CSS Accessibility
 
-(8) Avoiding content flicker.
+(1) Focus styles
 
-(9) Testing accessibility with tools like Lighthouse.
+(2) High contrast support
 
-(10) Using responsive font sizes for readability.
+(3) Text resizing
 
+(4) Screen reader support → aria-*
 
+(5) Color contrast check
 
-==============================>    Level 24 — CSS Grid Advanced
+(6) Accessible forms
 
-(1) Nested grids.
+(7) Keyboard navigation
 
-(2) Auto-fill vs auto-fit.
+(8) Skip links
 
-(3) Grid-template-areas for layout naming.
+(9) Hidden content for accessibility
 
-(4) Implicit grid tracks.
+(10) Testing with assistive tools
 
-(5) Fractional units fr and minmax().
+===============================> Level 29 — CSS Performance Optimization
 
-(6) Aligning items with align-self/justify-self.
+(1) Minify CSS
 
-(7) Aligning content with align-content/justify-content.
+(2) Reduce selectors complexity
 
-(8) Overlapping elements in grid cells.
+(3) Combine repeated rules
 
-(9) Responsive grids with media queries.
+(4) Use shorthand properties
 
-(10) Hybrid grid-flex layouts.
+(5) Avoid deep nesting
 
+(6) Limit @import usage
 
+(7) Use CSS variables instead of repeating colors
 
-==============================>    Level 25 — Advanced Animations & Transitions
+(8) Avoid large CSS files
 
-(1) Multiple property transitions.
+(9) Remove unused CSS
 
-(2) Transition-delay and timing functions.
+(10) Use hardware-accelerated properties
 
-(3) Keyframe sequences.
+===============================> Level 30 — CSS Project-Based Integration
 
-(4) Animation-iteration-count and direction.
+(1) Build a responsive website layout
 
-(5) CSS variables in animations.
+(2) Implement header, footer, sidebar
 
-(6) Hover/focus/scroll triggered animations.
+(3) Create responsive navigation menu
 
-(7) Combining transform and opacity animations.
+(4) Build cards/grid layout for products
 
-(8) Animation shorthand properties.
+(5) Add hover & animation effects
 
-(9) Performance optimization.
+(6) Apply themes using variables
 
-(10) Using will-change for GPU acceleration.
+(7) Use flexbox & grid for layouts
+
+(8) Integrate SCSS for maintainable code
+
+(9) Make website mobile-friendly
+
+(10) Deploy and test responsiveness
 
 
 

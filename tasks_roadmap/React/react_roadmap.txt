@@ -1,0 +1,689 @@
+🌟 React Tasks Roadmap
+
+
+
+===============================> Level 1 — Environment Setup & First App
+
+(1) Install Node.js (latest LTS).
+
+(2) Verify installation:
+a) Run → node -v
+b) Run → npm -v
+
+(3) Setup code editor:
+a) Install VS Code
+b) Recommended extensions: ESLint, Prettier, React Developer Tools
+
+(4) Install create-react-app (CRA):
+→ npx create-react-app my-app
+
+(5) Explore project folder structure:
+a) public/
+b) src/
+c) package.json
+d) node_modules/
+
+(6) Start development server:
+→ npm start
+
+(7) Run build:
+→ npm run build
+
+(8) Use npm install to add dependencies
+
+(9) Clean up CRA boilerplate
+
+(10) Open browser console to debug
+
+===============================> Level 2 — React JSX & Components Basics
+
+(1) Understand JSX syntax
+
+(2) Create functional components:
+→ function App(){ return <div>Hello</div>; }
+
+(3) Create class components:
+→ class App extends React.Component { render(){ return <div>Hello</div>; } }
+
+(4) Component rendering in index.js
+
+(5) Return multiple elements using fragments:
+→ <></>
+
+(6) Use expressions in JSX:
+→ {2 + 3}
+
+(7) Apply inline styles:
+→ style={{color: "red"}}
+
+(8) Add CSS classes:
+→ className="my-class"
+
+(9) Props basics:
+→ function Child({name}){ return <div>{name}</div> }
+
+(10) Children props:
+→ <Parent><Child /></Parent>
+
+===============================> Level 3 — React State Basics
+
+(1) Understand state in functional components
+
+(2) Use useState hook:
+→ const [count, setCount] = useState(0)
+
+(3) Update state on events:
+→ onClick={() => setCount(count + 1)}
+
+(4) State in class components:
+→ this.state = {count:0}
+→ this.setState({count: 1})
+
+(5) Multiple state variables in functional components
+
+(6) Functional update of state → setCount(prev => prev + 1)
+
+(7) Conditional rendering based on state
+
+(8) State with objects & arrays
+
+(9) State immutability best practices
+
+(10) Debug state updates
+
+===============================> Level 4 — React Props & Component Communication
+
+(1) Passing props from parent to child
+
+(2) Default props
+
+(3) PropTypes for validation
+
+(4) Destructuring props in components
+
+(5) Conditional props rendering
+
+(6) Event handling via props:
+→ onClick={handleClick}
+
+(7) Passing functions as props
+
+(8) Props drilling basics
+
+(9) Avoiding unnecessary re-renders with props
+
+(10) Children prop usage
+
+===============================> Level 5 — React Events & Forms
+
+(1) Handling click events
+
+(2) Handling input change events
+
+(3) Form submit event → onSubmit={handleSubmit}
+
+(4) Prevent default form submission → event.preventDefault()
+
+(5) Controlled components → input value from state
+
+(6) Uncontrolled components → using ref
+
+(7) Managing multiple input fields
+
+(8) Checkbox & radio button handling
+
+(9) Select dropdown handling
+
+(10) Form validation basics
+
+===============================> Level 6 — React Conditional Rendering & Lists
+
+(1) if condition in JSX
+
+(2) Ternary operator → {condition ? <A /> : <B />}
+
+(3) Logical AND → {condition && <A />}
+
+(4) Switch-case conditional rendering
+
+(5) Rendering lists with map()
+
+(6) Assign unique key for list items
+
+(7) Nested lists rendering
+
+(8) Conditional rendering in lists
+
+(9) Filtering list items before render
+
+(10) Sorting list items dynamically
+
+===============================> Level 7 — React Styling
+
+(1) Inline styles → style={{color:"red"}}
+
+(2) CSS classes → className="my-class"
+
+(3) CSS modules → import styles from './App.module.css'
+
+(4) Styled-components basics
+
+(5) Dynamic styling based on props
+
+(6) Conditional classes
+
+(7) Responsive styling with media queries
+
+(8) Global CSS vs component CSS
+
+(9) Animations using CSS
+
+(10) External CSS libraries (Bootstrap, Tailwind)
+
+===============================> Level 8 — React Router Basics
+
+(1) Install React Router DOM:
+→ npm install react-router-dom
+
+(2) Setup BrowserRouter in index.js
+
+(3) Use Routes & Route
+
+(4) Navigate between pages → <Link>
+
+(5) URL parameters → /user/:id
+
+(6) Access params using useParams
+
+(7) Query params with useLocation
+
+(8) Redirects using Navigate
+
+(9) Nested routes
+
+(10) 404 page handling
+
+===============================> Level 9 — React Lifecycle (Class Components)
+
+(1) constructor usage
+
+(2) componentDidMount → API calls
+
+(3) componentDidUpdate → react to prop/state changes
+
+(4) componentWillUnmount → cleanup
+
+(5) shouldComponentUpdate → performance optimization
+
+(6) getDerivedStateFromProps
+
+(7) getSnapshotBeforeUpdate
+
+(8) Understanding mounting, updating, unmounting phases
+
+(9) Debug lifecycle with console logs
+
+(10) Comparing lifecycle methods with hooks
+
+===============================> Level 10 — React Hooks Deep Dive
+
+(1) useState basics & advanced usage
+
+(2) useEffect for side effects
+
+(3) Cleanup function in useEffect
+
+(4) Dependency array usage
+
+(5) useContext basics
+
+(6) useRef for DOM references
+
+(7) useMemo for expensive computations
+
+(8) useCallback to memoize functions
+
+(9) useReducer for complex state
+
+(10) Custom hooks creation
+
+===============================> Level 11 — React Context API
+
+(1) Create context → React.createContext()
+
+(2) Provide context with <Context.Provider>
+
+(3) Consume context using useContext
+
+(4) Nested context providers
+
+(5) Default values for context
+
+(6) Updating context dynamically
+
+(7) Avoid prop drilling using context
+
+(8) Combine multiple contexts
+
+(9) Context performance optimization
+
+(10) Context vs Redux comparison
+
+===============================> Level 12 — React Forms Advanced
+
+(1) Controlled vs uncontrolled components
+
+(2) Form validation using state
+
+(3) useRef for uncontrolled form
+
+(4) Dynamic forms generation
+
+(5) Formik library basics
+
+(6) Yup for validation schemas
+
+(7) Multi-step forms
+
+(8) Form reset & prefill
+
+(9) Conditional fields
+
+(10) Error messages display
+
+===============================> Level 13 — React API Integration
+
+(1) Fetch API in useEffect
+
+(2) Axios setup → npm install axios
+
+(3) GET requests
+
+(4) POST requests
+
+(5) PUT/PATCH requests
+
+(6) DELETE requests
+
+(7) Loading & error handling
+
+(8) Cancel API requests
+
+(9) Async/await usage
+
+(10) Dynamic API calls based on state
+
+===============================> Level 14 — React State Management (Redux Basics)
+
+(1) Install Redux & React-Redux:
+→ npm install redux react-redux
+
+(2) Create store → createStore()
+
+(3) Actions & action creators
+
+(4) Reducers basics
+
+(5) Dispatch actions
+
+(6) Connect store to component → Provider
+
+(7) useSelector to access state
+
+(8) useDispatch to dispatch actions
+
+(9) Middleware basics (redux-thunk)
+
+(10) Redux devtools setup
+
+===============================> Level 15 — Redux Advanced
+
+(1) Combine reducers
+
+(2) Async actions using redux-thunk
+
+(3) Normalizing state
+
+(4) Avoid deep state mutation
+
+(5) Selector functions
+
+(6) Memoizing selectors (reselect)
+
+(7) Middleware custom creation
+
+(8) Redux Toolkit setup
+
+(9) createSlice usage
+
+(10) Immer for immutability
+
+===============================> Level 16 — React Performance Optimization
+
+(1) React.memo for functional components
+
+(2) useMemo for expensive computations
+
+(3) useCallback for function memoization
+
+(4) Avoid unnecessary re-renders
+
+(5) Lazy loading components → React.lazy
+
+(6) Suspense for code splitting
+
+(7) Dynamic import with lazy loading
+
+(8) Virtualization for large lists
+
+(9) Profiling using React DevTools
+
+(10) Optimizing context usage
+
+===============================> Level 17 — React Error Boundaries
+
+(1) Create Error Boundary class component
+
+(2) Implement componentDidCatch
+
+(3) Use getDerivedStateFromError
+
+(4) Wrap components with Error Boundary
+
+(5) Fallback UI implementation
+
+(6) Logging errors to server
+
+(7) Multiple error boundaries
+
+(8) Recover from errors
+
+(9) Testing error boundaries
+
+(10) Best practices
+
+===============================> Level 18 — React Router Advanced
+
+(1) Nested routes setup
+
+(2) Layout routes
+
+(3) Protected routes (authentication)
+
+(4) Redirects based on auth state
+
+(5) Lazy loading routes
+
+(6) Route transitions
+
+(7) Scroll restoration
+
+(8) Dynamic breadcrumbs
+
+(9) Programmatic navigation → useNavigate
+
+(10) URL search params → useSearchParams
+
+===============================> Level 19 — React Portals & Refs
+
+(1) Create a portal → ReactDOM.createPortal
+
+(2) Use portals for modals & tooltips
+
+(3) Forward refs → React.forwardRef
+
+(4) useRef for DOM access
+
+(5) Manipulate DOM with ref
+
+(6) Expose functions from child via ref
+
+(7) Multiple refs management
+
+(8) Callback refs usage
+
+(9) Ref vs state
+
+(10) Cleaning up refs
+
+===============================> Level 20 — React Animations
+
+(1) CSS transitions in React
+
+(2) CSS keyframes
+
+(3) React Transition Group basics
+
+(4) CSSTransition component
+
+(5) TransitionGroup component
+
+(6) Animate mounting & unmounting
+
+(7) Animate lists
+
+(8) Use Framer Motion library
+
+(9) Animations based on props
+
+(10) Performance optimization for animations
+
+===============================> Level 21 — React Testing Basics
+
+(1) Setup Jest & React Testing Library
+
+(2) Test rendering components
+
+(3) Test props passed correctly
+
+(4) Fire events → fireEvent.click()
+
+(5) Test conditional rendering
+
+(6) Test async calls → waitFor
+
+(7) Snapshot testing
+
+(8) Mock API calls
+
+(9) Mock modules
+
+(10) Coverage reports
+
+===============================> Level 22 — React Hooks Advanced
+
+(1) useReducer for complex state
+
+(2) useRef for storing mutable values
+
+(3) useLayoutEffect vs useEffect
+
+(4) useImperativeHandle with forwardRef
+
+(5) Custom hooks with reusable logic
+
+(6) Multiple hooks in one component
+
+(7) Hook dependency array pitfalls
+
+(8) Sharing state across hooks
+
+(9) Performance optimization with hooks
+
+(10) Testing custom hooks
+
+===============================> Level 23 — React Context Advanced
+
+(1) Dynamic context values
+
+(2) Multiple contexts
+
+(3) Splitting context providers
+
+(4) Avoid unnecessary renders
+
+(5) Combine context & reducers
+
+(6) Context performance tips
+
+(7) Debug context value
+
+(8) Context default values
+
+(9) Lazy loading context values
+
+(10) Testing context consumers
+
+===============================> Level 24 — React Forms Libraries
+
+(1) Formik basics
+
+(2) Formik with Yup validation
+
+(3) Controlled forms with Formik
+
+(4) Multi-step forms
+
+(5) Dynamic fields
+
+(6) Error messages handling
+
+(7) Reset & prefill form
+
+(8) Async form submission
+
+(9) React Hook Form setup
+
+(10) Integrate React Hook Form with Yup
+
+===============================> Level 25 — React Advanced Patterns
+
+(1) Higher Order Components (HOC)
+
+(2) Render props pattern
+
+(3) Compound components
+
+(4) Controlled vs uncontrolled components
+
+(5) Context + hooks pattern
+
+(6) State reducer pattern
+
+(7) Prop getters pattern
+
+(8) Container/presenter components
+
+(9) Function as children
+
+(10) Performance aware patterns
+
+===============================> Level 26 — React TypeScript Basics
+
+(1) Setup TypeScript in React project
+
+(2) tsconfig.json basics
+
+(3) Typing props & state
+
+(4) Functional component typing
+
+(5) Typing event handlers
+
+(6) Typing refs
+
+(7) Typing hooks (useState, useReducer)
+
+(8) Interface vs type
+
+(9) Optional & default props
+
+(10) Generics in React
+
+===============================> Level 27 — React TypeScript Advanced
+
+(1) Typing context
+
+(2) Typing higher-order components
+
+(3) Typing custom hooks
+
+(4) Typing forwardRef & useImperativeHandle
+
+(5) Typing API responses
+
+(6) Utility types usage
+
+(7) Union & intersection types
+
+(8) Type guards
+
+(9) Enum types
+
+(10) Component props composition
+
+===============================> Level 28 — React Performance Advanced
+
+(1) Memoization strategies
+
+(2) React.memo usage
+
+(3) useMemo & useCallback for optimization
+
+(4) Virtualization with react-window
+
+(5) Avoid inline functions in render
+
+(6) Optimizing context usage
+
+(7) Code splitting & lazy loading
+
+(8) Suspense for lazy components
+
+(9) Profiling & benchmarking
+
+(10) Performance monitoring tools
+
+===============================> Level 29 — React Deployment & DevOps
+
+(1) Build production app → npm run build
+
+(2) Deploy to GitHub Pages
+
+(3) Deploy to Netlify
+
+(4) Deploy to Vercel
+
+(5) Environment variables usage
+
+(6) Configure .env file
+
+(7) Continuous integration with GitHub Actions
+
+(8) Setup ESLint & Prettier
+
+(9) Bundle size optimization
+
+(10) Monitor deployed app performance
+
+===============================> Level 30 — React Project-Based Integration
+
+(1) Build a CRUD app with React & localStorage
+
+(2) Integrate API using Axios & fetch
+
+(3) Use React Router for multi-page navigation
+
+(4) Implement forms with Formik & Yup
+
+(5) Add global state using Redux / Context
+
+(6) Apply custom hooks for reusable logic
+
+(7) Use animations & transitions
+
+(8) Responsive design & styling
+
+(9) Deploy project to Netlify/GitHub Pages
+
+(10) Test app functionality & performance
