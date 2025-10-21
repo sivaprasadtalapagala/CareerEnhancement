@@ -1,0 +1,35 @@
+=========================================
+
+comments!: string;
+
+The ! is called the definite assignment assertion.
+
+It tells TypeScript:
+
+“Trust me, I will assign a value to this property later, so don’t worry about it being undefined.”
+
+✅ Use case: When a property cannot be initialized immediately in the constructor but will definitely get a value before use.
+
+Example:
+
+export class FeedbackComponent {
+  comments!: string;
+
+  ngOnInit() {
+    this.comments = "User feedback"; // initialized later
+  }
+}
+
+
+No compile-time error, even though it’s not initialized at declaration.
+
+2️⃣ comments: string;
+
+Without !, TypeScript expects that the property will be initialized immediately (either inline or in the constructor).
+
+If not, with strict mode enabled, TypeScript will give an error:
+
+Property 'comments' has no initializer and is not definitely assigned in the constructor.
+
+
+===========================================================================

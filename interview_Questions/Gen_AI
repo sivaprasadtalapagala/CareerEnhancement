@@ -1,0 +1,62 @@
+
+
+
+🧠 Section 1 — Basics of Generative AI (1–10)
+1. What is Generative AI? How is it different from traditional AI?
+2. Explain the difference between discriminative and generative models.
+3. What are some real-world applications of Generative AI?
+4. What are foundation models?
+5. How does Generative AI “generate” new data?
+6. What are embeddings, and why are they important in GenAI?
+7. Define diffusion models in Generative AI.
+8. What is latent space in AI models?
+9. Explain overfitting and underfitting in generative models.
+10. How do Generative AI models learn from unstructured data?
+
+🤖 Section 2 — Models & Architectures (11–20)
+11. What is a Generative Adversarial Network (GAN)?
+12. Explain how a GAN works — generator vs discriminator.
+13. What are common issues with GANs (e.g., mode collapse)?
+14. What is a Variational Autoencoder (VAE)?
+15. Compare VAEs, GANs, and Diffusion Models.
+16. What is a Transformer model?
+17. Explain the architecture of GPT (Generative Pretrained Transformer).
+18. What is attention mechanism and why is it important?
+19. What is the difference between BERT and GPT models?
+20. How does a Diffusion Model generate images?
+
+🧩 Section 3 — LLMs (Large Language Models) (21–30)
+21. What is a Large Language Model (LLM)?
+22. How is a model like GPT trained?
+23. What are tokens and tokenization?
+24. Explain prompt engineering and its importance.
+25. What is fine-tuning? What are the types of fine-tuning?
+26. What is instruction tuning and how does it improve LLMs?
+27. What is RLHF (Reinforcement Learning from Human Feedback)?
+28. Explain zero-shot, one-shot, and few-shot learning.
+29. What is context window in LLMs?
+30. How do LLMs handle hallucinations?
+
+🧰 Section 4 — Tools, Frameworks, and APIs (31–40)
+31. What is LangChain and why is it popular?
+32. What is RAG (Retrieval-Augmented Generation)?
+33. Explain how vector databases like FAISS or Pinecone work.
+34. What is an embedding model used for?
+35. How do you integrate OpenAI API or Gemini API in an application?
+36. What are some frameworks for building GenAI apps (LangChain, LlamaIndex, Haystack)?
+37. What is the difference between OpenAI’s GPT and Meta’s LLaMA models?
+38. How does Hugging Face help in GenAI development?
+39. What are safety and ethical concerns in Generative AI?
+40. How do you deploy a GenAI model efficiently?
+
+💡 Section 5 — Practical & Advanced (41–50)
+41. Explain how to build a chatbot using LLM + RAG.
+42. How do you use embeddings for semantic search?
+43. What’s the role of prompt templates in LangChain?
+44. How can you reduce hallucinations in a GenAI system?
+45. Explain the concept of temperature and top_p in text generation.
+46. How do you evaluate the quality of generated content?
+47. What are multi-modal models (e.g., Gemini, GPT-4V)?
+48. How do you handle privacy and security in GenAI applications?
+49. What are parameter-efficient fine-tuning techniques (PEFT, LoRA)?
+50. Where do you see the future of Generative AI heading?

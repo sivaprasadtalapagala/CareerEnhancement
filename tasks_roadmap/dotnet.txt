@@ -1,0 +1,677 @@
+🌟 .NET + C# Tasks Roadmap (Expanded Levels 1–30)
+==============================> Level 1 — Setup & First App
+
+Install .NET SDK (latest LTS) from Microsoft.
+
+Verify installation:
+→ dotnet --version
+
+Create your first console app:
+→ dotnet new console -o HelloWorld
+
+Navigate into folder and run:
+→ dotnet run
+
+Explore project structure:
+
+Program.cs
+
+.csproj file
+
+Add a simple print statement:
+→ Console.WriteLine("Hello, .NET!");
+
+Change namespace and understand its purpose.
+
+Add comments (//, /* */).
+
+Explore debugging with VS Code or Visual Studio.
+
+Bonus: Configure Prettier-like formatting in VS Code.
+
+==============================> Level 2 — C# Basics
+
+Learn data types: int, string, bool, float, double.
+
+Declare and initialize variables.
+
+Practice string interpolation:
+→ $"My name is {name}"
+
+Use var keyword for implicit typing.
+
+Practice type conversion (int.Parse, ToString).
+
+Learn arithmetic and comparison operators.
+
+Understand logical operators (&&, ||, !).
+
+Write if/else and switch conditions.
+
+Practice loops: for, while, do-while, foreach.
+
+Build a small calculator app (inputs from console).
+
+==============================> Level 3 — Methods & Functions
+
+Define and call simple methods.
+
+Use return types (void, int, string).
+
+Pass parameters to methods.
+
+Use optional and named parameters.
+
+Understand method overloading.
+
+Learn local vs global variables.
+
+Use static methods.
+
+Practice recursion (e.g., factorial).
+
+Build a simple menu-driven console program.
+
+Bonus: Explore “Main” method and command-line args.
+
+==============================> Level 4 — Object-Oriented Programming (OOP) Basics
+
+Create your first class and object.
+
+Add fields and methods inside class.
+
+Understand access modifiers (public, private).
+
+Use constructors and overload them.
+
+Use this keyword.
+
+Create multiple objects and call methods.
+
+Understand object initialization syntax.
+
+Build a simple “Car” or “Student” class example.
+
+Practice class separation into multiple files.
+
+Bonus: Learn naming conventions for classes and methods.
+
+==============================> Level 5 — Inheritance & Polymorphism
+
+Create base and derived classes.
+
+Use : baseClass syntax.
+
+Call base class constructor using base().
+
+Override virtual methods with override.
+
+Understand method hiding with new.
+
+Use sealed to stop inheritance.
+
+Use polymorphism via base references.
+
+Practice “Shape”, “Circle”, “Rectangle” example.
+
+Use abstract classes and methods.
+
+Bonus: Understand interfaces (introduction only).
+
+==============================> Level 6 — Interfaces & Abstraction
+
+Create an interface (IShape).
+
+Implement interface in class.
+
+Use multiple interfaces in one class.
+
+Compare abstract vs interface.
+
+Practice dependency injection via interface.
+
+Build a mini example (Printer → IPrinter interface).
+
+Learn about implicit and explicit interface implementation.
+
+Use interface-based design for testability.
+
+Bonus: Add a simple service interface for practice.
+
+Review OOP pillars (Encapsulation, Inheritance, Polymorphism, Abstraction).
+
+==============================> Level 7 — Collections & Generics
+
+Use arrays and lists.
+
+Understand List<T> and Dictionary<TKey, TValue>.
+
+Use foreach with collections.
+
+Use Stack and Queue.
+
+Create custom generic methods.
+
+Create a generic class.
+
+Learn about constraints (where T : class).
+
+Practice sorting and searching in collections.
+
+Bonus: Compare ArrayList vs List<T>.
+
+Build a simple “ToDo List” app using List<string>.
+
+==============================> Level 8 — Exception Handling
+
+Use try-catch-finally blocks.
+
+Throw custom exceptions.
+
+Use catch(Exception ex) properly.
+
+Understand throw vs throw ex.
+
+Handle multiple exception types.
+
+Use using statement for safe disposal.
+
+Create a custom exception class.
+
+Practice exception logging (Console or File).
+
+Bonus: Use checked for overflow handling.
+
+Build a small “Bank Withdrawal” program with error checks.
+
+==============================> Level 9 — File Handling
+
+Use File.ReadAllText() and WriteAllText().
+
+Use StreamReader and StreamWriter.
+
+Append data to existing file.
+
+Read files line by line.
+
+Check if file exists before reading.
+
+Create directories programmatically.
+
+Handle file I/O exceptions.
+
+Serialize/Deserialize simple objects to JSON.
+
+Use System.Text.Json or Newtonsoft.Json.
+
+Build a “Student Records” app that saves data to a file.
+
+==============================> Level 10 — LINQ (Language Integrated Query)
+
+Understand IEnumerable and IQueryable.
+
+Use Where, Select, OrderBy, GroupBy.
+
+Use FirstOrDefault, Any, All, Count.
+
+Practice query syntax and method syntax.
+
+Use Distinct and Join.
+
+Apply LINQ on lists and arrays.
+
+Use projection into anonymous types.
+
+Combine LINQ with file or object data.
+
+Practice nested queries.
+
+Build a “Filter Products” console app.
+
+==============================> Level 11 — Introduction to .NET Framework
+
+Understand what .NET SDK, CLR, and CIL are.
+
+Learn about .NET runtime and garbage collection.
+
+Explore project types: Console, Web, API, WPF.
+
+Understand difference between .NET Framework, .NET Core, and .NET 8+.
+
+Explore NuGet package manager.
+
+Install a package using:
+→ dotnet add package Newtonsoft.Json
+
+Understand namespaces and assemblies.
+
+Explore DLL and EXE output.
+
+Understand cross-platform compilation.
+
+Bonus: Learn about ILSpy for DLL inspection.
+
+==============================> Level 12 — C# Advanced Topics
+
+Learn anonymous types.
+
+Understand tuples and deconstruction.
+
+Learn delegates and lambda expressions.
+
+Use Func<> and Action<>.
+
+Explore extension methods.
+
+Use Nullable<T> and ?. operators.
+
+Learn indexers and properties.
+
+Understand enums and constants.
+
+Use pattern matching (is, switch).
+
+Build a delegate-based calculator app.
+
+==============================> Level 13 — Asynchronous Programming
+
+Understand threading basics.
+
+Learn async and await keywords.
+
+Use Task and Task<T>.
+
+Use Task.Delay() and Task.WhenAll().
+
+Handle exceptions in async methods.
+
+Use cancellation tokens.
+
+Compare synchronous vs asynchronous code.
+
+Fetch data asynchronously (simulated).
+
+Build a small async file downloader (mock).
+
+Bonus: Learn about Parallel.ForEach().
+
+==============================> Level 14 — Entity Framework Core (ORM)
+
+Install EF Core packages.
+
+Create a model class.
+
+Create DbContext class.
+
+Configure connection string (appsettings.json).
+
+Add migration: dotnet ef migrations add Init.
+
+Update database: dotnet ef database update.
+
+Perform CRUD operations via DbContext.
+
+Use LINQ queries with EF.
+
+Handle relationships (one-to-many).
+
+Build a “Student Management” app.
+
+==============================> Level 15 — ASP.NET Core Basics
+
+Create new Web API project:
+→ dotnet new webapi -o MyApi
+
+Explore folder structure:
+
+Controllers
+
+Program.cs
+
+appsettings.json
+
+Run and test default WeatherForecast API.
+
+Add new controller (e.g., ProductsController).
+
+Use [HttpGet], [HttpPost], [HttpPut], [HttpDelete].
+
+Test APIs in browser or Postman.
+
+Return JSON responses.
+
+Add DTOs and models.
+
+Understand dependency injection via constructor.
+
+Bonus: Handle routes with parameters.
+
+==============================> Level 16 — Dependency Injection in ASP.NET Core
+
+Understand DI concept.
+
+Register services using builder.Services.AddScoped().
+
+Inject service into controller.
+
+Create interfaces for services.
+
+Understand lifetime: Singleton, Scoped, Transient.
+
+Use logging service (ILogger).
+
+Inject configuration (IConfiguration).
+
+Use environment variables.
+
+Practice DI with multiple implementations.
+
+Build “UserService” and inject into controller.
+
+==============================> Level 17 — Configuration & Middleware
+
+Understand middleware pipeline.
+
+Add custom middleware for logging.
+
+Use app.Use() and app.Map().
+
+Add built-in middleware (e.g., CORS).
+
+Use appsettings.json for configuration.
+
+Access configuration values in controllers.
+
+Use environment-based config (Development, Production).
+
+Implement request/response logging.
+
+Handle global exception middleware.
+
+Build a request timing middleware.
+
+==============================> Level 18 — REST API with Database
+
+Connect EF Core with SQL Server.
+
+Configure connection string securely.
+
+Implement CRUD endpoints for entity.
+
+Add validation (DataAnnotations).
+
+Implement async methods.
+
+Handle pagination and filtering.
+
+Add global error handling.
+
+Use DTOs to hide entity fields.
+
+Test full CRUD with Postman.
+
+Build “Products API” end-to-end.
+
+==============================> Level 19 — Authentication & Authorization
+
+Implement JWT authentication.
+
+Configure token service.
+
+Add login and register endpoints.
+
+Secure routes with [Authorize].
+
+Add roles (Admin/User).
+
+Use ASP.NET Identity for user management.
+
+Hash passwords securely.
+
+Store tokens safely.
+
+Test auth using Postman.
+
+Build login flow with token validation.
+
+==============================> Level 20 — Advanced EF Core Features
+
+Implement relationships (1:1, 1:N, N:N).
+
+Use Fluent API for configuration.
+
+Handle migrations properly.
+
+Use eager, lazy, and explicit loading.
+
+Manage transactions.
+
+Implement repository pattern.
+
+Handle soft deletes.
+
+Use seed data.
+
+Optimize queries with projections.
+
+Bonus: Use SQL views with EF.
+
+==============================> Level 21 — Logging & Error Handling
+
+Use built-in ILogger.
+
+Configure logging in appsettings.json.
+
+Log exceptions globally.
+
+Add custom error response model.
+
+Create exception middleware.
+
+Integrate Serilog or NLog.
+
+Log to file or database.
+
+Use structured logging.
+
+Log request/response details.
+
+Bonus: Use Application Insights.
+
+==============================> Level 22 — Versioning & Swagger
+
+Add Swagger UI (Swashbuckle.AspNetCore).
+
+Document all endpoints.
+
+Add summary and remarks using XML comments.
+
+Implement API versioning.
+
+Add versioned routes.
+
+Secure Swagger with auth token.
+
+Customize Swagger UI.
+
+Export OpenAPI JSON.
+
+Test APIs via Swagger UI.
+
+Bonus: Integrate Postman collection.
+
+==============================> Level 23 — Caching & Performance
+
+Implement in-memory caching.
+
+Add distributed cache (Redis).
+
+Use cache expiration.
+
+Cache API responses.
+
+Implement output caching.
+
+Optimize EF queries.
+
+Use AsNoTracking for read-only data.
+
+Profile queries with logging.
+
+Add rate limiting middleware.
+
+Bonus: Use Response Compression.
+
+==============================> Level 24 — Unit Testing
+
+Install xUnit or NUnit.
+
+Write basic test methods.
+
+Mock dependencies using Moq.
+
+Test service layer.
+
+Test controller responses.
+
+Test async methods.
+
+Use dependency injection in tests.
+
+Implement integration testing.
+
+Use TestServer for end-to-end API tests.
+
+Bonus: Add code coverage report.
+
+==============================> Level 25 — File Uploads & Email Sending
+
+Implement file upload API.
+
+Validate file types and sizes.
+
+Store files in wwwroot or Azure Blob.
+
+Serve static files securely.
+
+Add email sending (SMTP or SendGrid).
+
+Use background services for email jobs.
+
+Log file upload events.
+
+Add image preview endpoint.
+
+Handle multipart/form-data.
+
+Bonus: Create image gallery API.
+
+==============================> Level 26 — SignalR & Real-Time Communication
+
+Install SignalR package.
+
+Create SignalR hub.
+
+Connect from Angular frontend.
+
+Broadcast messages to clients.
+
+Implement chat app.
+
+Send notifications in real-time.
+
+Handle user connections.
+
+Use groups and private messages.
+
+Log real-time events.
+
+Bonus: Integrate with JWT auth.
+
+==============================> Level 27 — Background Jobs
+
+Create background service with IHostedService.
+
+Schedule jobs using Quartz.NET or Hangfire.
+
+Manage recurring jobs.
+
+Run cleanup or email tasks automatically.
+
+Use dependency injection in background services.
+
+Monitor job execution.
+
+Add job dashboards (Hangfire UI).
+
+Handle long-running tasks.
+
+Test graceful shutdown.
+
+Bonus: Combine with SignalR notifications.
+
+==============================> Level 28 — Docker & Deployment
+
+Install Docker Desktop.
+
+Add Dockerfile to .NET project.
+
+Build and run Docker container.
+
+Expose port and test API.
+
+Use Docker Compose for API + DB.
+
+Add environment variables.
+
+Push image to Docker Hub.
+
+Deploy to Azure Web App or AWS ECS.
+
+Monitor running container logs.
+
+Bonus: Add CI/CD with GitHub Actions.
+
+==============================> Level 29 — Advanced Architecture & Design Patterns
+
+Implement Repository Pattern.
+
+Implement Unit of Work.
+
+Use CQRS pattern (MediatR).
+
+Add Clean Architecture structure.
+
+Apply SOLID principles.
+
+Use layered architecture (API → Service → Repo).
+
+Implement DTOs and AutoMapper.
+
+Add validation layer with FluentValidation.
+
+Add Mediator + Event handling.
+
+Bonus: Modularize features by domain.
+
+==============================> Level 30 — Full-Stack Project (Angular + .NET)
+
+Create Angular + .NET integrated app.
+
+Build user login/registration (JWT).
+
+Implement CRUD with real DB (SQL).
+
+Use EF Core + Repository pattern.
+
+Connect Angular via HttpClient.
+
+Secure API routes.
+
+Add global error handler.
+
+Add file uploads and image preview.
+
+Deploy backend (Azure) + frontend (Netlify).
+
+Bonus: Add CI/CD pipeline and Dockerization.

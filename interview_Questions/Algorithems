@@ -1,0 +1,2088 @@
+==================== 1. Array & String Algorithms ====================
+
+1. Find the largest and smallest element in an array  
+2. Reverse an array in place  
+3. Find the missing number in an array (1 to N)  
+4. Find all pairs with a given sum  
+5. Move all zeros to the end  
+6. Kadane’s Algorithm (maximum subarray sum)  
+7. Rotate array by K elements  
+8. Find duplicates in an array  
+9. Merge two sorted arrays  
+10. Sort an array of 0s, 1s, and 2s (Dutch National Flag)  
+11. Find the intersection and union of two arrays  
+12. Find the majority element (Boyer-Moore)  
+13. Find subarray with given sum  
+14. Rearrange array alternately (positive/negative)  
+15. Find equilibrium index (sum left = sum right)  
+16. Find leaders in an array  
+17. Longest consecutive sequence  
+18. Product of array except self  
+19. Maximum product subarray  
+20. Trapping rainwater problem  
+
+
+==================== 2. Searching & Sorting ====================
+
+21. Binary search (iterative + recursive)  
+22. First and last occurrence of a number (binary search variant)  
+23. Count occurrences in sorted array  
+24. Find peak element  
+25. Find square root using binary search  
+26. Merge sort  
+27. Quick sort  
+28. Insertion sort  
+29. Selection sort  
+30. Heap sort  
+31. Counting sort  
+32. Search in rotated sorted array  
+33. Find missing and repeating number  
+34. Find pair with difference K  
+35. Find Kth smallest/largest element (heap/quickselect)  
+
+
+==================== 3. Linked List ====================
+
+36. Reverse a linked list (iterative + recursive)  
+37. Detect and remove loop (Floyd’s Cycle Detection)  
+38. Find middle element  
+39. Merge two sorted linked lists  
+40. Remove nth node from end  
+41. Check if linked list is palindrome  
+42. Find intersection point of two lists  
+43. Add two numbers represented by linked lists  
+44. Flatten a linked list  
+45. Clone a linked list with random pointers  
+
+
+==================== 4. Stack & Queue ====================
+
+46. Implement stack using array/linked list  
+47. Implement queue using stacks  
+48. Evaluate postfix expression  
+49. Next greater element  
+50. Valid parentheses checker  
+51. Stock span problem  
+52. Minimum element in stack  
+53. LRU Cache implementation  
+54. Circular queue  
+55. Sliding window maximum  
+
+
+==================== 5. Recursion & Backtracking ====================
+
+56. Generate all subsets (power set)  
+57. Generate all permutations of a string/array  
+58. N-Queens problem  
+59. Sudoku solver  
+60. Rat in a maze  
+61. Word search in matrix  
+62. Combination sum  
+63. Letter combinations of a phone number  
+64. Palindrome partitioning  
+65. Tower of Hanoi  
+
+
+==================== 6. Dynamic Programming (DP) ====================
+
+66. Fibonacci using DP  
+67. Longest common subsequence (LCS)  
+68. Longest increasing subsequence (LIS)  
+69. 0/1 Knapsack problem  
+70. Subset sum problem  
+71. Coin change problem  
+72. Edit distance  
+73. Matrix chain multiplication  
+74. Minimum path sum in a grid  
+75. Maximum profit in stock buy-sell (multiple transactions)  
+76. Longest palindromic subsequence  
+77. Count number of ways to reach Nth stair  
+78. Rod cutting problem  
+79. Word break problem  
+80. Minimum jumps to reach end  
+
+
+==================== 7. Tree & Binary Search Tree (BST) ====================
+
+81. Inorder, Preorder, Postorder traversal (recursive & iterative)  
+82. Level order traversal (BFS)  
+83. Height of binary tree  
+84. Check if tree is balanced  
+85. Lowest common ancestor (LCA)  
+86. Check if two trees are identical  
+87. Mirror of binary tree  
+88. Diameter of a binary tree  
+89. Convert sorted array to BST  
+90. Validate BST  
+91. Vertical order traversal  
+92. Zigzag traversal  
+93. Boundary traversal  
+94. Top view & bottom view of binary tree  
+
+
+==================== 8. Graph Algorithms ====================
+
+95. DFS and BFS traversal  
+96. Detect cycle in directed/undirected graph  
+97. Topological sort  
+98. Dijkstra’s shortest path algorithm  
+99. Kruskal’s and Prim’s MST  
+100. Number of islands (DFS in matrix)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================================================================================================================
+
+
+1) Find the largest and smallest element in an array
+
+Problem: Given an array, find its maximum and minimum values.
+
+Idea / Intuition: Scan the array once, updating current min and max as you see elements. Single pass gives O(n).
+
+Step-by-step to explain
+
+If array is empty — handle as special case (return error or nulls).
+
+Initialize min = arr[0], max = arr[0].
+
+For each element x from index 1 to end:
+
+If x < min, set min = x.
+
+Else if x > max, set max = x.
+
+After loop, min and max hold the answers.
+
+Example: arr = [3, 7, 2, 9, 4]
+
+start: min = max = 3
+
+see 7 → max = 7
+
+see 2 → min = 2
+
+see 9 → max = 9
+
+see 4 → no change
+→ result: min = 2, max = 9
+
+Complexity: Time O(n), Space O(1).
+
+Edge-cases / tips: If you want to micro-optimize comparisons you can compare in pairs (reduces comparisons from ~2n to ~1.5n) — mention if asked about optimizing comparisons.
+
+JS sketch
+
+function minMax(arr){
+  if(arr.length === 0) return null;
+  let min = arr[0], max = arr[0];
+  for(let i=1;i<arr.length;i++){
+    if(arr[i] < min) min = arr[i];
+    else if(arr[i] > max) max = arr[i];
+  }
+  return {min, max};
+}
+
+2) Reverse an array in place
+
+Problem: Reverse the elements of an array without using extra array memory.
+
+Idea / Intuition: Swap symmetric elements from ends toward center.
+
+Step-by-step to explain
+
+Use two pointers: i = 0 (start) and j = n-1 (end).
+
+While i < j:
+
+Swap arr[i] and arr[j].
+
+Increment i, decrement j.
+
+Stop when pointers meet or cross; array is reversed.
+
+Example: arr = [1,2,3,4,5]
+
+swap i=0,j=4 → [5,2,3,4,1]
+
+swap i=1,j=3 → [5,4,3,2,1]
+
+i=2,j=2 stop → reversed.
+
+Complexity: Time O(n), Space O(1) — in-place.
+
+Edge-cases / tips: Works for odd/even lengths. Mention mutability: this modifies original array; if immutable needed, return a new reversed array.
+
+JS sketch
+
+function reverseInPlace(arr){
+  let i = 0, j = arr.length - 1;
+  while(i < j){
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    i++; j--;
+  }
+  return arr; // reversed in place
+}
+
+3) Find the missing number in an array (1 to N)
+
+Problem: Array contains N-1 distinct numbers from 1..N. Find the missing number.
+
+Idea / Intuition: Use the formula for sum 1..N or XOR trick. Sum method is simple: expected sum minus actual sum = missing number.
+
+Step-by-step to explain (sum method)
+
+Let n be the expected max number.
+
+Compute expected = n * (n + 1) / 2.
+
+Compute actual = sum of array elements.
+
+Missing = expected - actual.
+
+Example: n=5, arr=[1,2,4,5] → expected=15, actual=12 → missing=3.
+
+Complexity: Time O(n) (to sum elements), Space O(1).
+
+Alternative (XOR method): XOR all numbers from 1..N and XOR all elements in array; XOR of those two results is the missing number (avoids overflow concerns).
+
+Edge-cases / tips: If numbers are large, sum could overflow in some languages — mention using 64-bit type or use XOR to avoid overflow. Also check if input guarantees 1..N and distinctness.
+
+JS sketch (sum)
+
+function findMissing(arr, n){
+  let expected = n * (n + 1) / 2;
+  let actual = arr.reduce((s, x) => s + x, 0);
+  return expected - actual;
+}
+
+4) Find all pairs with a given sum
+
+Problem: Given array and target sum S, return all distinct pairs (a,b) where a + b = S.
+
+Idea / Intuition: Use a hash-set to check complements in one pass for O(n). Or sort and two-pointer if you want sorted output or to avoid extra space.
+
+Step-by-step to explain (hash-set approach)
+
+Create an empty set seen and an empty list pairs.
+
+For each number x in array:
+
+Let y = S - x (complement).
+
+If seen contains y and pair (min(x,y), max(x,y)) not already recorded, add pair to results.
+
+Add x to seen.
+
+Return pairs.
+
+Example: arr=[1,5,7, -1, 5], S=6
+
+x=1 → need 5 not seen → seen={1}
+
+x=5 → need 1 seen → add pair (1,5)
+
+x=7 → need -1 not seen → seen={1,5,7}
+
+x=-1 → need 7 seen → add pair (-1,7)
+
+x=5 → need 1 seen → (1,5) already found; handle duplicates as per requirement
+
+Complexity: Time O(n), Space O(n).
+
+Two-pointer approach (sorted array):
+
+Sort array (O(n log n)).
+
+Use i=0, j=n-1. If sum < target, i++; if > target, j--; if == record pair and move both pointers.
+
+Good when you want ordered pairs and lower memory.
+
+Edge-cases / tips: Clarify whether duplicates allowed; deduplicate results or count all occurrences. Mention choice of approach based on memory vs need to sort.
+
+JS sketch (hash-set, unique pairs)
+
+function pairsWithSum(arr, S){
+  const seen = new Set();
+  const result = new Set(); // store as "min,max" string to avoid duplicates
+  for(const x of arr){
+    const y = S - x;
+    if(seen.has(y)){
+      const a = Math.min(x,y), b = Math.max(x,y);
+      result.add(`${a},${b}`);
+    }
+    seen.add(x);
+  }
+  return Array.from(result).map(s => s.split(',').map(Number));
+}
+
+5) Move all zeros to the end
+
+Problem: Given array, move all 0 elements to the end while maintaining relative order of non-zero elements. Do it in-place.
+
+Idea / Intuition: Use two pointers — one to read through array, and one to write the next non-zero. After placing all non-zeros compactly at front, fill rest with zeros.
+
+Step-by-step to explain
+
+Let write = 0 — index where next non-zero should go.
+
+For read from 0 to n-1:
+
+If arr[read] is not zero, set arr[write] = arr[read]; if read != write optionally set arr[read] = 0 (or wait and fill zeros later). Then write++.
+
+After loop, fill indices write..n-1 with zeros (if not already zero).
+
+This preserves order of non-zero elements and is in-place.
+
+Example: arr = [0,1,0,3,12]
+
+read 0 → zero skip
+
+read 1 → arr[0]=1; write=1
+
+read 0 → skip
+
+read 3 → arr[1]=3; write=2
+
+read 12 → arr[2]=12; write=3
+
+fill indices 3..4 with 0 → [1,3,12,0,0]
+
+Complexity: Time O(n), Space O(1).
+
+Edge-cases / tips: If language assignments are cheap, you can set arr[read] = 0 when read != write to avoid second pass; otherwise do separate fill pass.
+
+JS sketch
+
+function moveZerosToEnd(arr){
+  let write = 0;
+  for(let read = 0; read < arr.length; read++){
+    if(arr[read] !== 0){
+      arr[write] = arr[read];
+      if(read !== write) arr[read] = 0; // optional immediate zeroing
+      write++;
+    }
+  }
+  // if not zeroed during loop, fill remaining
+  // for(let i = write; i < arr.length; i++) arr[i] = 0;
+  return arr;
+}
+
+
+
+🟢 6) Kadane’s Algorithm — Maximum Subarray Sum
+
+Problem: Find the contiguous subarray with the largest sum.
+
+Idea: Keep track of the current running sum — if it becomes negative, reset to 0.
+Always store the maximum seen so far.
+
+Steps:
+
+Initialize maxSum = -∞, currentSum = 0.
+
+For each element x:
+
+currentSum = currentSum + x
+
+If currentSum > maxSum, update maxSum.
+
+If currentSum < 0, reset to 0.
+
+Return maxSum.
+
+Example: arr = [-2,1,-3,4,-1,2,1,-5,4]
+→ Max sum = 6 ([4, -1, 2, 1])
+
+Complexity: O(n) time, O(1) space.
+
+function maxSubArray(arr){
+  let maxSum = -Infinity, current = 0;
+  for(let x of arr){
+    current += x;
+    maxSum = Math.max(maxSum, current);
+    if(current < 0) current = 0;
+  }
+  return maxSum;
+}
+
+🟢 7) Rotate Array by K elements
+
+Problem: Rotate array elements right by K positions.
+
+Idea: Reverse parts of the array:
+
+Reverse the whole array.
+
+Reverse first K.
+
+Reverse the rest.
+
+Steps (right rotation):
+
+Normalize k = k % n.
+
+Reverse entire array.
+
+Reverse first K elements.
+
+Reverse remaining elements.
+
+Example: arr = [1,2,3,4,5,6,7], k=3
+→ [7,6,5,4,3,2,1] → [5,6,7,4,3,2,1] → [5,6,7,1,2,3,4]
+
+Complexity: O(n) time, O(1) space.
+
+function rotate(arr, k){
+  k = k % arr.length;
+  arr.reverse();
+  reverse(arr, 0, k-1);
+  reverse(arr, k, arr.length-1);
+  return arr;
+}
+function reverse(a, i, j){
+  while(i<j) [a[i],a[j]] = [a[j],a[i]], i++, j--;
+}
+
+🟢 8) Find Duplicates in an Array
+
+Problem: Detect which elements appear more than once.
+
+Approach 1 (using Set):
+
+Create a Set.
+
+Iterate over array.
+
+If element already in set → duplicate.
+
+Else → add to set.
+
+Example: [1,2,3,1,3,6,6] → duplicates = [1,3,6]
+
+Complexity: O(n) time, O(n) space.
+
+function findDuplicates(arr){
+  const seen = new Set(), dup = new Set();
+  for(let x of arr){
+    if(seen.has(x)) dup.add(x);
+    else seen.add(x);
+  }
+  return Array.from(dup);
+}
+
+🟢 9) Merge Two Sorted Arrays
+
+Problem: Merge two sorted arrays into a single sorted array.
+
+Idea: Use two pointers (like merge step of merge sort).
+
+Steps:
+
+Start pointers i=0, j=0.
+
+Compare arr1[i] and arr2[j].
+
+Push smaller into result and move pointer.
+
+When one array ends, push remaining of the other.
+
+Example:
+arr1 = [1,3,5], arr2 = [2,4,6] → [1,2,3,4,5,6]
+
+Complexity: O(n+m) time, O(n+m) space.
+
+function mergeSorted(a,b){
+  let i=0,j=0,res=[];
+  while(i<a.length && j<b.length){
+    if(a[i] < b[j]) res.push(a[i++]);
+    else res.push(b[j++]);
+  }
+  return res.concat(a.slice(i)).concat(b.slice(j));
+}
+
+🟢 10) Sort an Array of 0s, 1s, and 2s (Dutch National Flag)
+
+Problem: Given array of only 0,1,2 — sort without using extra space.
+
+Idea: Use three pointers — low (0 zone), mid (1 zone), high (2 zone).
+
+Steps:
+
+low=0, mid=0, high=n-1
+
+While mid ≤ high:
+
+If arr[mid]==0 → swap(arr[low],arr[mid]); low++, mid++
+
+Else if arr[mid]==1 → mid++
+
+Else → swap(arr[mid],arr[high]); high--
+
+Example: [2,0,1] → [0,1,2]
+
+Complexity: O(n) time, O(1) space.
+
+function sort012(arr){
+  let low=0, mid=0, high=arr.length-1;
+  while(mid<=high){
+    if(arr[mid]==0) [arr[low++],arr[mid++]]=[arr[mid],arr[low]];
+    else if(arr[mid]==1) mid++;
+    else [arr[mid],arr[high--]]=[arr[high],arr[mid]];
+  }
+  return arr;
+}
+
+🟢 11) Find Intersection and Union of Two Arrays
+
+Union: All unique elements from both arrays.
+Intersection: Common elements.
+
+Steps (using Set):
+
+Union → new Set([...arr1, ...arr2])
+
+Intersection → elements in both sets.
+
+Example: arr1=[1,2,3,4], arr2=[3,4,5,6]
+Union=[1,2,3,4,5,6], Intersection=[3,4]
+
+Complexity: O(n+m)
+
+function unionIntersection(a,b){
+  const setA=new Set(a), setB=new Set(b);
+  const union=[...new Set([...a,...b])];
+  const inter=[...setA].filter(x=>setB.has(x));
+  return {union, inter};
+}
+
+🟢 12) Find the Majority Element (Boyer-Moore)
+
+Problem: Element appearing more than n/2 times.
+
+Idea: Cancel out different elements — majority remains.
+
+Steps:
+
+candidate=null, count=0
+
+For each num:
+
+If count==0 → candidate=num
+
+If num==candidate → count++
+
+Else count--
+
+Candidate at end is potential majority. Verify count.
+
+Example: [2,2,1,1,1,2,2] → candidate=2
+
+Complexity: O(n) time, O(1) space.
+
+function majorityElement(arr){
+  let cand=null, count=0;
+  for(let x of arr){
+    if(count==0) cand=x;
+    count += (x==cand)?1:-1;
+  }
+  return cand;
+}
+
+🟢 13) Find Subarray with Given Sum
+
+Problem: Find if a subarray sums to given value (non-negative numbers).
+
+Idea: Use sliding window.
+
+Steps:
+
+Initialize start=0, sum=0
+
+For end in [0..n):
+
+Add arr[end]
+
+While sum > target, subtract arr[start++].
+
+If sum==target → found subarray.
+
+Example: arr=[1,4,20,3,10,5], target=33 → [20,3,10]
+
+Complexity: O(n)
+
+function subarraySum(arr,target){
+  let sum=0,start=0;
+  for(let end=0;end<arr.length;end++){
+    sum+=arr[end];
+    while(sum>target) sum-=arr[start++];
+    if(sum===target) return [start,end];
+  }
+  return null;
+}
+
+🟢 14) Rearrange Array Alternately (Positive/Negative)
+
+Problem: Arrange numbers so positive and negative alternate.
+
+Idea: Separate +ve and -ve, then merge alternately.
+
+Steps:
+
+Create two arrays: pos[], neg[]
+
+Merge: one from each alternately.
+
+Example: [1,-2,3,-4,5,-6] → [1,-2,3,-4,5,-6]
+
+Complexity: O(n) time, O(n) space.
+
+function rearrangeAlt(arr){
+  const pos=arr.filter(x=>x>=0);
+  const neg=arr.filter(x=>x<0);
+  const res=[];
+  let i=0,j=0;
+  while(i<pos.length||j<neg.length){
+    if(i<pos.length) res.push(pos[i++]);
+    if(j<neg.length) res.push(neg[j++]);
+  }
+  return res;
+}
+
+🟢 15) Find Equilibrium Index
+
+Problem: Index where sum(left) == sum(right).
+
+Idea: Precompute total sum and walk through array keeping left sum.
+
+Steps:
+
+total = sum(arr)
+
+leftSum=0
+
+For each i:
+
+rightSum = total - leftSum - arr[i]
+
+if leftSum == rightSum → i is equilibrium
+
+leftSum += arr[i]
+
+Example: arr=[-7,1,5,2,-4,3,0] → index=3
+
+Complexity: O(n), O(1)
+
+function equilibriumIndex(arr){
+  const total=arr.reduce((a,b)=>a+b,0);
+  let left=0;
+  for(let i=0;i<arr.length;i++){
+    if(left === total - left - arr[i]) return i;
+    left += arr[i];
+  }
+  return -1;
+}
+
+
+
+
+
+🔹 16. Maximum Product Subarray
+🧠 Concept:
+
+Find a contiguous subarray that has the largest product.
+
+🪜 Steps:
+
+Keep track of current maxProduct, minProduct, and result.
+
+Since a negative × negative = positive, track both.
+
+Update max/min at each step using the current number.
+
+💡 Example:
+arr = [2, 3, -2, 4]
+Output = 6
+
+
+→ Subarray [2,3] gives max product = 6.
+
+💻 Code:
+function maxProduct(nums) {
+  let maxProd = nums[0], minProd = nums[0], result = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    let temp = maxProd;
+    maxProd = Math.max(nums[i], nums[i]*maxProd, nums[i]*minProd);
+    minProd = Math.min(nums[i], nums[i]*temp, nums[i]*minProd);
+    result = Math.max(result, maxProd);
+  }
+  return result;
+}
+
+
+🕒 Time: O(n) | 📦 Space: O(1)
+
+🔹 17. Subset Sum Problem
+🧠 Concept:
+
+Check if there exists a subset that adds up to target sum.
+
+🪜 Steps:
+
+Use Dynamic Programming.
+
+dp[i][j] → true if subset of first i items makes sum j.
+
+Fill table iteratively.
+
+💡 Example:
+arr = [3, 34, 4, 12, 5, 2], sum = 9
+Output = true (4 + 5)
+
+💻 Code:
+function isSubsetSum(arr, sum) {
+  let dp = Array(arr.length + 1).fill().map(() => Array(sum + 1).fill(false));
+  for (let i = 0; i <= arr.length; i++) dp[i][0] = true;
+
+  for (let i = 1; i <= arr.length; i++) {
+    for (let j = 1; j <= sum; j++) {
+      if (arr[i-1] > j) dp[i][j] = dp[i-1][j];
+      else dp[i][j] = dp[i-1][j] || dp[i-1][j - arr[i-1]];
+    }
+  }
+  return dp[arr.length][sum];
+}
+
+
+🕒 Time: O(nsum) | 📦 Space: O(nsum)
+
+🔹 18. Longest Common Subsequence (LCS)
+🧠 Concept:
+
+Find the length of longest subsequence present in both strings.
+
+🪜 Steps:
+
+If chars match → add 1 + recurse diagonally.
+
+Else → take max from top/left.
+
+Use DP to store intermediate results.
+
+💡 Example:
+X = "abcde", Y = "ace" → LCS = "ace", length = 3
+
+💻 Code:
+function lcs(X, Y) {
+  let m = X.length, n = Y.length;
+  let dp = Array(m+1).fill().map(()=>Array(n+1).fill(0));
+  for (let i=1; i<=m; i++) {
+    for (let j=1; j<=n; j++) {
+      if (X[i-1]==Y[j-1]) dp[i][j] = 1 + dp[i-1][j-1];
+      else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+    }
+  }
+  return dp[m][n];
+}
+
+
+🕒 Time: O(m*n)
+
+🔹 19. Longest Increasing Subsequence (LIS)
+🧠 Concept:
+
+Find longest subsequence where elements are increasing.
+
+🪜 Steps:
+
+Initialize dp[] = 1 for all.
+
+For each element, check previous smaller ones.
+
+Update dp[i] = max(dp[i], dp[j]+1)
+
+💡 Example:
+arr = [10, 9, 2, 5, 3, 7, 101, 18]
+LIS = 4 → [2,3,7,101]
+
+💻 Code:
+function lengthOfLIS(nums) {
+  let dp = Array(nums.length).fill(1);
+  for (let i=1; i<nums.length; i++) {
+    for (let j=0; j<i; j++) {
+      if (nums[i] > nums[j]) dp[i] = Math.max(dp[i], dp[j]+1);
+    }
+  }
+  return Math.max(...dp);
+}
+
+
+🕒 Time: O(n²)
+
+🔹 20. Longest Palindromic Substring
+🧠 Concept:
+
+Find the longest substring that reads same forward & backward.
+
+🪜 Steps:
+
+Expand from center (each char as center).
+
+Expand for both odd/even lengths.
+
+Track max length substring.
+
+💡 Example:
+s = "babad" → Output: "bab" or "aba"
+
+💻 Code:
+function longestPalindrome(s) {
+  let res = "";
+  function expand(l, r) {
+    while (l >= 0 && r < s.length && s[l] === s[r]) {
+      if (r - l + 1 > res.length) res = s.slice(l, r + 1);
+      l--; r++;
+    }
+  }
+  for (let i = 0; i < s.length; i++) {
+    expand(i, i);       // odd
+    expand(i, i + 1);   // even
+  }
+  return res;
+}
+
+
+🕒 Time: O(n²)
+
+🔹 21. Count Inversions in an Array
+🧠 Concept:
+
+Count pairs (i,j) where i<j and arr[i]>arr[j].
+
+🪜 Steps:
+
+Use merge sort technique.
+
+During merge, count inversions when left > right.
+
+💡 Example:
+arr = [2, 4, 1, 3, 5] → Inversions = 3
+
+💻 Code:
+function mergeSortCount(arr) {
+  function mergeSort(l, r) {
+    if (l >= r) return 0;
+    let mid = Math.floor((l+r)/2);
+    let count = mergeSort(l, mid) + mergeSort(mid+1, r);
+    let temp = [], i = l, j = mid+1;
+    while (i<=mid && j<=r) {
+      if (arr[i]<=arr[j]) temp.push(arr[i++]);
+      else {
+        temp.push(arr[j++]);
+        count += (mid - i + 1);
+      }
+    }
+    while (i<=mid) temp.push(arr[i++]);
+    while (j<=r) temp.push(arr[j++]);
+    for (let k=l; k<=r; k++) arr[k]=temp[k-l];
+    return count;
+  }
+  return mergeSort(0, arr.length-1);
+}
+
+
+🕒 Time: O(n log n)
+
+🔹 22. Search in Rotated Sorted Array
+🧠 Concept:
+
+Find element in a rotated sorted array using binary search.
+
+🪜 Steps:
+
+Find mid.
+
+Check which side is sorted.
+
+Move search range accordingly.
+
+💡 Example:
+arr = [4,5,6,7,0,1,2], target = 0 → Output: index 4
+
+💻 Code:
+function search(nums, target) {
+  let l=0, r=nums.length-1;
+  while(l<=r){
+    let mid=Math.floor((l+r)/2);
+    if(nums[mid]==target) return mid;
+    if(nums[l]<=nums[mid]){
+      if(target>=nums[l] && target<nums[mid]) r=mid-1;
+      else l=mid+1;
+    } else {
+      if(target>nums[mid] && target<=nums[r]) l=mid+1;
+      else r=mid-1;
+    }
+  }
+  return -1;
+}
+
+
+🕒 Time: O(log n)
+
+🔹 23. Find Minimum in Rotated Sorted Array
+🧠 Concept:
+
+Use modified binary search to find smallest element.
+
+💡 Example:
+arr = [3,4,5,1,2] → Output = 1
+
+💻 Code:
+function findMin(nums) {
+  let l=0, r=nums.length-1;
+  while(l<r){
+    let mid=Math.floor((l+r)/2);
+    if(nums[mid]>nums[r]) l=mid+1;
+    else r=mid;
+  }
+  return nums[l];
+}
+
+
+🕒 Time: O(log n)
+
+🔹 24. Count Set Bits
+🧠 Concept:
+
+Count number of 1’s in binary representation.
+
+💡 Example:
+n = 5 → binary = 101 → Output = 2
+
+💻 Code:
+function countBits(n) {
+  let count = 0;
+  while(n > 0){
+    count += n & 1;
+    n >>= 1;
+  }
+  return count;
+}
+
+
+🕒 Time: O(log n)
+
+🔹 25. Power of a Number (xⁿ)
+🧠 Concept:
+
+Use binary exponentiation to calculate efficiently.
+
+💡 Example:
+x=2, n=10 → Output=1024
+
+💻 Code:
+function power(x, n) {
+  if(n===0) return 1;
+  let half = power(x, Math.floor(n/2));
+  if(n%2===0) return half*half;
+  else return x*half*half;
+}
+
+
+🕒 Time: O(log n)
+
+🔹 26. Detect Cycle in a Linked List
+🧠 Concept:
+
+Use Floyd’s Cycle Detection (slow and fast pointers).
+
+💡 Example:
+
+If slow = fast → cycle exists.
+
+💻 Code:
+function hasCycle(head) {
+  let slow=head, fast=head;
+  while(fast && fast.next){
+    slow=slow.next;
+    fast=fast.next.next;
+    if(slow===fast) return true;
+  }
+  return false;
+}
+
+
+🕒 Time: O(n)
+
+🔹 27. Find Start of Cycle in Linked List
+🧠 Concept:
+
+After detection, move one pointer to head.
+Move both 1 step; where they meet = start of cycle.
+
+💻 Code:
+function detectCycle(head) {
+  let slow=head, fast=head;
+  while(fast && fast.next){
+    slow=slow.next; fast=fast.next.next;
+    if(slow===fast){
+      slow=head;
+      while(slow!==fast){
+        slow=slow.next;
+        fast=fast.next;
+      }
+      return slow;
+    }
+  }
+  return null;
+}
+
+🔹 28. Find Intersection Point of Two Linked Lists
+🧠 Concept:
+
+Use two pointers. Move each pointer to the other’s head when it reaches null.
+
+💻 Code:
+function getIntersectionNode(a, b) {
+  let p1=a, p2=b;
+  while(p1!==p2){
+    p1 = p1 ? p1.next : b;
+    p2 = p2 ? p2.next : a;
+  }
+  return p1;
+}
+
+
+🕒 Time: O(n)
+
+🔹 29. Reverse a Linked List in Groups of K
+🧠 Concept:
+
+Reverse K nodes recursively.
+
+💻 Code:
+function reverseKGroup(head, k) {
+  let count=0, node=head;
+  while(node && count<k){
+    node=node.next;
+    count++;
+  }
+  if(count===k){
+    let prev=reverseKGroup(node,k);
+    while(count--){
+      let temp=head.next;
+      head.next=prev;
+      prev=head;
+      head=temp;
+    }
+    head=prev;
+  }
+  return head;
+}
+
+🔹 30. Clone a Linked List with Random Pointers
+🧠 Concept:
+
+Use a hashmap to store mapping of original → clone.
+
+💻 Code:
+function copyRandomList(head) {
+  if(!head) return null;
+  let map = new Map();
+  let cur=head;
+  while(cur){
+    map.set(cur, {val:cur.val, next:null, random:null});
+    cur=cur.next;
+  }
+  cur=head;
+  while(cur){
+    map.get(cur).next = map.get(cur.next) || null;
+    map.get(cur).random = map.get(cur.random) || null;
+    cur=cur.next;
+  }
+  return map.get(head);
+}
+
+
+🕒 Time: O(n)
+
+
+
+🔹 31. Implement Stack using Array
+🧠 Concept:
+
+Use an array and perform push, pop, peek operations.
+
+💻 Code:
+class Stack {
+  constructor() { this.items = []; }
+  push(val) { this.items.push(val); }
+  pop() { return this.items.pop(); }
+  peek() { return this.items[this.items.length - 1]; }
+  isEmpty() { return this.items.length === 0; }
+}
+
+
+🕒 Time: O(1) for all operations
+
+🔹 32. Implement Queue using Array
+🧠 Concept:
+
+Use an array and maintain FIFO order (shift for dequeue).
+
+💻 Code:
+class Queue {
+  constructor() { this.items = []; }
+  enqueue(val) { this.items.push(val); }
+  dequeue() { return this.items.shift(); }
+  front() { return this.items[0]; }
+  isEmpty() { return this.items.length === 0; }
+}
+
+
+🕒 Time: O(1) average
+
+🔹 33. Implement Stack using Two Queues
+🧠 Concept:
+
+Use two queues to simulate LIFO behavior.
+
+💻 Code:
+class StackUsingQueues {
+  constructor() { this.q1 = []; this.q2 = []; }
+  push(x) { this.q1.push(x); }
+  pop() {
+    while (this.q1.length > 1) this.q2.push(this.q1.shift());
+    let val = this.q1.shift();
+    [this.q1, this.q2] = [this.q2, this.q1];
+    return val;
+  }
+}
+
+🔹 34. Next Greater Element
+🧠 Concept:
+
+Use a stack to find next greater for each element.
+
+💡 Example:
+arr = [4,5,2,25]
+Output = [5,25,25,-1]
+
+💻 Code:
+function nextGreater(arr) {
+  let stack = [], res = Array(arr.length).fill(-1);
+  for (let i = arr.length - 1; i >= 0; i--) {
+    while (stack.length && stack[stack.length - 1] <= arr[i]) stack.pop();
+    if (stack.length) res[i] = stack[stack.length - 1];
+    stack.push(arr[i]);
+  }
+  return res;
+}
+
+
+🕒 Time: O(n)
+
+🔹 35. Valid Parentheses
+🧠 Concept:
+
+Use a stack to check for balanced brackets.
+
+💻 Code:
+function isValid(s) {
+  let stack = [];
+  for (let ch of s) {
+    if ("([{".includes(ch)) stack.push(ch);
+    else {
+      let last = stack.pop();
+      if ((ch === ")" && last !== "(") ||
+          (ch === "}" && last !== "{") ||
+          (ch === "]" && last !== "[")) return false;
+    }
+  }
+  return stack.length === 0;
+}
+
+
+🕒 Time: O(n)
+
+🔹 36. Evaluate Postfix Expression
+🧠 Concept:
+
+Use a stack; push numbers, pop 2 when operator appears.
+
+💡 Example:
+Expression = "231*+9-"
+Output = -4
+
+💻 Code:
+function evalPostfix(exp) {
+  let stack = [];
+  for (let ch of exp) {
+    if (!isNaN(ch)) stack.push(Number(ch));
+    else {
+      let b = stack.pop(), a = stack.pop();
+      switch(ch){
+        case '+': stack.push(a+b); break;
+        case '-': stack.push(a-b); break;
+        case '*': stack.push(a*b); break;
+        case '/': stack.push(a/b); break;
+      }
+    }
+  }
+  return stack.pop();
+}
+
+🔹 37. Implement Min Stack
+🧠 Concept:
+
+Keep track of current minimum along with stack.
+
+💻 Code:
+class MinStack {
+  constructor() { this.stack = []; this.minStack = []; }
+  push(x) {
+    this.stack.push(x);
+    if (this.minStack.length === 0 || x <= this.getMin()) this.minStack.push(x);
+  }
+  pop() {
+    let val = this.stack.pop();
+    if (val === this.getMin()) this.minStack.pop();
+  }
+  top() { return this.stack[this.stack.length - 1]; }
+  getMin() { return this.minStack[this.minStack.length - 1]; }
+}
+
+🔹 38. Implement Queue using Two Stacks
+💻 Code:
+class QueueUsingStacks {
+  constructor() { this.s1 = []; this.s2 = []; }
+  enqueue(x) { this.s1.push(x); }
+  dequeue() {
+    if (!this.s2.length) while (this.s1.length) this.s2.push(this.s1.pop());
+    return this.s2.pop();
+  }
+}
+
+🔹 39. Stock Span Problem
+🧠 Concept:
+
+Find number of days price ≤ today’s price → use stack.
+
+💡 Example:
+Prices = [100, 80, 60, 70, 60, 75, 85]
+Output = [1,1,1,2,1,4,6]
+
+💻 Code:
+function stockSpan(prices) {
+  let stack = [], res = [];
+  for (let i = 0; i < prices.length; i++) {
+    while (stack.length && prices[stack[stack.length - 1]] <= prices[i]) stack.pop();
+    res[i] = stack.length ? i - stack[stack.length - 1] : i + 1;
+    stack.push(i);
+  }
+  return res;
+}
+
+🔹 40. Largest Rectangle in Histogram
+🧠 Concept:
+
+Use a stack to find next smaller left/right for each bar.
+
+💻 Code:
+function largestRectangleArea(heights) {
+  let stack = [], max = 0;
+  heights.push(0);
+  for (let i = 0; i < heights.length; i++) {
+    while (stack.length && heights[i] < heights[stack[stack.length-1]]) {
+      let h = heights[stack.pop()];
+      let w = stack.length ? i - stack[stack.length-1] - 1 : i;
+      max = Math.max(max, h * w);
+    }
+    stack.push(i);
+  }
+  return max;
+}
+
+🔹 41. Trapping Rain Water
+🧠 Concept:
+
+Find water trapped between bars.
+
+🪜 Steps:
+
+Precompute leftMax, rightMax for each index.
+
+Water[i] = min(leftMax[i], rightMax[i]) - height[i]
+
+💻 Code:
+function trap(height) {
+  let n = height.length, left = [], right = [], water = 0;
+  left[0] = height[0];
+  for (let i=1;i<n;i++) left[i]=Math.max(left[i-1],height[i]);
+  right[n-1]=height[n-1];
+  for (let i=n-2;i>=0;i--) right[i]=Math.max(right[i+1],height[i]);
+  for (let i=0;i<n;i++) water += Math.min(left[i],right[i])-height[i];
+  return water;
+}
+
+
+🕒 Time: O(n)
+
+🔹 42. Implement Binary Tree Traversals
+💻 Code:
+function inorder(root) {
+  if (!root) return;
+  inorder(root.left);
+  console.log(root.val);
+  inorder(root.right);
+}
+
+
+(Similar: preorder → root-left-right, postorder → left-right-root)
+
+🔹 43. Level Order Traversal
+💻 Code:
+function levelOrder(root) {
+  if (!root) return [];
+  let q=[root], res=[];
+  while(q.length){
+    let len=q.length, level=[];
+    for(let i=0;i<len;i++){
+      let node=q.shift();
+      level.push(node.val);
+      if(node.left) q.push(node.left);
+      if(node.right) q.push(node.right);
+    }
+    res.push(level);
+  }
+  return res;
+}
+
+🔹 44. Maximum Depth of Binary Tree
+💻 Code:
+function maxDepth(root) {
+  if (!root) return 0;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+}
+
+🔹 45. Check if Two Trees are Identical
+💻 Code:
+function isSameTree(p, q) {
+  if (!p && !q) return true;
+  if (!p || !q || p.val !== q.val) return false;
+  return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+}
+
+🔹 46. Diameter of Binary Tree
+🧠 Concept:
+
+Diameter = longest path between two nodes.
+
+💻 Code:
+function diameterOfBinaryTree(root) {
+  let diameter = 0;
+  function dfs(node){
+    if(!node) return 0;
+    let left = dfs(node.left);
+    let right = dfs(node.right);
+    diameter = Math.max(diameter, left+right);
+    return 1 + Math.max(left, right);
+  }
+  dfs(root);
+  return diameter;
+}
+
+🔹 47. Balanced Binary Tree
+💻 Code:
+function isBalanced(root) {
+  function dfs(node){
+    if(!node) return 0;
+    let left=dfs(node.left);
+    if(left===-1) return -1;
+    let right=dfs(node.right);
+    if(right===-1) return -1;
+    if(Math.abs(left-right)>1) return -1;
+    return 1+Math.max(left,right);
+  }
+  return dfs(root)!==-1;
+}
+
+🔹 48. Lowest Common Ancestor (LCA)
+💻 Code:
+function lowestCommonAncestor(root, p, q) {
+  if (!root || root === p || root === q) return root;
+  let left = lowestCommonAncestor(root.left, p, q);
+  let right = lowestCommonAncestor(root.right, p, q);
+  return !left ? right : !right ? left : root;
+}
+
+🔹 49. Invert Binary Tree (Mirror)
+💻 Code:
+function invertTree(root) {
+  if (!root) return null;
+  [root.left, root.right] = [invertTree(root.right), invertTree(root.left)];
+  return root;
+}
+
+🔹 50. Path Sum (Root to Leaf)
+💻 Code:
+function hasPathSum(root, sum) {
+  if (!root) return false;
+  if (!root.left && !root.right) return sum === root.val;
+  return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+}
+
+
+
+
+51. Find the minimum and maximum element in an array
+
+Steps:
+
+Initialize min and max as the first element.
+
+Loop through the array.
+
+If current element < min, update min.
+
+If current element > max, update max.
+
+Return both values.
+
+Example:
+Input: [2, 8, 1, 4, 10] → Output: Min = 1, Max = 10
+
+52. Check if two arrays are equal or not
+
+Steps:
+
+Check if lengths are equal; if not, return false.
+
+Sort both arrays.
+
+Compare each element one by one.
+
+If all match, return true.
+
+53. Find all pairs in an array whose sum is equal to a given number
+
+Steps:
+
+Use a hash set to store visited elements.
+
+For each element num, check if (target - num) is in the set.
+
+If yes → that’s a pair.
+
+Else add num to the set.
+
+Example:
+Array: [2, 7, 4, 5, 3, 1], Target = 6
+Pairs → (2,4), (5,1), (3,3)
+
+54. Find the majority element in an array
+
+Steps (Boyer–Moore Voting Algorithm):
+
+Initialize count = 0, candidate = None.
+
+For each element:
+
+If count = 0 → set candidate to current element.
+
+If element = candidate → increment count.
+
+Else decrement count.
+
+The remaining candidate is majority.
+
+55. Kadane’s Algorithm (Maximum Subarray Sum)
+
+Steps:
+
+Initialize max_so_far = arr[0], max_ending_here = arr[0].
+
+Loop from second element:
+
+max_ending_here = max(arr[i], max_ending_here + arr[i])
+
+max_so_far = max(max_so_far, max_ending_here)
+
+Return max_so_far.
+
+Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4] → Output: 6 (subarray [4,-1,2,1])
+
+56. Move all negative numbers to one side of array
+
+Steps:
+
+Initialize a pointer j = 0.
+
+Loop through array → if arr[i] < 0, swap arr[i] with arr[j] and increment j.
+
+Now all negatives are before positives.
+
+57. Find intersection of two arrays
+
+Steps:
+
+Convert both arrays into sets.
+
+Find intersection using set1 & set2.
+
+Convert back to list.
+
+58. Find union of two arrays
+
+Steps:
+
+Convert both arrays to sets.
+
+Use union operation → set1 | set2.
+
+Convert back to list.
+
+59. Find missing number in a sequence
+
+Steps:
+
+Formula for sum of 1 to n = n*(n+1)/2.
+
+Calculate actual sum of given array.
+
+Missing = (expected sum - actual sum).
+
+Example:
+Array: [1,2,3,5], n=5 → Missing = 15-11=4
+
+60. Count frequency of elements in an array
+
+Steps:
+
+Use a dictionary (or Map).
+
+Loop over array → increment count for each element.
+
+Print element and its frequency.
+
+61. Rearrange array in alternating positive & negative items
+
+Steps:
+
+Separate positives and negatives into two lists.
+
+Merge them alternately (one pos, one neg).
+
+Append remaining elements if any list is longer.
+
+62. Find duplicate numbers in an array
+
+Steps:
+
+Use a set to store seen numbers.
+
+If an element is already in the set, it’s a duplicate.
+
+Return list of duplicates.
+
+63. Find smallest and second smallest element
+
+Steps:
+
+Initialize first and second as ∞.
+
+Loop through array:
+
+If element < first → update both.
+
+Else if element < second → update second.
+
+Return both.
+
+64. Find the largest three elements in array
+
+Steps:
+
+Initialize first = second = third = -∞.
+
+For each element, compare and shift accordingly.
+
+Return the three numbers.
+
+65. Rearrange array in increasing-decreasing order
+
+Steps:
+
+Sort array.
+
+First half → ascending; second half → descending.
+
+66. Find whether an array is subset of another
+
+Steps:
+
+Convert both arrays to sets.
+
+Check set1.issubset(set2).
+
+Return true or false.
+
+67. Count pairs with given sum (optimized)
+
+Steps:
+
+Use hashmap for frequencies.
+
+For each element x, check if target - x exists.
+
+Add count accordingly and return total pairs.
+
+68. Find equilibrium index (sum of left elements = right elements)
+
+Steps:
+
+Calculate total sum.
+
+Initialize leftSum = 0.
+
+Loop: subtract current element from total → rightSum.
+
+If leftSum == rightSum → index found.
+
+Else add element to leftSum and continue.
+
+69. Find leaders in an array (greater than all elements to right)
+
+Steps:
+
+Start from rightmost element → always a leader.
+
+Keep track of max so far.
+
+Move left and compare → if greater than max, it’s a leader.
+
+70. Find longest consecutive subsequence
+
+Steps:
+
+Convert array to set.
+
+For each element, if previous element not in set → start a sequence.
+
+Count consecutive elements until break.
+
+Track max length.
+
+71. Find common elements in three arrays
+
+Steps:
+
+Use three pointers i, j, k.
+
+Move smallest pointer forward.
+
+If all three elements are equal → add to result.
+
+Continue until one array ends.
+
+72. Sort elements by frequency
+
+Steps:
+
+Use dictionary to count frequency.
+
+Sort by frequency (descending), then by value if needed.
+
+Return sorted array.
+
+73. Find first repeating element
+
+Steps:
+
+Use a set to track seen elements.
+
+Loop from left → if element already in set → that’s the first repeating.
+
+Break and print it.
+
+74. Find first non-repeating element
+
+Steps:
+
+Count frequency of each element.
+
+Loop again → first with frequency 1 is answer.
+
+75. Find subarray with given sum (non-negative numbers)
+
+Steps:
+
+Use two pointers → start = 0, curr_sum = arr[0].
+
+Add next element to curr_sum.
+
+If curr_sum > target → subtract arr[start++].
+
+If curr_sum == target → return indices.
+
+
+
+76. Count number of ways to reach nth stair (Staircase problem)
+
+Steps:
+
+You can climb 1 or 2 stairs at a time.
+
+Ways to reach step n = ways(n-1) + ways(n-2) → Fibonacci series.
+
+Code:
+
+function climbStairs(n) {
+  if(n<=2) return n;
+  let a=1, b=2;
+  for(let i=3;i<=n;i++){
+    let temp = a + b;
+    a=b;
+    b=temp;
+  }
+  return b;
+}
+
+77. N-th Fibonacci Number
+
+Steps:
+
+Use iterative approach (or DP).
+
+Start with 0,1 → sum previous two for next.
+
+Code:
+
+function fibonacci(n){
+  if(n<=1) return n;
+  let a=0,b=1;
+  for(let i=2;i<=n;i++){
+    let c=a+b;
+    a=b;
+    b=c;
+  }
+  return b;
+}
+
+78. Print all permutations of a string
+
+Steps:
+
+Use recursion.
+
+Swap each character with the current index.
+
+Recurse for next index.
+
+Backtrack (swap back).
+
+Code:
+
+function permute(str, l=0, r=str.length-1){
+  if(l===r) console.log(str.join(''));
+  else{
+    for(let i=l;i<=r;i++){
+      [str[l], str[i]] = [str[i], str[l]];
+      permute(str,l+1,r);
+      [str[l], str[i]] = [str[i], str[l]]; // backtrack
+    }
+  }
+}
+
+79. Generate all subsets (Power set)
+
+Steps:
+
+Start with empty subset.
+
+For each element, add it to existing subsets to create new ones.
+
+Code:
+
+function subsets(nums){
+  let res=[[]];
+  for(let num of nums){
+    let newSubsets = res.map(s => [...s, num]);
+    res.push(...newSubsets);
+  }
+  return res;
+}
+
+80. Count number of set bits in all numbers up to n
+
+Steps:
+
+Loop from 1 to n.
+
+Count bits using n & (n-1) trick.
+
+Code:
+
+function countBits(n){
+  let res=[];
+  for(let i=0;i<=n;i++){
+    let count=0, num=i;
+    while(num){ num &= (num-1); count++; }
+    res.push(count);
+  }
+  return res;
+}
+
+81. Reverse words in a string
+
+Steps:
+
+Split string by spaces.
+
+Reverse array.
+
+Join back.
+
+Code:
+
+function reverseWords(s){
+  return s.split(' ').reverse().join(' ');
+}
+
+82. Reverse a string
+
+Steps:
+
+Convert string → array.
+
+Reverse array.
+
+Join back.
+
+Code:
+
+function reverseString(s){
+  return s.split('').reverse().join('');
+}
+
+83. Check if string is palindrome
+
+Steps:
+
+Compare characters from start and end.
+
+If all match → palindrome.
+
+Code:
+
+function isPalindrome(s){
+  let i=0,j=s.length-1;
+  while(i<j){
+    if(s[i++]!==s[j--]) return false;
+  }
+  return true;
+}
+
+84. Longest substring without repeating characters
+
+Steps:
+
+Use sliding window & set.
+
+Expand right, remove left until no repeat.
+
+Track max length.
+
+Code:
+
+function lengthOfLongestSubstring(s){
+  let set=new Set(), left=0, maxLen=0;
+  for(let right=0; right<s.length; right++){
+    while(set.has(s[right])) set.delete(s[left++]);
+    set.add(s[right]);
+    maxLen=Math.max(maxLen, right-left+1);
+  }
+  return maxLen;
+}
+
+85. Minimum window substring
+
+Steps:
+
+Use sliding window & hashmap.
+
+Expand until all characters included.
+
+Shrink from left to minimize window.
+
+Code: (Conceptual, can explain in interview)
+
+86. Word break problem
+
+Steps:
+
+DP → dp[i] = true if substring(0,i) can be segmented.
+
+Loop through words, update dp array.
+
+87. Implement Trie (Prefix Tree)
+
+Steps:
+
+Node contains children & isEnd flag.
+
+Insert word → create nodes for each char.
+
+Search → traverse nodes, check isEnd.
+
+88. Find all anagrams in a string
+
+Steps:
+
+Use sliding window & char count array.
+
+Compare window with target count.
+
+Store starting indices.
+
+89. Serialize and deserialize a binary tree
+
+Steps:
+
+Use pre-order traversal.
+
+For null → mark as #.
+
+To deserialize → use queue to reconstruct nodes recursively.
+
+90. Clone a graph
+
+Steps:
+
+Use BFS/DFS with hashmap mapping original → clone node.
+
+Traverse neighbors, copy nodes recursively.
+
+91. Detect cycle in a directed graph
+
+Steps:
+
+Use DFS + recursion stack.
+
+If node visited & in recursion stack → cycle exists.
+
+92. Detect cycle in an undirected graph
+
+Steps:
+
+DFS, keep track of parent node.
+
+If visited & not parent → cycle exists.
+
+93. Topological sort of a DAG
+
+Steps:
+
+Use DFS.
+
+Add nodes to stack after visiting all neighbors.
+
+Pop stack → sorted order.
+
+94. Dijkstra’s shortest path
+
+Steps:
+
+Initialize distances array.
+
+Use min-heap / priority queue.
+
+Update neighbors if shorter path found.
+
+95. Bellman-Ford shortest path
+
+Steps:
+
+Initialize distances.
+
+Relax all edges (V-1) times.
+
+Check for negative cycles.
+
+96. Floyd-Warshall (All-pairs shortest path)
+
+Steps:
+
+Initialize distance matrix.
+
+For each k (intermediate node) → update distance[i][j] = min(distance[i][j], distance[i][k]+distance[k][j])
+
+97. Kruskal’s Minimum Spanning Tree
+
+Steps:
+
+Sort edges by weight.
+
+Use Union-Find to avoid cycles.
+
+Pick edges until all vertices connected.
+
+98. Prim’s Minimum Spanning Tree
+
+Steps:
+
+Start from any node.
+
+Use min-heap to pick smallest edge connecting MST to remaining nodes.
+
+Repeat until all nodes included.
+
+99. Graph BFS traversal
+
+Steps:
+
+Use a queue.
+
+Start from source node, mark visited.
+
+Enqueue neighbors.
+
+Repeat until queue empty.
+
+100. Graph DFS traversal
+
+Steps:
+
+Use recursion or stack.
+
+Visit node, mark visited.
+
+Recurse for neighbors.

@@ -1,6 +1,6 @@
 🌟 Angular Tasks Roadmap (Expanded Levels 1–30)
 
-
+https://chatgpt.com/c/68f12fbe-4eec-8320-835d-0df4733c4678
 
 
 ==============================>    Level 1 — Environment Setup & First App
@@ -95,6 +95,9 @@ c) guest
 
 ==============================>    Level 3 — Parent-Child Communication
 
+https://chatgpt.com/share/68f5d16c-541c-8009-a07b-885161870a30
+
+
 (1) Create ParentComponent and ChildComponent.
 
 (2) Pass data from parent to child using @Input:
@@ -127,6 +130,8 @@ b) Display received data in child template.
 
 
 ==============================>    Level 4 — Lifecycle Hooks
+
+https://chatgpt.com/share/68f5d16c-541c-8009-a07b-885161870a30
 
 (1) Implement ngOnInit to log a message and fetch data.
 
@@ -216,6 +221,8 @@ a) Track how many times it changes.
 
 ==============================>    Level 7 — Custom Directives
 
+https://chatgpt.com/share/68f7c03f-b8b8-8009-a2a1-5dcf0efb9645
+
 (1) Create a directive to highlight text on hover:
 → Pass color as input.
 
@@ -303,6 +310,48 @@ d) lowercase
 
 (12) Group form fields into FormGroup (ngModelGroup).
 
+(13) Create a registration form with name, email, password, and gender using ngModel.
+
+(14) Implement password and confirm-password fields; show error if they don’t match.
+
+(15) Add dynamic validation messages for each field (e.g., show all that apply).
+
+(16) Highlight invalid fields with red border using ngClass.
+
+(17) Display form validity status (valid, invalid, pristine, touched) in the template.
+
+(18) Reset the form after successful submission using form.reset().
+
+(19) Pre-populate form fields with default values.
+
+(20) Create nested form groups using ngModelGroup (e.g., address → city, state, zip).
+
+(21) Add a phone number field and validate with a regex pattern (pattern attribute).
+
+(22) Disable a specific field conditionally (e.g., disable email if “guest” is selected).
+
+(23) Use #ref="ngModel" to access form control states in the template.
+
+(24) Show a live JSON preview of form data while typing ({{ form.value | json }}).
+
+(25) Add custom CSS styles for touched, dirty, and valid states.
+
+(26) Implement a form with dynamic checkbox list (e.g., multiple skills selection).
+
+(27) Create a feedback form and send submitted data to a service (mock HTTP).
+
+(28) Implement two-way binding between input and model variable using [(ngModel)].
+
+(29) Add tooltip or helper text that changes based on validation state.
+
+(30) Handle form submit using both (ngSubmit) and (click) — explain difference.
+
+(31) Create a form with date input and custom date validation.
+
+(32) Disable form controls dynamically based on another field’s value.
+
+(33) Write a directive to validate custom rules (e.g., no special characters in name).
+
 
 
 
@@ -337,6 +386,70 @@ b) minLength
 (12) Disable/enable controls dynamically.
 
 (13) Group controls with nested FormGroup.
+
+(14) Create a registration form using FormBuilder instead of manual FormGroup.
+
+(15) Create a form that dynamically adds or removes input fields using FormArray.
+
+(16) Create a form with dependent dropdowns (e.g., Country → State → City).
+
+(17) Add custom cross-field validation (e.g., password & confirm password match).
+
+(18) Show all validation errors on submit if user didn’t touch fields.
+
+(19) Disable submit button if the form is invalid.
+
+(20) Display real-time validation feedback with color highlights.
+
+(21) Create reusable custom validator functions in a separate file.
+
+(22) Apply multiple validators to the same control.
+
+(23) Dynamically add validators to a control after form initialization.
+
+(24) Remove validators dynamically based on conditions.
+
+(25) Validate form fields using regex pattern (Validators.pattern).
+
+(26) Create a reusable form control component (like custom input or datepicker).
+
+(27) Listen to both statusChanges and valueChanges and log results.
+
+(28) Load form data asynchronously (simulate API call and populate with patchValue).
+
+(29) Create a nested address form inside a parent form (using nested FormGroup).
+
+(30) Implement conditional form fields (e.g., show “Company Name” only if “Employed” is selected).
+
+(31) Create a form that saves progress locally (use localStorage).
+
+(32) Build a multi-step form wizard using Reactive Forms and shared data.
+
+(33) Write a custom validator that checks if an age is between 18 and 60.
+
+(34) Write a custom validator that checks for forbidden words in input.
+
+(35) Create a reusable async validator service that checks email availability.
+
+(36) Validate a dynamic FormArray (e.g., at least one checkbox must be selected).
+
+(37) Disable a specific FormGroup dynamically.
+
+(38) Show error summary at the top of the form when submitted invalid.
+
+(39) Pre-fill form values using setValue() and explain difference from patchValue().
+
+(40) Submit form data to a mock service and display response.
+
+(41) Create a complex form with nested FormArray (like multiple addresses).
+
+(42) Integrate Reactive Form with a custom Material input component.
+
+(43) Write a directive that marks all controls as touched when submitting.
+
+(44) Add a dynamic validator using a configuration object from API.
+
+(45) Explain difference between FormGroup, FormControl, and FormArray in real example.
 
 
 
