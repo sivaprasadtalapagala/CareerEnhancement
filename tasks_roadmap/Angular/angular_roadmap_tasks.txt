@@ -161,6 +161,8 @@ a) Track how many times it changes.
 
 ==============================>    Level 5 — Services & Dependency Injection
 
+https://chatgpt.com/share/68fd0b8c-dbe4-8009-87ca-318d37fd85da
+
 (1) Create UserService.
 
 (2) Inject service into a component via constructor.
@@ -192,6 +194,8 @@ a) Track how many times it changes.
 
 ==============================>    Level 6 — Built-in Directives
 
+https://chatgpt.com/share/68fd0b8c-dbe4-8009-87ca-318d37fd85da
+
 (1) Use *ngIf for conditional UI.
 
 (2) Use *ngFor with trackBy.
@@ -220,6 +224,7 @@ a) Track how many times it changes.
 
 
 ==============================>    Level 7 — Custom Directives
+https://chatgpt.com/share/68fd0b8c-dbe4-8009-87ca-318d37fd85da
 
 https://chatgpt.com/share/68f7c03f-b8b8-8009-a2a1-5dcf0efb9645
 
@@ -252,6 +257,8 @@ https://chatgpt.com/share/68f7c03f-b8b8-8009-a2a1-5dcf0efb9645
 
 
 ==============================>    Level 8 — Pipes
+
+https://chatgpt.com/share/68fe40df-2a70-8009-b894-97ed6036f029
 
 (1) Use built-in pipes:
 a) date
@@ -358,6 +365,8 @@ d) lowercase
 
 
 ==============================>    Level 10 — Reactive Forms
+
+https://chatgpt.com/share/68fdd98d-6efc-8009-916f-d155301f241b
 
 (1) Create form using FormGroup and FormControl.
 
@@ -529,6 +538,8 @@ b) CanDeactivate
 
 
 ==============================>    Level 13 — RxJS & Observables
+
+https://chatgpt.com/share/68fe5635-7574-8009-b846-9c9ad0e20556
 
 (1) Understand Observable creation:
 a) of(), from(), interval()
@@ -708,6 +719,10 @@ b) Test services
 
 
 ==============================>    Level 19 — Performance Optimization
+
+
+https://chatgpt.com/share/68fe4744-e8c0-8009-91c2-233d8cdb1268
+
 
 (1) Use OnPush change detection.
 
@@ -1045,3 +1060,28 @@ b) Test services
 (9) Deploy to production (Netlify, Firebase, AWS, or Azure).
 
 (10) Implement CI/CD pipelines for Angular applications.
+
+
+
+
+
+
+
+
+
+=========================================== Angular Authentication Guards ======================================
+
+https://chatgpt.com/share/68fe69c3-8014-8009-beeb-e9aa6fd2f3cd
+
+
+
+
+
+
+
+
+
+
+Gen AI roadmap
+
+https://chatgpt.com/share/68fe779e-a878-8009-aeff-b13e23acdeba
