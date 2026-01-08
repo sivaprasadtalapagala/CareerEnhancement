@@ -933,6 +933,8 @@ https://chatgpt.com/share/68fe4744-e8c0-8009-91c2-233d8cdb1268
 
 ==============================>    Level 26 — State Management Advanced
 
+https://chatgpt.com/share/690cf2ee-a640-8009-bc2b-bc4a98c74426
+
 (1) Use NgRx Entity for structured state management.
 
 (2) Implement feature modules with separate stores.

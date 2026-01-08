@@ -1,0 +1,587 @@
+===============================Tell me about yourself. ====================================
+
+Hello everyone, My name is Siva prasad,I’m an Angular Developer with around 5 years of experience in building enterprise-level web applications.
+Throughout my career, I’ve focused mainly on frontend development, using Angular, TypeScript, RxJS, and NgRx to create scalable, maintainable, and high-performance applications.
+
+I’ve worked on end-to-end feature development, starting from designing reusable UI components to implementing complex reactive forms, API integrations, and advanced state management using NgRx.
+
+I’m very comfortable working with Observables, Subjects, and BehaviorSubjects for handling asynchronous data streams and communication between components.
+
+Apart from frontend, I also have hands-on experience with backend integration using Node.js (Express.js) and .NET Core APIs.
+I’ve collaborated closely with backend teams to design and consume REST APIs, manage authentication flows, and ensure data consistency between client and server.
+I also pay special attention to performance optimization, applying techniques like lazy loading, OnPush change detection, and memoized selectors to enhance user experience.
+
+Recently, I’ve been exploring Generative AI and how it can be integrated into modern web applications.
+I’ve learned how AI models like GPT and diffusion models work and how they can be used to create AI-driven features such as intelligent chatbots, content generation, personalized recommendations, and even AI-assisted form filling or code suggestions within web applications.
+
+I’m passionate about writing clean, reusable code, following best practices, and continuously improving application performance and scalability.
+I enjoy solving challenging UI problems, mentoring juniors, and contributing to projects that combine innovation, technology, and real-world impact.
+
+
+
+
+=====================================About chubb project====
+
+I’m currently working at Chubb India on an enterprise-level insurance web application built using Angular 15, NgRx, and RxJS.
+The application helps customers to Buy and manage their insurance policies, submit claims, and update their personal details online.
+
+My role as an Angular Developer involves developing dynamic reactive forms, integrating REST APIs, and managing state efficiently using NgRx Store and Effects.
+I’ve implemented cross-field validations, lazy loading, and OnPush change detection to improve performance and maintain smooth user experience.
+
+I also focus on error handling, data caching, and optimizing component rendering using RxJS operators.
+Additionally, I work closely with backend teams to ensure proper API integration and data flow.
+
+Overall, I’ve contributed to improving the application’s speed, stability, and code maintainability, while helping deliver a cleaner and more scalable architecture.
+
+Architecture & modules:
+The app is organized into feature modules — auth, policies, claims, payments, user-profile, and several shared/core modules. I follow a feature-based folder structure so each module owns its components, services, and state. We use lazy loading for feature modules via the router so the initial bundle stays small and routes load on demand. We also use a custom preloading strategy to preload high-probability features after login.
+
+
+* How You Used TokenEx in Your Angular Application
+For example, when a user enters their debit card details to buy a policy, the card number is captured through TokenEx’s iFrame.
+Angular sends this to TokenEx, TokenEx returns a single-use token, and only that token goes to our backend.
+Our backend then sends the token to the payment gateway, which maps it back to the actual card number securely.
+This ensures full PCI compliance and reduces security risk.
+
+
+================================================================================================================================================================
+================================================================================================
+===========================================================================================================
+======================================================================================================================
+<ng-container *ngIf="items">
+  <ul *ngFor="let item of items">
+    <li></li>
+  </ul>
+</ng-container>
+
+<tr *ngFor="let customer of customers; trackBy: trackByTodos">
+
+--------------------------------------------------------
+<div *ngIf=”false else showNgTemplateContent”> 
+    Shouldn't be displayed 
+</div>
+
+ 
+<ng-template #showNgTemplateContent> Should be displayed
+</ng-template>
+===================================================================
+<div [ngSwitch]="condition">
+      <div *ngSwitchCase="'case1'">Content for Case 1</div>
+      <div *ngSwitchCase="'case2'">Content for Case 2</div>
+      <div *ngSwitchDefault>Default Content</div>
+    </div>
+
+condition: string = 'case1';
+===================================================================
+
+import { FormsModule } from '@angular/forms';
+  
+<input type="text" name="value" [(ngModel)]="value">
+
+===================================================================
+<div [ngClass]="{'active': isActive, 'inactive': !isActive}">Toggle Class</div>
+===================================================================
+
+<div [ngStyle]="{'color': isError ? 'red' : 'green', 'font-size': '24px', 'font-weight': 'bold'}">
+    some text
+</div>
+
+===================================================================
+     ====Custom Directive===
+
+constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  // When mouse enters
+  @HostListener('mouseenter') onMouseEnter() {
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+  }
+
+  // When mouse leaves
+  @HostListener('mouseleave') onMouseLeave() {
+    this.renderer.removeStyle(this.el.nativeElement, 'backgroundColor');
+  }
+
+<p appHighlight>
+
+===================================================================
+
+
+
+
+
+
+
+
+           =======================life cycle hook========================
+---------------------------,ngOnChanges
+ngOnChanges(changes: SimpleChanges) {
+    console.log('Changes detected:', changes);
+   if (changes['userId']) {
+    this.loadUserDetails(this.userId);
+  }
+  }
+output:
+Changes detected: {
+  value: {
+    previousValue: 0,
+    currentValue: 1,
+    firstChange: false
+  }
+}
+
+-------------------,ngDoCheck
+@Input() items!: string[];
+
+  previousLength = 0;
+
+  ngDoCheck() {
+    if (this.items.length !== this.previousLength) {
+      console.log('Array length changed!');
+      this.previousLength = this.items.length;
+    }
+  }
+-------------------------------,ngAfterContentInit ,ngAfterContentChecked
+<app-child>
+  <p #projectedPara>This is projected paragraph from Parent!</p>
+</app-child>
+
+<div class="child-container">
+  <ng-content></ng-content>
+</div>
+
+@ContentChild('projectedPara') projectedPara!: ElementRef;
+
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit called');
+    console.log('Projected content:', this.projectedPara.nativeElement.textContent);
+
+    // ✅ Safe to access DOM now
+    this.projectedPara.nativeElement.style.color = 'blue';
+  }
+
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked called');
+
+    // You can check or update projected content here if it changes
+    this.projectedPara.nativeElement.style.fontWeight = 'bold';
+  }
+
+       --------------- @ContentChildren-----
+  <app-child>
+  <p #para>Paragraph 1</p>
+  <p #para>Paragraph 2</p>
+  <p #para>Paragraph 3</p>
+</app-child>
+
+<div>
+  <ng-content></ng-content>
+</div>
+
+
+@ContentChildren('para') paragraphs!: QueryList<ElementRef>;
+ngAfterContentInit() {
+    console.log('ngAfterContentInit called');
+    console.log('Paragraphs count:', this.paragraphs.length);
+
+    // Loop through all projected paragraphs
+    this.paragraphs.forEach((p, index) => {
+      p.nativeElement.style.color = 'blue';
+      p.nativeElement.textContent += ` (Modified by child #${index + 1})`;
+    });
+  }
+
+  -----------------------,ngAfterViewInit ,ngAfterViewChecked
+<app-child></app-child>  (parent)
+<p #paraRef>This is inside child view</p>   (child)
+
+export class ChildComponent implements AfterViewInit {
+  @ViewChild('paraRef') paraElement!: ElementRef;
+
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit called');
+    console.log('Paragraph text:', this.paraElement.nativeElement.textContent);
+
+    // ✅ Safe to modify DOM here
+    this.paraElement.nativeElement.style.color = 'blue';
+  }
+
+  ngAfterViewChecked() {
+  console.log('ngAfterViewChecked called');
+ }
+}
+
+              ====@ViewChildren
+<div #box class="box">Box 1</div>
+<div #box class="box">Box 2</div>
+<div #box class="box">Box 3</div>
+
+ngAfterViewInit() {
+    console.log('Number of boxes:', this.boxes.length);
+
+    // Style all boxes after view is initialized
+    this.boxes.forEach((box, index) => {
+      box.nativeElement.style.border = '2px solid blue';
+      box.nativeElement.style.padding = '10px';
+      box.nativeElement.style.margin = '5px';
+      box.nativeElement.style.display = 'inline-block';
+    });
+  }
+-----------------------------,ngOnDestroy
+constructor() {
+    this.sub = interval(1000).subscribe(() => {
+      this.counter++;
+    });
+  }
+
+  ngOnDestroy() {
+    console.log('Component destroyed. Unsubscribing...');
+    this.sub.unsubscribe(); // ✅ prevent memory leak
+  }
+
+===================================================================
+
+
+
+
+
+
+
+
+            =================,pipes=======================
+----------------------built-in pipes==
+{{ name | uppercase }}
+<p>Birthday is {{ birthday | date }}</p>
+birthday = new Date(1987, 6, 18); // June 18, 1987
+----------------------parameterized pipe
+<p>Birthday is {{  birthday | date:'fullDate' | uppercase}} </p>
+
+-----------------------,Custom pipe
+ng generate pipe ReversePipe 
+
+@Pipe({
+  name: 'reverse'
+})
+export class ReversePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.split('').reverse().join('');
+  }
+}
+<p>{{ 'Angular' | reverse }}</p>
+
+----------------,Pipe with Arguments
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'truncate'
+})
+export class TruncatePipe implements PipeTransform {
+
+  transform(value: string, limit: number = 20): string {
+    if (!value) return '';
+    return value.length > limit ? value.substring(0, limit) + '...' : value;
+  }
+
+}
+
+-------------------,Pipe with Multiple Arguments
+@Pipe({ name: 'greet' })
+export class GreetPipe implements PipeTransform {
+  transform(name: string, greeting: string = 'Hello'): string {
+    return `${greeting}, ${name}!`;
+  }
+}
+
+<p>{{ 'Siva' | greet:'Good Morning' }}</p>
+
+-------------------
+
+All pipes are pure pipes,until you add pure: false
+
+@Pipe({
+  name: 'myPipe',
+  pure: false
+})
+
+If you have an array, and you push new items into it,
+a pure pipe won’t detect it (because the reference didn’t change).
+An impure pipe will detect it and re-run automatically.
+
+-------------------------,asyncPipe
+{{ observableOrPromise | async }}
+
+<p>{{ dataService.getData() | async }}</p>
+
+
+====================================================================
+
+
+
+
+
+
+             ============================= ,Template-Driven Form==============
+  import { FormsModule } from '@angular/forms';
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <label>Name:</label>
+  <input type="text" name="name" ngModel />
+
+  <label>Email:</label>
+  <input type="email" name="email" ngModel />
+
+  <button type="submit">Submit</button>
+</form>
+
+onSubmit(form: any) {
+    console.log('Form submitted:', form.value);
+  }
+
+
+                  =================Reactive Form===================
+export class AppComponent implements OnInit {
+  userForm!: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.userForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
+
+  onSubmit() {
+    console.log('Reactive Form Data:', this.userForm.value);
+  }
+}
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label>Name:</label>
+  <input type="text" formControlName="name" />
+
+  <label>Email:</label>
+  <input type="email" formControlName="email" />
+
+  <button type="submit">Submit</button>
+</form>
+
+====================================
+
+
+
+
+
+
+
+========================================= Routing ===================================
+{
+    path: 'customers',
+    loadChildren: () => import('./customers/customers.module').then(module => module.CustomersModule)
+  }
+
+
+
+=====================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================,Rxjs=================================
+----service--
+export class DataService {
+  // 🔹 1. Subject - does NOT store old values
+  subjectData$ = new Subject<string>();
+
+  // 🔹 2. BehaviorSubject - stores the latest value
+  behaviorData$ = new BehaviorSubject<string>('Initial Value');
+
+  // 🔹 3. ReplaySubject - stores multiple previous values (e.g., last 2)
+  replayData$ = new ReplaySubject<string>(2);
+
+  // Methods to send data
+  sendViaSubject(value: string) {
+    this.subjectData$.next(value);
+  }
+
+  sendViaBehavior(value: string) {
+    this.behaviorData$.next(value);
+  }
+
+  sendViaReplay(value: string) {
+    this.replayData$.next(value);
+  }
+}
+
+
+
+------componet
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <h3>Subject: {{ subjectValue }}</h3>
+    <h3>BehaviorSubject: {{ behaviorValue }}</h3>
+    <h3>ReplaySubject: {{ replayValue }}</h3>
+
+    <button (click)="sendData()">Send New Data</button>
+  `
+})
+export class AppComponent implements OnInit {
+  subjectValue = '';
+  behaviorValue = '';
+  replayValue = '';
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    // 🔹 Subscribe to Subject
+    this.dataService.subjectData$.subscribe(val => {
+      this.subjectValue = val;
+    });
+
+    // 🔹 Subscribe to BehaviorSubject
+    this.dataService.behaviorData$.subscribe(val => {
+      this.behaviorValue = val;
+    });
+
+    // 🔹 Subscribe to ReplaySubject
+    this.dataService.replayData$.subscribe(val => {
+      this.replayValue = val;
+    });
+  }
+
+  sendData() {
+    const random = Math.floor(Math.random() * 100);
+    this.dataService.sendViaSubject('Subject ' + random);
+    this.dataService.sendViaBehavior('Behavior ' + random);
+    this.dataService.sendViaReplay('Replay ' + random);
+  }
+}
+
+
+Type	Behavior	Example Output
+Subject	Sends only new data after you subscribe	You’ll miss old messages
+BehaviorSubject	Sends the last value immediately + new ones	You get the most recent state
+ReplaySubject	Sends a few past values (based on buffer size)	Great for “chat history” style
+
+
+-----------------------------------------------------------------------
+
+---------------,switchMap
+export class AppComponent {
+  constructor(private userService: UserService) {
+    const searchBox = document.getElementById('search') as HTMLInputElement;
+
+    fromEvent(searchBox, 'input').pipe(
+      map((event: any) => event.target.value),
+      debounceTime(500), // wait 0.5s after typing
+      switchMap(id => this.userService.getUser(id))
+    ).subscribe(user => console.log('Latest user:', user));
+  }
+}
+
+------------,concatMap
+
+ loadUsers() {
+    from([1, 2, 3]).pipe(
+      concatMap(id => this.userService.getUser(id)),
+      tap(user => console.log('Loaded user:', user.name))
+    ).subscribe();
+  }
+
+-----------------,mergeMap
+loadUsers() {
+    from([1, 2, 3]).pipe(
+      mergeMap(id => this.userService.getUser(id)),
+      tap(user => console.log('Loaded user:', user.name))
+    ).subscribe();
+  }
+
+
+
+======================================================================================
+
+=====Promise===
+
+const myPromise = new Promise((resolve, reject) => {
+  const success = false;
+
+  if (success) {
+    resolve("Success!");
+  } else {
+    reject("Something went wrong!");
+  }
+});
+
+myPromise
+  .then(res => console.log(res))
+  .catch(err => console.log(err));
+
+
+     ---OR----
+  
+function getUsers() {
+  return fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json());
+}
+
+getUsers()
+  .then(data => console.log(data))
+  .catch(err => console.log("API failed:", err));
+
+
+
+    ---OR----
+
+function getData() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Data loaded"), 1000);
+  });
+}
+
+async function load() {
+  const result = await getData();
+  console.log(result);
+}
+
+load();
+
+
+
+================
+
+@Input('age') userAge?: number;
+
+@Output() userClicked = new EventEmitter<string>();
+
+    onClickButton() {
+    // Emit the current userName back to parent
+    this.userClicked.emit(this.userName);
+  }
+
+
+==========
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+
+
+===========
+
+ng add @ngrx/store@latest
+ng add @ngrx/effects@latest
+ng add @ngrx/entity@latest
+ng add @ngrx/store-devtools@latest

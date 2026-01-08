@@ -1,0 +1,254 @@
+https://chatgpt.com/share/69081356-692c-8009-be0f-124b40b2506b
+
+
+
+
+🧭 PHASE 1: RxJS BASICS (⭐ Important)
+
+Goal: Understand what Observables are and how to use them.
+
+🔹 Topic: Observable & Observer
+
+Tasks:
+
+Create a simple Observable that emits numbers 1, 2, 3 and logs them.
+
+Create a custom Observable that emits your name after 2 seconds.
+
+Implement an Observer with next, error, and complete methods.
+
+Use of(), from() to convert arrays, promises, and strings into Observables.
+
+🔹 Topic: Subscription (⭐ Important)
+
+Tasks:
+
+Subscribe to an Observable and log emitted values.
+
+Unsubscribe manually after certain emissions using take() or unsubscribe().
+
+Create a component that starts an Observable on ngOnInit and unsubscribes on ngOnDestroy.
+
+⚙️ PHASE 2: CREATION OPERATORS (⭐ Important)
+
+Goal: Learn how to create Observables efficiently.
+
+🔹 Topic: Creation Operators
+
+Tasks:
+
+Use interval() and timer() to emit values at specific intervals.
+
+Create an Observable using fromEvent(document, 'click') to log click positions.
+
+Convert HTTP request mock data to Observable using of() or fromFetch().
+
+Use defer() to create lazy Observables.
+
+🔄 PHASE 3: TRANSFORMATION OPERATORS (⭐ Important)
+
+Goal: Learn how to transform emitted data.
+
+🔹 Topic: map, pluck, mapTo
+
+Tasks:
+
+Use map() to double all emitted numbers.
+
+Use pluck() to extract specific properties from emitted objects.
+
+Use mapTo() to replace emitted values with a constant string.
+
+🔹 Topic: mergeMap, switchMap, concatMap, exhaustMap (🔥 VERY Important)
+
+Tasks:
+
+Mock two HTTP calls — chain them using:
+
+mergeMap (parallel)
+
+concatMap (sequential)
+
+switchMap (cancel previous)
+
+exhaustMap (ignore new until complete)
+
+Demonstrate difference between them using a button click that triggers HTTP request.
+
+🧩 PHASE 4: FILTERING OPERATORS
+
+Goal: Control which emissions pass through.
+
+🔹 Topic: filter, take, takeUntil, takeWhile, first, last
+
+Tasks:
+
+Emit numbers 1–10, use filter() to get even ones.
+
+Use take(3) to take first 3 values.
+
+Create a “Stop” button that calls takeUntil() to stop the stream.
+
+Use first() and last() to log first and last emitted values.
+
+🔹 Topic: debounceTime, distinctUntilChanged, throttleTime (⭐ Important for search)
+
+Tasks:
+
+Build a search box in Angular that:
+
+Uses debounceTime(500)
+
+Uses distinctUntilChanged()
+
+Logs value only after user stops typing.
+
+Compare it with throttleTime() behavior.
+
+🧠 PHASE 5: COMBINATION OPERATORS
+
+Goal: Combine multiple Observables.
+
+🔹 Topic: combineLatest, withLatestFrom, merge, concat, forkJoin, zip
+
+Tasks:
+
+Combine two streams (e.g., first name + last name) using combineLatest().
+
+Use withLatestFrom() to combine a timer and input events.
+
+Merge click + keypress events using merge().
+
+Concatenate Observables using concat().
+
+Use forkJoin() to make 3 mock HTTP calls and emit when all complete.
+
+Use zip() to pair emitted values from 2 streams.
+
+⚡ PHASE 6: ERROR HANDLING (⭐ Important)
+
+Goal: Handle errors gracefully in Observables.
+
+🔹 Topic: catchError, retry, retryWhen
+
+Tasks:
+
+Create an Observable that throws error, handle it using catchError().
+
+Simulate HTTP error and retry it 3 times using retry(3).
+
+Use retryWhen() with delay before retrying.
+
+🧹 PHASE 7: UTILITY OPERATORS
+
+Goal: Manage side effects and finalize tasks.
+
+🔹 Topic: tap, finalize, delay, timeout
+
+Tasks:
+
+Use tap() to log emitted values before mapping.
+
+Simulate delayed response using delay(2000).
+
+Use timeout() to handle slow Observables.
+
+Add finalize() to show cleanup logic after Observable completes.
+
+🧭 PHASE 8: SUBJECTS (⭐ Very Important)
+
+Goal: Understand Subject types and behavior.
+
+🔹 Topic: Subject
+
+Tasks:
+
+Create a Subject, subscribe from two observers, emit values manually.
+
+Use Subject as EventEmitter between two Angular components.
+
+🔹 Topic: BehaviorSubject (🔥 Crucial for Angular state)
+
+Tasks:
+
+Create a BehaviorSubject with default value.
+
+Subscribe in multiple places and log latest values.
+
+Use in a service to share state between components.
+
+🔹 Topic: ReplaySubject and AsyncSubject
+
+Tasks:
+
+Demonstrate how ReplaySubject replays old values for late subscribers.
+
+Show AsyncSubject emits only the last value when completed.
+
+🧱 PHASE 9: HIGHER-ORDER OBSERVABLES (⭐ Important for complex flows)
+
+Tasks:
+
+Create an Observable that emits Observables.
+
+Use switchAll(), mergeAll(), concatAll() to flatten them.
+
+Combine them with map() to understand mapping + flattening.
+
+🧰 PHASE 10: SCHEDULERS & CONCURRENCY
+
+Tasks:
+
+Use observeOn and subscribeOn with asyncScheduler to simulate background execution.
+
+Experiment with execution order using queueScheduler.
+
+🔄 PHASE 11: RxJS IN ANGULAR (🔥 Super Important)
+
+Goal: Connect RxJS concepts with Angular ecosystem.
+
+🔹 Topic: HttpClient with RxJS
+
+Tasks:
+
+Make a GET API call and transform data using map().
+
+Handle API errors using catchError().
+
+Retry API on failure using retry().
+
+🔹 Topic: Forms & Reactive Programming
+
+Tasks:
+
+Use valueChanges of a FormControl with debounceTime() and distinctUntilChanged().
+
+Cancel previous search API using switchMap() when new input arrives.
+
+🔹 Topic: Component Communication using Subject (⭐ Important)
+
+Tasks:
+
+Use Subject in a service to send messages between components.
+
+Use BehaviorSubject for shared state management (like logged-in user).
+
+🔹 Topic: Async Pipe (⭐ Important)
+
+Tasks:
+
+Display Observable data in the template using async pipe.
+
+Compare manual subscription vs async pipe (and memory leak prevention).
+
+🧠 PHASE 12: ADVANCED PROJECT TASKS (Final Mastery)
+
+Create a search autocomplete using FormControl.valueChanges + RxJS operators.
+
+Build a live timer with start/pause/reset using interval() and Subject.
+
+Implement real-time data refresh (every 5s) using timer() + switchMap().
+
+Create retry mechanism for failed HTTP calls with exponential delay.
+
+Implement a state management service using BehaviorSubject.       
